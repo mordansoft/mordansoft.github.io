@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MordanSoft — mobile software studio</title>
   <meta name="description" content="MordanSoft builds mobile apps — our own and for clients who need them done right.">
+  <link rel="icon" type="image/png" href="/assets/img/aok/icon.png">
+  <link rel="apple-touch-icon" href="/assets/img/aok/icon.png">
   <style>
     :root {
       --fg: #15171c;
@@ -160,7 +162,7 @@
       background: var(--card); border: 1px solid var(--border); border-radius: 18px;
       padding: 1.75rem; display: grid; grid-template-columns: 1fr; gap: 1.5rem; align-items: center;
     }
-    .product-icon { width: 84px; height: 84px; border-radius: 20px; flex: none; }
+    .product-icon { width: 84px; height: 84px; border-radius: 20px; flex: none; display: block; object-fit: cover; }
     .product .kicker {
       font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
       color: var(--accent); margin-bottom: 0.625rem;
@@ -297,7 +299,7 @@
     <section class="section reveal" id="products">
       <div class="seclabel"><span class="num">04</span><h2>Our products</h2></div>
       <div class="product">
-        <div class="slot product-icon"><span class="tag">icon</span></div>
+        <img class="product-icon" src="/assets/img/aok/icon.png" alt="AoK app icon">
         <div>
           <div class="kicker">Available on Google Play</div>
           <div class="product-name">AoK — Angle of Knife</div>
