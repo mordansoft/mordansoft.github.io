@@ -3,41 +3,342 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MordanSoft</title>
+  <title>MordanSoft — mobile software studio</title>
   <meta name="description" content="MordanSoft builds mobile apps — our own and for clients who need them done right.">
-  <link rel="stylesheet" href="/assets/css/styles.css">
+  <style>
+    :root {
+      --fg: #15171c;
+      --muted: #5f636b;
+      --accent: #1E4FCC;
+      --accent-soft: #e8edfb;
+      --ink: #0d0f14;
+      --bg: #f4f5f7;
+      --card: #ffffff;
+      --border: #e6e8ec;
+      --hair: #eef0f3;
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: system-ui, -apple-system, "Segoe UI", Inter, sans-serif;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+
+    /* placeholder slot */
+    .slot {
+      position: relative;
+      background-color: #eceef2;
+      background-image: repeating-linear-gradient(45deg, #e3e6ec 0 10px, #eceef2 10px 20px);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .slot.dark {
+      background-color: #1a1e27;
+      background-image: repeating-linear-gradient(45deg, #20242f 0 10px, #1a1e27 10px 20px);
+    }
+    .slot .tag {
+      font-family: ui-monospace, "SF Mono", Menlo, monospace;
+      font-size: 0.6875rem;
+      letter-spacing: 0.02em;
+      color: #8a8f99;
+      background: rgba(255,255,255,0.85);
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+    }
+    .slot.dark .tag { color: #9aa0ad; background: rgba(0,0,0,0.4); }
+
+    /* ===== top bar ===== */
+    .topbar { background: var(--ink); }
+    .topbar-inner {
+      max-width: 1080px; margin: 0 auto;
+      padding: 1.125rem 1.75rem;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .brand { font-size: 1rem; font-weight: 700; letter-spacing: -0.01em; color: #fff; }
+    .brand .dot { color: var(--accent); }
+    .topbar-meta { font-size: 0.8125rem; color: #9aa0ad; }
+
+    /* ===== hero (dark) ===== */
+    .hero { background: var(--ink); color: #fff; overflow: hidden; }
+    .hero-inner {
+      max-width: 1080px; margin: 0 auto;
+      padding: 4.5rem 1.75rem 5rem;
+      display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center;
+    }
+    .hero h1 {
+      margin: 0;
+      font-size: clamp(2.5rem, 7vw, 4rem);
+      font-weight: 700; letter-spacing: -0.03em; line-height: 1.03;
+    }
+    .hero h1 .accent { color: #7d9cf2; }
+    .hero-tag {
+      margin: 1.75rem 0 0; font-size: clamp(1.0625rem, 2.6vw, 1.3125rem);
+      color: #aeb3bd; max-width: 32ch; line-height: 1.5;
+    }
+    .hero-cta {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      margin-top: 2rem; padding: 0.75rem 1.25rem;
+      background: var(--accent); color: #fff; text-decoration: none;
+      font-size: 0.9375rem; font-weight: 600; border-radius: 9px;
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+    .hero-cta:hover { transform: translateY(-2px); box-shadow: 0 10px 30px -12px rgba(30,79,204,.7); }
+    .hero-media {
+      display: flex; justify-content: flex-start;
+      gap: 1rem;
+    }
+    .phone {
+      width: 220px; aspect-ratio: 9 / 19.5; flex: none;
+      border-radius: 30px; padding: 9px; background: #2a2f3a;
+      box-shadow: 0 30px 60px -25px rgba(0,0,0,.7);
+      animation: float 6s ease-in-out infinite;
+    }
+    .phone .slot { width: 100%; height: 100%; border-radius: 22px; }
+    .phone:nth-child(2) { transform: translateY(28px) scale(.92); opacity: .85; animation-delay: -3s; }
+    @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
+    .phone:nth-child(2) { animation-name: float2; }
+    @keyframes float2 { 0%,100% { transform: translateY(28px) scale(.92); } 50% { transform: translateY(14px) scale(.92); } }
+
+    @media (min-width: 880px) {
+      .hero-inner { grid-template-columns: 1.1fr 0.9fr; padding: 6rem 1.75rem; }
+      .hero-media { justify-content: flex-end; }
+    }
+
+    /* ===== layout ===== */
+    .wrap { max-width: 1080px; margin: 0 auto; padding: 0 1.75rem; }
+    .section { padding: 4rem 0; border-bottom: 1px solid var(--hair); }
+    .section:last-of-type { border-bottom: 0; }
+    .seclabel { display: flex; align-items: baseline; gap: 0.625rem; margin: 0 0 1.75rem; }
+    .seclabel .num { font-size: 0.75rem; font-weight: 700; color: var(--accent); font-variant-numeric: tabular-nums; }
+    .seclabel h2 {
+      margin: 0; font-size: 0.8125rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.09em; color: var(--muted);
+    }
+
+    .about p {
+      margin: 0; font-size: clamp(1.125rem, 2.6vw, 1.5rem);
+      line-height: 1.5; max-width: 24ch; font-weight: 500; letter-spacing: -0.01em;
+    }
+    .about .lead { max-width: 38ch; }
+
+    /* what we do */
+    .do { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+    .do .item {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 14px; padding: 1.5rem 1.625rem;
+      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+    .do .item:hover { transform: translateY(-3px); box-shadow: 0 16px 40px -24px rgba(20,30,60,.35); border-color: #d4d8e0; }
+    .do .item .ic {
+      width: 36px; height: 36px; border-radius: 9px; background: var(--accent-soft);
+      display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;
+    }
+    .do .item .ic span { width: 9px; height: 9px; border-radius: 50%; background: var(--accent); }
+    .do .item h3 { margin: 0 0 0.375rem; font-size: 1.0625rem; font-weight: 600; }
+    .do .item p { margin: 0; font-size: 0.9375rem; color: var(--muted); line-height: 1.55; }
+
+    /* chips */
+    .chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .chip {
+      background: var(--card); border: 1px solid var(--border); border-radius: 999px;
+      padding: 0.4375rem 0.875rem; font-size: 0.875rem; color: var(--fg);
+      transition: transform .15s ease, border-color .15s ease, color .15s ease;
+    }
+    .chip:hover { transform: translateY(-2px); border-color: var(--accent); color: var(--accent); }
+
+    /* product */
+    .product {
+      background: var(--card); border: 1px solid var(--border); border-radius: 18px;
+      padding: 1.75rem; display: grid; grid-template-columns: 1fr; gap: 1.5rem; align-items: center;
+    }
+    .product-icon { width: 84px; height: 84px; border-radius: 20px; flex: none; }
+    .product .kicker {
+      font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 0.625rem;
+    }
+    .product-name { font-size: 1.375rem; font-weight: 700; letter-spacing: -0.01em; }
+    .product-desc { margin: 0.5rem 0 0; font-size: 0.9375rem; color: var(--muted); max-width: 44ch; line-height: 1.55; }
+    .product-cta {
+      display: inline-flex; align-items: center; gap: 0.4rem; margin-top: 1.25rem;
+      font-size: 0.9375rem; font-weight: 600; color: #fff; background: var(--accent);
+      text-decoration: none; padding: 0.6875rem 1.1875rem; border-radius: 9px;
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+    .product-cta:hover { transform: translateY(-2px); box-shadow: 0 10px 26px -12px rgba(30,79,204,.65); }
+    @media (min-width: 620px) {
+      .do { grid-template-columns: 1fr 1fr; }
+      .product { grid-template-columns: auto 1fr; }
+    }
+
+    /* contact */
+    .contact a {
+      font-size: clamp(1.375rem, 5vw, 2rem); font-weight: 700; letter-spacing: -0.02em;
+      color: var(--accent); text-decoration: none;
+      background-image: linear-gradient(var(--accent), var(--accent));
+      background-size: 0% 2px; background-position: 0 100%; background-repeat: no-repeat;
+      transition: background-size .25s ease;
+    }
+    .contact a:hover { background-size: 100% 2px; }
+
+    /* footer */
+    footer { background: var(--ink); color: #aeb3bd; }
+    .footer-inner {
+      max-width: 1080px; margin: 0 auto; padding: 2.5rem 1.75rem 3.5rem;
+      font-size: 0.875rem; line-height: 1.85;
+    }
+    .footer-top {
+      display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between;
+      align-items: baseline; padding-bottom: 1.5rem; margin-bottom: 1.5rem;
+      border-bottom: 1px solid #232833;
+    }
+    .footer-brand { color: #fff; font-weight: 700; font-size: 1rem; }
+    .footer-brand .dot { color: var(--accent); }
+    .footer-legal-title { font-weight: 600; color: #fff; margin-bottom: 0.25rem; }
+    .footer-inner a { color: #aeb3bd; text-decoration: underline; text-underline-offset: 2px; }
+    .footer-inner a:hover { color: #fff; }
+
+    /* reveal */
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.in { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+      .phone { animation: none !important; }
+      html { scroll-behavior: auto; }
+    }
+  </style>
 </head>
 <body>
+
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">MordanSoft<span class="dot">.</span></div>
+      <div class="topbar-meta">Mobile software studio</div>
+    </div>
+  </div>
+
+  <!-- 1. Hero -->
   <header class="hero">
-    <div class="container">
-      <h1 class="logo">MordanSoft</h1>
-      <p class="tagline">MordanSoft builds mobile apps — our own and for clients who need them done right.</p>
+    <div class="hero-inner">
+      <div>
+        <h1>We build <span class="accent">mobile apps</span> that ship.</h1>
+        <p class="hero-tag">MordanSoft builds mobile apps — our own and for clients who need them done right.</p>
+        <a class="hero-cta" href="#products">See our work →</a>
+      </div>
+      <div class="hero-media">
+        <div class="phone"><div class="slot dark"><span class="tag">app screen · 1170×2532</span></div></div>
+        <div class="phone"><div class="slot dark"><span class="tag">app screen</span></div></div>
+      </div>
     </div>
   </header>
 
-  <main class="container">
-    <section class="products">
-      <h2>Products</h2>
-      <article class="product-card">
-        <h3><a href="/aok/">AoK — Angle of Knife</a></h3>
-        <p>Sharpening companion for kitchen and pocket knives.</p>
-      </article>
+  <main class="wrap">
+
+    <!-- 2. About -->
+    <section class="section about reveal">
+      <div class="seclabel"><span class="num">01</span><h2>About</h2></div>
+      <p class="lead">Independent mobile software studio run by a developer with 13+ years in industry — from industrial database systems and embedded electronics to native mobile and Flutter. We build small, focused apps that ship and stay shipped.</p>
     </section>
 
-    <section class="contact">
-      <h2>Contact</h2>
-      <p><a href="mailto:mordansoft@gmail.com">mordansoft@gmail.com</a></p>
+    <!-- 3. What we do -->
+    <section class="section reveal">
+      <div class="seclabel"><span class="num">02</span><h2>What we do</h2></div>
+      <div class="do">
+        <div class="item">
+          <div class="ic"><span></span></div>
+          <h3>Mobile app development</h3>
+          <p>Flutter, iOS, Android. From concept to store release.</p>
+        </div>
+        <div class="item">
+          <div class="ic"><span></span></div>
+          <h3>Backend &amp; data</h3>
+          <p>Python, SQL, integrations with existing systems.</p>
+        </div>
+        <div class="item">
+          <div class="ic"><span></span></div>
+          <h3>AI-augmented development</h3>
+          <p>Modern tooling for faster, cleaner delivery.</p>
+        </div>
+        <div class="item">
+          <div class="ic"><span></span></div>
+          <h3>Maintenance &amp; support</h3>
+          <p>Long-term partnerships, not throwaway projects.</p>
+        </div>
+      </div>
     </section>
+
+    <!-- 4. Tech we use -->
+    <section class="section reveal">
+      <div class="seclabel"><span class="num">03</span><h2>Tech we use</h2></div>
+      <div class="chips">
+        <span class="chip">Flutter</span>
+        <span class="chip">Dart</span>
+        <span class="chip">Kotlin</span>
+        <span class="chip">Swift</span>
+        <span class="chip">Python</span>
+        <span class="chip">C#</span>
+        <span class="chip">React</span>
+        <span class="chip">PL-SQL</span>
+        <span class="chip">T-SQL</span>
+        <span class="chip">SQLite</span>
+        <span class="chip">Firebase</span>
+      </div>
+    </section>
+
+    <!-- 5. Our products -->
+    <section class="section reveal" id="products">
+      <div class="seclabel"><span class="num">04</span><h2>Our products</h2></div>
+      <div class="product">
+        <div class="slot product-icon"><span class="tag">icon</span></div>
+        <div>
+          <div class="kicker">Available on Google Play</div>
+          <div class="product-name">AoK — Angle of Knife</div>
+          <p class="product-desc">A sharpening companion for kitchen and pocket knives. Available on Google Play.</p>
+          <a class="product-cta" href="/aok/">View product →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Contact -->
+    <section class="section contact reveal">
+      <div class="seclabel"><span class="num">05</span><h2>Contact</h2></div>
+      <a href="mailto:mordansoft@gmail.com">mordansoft@gmail.com</a>
+    </section>
+
   </main>
 
-  <footer class="container">
-    <p>&copy; 2026 MordanSoft</p>
-    <nav class="legal">
-      <a href="/legal/aok/privacy.html">AoK Privacy</a> ·
-      <a href="/legal/aok/terms.html">AoK Terms</a> ·
-      <a href="/legal/sloviko/privacy.html">Sloviko Privacy</a> ·
-      <a href="/legal/sloviko/terms.html">Sloviko Terms</a>
-    </nav>
+  <!-- 7. Footer (legal) -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">MordanSoft<span class="dot">.</span></div>
+        <div>© 2026 MordanSoft</div>
+      </div>
+      <div class="footer-legal-title">Legal</div>
+      <div>AoK — <a href="/legal/aok/privacy.html">Privacy</a> · <a href="/legal/aok/terms.html">Terms</a></div>
+      <div>Sloviko — <a href="/legal/sloviko/privacy.html">Privacy</a> · <a href="/legal/sloviko/terms.html">Terms</a></div>
+    </div>
   </footer>
+
+  <script>
+    (function () {
+      var els = document.querySelectorAll('.reveal');
+      if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('in'); }); return; }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+      els.forEach(function (e) { io.observe(e); });
+    })();
+  </script>
+
 </body>
 </html>
