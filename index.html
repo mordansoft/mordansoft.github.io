@@ -96,12 +96,13 @@
       gap: 1rem;
     }
     .phone {
-      width: 220px; aspect-ratio: 9 / 19.5; flex: none;
+      width: 220px; aspect-ratio: 9 / 16; flex: none;
       border-radius: 30px; padding: 9px; background: #2a2f3a;
       box-shadow: 0 30px 60px -25px rgba(0,0,0,.7);
       animation: float 6s ease-in-out infinite;
     }
     .phone .slot { width: 100%; height: 100%; border-radius: 22px; }
+    .phone img { width: 100%; height: 100%; border-radius: 22px; object-fit: cover; display: block; }
     .phone:nth-child(2) { transform: translateY(28px) scale(.92); opacity: .85; animation-delay: -3s; }
     @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
     .phone:nth-child(2) { animation-name: float2; }
@@ -233,8 +234,8 @@
         <a class="hero-cta" href="#products">See our work →</a>
       </div>
       <div class="hero-media">
-        <div class="phone"><div class="slot dark"><span class="tag">app screen · 1170×2532</span></div></div>
-        <div class="phone"><div class="slot dark"><span class="tag">app screen</span></div></div>
+        <div class="phone"><img src="/assets/img/sloviko/en_1_hero.png" alt="Sloviko — vocabulary practice"></div>
+        <div class="phone"><img src="/assets/img/sloviko/en_2_repetition.png" alt="Sloviko — spaced repetition"></div>
       </div>
     </div>
   </header>
