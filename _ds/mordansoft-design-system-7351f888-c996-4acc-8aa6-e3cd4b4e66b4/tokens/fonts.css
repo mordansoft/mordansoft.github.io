@@ -1,0 +1,6 @@
+/* MordanSoft — webfonts
+   IBM Plex Sans (display + body) and IBM Plex Mono (labels, tags, code).
+   Plex's engineering heritage fits a studio rooted in industrial databases
+   and embedded systems. Loaded from Google's static host. */
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;450;500;600;700&display=swap');

@@ -1,0 +1,188 @@
+/* ============================================================
+   MordanSoft — Color
+   Monochrome-dominant. A committed WARM grey scale carries ~90%
+   of every surface. One brand accent ("Ember"). Quiet semantics.
+   Light and dark are paired peers; default follows the OS.
+   ============================================================ */
+
+:root {
+  /* --- Warm grey ramp (raw scale, hue ~65 in oklch) -------- */
+  --grey-0:    oklch(1 0 0);
+  --grey-50:   oklch(0.985 0.003 75);
+  --grey-100:  oklch(0.967 0.004 73);
+  --grey-150:  oklch(0.948 0.005 72);
+  --grey-200:  oklch(0.918 0.006 70);
+  --grey-300:  oklch(0.869 0.007 68);
+  --grey-400:  oklch(0.762 0.008 66);
+  --grey-500:  oklch(0.642 0.009 64);
+  --grey-600:  oklch(0.534 0.009 62);
+  --grey-700:  oklch(0.432 0.008 60);
+  --grey-800:  oklch(0.323 0.007 58);
+  --grey-850:  oklch(0.262 0.006 58);
+  --grey-900:  oklch(0.209 0.006 56);
+  --grey-950:  oklch(0.166 0.006 54);
+  --grey-1000: oklch(0.122 0.005 52);
+
+  /* --- Brand accent: "Ember" — a molten warm orange --------- */
+  /* Deliberately singular: not tech-blue, not purple. Used sparingly. */
+  --ember-300: oklch(0.80 0.115 52);
+  --ember-400: oklch(0.74 0.155 49);
+  --ember-500: oklch(0.672 0.188 46);  /* core brand mark */
+  --ember-600: oklch(0.612 0.182 44);
+  --ember-700: oklch(0.548 0.162 42);
+  --ember-050: oklch(0.955 0.030 60);  /* faint wash, light mode */
+  --ember-tint-dark: oklch(0.305 0.070 48); /* faint wash, dark mode */
+
+  /* --- Semantic hues (raw, tuned quiet against grey) -------- */
+  --green-500:  oklch(0.640 0.110 156);
+  --green-050:  oklch(0.955 0.035 156);
+  --green-tint-dark: oklch(0.330 0.060 158);
+
+  --amber-500:  oklch(0.770 0.120 82);
+  --amber-050:  oklch(0.962 0.045 86);
+  --amber-tint-dark: oklch(0.350 0.060 80);
+
+  --red-500:    oklch(0.602 0.170 27);
+  --red-050:    oklch(0.957 0.030 25);
+  --red-tint-dark: oklch(0.330 0.080 27);
+
+  --blue-500:   oklch(0.620 0.075 232);  /* "info" only — never the brand */
+  --blue-050:   oklch(0.957 0.025 232);
+  --blue-tint-dark: oklch(0.330 0.050 232);
+}
+
+/* ============================================================
+   Semantic, theme-paired tokens.
+   These are what components reference — never the raw ramp.
+   ============================================================ */
+
+:root,
+[data-theme="light"] {
+  color-scheme: light;
+
+  --surface:           oklch(0.978 0.004 74);  /* page — warm paper */
+  --surface-elevated:  var(--grey-0);          /* cards, panels */
+  --surface-sunken:    oklch(0.955 0.005 72);  /* insets, code wells */
+  --surface-overlay:   var(--grey-0);          /* popovers, menus */
+  --surface-inverse:   var(--grey-950);        /* dark band in light page */
+
+  --text-primary:      var(--grey-900);
+  --text-secondary:    var(--grey-700);
+  --text-muted:        var(--grey-500);
+  --text-faint:        var(--grey-400);
+  --text-on-accent:    var(--grey-0);
+  --text-on-inverse:   var(--grey-100);
+
+  --border:            var(--grey-200);
+  --border-strong:     var(--grey-300);
+  --border-faint:      var(--grey-150);
+
+  --accent:            var(--ember-500);
+  --accent-hover:      var(--ember-600);
+  --accent-press:      var(--ember-700);
+  --accent-contrast:   var(--grey-0);          /* text/icon on accent fill */
+  --accent-subtle:     var(--ember-050);       /* faint accent wash */
+  --accent-text:       var(--ember-700);       /* accent used as text/link */
+  --ring:              oklch(0.672 0.188 46 / 0.45);
+
+  --success:           var(--green-500);
+  --success-subtle:    var(--green-050);
+  --warning:           var(--amber-500);
+  --warning-subtle:    var(--amber-050);
+  --danger:            var(--red-500);
+  --danger-subtle:     var(--red-050);
+  --info:              var(--blue-500);
+  --info-subtle:       var(--blue-050);
+
+  /* Geometry: layered planes use these soft tints */
+  --plane-1:           oklch(0.978 0.004 74);
+  --plane-2:           oklch(0.955 0.006 70);
+  --plane-3:           oklch(0.925 0.008 66);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+
+    --surface:           var(--grey-1000);
+    --surface-elevated:  var(--grey-900);
+    --surface-sunken:    oklch(0.105 0.005 52);
+    --surface-overlay:   var(--grey-850);
+    --surface-inverse:   var(--grey-100);
+
+    --text-primary:      oklch(0.955 0.004 80);
+    --text-secondary:    var(--grey-400);
+    --text-muted:        var(--grey-500);
+    --text-faint:        var(--grey-600);
+    --text-on-accent:    var(--grey-1000);
+    --text-on-inverse:   var(--grey-900);
+
+    --border:            oklch(0.298 0.006 58);
+    --border-strong:     oklch(0.378 0.007 58);
+    --border-faint:      oklch(0.238 0.006 58);
+
+    --accent:            oklch(0.715 0.178 50);
+    --accent-hover:      oklch(0.765 0.165 52);
+    --accent-press:      oklch(0.805 0.150 54);
+    --accent-contrast:   var(--grey-1000);
+    --accent-subtle:     var(--ember-tint-dark);
+    --accent-text:       oklch(0.785 0.150 54);
+    --ring:              oklch(0.715 0.178 50 / 0.55);
+
+    --success:           oklch(0.720 0.105 158);
+    --success-subtle:    var(--green-tint-dark);
+    --warning:           oklch(0.800 0.110 84);
+    --warning-subtle:    var(--amber-tint-dark);
+    --danger:            oklch(0.680 0.155 27);
+    --danger-subtle:     var(--red-tint-dark);
+    --info:              oklch(0.700 0.070 232);
+    --info-subtle:       var(--blue-tint-dark);
+
+    --plane-1:           oklch(0.155 0.006 54);
+    --plane-2:           oklch(0.195 0.006 56);
+    --plane-3:           oklch(0.245 0.007 58);
+  }
+}
+
+/* Explicit dark override (forces dark regardless of OS) */
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --surface:           var(--grey-1000);
+  --surface-elevated:  var(--grey-900);
+  --surface-sunken:    oklch(0.105 0.005 52);
+  --surface-overlay:   var(--grey-850);
+  --surface-inverse:   var(--grey-100);
+
+  --text-primary:      oklch(0.955 0.004 80);
+  --text-secondary:    var(--grey-400);
+  --text-muted:        var(--grey-500);
+  --text-faint:        var(--grey-600);
+  --text-on-accent:    var(--grey-1000);
+  --text-on-inverse:   var(--grey-900);
+
+  --border:            oklch(0.298 0.006 58);
+  --border-strong:     oklch(0.378 0.007 58);
+  --border-faint:      oklch(0.238 0.006 58);
+
+  --accent:            oklch(0.715 0.178 50);
+  --accent-hover:      oklch(0.765 0.165 52);
+  --accent-press:      oklch(0.805 0.150 54);
+  --accent-contrast:   var(--grey-1000);
+  --accent-subtle:     var(--ember-tint-dark);
+  --accent-text:       oklch(0.785 0.150 54);
+  --ring:              oklch(0.715 0.178 50 / 0.55);
+
+  --success:           oklch(0.720 0.105 158);
+  --success-subtle:    var(--green-tint-dark);
+  --warning:           oklch(0.800 0.110 84);
+  --warning-subtle:    var(--amber-tint-dark);
+  --danger:            oklch(0.680 0.155 27);
+  --danger-subtle:     var(--red-tint-dark);
+  --info:              oklch(0.700 0.070 232);
+  --info-subtle:       var(--blue-tint-dark);
+
+  --plane-1:           oklch(0.155 0.006 54);
+  --plane-2:           oklch(0.195 0.006 56);
+  --plane-3:           oklch(0.245 0.007 58);
+}

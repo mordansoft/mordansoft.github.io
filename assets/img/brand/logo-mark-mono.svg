@@ -1,0 +1,6 @@
+
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="MordanSoft">
+  <rect x="6.75" y="10.75" width="24.5" height="24.5" rx="6.5" stroke="currentColor" stroke-width="1.5" opacity="0.38"></rect>
+  <rect x="12.75" y="14.75" width="24.5" height="24.5" rx="6.5" stroke="currentColor" stroke-width="1.5" opacity="0.66"></rect>
+  <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M25 18h10a7 7 0 0 1 7 7v10a7 7 0 0 1-7 7H25a7 7 0 0 1-7-7V25a7 7 0 0 1 7-7Zm-1 6a3.5 3.5 0 0 0-3.5 3.5v0A3.5 3.5 0 0 0 24 31h8a3.5 3.5 0 0 0 3.5-3.5A3.5 3.5 0 0 0 32 24h-8Z"></path>
+</svg>

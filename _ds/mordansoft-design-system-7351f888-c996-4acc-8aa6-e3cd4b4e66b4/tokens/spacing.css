@@ -1,0 +1,50 @@
+/* ============================================================
+   MordanSoft — Spacing, radii, borders, layout
+   4px base grid. Generous but composed.
+   ============================================================ */
+
+:root {
+  /* --- Spacing scale (4px base) -------------------------- */
+  --space-0: 0;
+  --space-px: 1px;
+  --space-1: 0.25rem;   /* 4 */
+  --space-2: 0.5rem;    /* 8 */
+  --space-3: 0.75rem;   /* 12 */
+  --space-4: 1rem;      /* 16 */
+  --space-5: 1.25rem;   /* 20 */
+  --space-6: 1.5rem;    /* 24 */
+  --space-8: 2rem;      /* 32 */
+  --space-10: 2.5rem;   /* 40 */
+  --space-12: 3rem;     /* 48 */
+  --space-16: 4rem;     /* 64 */
+  --space-20: 5rem;     /* 80 */
+  --space-24: 6rem;     /* 96 */
+  --space-32: 8rem;     /* 128 */
+  --space-40: 10rem;    /* 160 */
+
+  /* Section rhythm */
+  --section-y: clamp(4rem, 2rem + 8vw, 8rem);       /* @kind spacing */
+  --section-y-lg: clamp(5rem, 2rem + 11vw, 11rem);  /* @kind spacing */
+
+  /* --- Radii --------------------------------------------- */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --radius-2xl: 28px;
+  --radius-pill: 999px;
+  --radius-circle: 50%;
+
+  /* --- Borders ------------------------------------------- */
+  --border-width: 1px;
+  --border-width-strong: 1.5px;
+  --hairline: var(--border-width) solid var(--border);
+  --hairline-strong: var(--border-width) solid var(--border-strong);
+
+  /* --- Layout -------------------------------------------- */
+  --container: 1200px;
+  --container-narrow: 760px;   /* reading width — legal, blog */
+  --container-wide: 1360px;
+  --gutter: clamp(1.25rem, 0.5rem + 3vw, 3rem);  /* @kind spacing */
+}

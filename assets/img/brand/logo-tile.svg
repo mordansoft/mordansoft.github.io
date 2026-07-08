@@ -1,0 +1,21 @@
+
+<svg width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="MordanSoft app tile">
+  <defs>
+    <linearGradient id="ms-tile-bg" x1="0" y1="0" x2="96" y2="96" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#26221F"></stop>
+      <stop offset="1" stop-color="#161311"></stop>
+    </linearGradient>
+    <linearGradient id="ms-ember" x1="40" y1="34" x2="74" y2="74" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#EE7A41"></stop>
+      <stop offset="1" stop-color="#D4561F"></stop>
+    </linearGradient>
+  </defs>
+  <rect width="96" height="96" rx="22" fill="url(#ms-tile-bg)"></rect>
+  
+  <rect x="22" y="24" width="34" height="34" rx="9" fill="#F4F0EC" opacity="0.16"></rect>
+  
+  <rect x="30" y="30" width="34" height="34" rx="9" fill="#F4F0EC" opacity="0.34"></rect>
+  
+  <rect x="38" y="36" width="34" height="34" rx="9" fill="url(#ms-ember)"></rect>
+  <rect x="46" y="44" width="18" height="18" rx="5" fill="#000000" opacity="0.18"></rect>
+</svg>

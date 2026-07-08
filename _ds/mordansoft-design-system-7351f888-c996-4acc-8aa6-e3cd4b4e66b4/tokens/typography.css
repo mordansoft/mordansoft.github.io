@@ -1,0 +1,66 @@
+/* ============================================================
+   MordanSoft — Typography
+   IBM Plex Sans (display + body), IBM Plex Mono (labels, code).
+   Headlines: tight tracking, heavy weight. Body: comfortable
+   line-height. Mono carries eyebrows, tags, and technical detail.
+   ============================================================ */
+
+:root {
+  /* --- Families ------------------------------------------- */
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, -apple-system,
+               "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", "JetBrains Mono",
+               Menlo, Consolas, monospace;
+
+  /* --- Weights ------------------------------------------- */
+  --weight-regular: 400;
+  --weight-text: 450;     /* slightly heavier body for warmth on screen */
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  /* --- Type scale (fluid where it matters) --------------- */
+  /* Display — for hero headlines; expressive, tight */
+  --text-display-2xl: clamp(3.25rem, 1.6rem + 6.6vw, 6rem);     /* @kind spacing */ /* 52 → 96 */
+  --text-display-xl:  clamp(2.75rem, 1.7rem + 4.2vw, 4.5rem);   /* @kind spacing */ /* 44 → 72 */
+  --text-display-lg:  clamp(2.25rem, 1.5rem + 3vw, 3.5rem);     /* @kind spacing */ /* 36 → 56 */
+
+  /* Headings */
+  --text-h1: clamp(2rem, 1.5rem + 2vw, 2.75rem);    /* @kind spacing */ /* 32 → 44 */
+  --text-h2: clamp(1.5rem, 1.2rem + 1.3vw, 2rem);   /* @kind spacing */ /* 24 → 32 */
+  --text-h3: 1.5rem;     /* 24 */
+  --text-h4: 1.25rem;    /* 20 */
+  --text-h5: 1.0625rem;  /* 17 */
+
+  /* Body & UI */
+  --text-lead: 1.25rem;  /* 20 — intro paragraphs */
+  --text-lg:   1.125rem; /* 18 */
+  --text-base: 1rem;     /* 16 */
+  --text-sm:   0.875rem; /* 14 */
+  --text-xs:   0.75rem;  /* 12 */
+
+  /* Eyebrow / overline (mono, tracked) */
+  --text-eyebrow: 0.8125rem; /* 13 */
+
+  /* --- Line heights -------------------------------------- */
+  --leading-none: 1;
+  --leading-tight: 1.1;
+  --leading-snug: 1.25;
+  --leading-display: 1.04;
+  --leading-heading: 1.15;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.65;  /* long-form body, legal docs */
+
+  /* --- Letter spacing ------------------------------------ */
+  --tracking-tightest: -0.04em;  /* big display */
+  --tracking-tighter: -0.025em;  /* headings */
+  --tracking-tight: -0.015em;
+  --tracking-normal: 0em;
+  --tracking-wide: 0.02em;
+  --tracking-eyebrow: 0.14em;    /* mono overlines, uppercase */
+
+  /* --- Paragraph measure --------------------------------- */
+  --measure: 68ch;        /* @kind spacing */ /* general prose */
+  --measure-narrow: 46ch; /* @kind spacing */ /* lead / pull text */
+  --measure-legal: 74ch;  /* @kind spacing */
+}

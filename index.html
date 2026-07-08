@@ -5,342 +5,437 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MordanSoft — mobile software studio</title>
   <meta name="description" content="MordanSoft builds mobile apps — our own and for clients who need them done right.">
-  <link rel="icon" type="image/png" href="/assets/img/aok/icon.png">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/brand/logo-tile.svg">
+  <link rel="alternate icon" href="/assets/img/aok/icon.png">
   <link rel="apple-touch-icon" href="/assets/img/aok/icon.png">
+
+  <!-- MordanSoft Design System -->
+  <link rel="stylesheet" href="_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/elevation.css">
+  <link rel="stylesheet" href="_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/base.css">
+  <link rel="stylesheet" href="_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/components/core/core.css">
+
+  <!-- Lucide icons -->
+  <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+
   <style>
-    :root {
-      --fg: #15171c;
-      --muted: #5f636b;
-      --accent: #1E4FCC;
-      --accent-soft: #e8edfb;
-      --ink: #0d0f14;
-      --bg: #f4f5f7;
-      --card: #ffffff;
-      --border: #e6e8ec;
-      --hair: #eef0f3;
+    /* ── Topbar ─────────────────────────────────────────── */
+    .topbar {
+      position: sticky; top: 0; z-index: 50;
+      background: color-mix(in oklch, var(--surface) 85%, transparent);
+      backdrop-filter: saturate(140%) blur(14px);
+      -webkit-backdrop-filter: saturate(140%) blur(14px);
+      border-bottom: 1px solid var(--border-faint);
     }
-    * { box-sizing: border-box; }
-    html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--fg);
-      font-family: system-ui, -apple-system, "Segoe UI", Inter, sans-serif;
-      line-height: 1.55;
-      -webkit-font-smoothing: antialiased;
+    .topbar__inner {
+      display: flex; align-items: center;
+      justify-content: space-between; height: 60px;
     }
-    a { color: inherit; }
+    .brand {
+      display: inline-flex; align-items: center; gap: var(--space-3);
+      color: var(--text-primary); text-decoration: none;
+    }
+    .brand:hover { text-decoration: none; }
+    .brand__mark { width: 28px; height: 28px; display: inline-flex; color: var(--text-primary); flex: none; }
+    .brand__mark svg { width: 100%; height: 100%; }
+    .brand__name { font-weight: 600; font-size: 1.0625rem; letter-spacing: -0.02em; color: var(--text-primary); }
+    .brand__name b { color: var(--accent-text); font-weight: 600; }
+    .topbar__tag { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--text-muted); }
 
-    /* placeholder slot */
-    .slot {
-      position: relative;
-      background-color: #eceef2;
-      background-image: repeating-linear-gradient(45deg, #e3e6ec 0 10px, #eceef2 10px 20px);
-      border-radius: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
+    /* ── Hero ───────────────────────────────────────────── */
+    .hero {
+      position: relative; isolation: isolate; overflow: hidden;
+      padding: var(--space-24) 0 var(--space-24);
     }
-    .slot.dark {
-      background-color: #1a1e27;
-      background-image: repeating-linear-gradient(45deg, #20242f 0 10px, #1a1e27 10px 20px);
+    .hero__field {
+      position: absolute; inset: -10% -5% -20%;
+      z-index: -1; pointer-events: none;
     }
-    .slot .tag {
-      font-family: ui-monospace, "SF Mono", Menlo, monospace;
-      font-size: 0.6875rem;
-      letter-spacing: 0.02em;
-      color: #8a8f99;
-      background: rgba(255,255,255,0.85);
-      padding: 0.25rem 0.5rem;
-      border-radius: 4px;
+    .hero__wash {
+      position: absolute; border-radius: 50%; filter: blur(80px);
     }
-    .slot.dark .tag { color: #9aa0ad; background: rgba(0,0,0,0.4); }
+    .hero__wash--a {
+      width: 520px; height: 520px; top: -120px; right: -80px; opacity: 0.45;
+      background: radial-gradient(circle, var(--ember-400), transparent 66%);
+    }
+    .hero__wash--b {
+      width: 460px; height: 460px; top: 100px; left: -180px; opacity: 0.30;
+      background: radial-gradient(circle, var(--plane-3), transparent 70%);
+    }
+    .hero__plane {
+      position: absolute; border-radius: var(--radius-2xl);
+      box-shadow: var(--shadow-lg); border: 1px solid var(--border-faint);
+    }
+    .hero__plane--1 { width: 290px; height: 185px; right: 5%; top: 28%; background: var(--surface-elevated); transform: rotate(4deg); }
+    .hero__plane--2 { width: 290px; height: 185px; right: 11%; top: 22%; background: var(--plane-2); transform: rotate(-3deg); opacity: 0.90; }
+    .hero__plane--3 { width: 290px; height: 185px; right: 17%; top: 16%; background: var(--plane-3); transform: rotate(-10deg); opacity: 0.65; }
+    .hero__facet {
+      position: absolute; width: 80px; height: 80px; right: 26%; top: 54%;
+      border-radius: var(--radius-xl);
+      background: linear-gradient(150deg, var(--ember-400), var(--ember-600));
+      box-shadow: var(--glow-accent); transform: rotate(12deg);
+    }
+    .hero__inner { position: relative; max-width: 600px; }
+    .hero__title {
+      margin: var(--space-4) 0 0;
+      font-size: var(--text-display-xl); font-weight: 700;
+      letter-spacing: var(--tracking-tightest); line-height: var(--leading-display);
+      color: var(--text-primary);
+    }
+    .hero__lead {
+      margin-top: var(--space-6);
+      font-size: var(--text-lead); color: var(--text-secondary);
+      line-height: var(--leading-snug); max-width: 46ch;
+    }
+    .hero__cta { display: flex; align-items: center; gap: var(--space-4); margin-top: var(--space-8); flex-wrap: wrap; }
 
-    /* ===== top bar ===== */
-    .topbar { background: var(--ink); }
-    .topbar-inner {
-      max-width: 1080px; margin: 0 auto;
-      padding: 1.125rem 1.75rem;
-      display: flex; align-items: center; justify-content: space-between;
-    }
-    .brand { font-size: 1rem; font-weight: 700; letter-spacing: -0.01em; color: #fff; }
-    .brand .dot { color: var(--accent); }
-    .topbar-meta { font-size: 0.8125rem; color: #9aa0ad; }
+    /* Staggered delay for hero [data-reveal] */
+    [data-reveal-delay="1"] { animation-delay: 90ms; }
+    [data-reveal-delay="2"] { animation-delay: 180ms; }
+    [data-reveal-delay="3"] { animation-delay: 270ms; }
 
-    /* ===== hero (dark) ===== */
-    .hero { background: var(--ink); color: #fff; overflow: hidden; }
-    .hero-inner {
-      max-width: 1080px; margin: 0 auto;
-      padding: 4.5rem 1.75rem 5rem;
-      display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center;
-    }
-    .hero h1 {
-      margin: 0;
-      font-size: clamp(2.5rem, 7vw, 4rem);
-      font-weight: 700; letter-spacing: -0.03em; line-height: 1.03;
-    }
-    .hero h1 .accent { color: #7d9cf2; }
-    .hero-tag {
-      margin: 1.75rem 0 0; font-size: clamp(1.0625rem, 2.6vw, 1.3125rem);
-      color: #aeb3bd; max-width: 32ch; line-height: 1.5;
-    }
-    .hero-cta {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      margin-top: 2rem; padding: 0.75rem 1.25rem;
-      background: var(--accent); color: #fff; text-decoration: none;
-      font-size: 0.9375rem; font-weight: 600; border-radius: 9px;
-      transition: transform .18s ease, box-shadow .18s ease;
-    }
-    .hero-cta:hover { transform: translateY(-2px); box-shadow: 0 10px 30px -12px rgba(30,79,204,.7); }
-    .hero-media {
-      display: flex; justify-content: flex-start;
-      gap: 1rem;
-    }
-    .phone {
-      width: 220px; aspect-ratio: 9 / 16; flex: none;
-      border-radius: 30px; padding: 9px; background: #2a2f3a;
-      box-shadow: 0 30px 60px -25px rgba(0,0,0,.7);
-      animation: float 6s ease-in-out infinite;
-    }
-    .phone .slot { width: 100%; height: 100%; border-radius: 22px; }
-    .phone img { width: 100%; height: 100%; border-radius: 22px; object-fit: cover; display: block; }
-    .phone:nth-child(2) { transform: translateY(28px) scale(.92); opacity: .85; animation-delay: -3s; }
-    @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
-    .phone:nth-child(2) { animation-name: float2; }
-    @keyframes float2 { 0%,100% { transform: translateY(28px) scale(.92); } 50% { transform: translateY(14px) scale(.92); } }
-
-    @media (min-width: 880px) {
-      .hero-inner { grid-template-columns: 1.1fr 0.9fr; padding: 6rem 1.75rem; }
-      .hero-media { justify-content: flex-end; }
+    /* ── Sections ───────────────────────────────────────── */
+    .section { padding: var(--section-y) 0; border-bottom: 1px solid var(--border-faint); }
+    .section:last-of-type { border-bottom: none; }
+    .section__head { margin-bottom: var(--space-10); display: flex; flex-direction: column; gap: var(--space-3); max-width: 640px; }
+    .section__title {
+      font-size: var(--text-h1); font-weight: 600;
+      letter-spacing: var(--tracking-tighter); color: var(--text-primary);
     }
 
-    /* ===== layout ===== */
-    .wrap { max-width: 1080px; margin: 0 auto; padding: 0 1.75rem; }
-    .section { padding: 4rem 0; border-bottom: 1px solid var(--hair); }
-    .section:last-of-type { border-bottom: 0; }
-    .seclabel { display: flex; align-items: baseline; gap: 0.625rem; margin: 0 0 1.75rem; }
-    .seclabel .num { font-size: 0.75rem; font-weight: 700; color: var(--accent); font-variant-numeric: tabular-nums; }
-    .seclabel h2 {
-      margin: 0; font-size: 0.8125rem; font-weight: 600;
-      text-transform: uppercase; letter-spacing: 0.09em; color: var(--muted);
+    /* ── About ──────────────────────────────────────────── */
+    .about__body {
+      font-size: var(--text-lead); color: var(--text-secondary);
+      line-height: var(--leading-normal); max-width: var(--measure-narrow);
     }
 
-    .about p {
-      margin: 0; font-size: clamp(1.125rem, 2.6vw, 1.5rem);
-      line-height: 1.5; max-width: 24ch; font-weight: 500; letter-spacing: -0.01em;
+    /* ── What we do ─────────────────────────────────────── */
+    .do-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-5); }
+    .do-card { display: flex; flex-direction: column; gap: var(--space-4); }
+    .do-card__icon {
+      width: 40px; height: 40px; border-radius: var(--radius-md); flex: none;
+      display: grid; place-items: center;
+      background: var(--accent-subtle); color: var(--accent-text);
     }
-    .about .lead { max-width: 38ch; }
+    .do-card__icon i { display: block; }
+    .do-card__title { font-size: var(--text-h5); font-weight: 600; color: var(--text-primary); margin: 0; }
+    .do-card__text { font-size: var(--text-base); color: var(--text-secondary); line-height: var(--leading-normal); margin: 0; }
 
-    /* what we do */
-    .do { display: grid; grid-template-columns: 1fr; gap: 1rem; }
-    .do .item {
-      background: var(--card); border: 1px solid var(--border);
-      border-radius: 14px; padding: 1.5rem 1.625rem;
-      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
-    }
-    .do .item:hover { transform: translateY(-3px); box-shadow: 0 16px 40px -24px rgba(20,30,60,.35); border-color: #d4d8e0; }
-    .do .item .ic {
-      width: 36px; height: 36px; border-radius: 9px; background: var(--accent-soft);
-      display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;
-    }
-    .do .item .ic span { width: 9px; height: 9px; border-radius: 50%; background: var(--accent); }
-    .do .item h3 { margin: 0 0 0.375rem; font-size: 1.0625rem; font-weight: 600; }
-    .do .item p { margin: 0; font-size: 0.9375rem; color: var(--muted); line-height: 1.55; }
+    /* ── Tech ───────────────────────────────────────────── */
+    .tech-wrap { display: flex; flex-wrap: wrap; gap: var(--space-2); }
 
-    /* chips */
-    .chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-    .chip {
-      background: var(--card); border: 1px solid var(--border); border-radius: 999px;
-      padding: 0.4375rem 0.875rem; font-size: 0.875rem; color: var(--fg);
-      transition: transform .15s ease, border-color .15s ease, color .15s ease;
+    /* ── Product ────────────────────────────────────────── */
+    .product-layout { display: flex; flex-direction: column; gap: var(--space-5); }
+    .product-icon {
+      width: 80px; height: 80px; border-radius: var(--radius-xl); flex: none;
+      background-color: var(--surface-sunken);
+      background-image: repeating-linear-gradient(45deg, var(--plane-2) 0 7px, var(--surface-sunken) 7px 14px);
+      display: flex; align-items: center; justify-content: center;
     }
-    .chip:hover { transform: translateY(-2px); border-color: var(--accent); color: var(--accent); }
+    .product-icon span { font-family: var(--font-mono); font-size: 0.625rem; color: var(--text-faint); }
+    .product-icon--img {
+      background: none; padding: 0; overflow: hidden;
+      border: 1px solid var(--border-faint);
+    }
+    .product-icon--img img { width: 100%; height: 100%; display: block; object-fit: cover; }
+    .products-stack { display: flex; flex-direction: column; gap: var(--space-6); }
+    .product-name {
+      font-size: var(--text-h3); font-weight: 700;
+      letter-spacing: var(--tracking-tight); color: var(--text-primary); margin: 0;
+    }
+    .product-desc {
+      font-size: var(--text-base); color: var(--text-secondary);
+      line-height: var(--leading-normal); max-width: 44ch; margin: var(--space-2) 0 0;
+    }
+    .product-actions { display: flex; align-items: center; gap: var(--space-3); margin-top: var(--space-5); flex-wrap: wrap; }
 
-    /* product */
-    .product {
-      background: var(--card); border: 1px solid var(--border); border-radius: 18px;
-      padding: 1.75rem; display: grid; grid-template-columns: 1fr; gap: 1.5rem; align-items: center;
-    }
-    .product-icon { width: 84px; height: 84px; border-radius: 20px; flex: none; display: block; object-fit: cover; }
-    .product .kicker {
-      font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
-      color: var(--accent); margin-bottom: 0.625rem;
-    }
-    .product-name { font-size: 1.375rem; font-weight: 700; letter-spacing: -0.01em; }
-    .product-desc { margin: 0.5rem 0 0; font-size: 0.9375rem; color: var(--muted); max-width: 44ch; line-height: 1.55; }
-    .product-cta {
-      display: inline-flex; align-items: center; gap: 0.4rem; margin-top: 1.25rem;
-      font-size: 0.9375rem; font-weight: 600; color: #fff; background: var(--accent);
-      text-decoration: none; padding: 0.6875rem 1.1875rem; border-radius: 9px;
-      transition: transform .18s ease, box-shadow .18s ease;
-    }
-    .product-cta:hover { transform: translateY(-2px); box-shadow: 0 10px 26px -12px rgba(30,79,204,.65); }
-    @media (min-width: 620px) {
-      .do { grid-template-columns: 1fr 1fr; }
-      .product { grid-template-columns: auto 1fr; }
-    }
-
-    /* contact */
-    .contact a {
-      font-size: clamp(1.375rem, 5vw, 2rem); font-weight: 700; letter-spacing: -0.02em;
-      color: var(--accent); text-decoration: none;
-      background-image: linear-gradient(var(--accent), var(--accent));
+    /* ── Contact ────────────────────────────────────────── */
+    .contact-link {
+      font-size: clamp(1.375rem, 4vw, var(--text-h2)); font-weight: 600;
+      letter-spacing: var(--tracking-tighter); color: var(--accent-text);
+      text-decoration: none;
+      background-image: linear-gradient(currentColor, currentColor);
       background-size: 0% 2px; background-position: 0 100%; background-repeat: no-repeat;
-      transition: background-size .25s ease;
+      transition: background-size 220ms var(--ease-out);
     }
-    .contact a:hover { background-size: 100% 2px; }
+    .contact-link:hover { text-decoration: none; background-size: 100% 2px; }
 
-    /* footer */
-    footer { background: var(--ink); color: #aeb3bd; }
-    .footer-inner {
-      max-width: 1080px; margin: 0 auto; padding: 2.5rem 1.75rem 3.5rem;
-      font-size: 0.875rem; line-height: 1.85;
+    /* ── Footer ─────────────────────────────────────────── */
+    .site-footer {
+      background: var(--surface-elevated); border-top: 1px solid var(--border);
+      padding: var(--space-12) 0 var(--space-16);
     }
-    .footer-top {
-      display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between;
-      align-items: baseline; padding-bottom: 1.5rem; margin-bottom: 1.5rem;
-      border-bottom: 1px solid #232833;
+    .footer-inner { display: flex; justify-content: space-between; gap: var(--space-10); flex-wrap: wrap; }
+    .footer-brand { display: flex; align-items: flex-start; gap: var(--space-3); }
+    .footer-brand__mark { width: 32px; height: 32px; flex: none; color: var(--text-primary); }
+    .footer-brand__mark svg { width: 100%; height: 100%; }
+    .footer-brand__name { font-weight: 600; font-size: 1rem; letter-spacing: -0.015em; color: var(--text-primary); }
+    .footer-brand__name b { color: var(--accent-text); font-weight: 600; }
+    .footer-copy { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--text-muted); margin-top: var(--space-2); }
+    .footer-legal h4 {
+      font-family: var(--font-mono); font-size: var(--text-xs); font-weight: 500;
+      text-transform: uppercase; letter-spacing: 0.10em; color: var(--text-muted);
+      margin: 0 0 var(--space-3) 0;
     }
-    .footer-brand { color: #fff; font-weight: 700; font-size: 1rem; }
-    .footer-brand .dot { color: var(--accent); }
-    .footer-legal-title { font-weight: 600; color: #fff; margin-bottom: 0.25rem; }
-    .footer-inner a { color: #aeb3bd; text-decoration: underline; text-underline-offset: 2px; }
-    .footer-inner a:hover { color: #fff; }
+    .footer-legal a { display: block; font-size: var(--text-sm); color: var(--text-secondary); text-decoration: none; padding: var(--space-1) 0; }
+    .footer-legal a:hover { color: var(--accent-text); text-decoration: none; }
 
-    /* reveal */
-    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
-    .reveal.in { opacity: 1; transform: none; }
-    @media (prefers-reduced-motion: reduce) {
-      .reveal { opacity: 1; transform: none; transition: none; }
-      .phone { animation: none !important; }
-      html { scroll-behavior: auto; }
+    /* ── Scroll reveal ──────────────────────────────────── */
+    @media (prefers-reduced-motion: no-preference) {
+      .js-reveal {
+        opacity: 0;
+        transform: translateY(16px);
+        transition: opacity 420ms var(--ease-out), transform 420ms var(--ease-out);
+      }
+      .js-reveal.is-in { opacity: 1; transform: none; }
+      .js-reveal[data-delay="1"] { transition-delay: 80ms; }
+      .js-reveal[data-delay="2"] { transition-delay: 160ms; }
+      .js-reveal[data-delay="3"] { transition-delay: 240ms; }
+      .js-reveal[data-delay="4"] { transition-delay: 320ms; }
+    }
+
+    /* ── Responsive ─────────────────────────────────────── */
+    @media (min-width: 640px) {
+      .do-grid { grid-template-columns: 1fr 1fr; }
+      .product-layout { flex-direction: row; align-items: flex-start; }
+    }
+    @media (max-width: 860px) {
+      .hero__plane, .hero__facet { display: none; }
+      .hero__wash--a { opacity: 0.25; }
+    }
+    @media (max-width: 560px) {
+      .topbar__tag { display: none; }
+      .footer-inner { flex-direction: column; }
     }
   </style>
 </head>
 <body>
 
+  <!-- Topbar -->
   <div class="topbar">
-    <div class="topbar-inner">
-      <div class="brand">MordanSoft<span class="dot">.</span></div>
-      <div class="topbar-meta">Mobile software studio</div>
+    <div class="ms-container topbar__inner">
+      <a class="brand" href="/">
+        <span class="brand__mark">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="6" y="10" width="26" height="26" rx="7" fill="currentColor" opacity="0.22"></rect>
+            <rect x="12" y="14" width="26" height="26" rx="7" fill="currentColor" opacity="0.45"></rect>
+            <rect x="18" y="18" width="24" height="24" rx="7" fill="#E0632C"></rect>
+            <rect x="24" y="24" width="12" height="12" rx="3.5" fill="#000000" opacity="0.16"></rect>
+          </svg>
+        </span>
+        <span class="brand__name">Mordan<b>Soft</b></span>
+      </a>
+      <span class="topbar__tag">Mobile software studio</span>
     </div>
   </div>
 
   <!-- 1. Hero -->
   <header class="hero">
-    <div class="hero-inner">
-      <div>
-        <h1>We build <span class="accent">mobile apps</span> that ship.</h1>
-        <p class="hero-tag">MordanSoft builds mobile apps — our own and for clients who need them done right.</p>
-        <a class="hero-cta" href="#products">See our work →</a>
-      </div>
-      <div class="hero-media">
-        <div class="phone"><img src="/assets/img/sloviko/en_1_hero.png" alt="Sloviko — vocabulary practice"></div>
-        <div class="phone"><img src="/assets/img/sloviko/en_2_repetition.png" alt="Sloviko — spaced repetition"></div>
+    <div class="hero__field" aria-hidden="true">
+      <div class="hero__wash hero__wash--a"></div>
+      <div class="hero__wash hero__wash--b"></div>
+      <div class="hero__plane hero__plane--3"></div>
+      <div class="hero__plane hero__plane--2"></div>
+      <div class="hero__plane hero__plane--1"></div>
+      <div class="hero__facet"></div>
+    </div>
+    <div class="ms-container">
+      <div class="hero__inner">
+        <span class="ms-eyebrow" data-reveal style="color: var(--accent-text)">// Independent mobile studio</span>
+        <h1 class="hero__title" data-reveal data-reveal-delay="1">We build mobile apps<br>that ship.</h1>
+        <p class="hero__lead" data-reveal data-reveal-delay="2">MordanSoft builds mobile apps — our own and for clients who need them done right.</p>
+        <div class="hero__cta" data-reveal data-reveal-delay="3">
+          <a class="ms-btn ms-btn--primary ms-btn--lg" href="#products">
+            Our products
+            <span class="ms-btn__icon"><i data-lucide="arrow-right"></i></span>
+          </a>
+          <a class="ms-btn ms-btn--link" href="#contact">Get in touch</a>
+        </div>
       </div>
     </div>
   </header>
 
-  <main class="wrap">
+  <main>
 
     <!-- 2. About -->
-    <section class="section about reveal">
-      <div class="seclabel"><span class="num">01</span><h2>About</h2></div>
-      <p class="lead">Independent mobile software studio run by a developer with 13+ years in industry — from industrial database systems and embedded electronics to native mobile and Flutter. We build small, focused apps that ship and stay shipped.</p>
+    <section class="section" id="about">
+      <div class="ms-container">
+        <div class="section__head js-reveal">
+          <span class="ms-eyebrow">// The studio</span>
+          <h2 class="section__title">About</h2>
+        </div>
+        <p class="about__body js-reveal" data-delay="1">
+          Independent mobile software studio run by a developer with 13+ years in industry — from industrial database systems and embedded electronics to native mobile and Flutter. We build small, focused apps that ship and stay shipped.
+        </p>
+      </div>
     </section>
 
     <!-- 3. What we do -->
-    <section class="section reveal">
-      <div class="seclabel"><span class="num">02</span><h2>What we do</h2></div>
-      <div class="do">
-        <div class="item">
-          <div class="ic"><span></span></div>
-          <h3>Mobile app development</h3>
-          <p>Flutter, iOS, Android. From concept to store release.</p>
+    <section class="section" id="services">
+      <div class="ms-container">
+        <div class="section__head js-reveal">
+          <span class="ms-eyebrow">// What we do</span>
+          <h2 class="section__title">What we do</h2>
         </div>
-        <div class="item">
-          <div class="ic"><span></span></div>
-          <h3>Backend &amp; data</h3>
-          <p>Python, SQL, integrations with existing systems.</p>
-        </div>
-        <div class="item">
-          <div class="ic"><span></span></div>
-          <h3>AI-augmented development</h3>
-          <p>Modern tooling for faster, cleaner delivery.</p>
-        </div>
-        <div class="item">
-          <div class="ic"><span></span></div>
-          <h3>Maintenance &amp; support</h3>
-          <p>Long-term partnerships, not throwaway projects.</p>
+        <div class="do-grid">
+          <div class="ms-card ms-card--pad do-card js-reveal" data-delay="1">
+            <div class="do-card__icon"><i data-lucide="smartphone"></i></div>
+            <div>
+              <h3 class="do-card__title">Mobile app development</h3>
+              <p class="do-card__text">Flutter, iOS, Android. From concept to store release.</p>
+            </div>
+          </div>
+          <div class="ms-card ms-card--pad do-card js-reveal" data-delay="2">
+            <div class="do-card__icon"><i data-lucide="database"></i></div>
+            <div>
+              <h3 class="do-card__title">Backend &amp; data</h3>
+              <p class="do-card__text">Python, SQL, integrations with existing systems.</p>
+            </div>
+          </div>
+          <div class="ms-card ms-card--pad do-card js-reveal" data-delay="1">
+            <div class="do-card__icon"><i data-lucide="cpu"></i></div>
+            <div>
+              <h3 class="do-card__title">AI-augmented development</h3>
+              <p class="do-card__text">Modern tooling for faster, cleaner delivery.</p>
+            </div>
+          </div>
+          <div class="ms-card ms-card--pad do-card js-reveal" data-delay="2">
+            <div class="do-card__icon"><i data-lucide="wrench"></i></div>
+            <div>
+              <h3 class="do-card__title">Maintenance &amp; support</h3>
+              <p class="do-card__text">Long-term partnerships, not throwaway projects.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- 4. Tech we use -->
-    <section class="section reveal">
-      <div class="seclabel"><span class="num">03</span><h2>Tech we use</h2></div>
-      <div class="chips">
-        <span class="chip">Flutter</span>
-        <span class="chip">Dart</span>
-        <span class="chip">Kotlin</span>
-        <span class="chip">Swift</span>
-        <span class="chip">Python</span>
-        <span class="chip">C#</span>
-        <span class="chip">React</span>
-        <span class="chip">PL-SQL</span>
-        <span class="chip">T-SQL</span>
-        <span class="chip">SQLite</span>
-        <span class="chip">Firebase</span>
+    <section class="section" id="tech">
+      <div class="ms-container">
+        <div class="section__head js-reveal">
+          <span class="ms-eyebrow">// Tech we use</span>
+          <h2 class="section__title">Tech we use</h2>
+        </div>
+        <div class="tech-wrap js-reveal" data-delay="1">
+          <span class="ms-tag">Flutter</span>
+          <span class="ms-tag">Dart</span>
+          <span class="ms-tag">Kotlin</span>
+          <span class="ms-tag">Swift</span>
+          <span class="ms-tag">Python</span>
+          <span class="ms-tag">C#</span>
+          <span class="ms-tag">React</span>
+          <span class="ms-tag ms-tag--accent">PL-SQL</span>
+          <span class="ms-tag ms-tag--accent">T-SQL</span>
+          <span class="ms-tag">SQLite</span>
+          <span class="ms-tag">Firebase</span>
+        </div>
       </div>
     </section>
 
     <!-- 5. Our products -->
-    <section class="section reveal" id="products">
-      <div class="seclabel"><span class="num">04</span><h2>Our products</h2></div>
-      <div class="product">
-        <img class="product-icon" src="/assets/img/aok/icon.png" alt="AoK app icon">
-        <div>
-          <div class="kicker">Available on Google Play</div>
-          <div class="product-name">AoK — Angle of Knife</div>
-          <p class="product-desc">A sharpening companion for kitchen and pocket knives. Available on Google Play.</p>
-          <a class="product-cta" href="/aok/">View product →</a>
+    <section class="section" id="products">
+      <div class="ms-container">
+        <div class="section__head js-reveal">
+          <span class="ms-eyebrow">// Our products</span>
+          <h2 class="section__title">Our products</h2>
+        </div>
+        <div class="products-stack">
+          <div class="ms-card ms-card--raised ms-card--pad js-reveal" data-delay="1" style="max-width: 680px;">
+            <div class="product-layout">
+              <div class="product-icon product-icon--img"><img src="/assets/img/aok/icon.png" alt="AoK app icon"></div>
+              <div>
+                <span class="ms-badge ms-badge--success"><span class="ms-badge__dot"></span>Available on Google Play</span>
+                <h3 class="product-name" style="margin-top: var(--space-3);">AoK — Angle of Knife</h3>
+                <p class="product-desc">Turns your phone into a real angle meter for knife sharpening — with presets, a blade log, and a whetstone audio guide.</p>
+                <div class="product-actions">
+                  <a class="ms-btn ms-btn--primary" href="/aok/">
+                    View product
+                    <span class="ms-btn__icon"><i data-lucide="arrow-up-right"></i></span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="ms-card ms-card--raised ms-card--pad js-reveal" data-delay="2" style="max-width: 680px;">
+            <div class="product-layout">
+              <div class="product-icon product-icon--img"><img src="/assets/img/sloviko/icon.png" alt="Sloviko app icon"></div>
+              <div>
+                <span class="ms-badge"><span class="ms-badge__dot"></span>In development</span>
+                <h3 class="product-name" style="margin-top: var(--space-3);">Sloviko — vocabulary practice</h3>
+                <p class="product-desc">Minimalist English vocabulary trainer. Open it — you're already learning. Offline, no account, Oxford 5000 built in.</p>
+                <div class="product-actions">
+                  <span class="ms-tag">Coming soon</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- 6. Contact -->
-    <section class="section contact reveal">
-      <div class="seclabel"><span class="num">05</span><h2>Contact</h2></div>
-      <a href="mailto:mordansoft@gmail.com">mordansoft@gmail.com</a>
+    <section class="section" id="contact">
+      <div class="ms-container">
+        <div class="section__head js-reveal">
+          <span class="ms-eyebrow">// Contact</span>
+          <h2 class="section__title">Get in touch</h2>
+        </div>
+        <a class="contact-link js-reveal" data-delay="1" href="mailto:mordansoft@gmail.com">
+          mordansoft@gmail.com
+        </a>
+      </div>
     </section>
 
   </main>
 
   <!-- 7. Footer (legal) -->
-  <footer>
-    <div class="footer-inner">
-      <div class="footer-top">
-        <div class="footer-brand">MordanSoft<span class="dot">.</span></div>
-        <div>© 2026 MordanSoft</div>
+  <footer class="site-footer">
+    <div class="ms-container footer-inner">
+      <div class="footer-brand">
+        <span class="footer-brand__mark" aria-hidden="true">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="6" y="10" width="26" height="26" rx="7" fill="currentColor" opacity="0.22"></rect>
+            <rect x="12" y="14" width="26" height="26" rx="7" fill="currentColor" opacity="0.45"></rect>
+            <rect x="18" y="18" width="24" height="24" rx="7" fill="#E0632C"></rect>
+            <rect x="24" y="24" width="12" height="12" rx="3.5" fill="#000000" opacity="0.16"></rect>
+          </svg>
+        </span>
+        <div>
+          <div class="footer-brand__name">Mordan<b>Soft</b></div>
+          <div class="footer-copy">© 2026 MordanSoft</div>
+        </div>
       </div>
-      <div class="footer-legal-title">Legal</div>
-      <div>AoK — <a href="/legal/aok/privacy.html">Privacy</a> · <a href="/legal/aok/terms.html">Terms</a></div>
-      <div>Sloviko — <a href="/legal/sloviko/privacy.html">Privacy</a> · <a href="/legal/sloviko/terms.html">Terms</a></div>
+      <div class="footer-legal">
+        <h4>Legal</h4>
+        <a href="/legal/aok/privacy.html">AoK — Privacy</a>
+        <a href="/legal/aok/terms.html">AoK — Terms</a>
+        <a href="/legal/sloviko/privacy.html">Sloviko — Privacy</a>
+        <a href="/legal/sloviko/terms.html">Sloviko — Terms</a>
+      </div>
     </div>
   </footer>
 
   <script>
+    // Lucide icons
+    if (window.lucide) lucide.createIcons();
+
+    // Scroll-based reveal for .js-reveal elements
     (function () {
-      var els = document.querySelectorAll('.reveal');
-      if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('in'); }); return; }
+      var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var els = document.querySelectorAll('.js-reveal');
+      if (reduced) { els.forEach(function (el) { el.classList.add('is-in'); }); return; }
+      if (!('IntersectionObserver' in window)) { els.forEach(function (el) { el.classList.add('is-in'); }); return; }
       var io = new IntersectionObserver(function (entries) {
         entries.forEach(function (en) {
-          if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+          if (en.isIntersecting) { en.target.classList.add('is-in'); io.unobserve(en.target); }
         });
-      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
-      els.forEach(function (e) { io.observe(e); });
-    })();
+      }, { threshold: 0.08, rootMargin: '0px 0px -5% 0px' });
+      els.forEach(function (el) { io.observe(el); });
+    }());
   </script>
 
 </body>

@@ -1,0 +1,69 @@
+/* ============================================================
+   MordanSoft — Elevation & motion
+   Soft, layered shadows (warm-tinted). Calm, physical motion.
+   ============================================================ */
+
+:root {
+  /* --- Shadows (light) ----------------------------------
+     Warm-tinted, low-opacity, layered. Cards sit close to the
+     page; elevation is felt, not announced. */
+  --shadow-xs:  0 1px 2px oklch(0.30 0.02 60 / 0.05);
+  --shadow-sm:  0 1px 2px oklch(0.30 0.02 60 / 0.05),
+                0 2px 6px oklch(0.30 0.02 60 / 0.05);
+  --shadow-md:  0 2px 4px oklch(0.30 0.02 60 / 0.05),
+                0 6px 16px oklch(0.30 0.02 60 / 0.07);
+  --shadow-lg:  0 4px 8px oklch(0.30 0.02 60 / 0.05),
+                0 14px 34px oklch(0.30 0.02 60 / 0.09);
+  --shadow-xl:  0 8px 16px oklch(0.30 0.02 60 / 0.06),
+                0 28px 60px oklch(0.30 0.02 60 / 0.12);
+
+  /* Accent glow — reserved, used only on the brand mark / CTA hover */
+  --glow-accent: 0 6px 24px oklch(0.672 0.188 46 / 0.28);
+
+  /* Hairline ring used in place of / atop shadow on key cards */
+  --ring-hairline: inset 0 0 0 1px var(--border);
+
+  /* --- Motion ------------------------------------------- */
+  --ease-standard: cubic-bezier(0.22, 0.61, 0.36, 1);   /* @kind other */ /* default UI */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);            /* @kind other */ /* reveals */
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);        /* @kind other */
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);     /* @kind other */ /* subtle overshoot */
+
+  /* Durations: 80 / 140 / 220 / 380 / 640 ms.
+     Inlined at point of use rather than tokenised — the token layer is
+     reserved for color/space/radius/shadow/font; motion timing lives with
+     the easing curves and the global reduced-motion reset in base.css. */
+
+  /* Scroll-reveal distance */
+  --reveal-shift: 18px;  /* @kind spacing */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --shadow-xs:  0 1px 2px oklch(0 0 0 / 0.30);
+    --shadow-sm:  0 1px 2px oklch(0 0 0 / 0.30),
+                  0 2px 6px oklch(0 0 0 / 0.32);
+    --shadow-md:  0 2px 4px oklch(0 0 0 / 0.32),
+                  0 6px 16px oklch(0 0 0 / 0.40);
+    --shadow-lg:  0 4px 8px oklch(0 0 0 / 0.34),
+                  0 14px 34px oklch(0 0 0 / 0.48);
+    --shadow-xl:  0 8px 16px oklch(0 0 0 / 0.40),
+                  0 28px 60px oklch(0 0 0 / 0.58);
+    --glow-accent: 0 6px 28px oklch(0.715 0.178 50 / 0.40);
+  }
+}
+
+[data-theme="dark"] {
+  --shadow-xs:  0 1px 2px oklch(0 0 0 / 0.30);
+  --shadow-sm:  0 1px 2px oklch(0 0 0 / 0.30),
+                0 2px 6px oklch(0 0 0 / 0.32);
+  --shadow-md:  0 2px 4px oklch(0 0 0 / 0.32),
+                0 6px 16px oklch(0 0 0 / 0.40);
+  --shadow-lg:  0 4px 8px oklch(0 0 0 / 0.34),
+                0 14px 34px oklch(0 0 0 / 0.48);
+  --shadow-xl:  0 8px 16px oklch(0 0 0 / 0.40),
+                0 28px 60px oklch(0 0 0 / 0.58);
+  --glow-accent: 0 6px 28px oklch(0.715 0.178 50 / 0.40);
+}
+
+/* Reduced motion is handled globally in base.css. */

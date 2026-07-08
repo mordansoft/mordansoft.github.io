@@ -4,20 +4,78 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AoK — Angle of Knife · MordanSoft</title>
+  <meta name="description" content="AoK — Angle of Knife: turn your phone into a real knife-sharpening angle meter. Whetstone guide, blade log, presets.">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/brand/logo-tile.svg">
+  <link rel="alternate icon" href="/assets/img/aok/icon.png">
   <link rel="stylesheet" href="/assets/css/styles.css">
+  <style>
+    .aok-head {
+      display: flex; align-items: center; gap: 1rem; margin: 0.5rem 0 1rem;
+    }
+    .aok-head img { width: 72px; height: 72px; border-radius: 16px; }
+    .aok-head h1 { margin: 0; font-size: 1.75rem; letter-spacing: -0.01em; }
+    .cta {
+      display: inline-block; margin-top: 1rem;
+      background: var(--accent); color: #fff; padding: 0.65rem 1.1rem;
+      border-radius: 8px; font-weight: 600;
+    }
+    .cta:hover { text-decoration: none; opacity: .92; }
+    .hero-screen {
+      margin: 1.5rem 0 0.75rem;
+    }
+    .hero-screen img {
+      width: 100%; height: auto; display: block;
+      border-radius: 14px; border: 1px solid var(--border);
+      background: #0d0f14;
+    }
+    .screens {
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem; margin: 0.75rem 0 0.5rem;
+    }
+    .screens img {
+      width: 100%; height: auto; display: block;
+      border-radius: 14px; border: 1px solid var(--border);
+      background: #f4f5f7;
+    }
+    .features { margin: 1rem 0 0; padding-left: 1.2rem; }
+    .features li { margin: 0.35rem 0; }
+  </style>
 </head>
 <body>
   <header class="hero">
     <div class="container">
       <p class="breadcrumb"><a href="/">← MordanSoft</a></p>
-      <h1>AoK — Angle of Knife</h1>
-      <p class="tagline">Sharpening companion for kitchen and pocket knives.</p>
+      <div class="aok-head">
+        <img src="/assets/img/aok/icon.png" alt="AoK icon">
+        <h1>AoK — Angle of Knife</h1>
+      </div>
+      <p class="tagline">Knife-sharpening angle meter — whetstone guide, blade log, sharper edges.</p>
+      <a class="cta" href="https://play.google.com/store/apps/details?id=com.mordansoft.aok" target="_blank" rel="noopener">Get it on Google Play →</a>
     </div>
   </header>
 
   <main class="container">
     <section>
-      <p><em>Product page — content coming soon.</em></p>
+      <div class="hero-screen">
+        <img src="/assets/img/aok/en_1_angle.png" alt="Sharpening angle meter — phone rests on the blade">
+      </div>
+      <div class="screens">
+        <img src="/assets/img/aok/en_3_list.png" alt="Knives list — chef's knife, pocket knife, axe and more">
+        <img src="/assets/img/aok/en_2_knife.png" alt="Knife card with angle, photo, and sharpening history">
+      </div>
+    </section>
+
+    <section>
+      <h2>What it does</h2>
+      <p>AoK turns your phone into a real angle meter for knife sharpening. Lay it on the blade — get the exact angle. No guesswork, no ruined edges.</p>
+      <ul class="features">
+        <li>Live angle meter, updated in real time</li>
+        <li>Whetstone guide — audio beep when the blade hits the target angle</li>
+        <li>Works with any tool — whetstone, guided rod, belt sharpener, bench grinder</li>
+        <li>Blade log — save every knife with angle, steel, photo, and full sharpening history</li>
+        <li>Presets for chef's, pocket, hunting, kitchen utility, fruit &amp; veg knives, axe, and more</li>
+        <li>8 languages, metric and imperial</li>
+      </ul>
     </section>
 
     <section>
