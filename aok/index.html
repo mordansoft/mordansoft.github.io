@@ -3,93 +3,369 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AoK — Angle of Knife · MordanSoft</title>
-  <meta name="description" content="AoK — Angle of Knife: turn your phone into a real knife-sharpening angle meter. Whetstone guide, blade log, presets.">
-  <link rel="icon" type="image/svg+xml" href="/assets/img/brand/logo-tile.svg">
-  <link rel="alternate icon" href="/assets/img/aok/icon.png">
-  <link rel="stylesheet" href="/assets/css/styles.css">
+  <title>AoK — Angle of Knife — MordanSoft</title>
+  <meta name="description" content="AoK — Angle of Knife. Turn your phone into a real knife-sharpening angle meter: live angle, audio guide, blade log. Offline-first, no account.">
+
+  <!-- MordanSoft Design System -->
+  <link rel="stylesheet" href="../_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/fonts.css">
+  <link rel="stylesheet" href="../_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/colors.css">
+  <link rel="stylesheet" href="../_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/typography.css">
+  <link rel="stylesheet" href="../_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/spacing.css">
+  <link rel="stylesheet" href="../_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/elevation.css">
+  <link rel="stylesheet" href="../_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/base.css">
+  <link rel="stylesheet" href="../_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/components/core/core.css">
+
+  <!-- Lucide icons -->
+  <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+
   <style>
-    .aok-head {
-      display: flex; align-items: center; gap: 1rem; margin: 0.5rem 0 1rem;
+    /* ── Topbar ─────────────────────────────────────────── */
+    .topbar {
+      position: sticky; top: 0; z-index: 50;
+      background: color-mix(in oklch, var(--surface) 85%, transparent);
+      backdrop-filter: saturate(140%) blur(14px);
+      -webkit-backdrop-filter: saturate(140%) blur(14px);
+      border-bottom: 1px solid var(--border-faint);
     }
-    .aok-head img { width: 72px; height: 72px; border-radius: 16px; }
-    .aok-head h1 { margin: 0; font-size: 1.75rem; letter-spacing: -0.01em; }
-    .store-badges { display: inline-flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; margin-top: 1rem; }
-    .store-badge { display: inline-flex; height: 48px; border-radius: 8px; transition: transform .15s ease, opacity .15s ease; }
+    .topbar__inner { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+    .brand { display: inline-flex; align-items: center; gap: var(--space-3); color: var(--text-primary); text-decoration: none; }
+    .brand:hover { text-decoration: none; }
+    .brand__mark { width: 28px; height: 28px; display: inline-flex; color: var(--text-primary); flex: none; }
+    .brand__mark svg { width: 100%; height: 100%; }
+    .brand__name { font-weight: 600; font-size: 1.0625rem; letter-spacing: -0.02em; color: var(--text-primary); }
+    .brand__name b { color: var(--accent-text); font-weight: 600; }
+    .topbar__tag { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--text-muted); }
+
+    /* ── Detail hero ────────────────────────────────────── */
+    .detail-hero { position: relative; isolation: isolate; overflow: hidden; padding: var(--space-16) 0 var(--space-20); }
+    .detail-hero__wash {
+      position: absolute; border-radius: 50%; filter: blur(90px); z-index: -1; pointer-events: none;
+      width: 560px; height: 560px; top: -180px; right: -140px; opacity: 0.40;
+      background: radial-gradient(circle, var(--ember-400), transparent 66%);
+    }
+    .detail-hero__wash--b {
+      right: auto; left: -200px; top: 120px; width: 460px; height: 460px; opacity: 0.26;
+      background: radial-gradient(circle, var(--plane-3), transparent 70%);
+    }
+    .detail__back {
+      display: inline-flex; align-items: center; gap: var(--space-2);
+      margin-bottom: var(--space-8); font-size: var(--text-sm);
+    }
+    .detail-hero__grid { display: grid; grid-template-columns: 1fr; gap: var(--space-12); align-items: center; }
+    .detail__tile { width: 68px; height: 68px; border-radius: var(--radius-xl); overflow: hidden; display: block; box-shadow: var(--shadow-md); }
+    .detail__tile img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .detail__title {
+      margin: var(--space-5) 0 0; font-size: var(--text-display-lg); font-weight: 700;
+      letter-spacing: var(--tracking-tightest); line-height: var(--leading-display); color: var(--text-primary);
+    }
+    .detail__tagline { margin: var(--space-3) 0 0; font-size: var(--text-lead); color: var(--text-secondary); line-height: var(--leading-snug); max-width: 44ch; }
+    .detail__blurb { margin: var(--space-5) 0 0; font-size: var(--text-base); color: var(--text-secondary); line-height: var(--leading-normal); max-width: 52ch; }
+    .detail__tags { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--space-6); }
+    .detail__cta { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-top: var(--space-8); }
+    .detail__specs { display: flex; flex-wrap: wrap; gap: var(--space-5); margin-top: var(--space-6); font-family: var(--font-mono); font-size: var(--text-xs); color: var(--text-muted); }
+    .detail__specs b { color: var(--text-secondary); font-weight: 500; }
+
+    /* phone mock stack */
+    .detail-hero__mock { position: relative; display: flex; justify-content: center; min-height: 420px; }
+    .phone {
+      position: relative; width: 232px; flex: none; border-radius: 36px; padding: 8px;
+      background: linear-gradient(160deg, #2c2c2e, #1a1a1c);
+      box-shadow: var(--shadow-xl), 0 0 0 1px rgba(0,0,0,0.4);
+    }
+    .phone img { display: block; width: 100%; border-radius: 29px; }
+    .phone--a { z-index: 2; transform: rotate(-3deg); }
+    .phone--b { position: absolute; top: 40px; left: 50%; z-index: 1; width: 200px; transform: translateX(2%) rotate(8deg); opacity: 0.96; }
+    .detail-hero__facet {
+      position: absolute; z-index: 3; width: 62px; height: 62px; left: 6%; bottom: 4%;
+      border-radius: var(--radius-lg); background: linear-gradient(150deg, var(--ember-400), var(--ember-600));
+      box-shadow: var(--glow-accent); transform: rotate(12deg);
+    }
+
+    /* ── Sections ───────────────────────────────────────── */
+    .section { padding: var(--section-y) 0; border-bottom: 1px solid var(--border-faint); }
+    .section:last-of-type { border-bottom: none; }
+    .section__head { margin-bottom: var(--space-10); display: flex; flex-direction: column; gap: var(--space-3); max-width: 640px; }
+    .section__title { font-size: var(--text-h1); font-weight: 600; letter-spacing: var(--tracking-tighter); color: var(--text-primary); }
+
+    .detail-features { display: grid; grid-template-columns: 1fr; gap: var(--space-5); }
+    .feature { display: flex; gap: var(--space-4); align-items: flex-start; }
+    .feature__icon { width: 40px; height: 40px; border-radius: var(--radius-md); flex: none; display: grid; place-items: center; background: var(--accent-subtle); color: var(--accent-text); }
+    .feature__title { font-size: var(--text-h5); font-weight: 600; color: var(--text-primary); margin: 0 0 var(--space-2); }
+    .feature__text { font-size: var(--text-base); color: var(--text-secondary); line-height: var(--leading-normal); margin: 0; }
+
+    /* ── Closing ────────────────────────────────────────── */
+    .detail-close { text-align: center; }
+    .detail-close__title { font-size: var(--text-h1); font-weight: 700; letter-spacing: var(--tracking-tighter); color: var(--text-primary); margin: 0; }
+    .detail-close__text { font-size: var(--text-lead); color: var(--text-secondary); line-height: var(--leading-normal); margin: var(--space-5) auto var(--space-8); max-width: 48ch; }
+
+    /* ── Footer ─────────────────────────────────────────── */
+    .site-footer { background: var(--surface-elevated); border-top: 1px solid var(--border); padding: var(--space-12) 0 var(--space-16); }
+    .footer-inner { display: flex; justify-content: space-between; gap: var(--space-10); flex-wrap: wrap; }
+    .footer-brand { display: flex; align-items: flex-start; gap: var(--space-3); }
+    .footer-brand__mark { width: 32px; height: 32px; flex: none; color: var(--text-primary); }
+    .footer-brand__mark svg { width: 100%; height: 100%; }
+    .footer-brand__name { font-weight: 600; font-size: 1rem; letter-spacing: -0.015em; color: var(--text-primary); }
+    .footer-brand__name b { color: var(--accent-text); font-weight: 600; }
+    .footer-copy { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--text-muted); margin-top: var(--space-2); }
+    .footer-legal h4 { font-family: var(--font-mono); font-size: var(--text-xs); font-weight: 500; text-transform: uppercase; letter-spacing: 0.10em; color: var(--text-muted); margin: 0 0 var(--space-3) 0; }
+    .footer-legal a { display: block; font-size: var(--text-sm); color: var(--text-secondary); text-decoration: none; padding: var(--space-1) 0; }
+    .footer-legal a:hover { color: var(--accent-text); text-decoration: none; }
+
+    /* ── Shots strip ───────────────────────────────────── */
+    .shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-6); align-items: start; }
+    .shots--pair { grid-template-columns: repeat(2, 1fr); max-width: 640px; margin-inline: auto; }
+    .shots .phone { width: 100%; }
+
+    /* ── Case study ─────────────────────────────────────── */
+    .case-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-6); }
+    .case-block__label { font-family: var(--font-mono); font-size: var(--text-xs); font-weight: 500; text-transform: uppercase; letter-spacing: 0.10em; color: var(--text-muted); margin: 0 0 var(--space-3) 0; }
+    .case-block__text { font-size: var(--text-base); color: var(--text-secondary); line-height: var(--leading-normal); margin: 0; }
+    .case-block__text + .case-block__text { margin-top: var(--space-3); }
+    .case-stack { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+
+
+    /* ── Reveal ─────────────────────────────────────────── */
+    @media (prefers-reduced-motion: no-preference) {
+      .js-reveal { opacity: 0; transform: translateY(16px); transition: opacity 420ms var(--ease-out), transform 420ms var(--ease-out); }
+      .js-reveal.is-in { opacity: 1; transform: none; }
+      .js-reveal[data-delay="1"] { transition-delay: 80ms; }
+      .js-reveal[data-delay="2"] { transition-delay: 160ms; }
+    }
+
+    /* ── Responsive ─────────────────────────────────────── */
+    @media (min-width: 720px) { .detail-features { grid-template-columns: 1fr 1fr; } }
+    @media (min-width: 900px) { .detail-hero { padding: var(--space-20) 0 var(--space-24); } .detail-hero__grid { grid-template-columns: 1.05fr 0.95fr; } }
+    @media (max-width: 860px) { .phone--b, .detail-hero__facet { display: none; } .detail-hero__wash { opacity: 0.24; } }
+    @media (max-width: 900px) { .shots { grid-template-columns: repeat(2, 1fr); gap: var(--space-5); } }
+    @media (max-width: 560px) { .shots { grid-template-columns: 1fr; max-width: 300px; margin-inline: auto; } }
+    @media (max-width: 720px) {
+      .ms-container { padding-left: var(--space-5); padding-right: var(--space-5); }
+      .detail-hero { padding: var(--space-10) 0 var(--space-12); }
+      .detail__back { margin-bottom: var(--space-6); }
+      .detail-hero__grid { gap: var(--space-10); }
+      .detail__title { font-size: clamp(2.25rem, 11vw, 3rem); }
+      .detail__tagline { font-size: 1.0625rem; max-width: none; }
+      .detail__blurb { font-size: 1rem; max-width: none; }
+      .detail__tile { width: 60px; height: 60px; }
+      .detail-hero__mock { min-height: 0; }
+      .phone { width: min(210px, 60vw); }
+      .detail__cta { gap: var(--space-3); }
+      .detail__cta .ms-btn { min-height: 46px; }
+      .section { padding: var(--space-12) 0; }
+      .section__head { margin-bottom: var(--space-8); }
+      .section__title, .detail-close__title { font-size: clamp(1.5rem, 6.5vw, 2rem); }
+      .detail-close__text { font-size: 1.0625rem; }
+      .footer-inner { gap: var(--space-8); }
+      .footer-legal a { padding: var(--space-2) 0; }
+    }
+    @media (max-width: 420px) {
+      .detail-hero__wash--b { display: none; }
+      .detail__cta .ms-btn { width: 100%; justify-content: center; }
+      .feature { gap: var(--space-3); }
+    }
+    @media (max-width: 560px) { .topbar__tag { display: none; } .footer-inner { flex-direction: column; } }
+    .store-badges { display: inline-flex; align-items: center; gap: var(--space-3); flex-wrap: wrap; }
+    .store-badges--lg { gap: var(--space-4); }
+    .store-badge { display: inline-flex; height: 48px; border-radius: 8px; transition: transform .15s ease, opacity .15s ease; text-decoration: none; }
+    .store-badges--lg .store-badge { height: 56px; }
     .store-badge:hover { transform: translateY(-1px); opacity: .9; text-decoration: none; }
     .store-badge img { height: 100%; width: auto; display: block; }
-    .hero-screen {
-      margin: 1.5rem 0 0.75rem;
-    }
-    .hero-screen img {
-      width: 100%; height: auto; display: block;
-      border-radius: 14px; border: 1px solid var(--border);
-      background: #0d0f14;
-    }
-    .screens {
-      display: grid; grid-template-columns: repeat(2, 1fr);
-      gap: 0.75rem; margin: 0.75rem 0 0.5rem;
-    }
-    .screens img {
-      width: 100%; height: auto; display: block;
-      border-radius: 14px; border: 1px solid var(--border);
-      background: #f4f5f7;
-    }
-    .features { margin: 1rem 0 0; padding-left: 1.2rem; }
-    .features li { margin: 0.35rem 0; }
   </style>
 </head>
 <body>
-  <header class="hero">
-    <div class="container">
-      <p class="breadcrumb"><a href="/">← MordanSoft</a></p>
-      <div class="aok-head">
-        <img src="/assets/img/aok/icon.png" alt="AoK icon">
-        <h1>AoK — Angle of Knife</h1>
-      </div>
-      <p class="tagline">Knife-sharpening angle meter — whetstone guide, blade log, sharper edges.</p>
-      <div class="store-badges">
-        <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.mordansoft.aok" target="_blank" rel="noopener" aria-label="Get AoK on Google Play"><img src="/assets/badges/google-play.svg" alt="Get it on Google Play"></a>
-        <a class="store-badge" href="https://apps.apple.com/us/app/angle-of-knife-sharpening/id6739965153" target="_blank" rel="noopener" aria-label="Download AoK on the App Store"><img src="/assets/badges/app-store.svg" alt="Download on the App Store"></a>
-      </div>
+
+  <div class="topbar">
+    <div class="ms-container topbar__inner">
+      <a class="brand" href="/">
+        <span class="brand__mark">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="6" y="10" width="26" height="26" rx="7" fill="currentColor" opacity="0.22"></rect>
+            <rect x="12" y="14" width="26" height="26" rx="7" fill="currentColor" opacity="0.45"></rect>
+            <rect x="18" y="18" width="24" height="24" rx="7" fill="#E0632C"></rect>
+            <rect x="24" y="24" width="12" height="12" rx="3.5" fill="#000000" opacity="0.16"></rect>
+          </svg>
+        </span>
+        <span class="brand__name">Mordan<b>Soft</b></span>
+      </a>
+      <span class="topbar__tag">Mobile software studio</span>
     </div>
-  </header>
+  </div>
 
-  <main class="container">
-    <section>
-      <div class="hero-screen">
-        <img src="/assets/img/aok/en_1_angle.png" alt="Sharpening angle meter — phone rests on the blade">
-      </div>
-      <div class="screens">
-        <img src="/assets/img/aok/en_3_list.png" alt="Knives list — chef's knife, pocket knife, axe and more">
-        <img src="/assets/img/aok/en_2_knife.png" alt="Knife card with angle, photo, and sharpening history">
+  <main>
+    <section class="detail-hero">
+      <div class="detail-hero__wash" aria-hidden="true"></div>
+      <div class="detail-hero__wash detail-hero__wash--b" aria-hidden="true"></div>
+      <div class="ms-container">
+        <a class="ms-btn ms-btn--link detail__back" href="/#products">
+          <i data-lucide="arrow-left"></i> All products
+        </a>
+        <div class="detail-hero__grid">
+          <div class="detail-hero__copy" data-reveal>
+            <span class="detail__tile"><img src="/assets/img/aok/icon.png" alt="AoK app icon"></span>
+            <h1 class="detail__title">AoK — Angle of Knife</h1>
+            <p class="detail__tagline">Turn your phone into a real knife-sharpening angle meter.</p>
+            <p class="detail__blurb">AoK reads the exact angle between your blade and the whetstone in real time. Set a target, hear a beep when you hit it, and keep every knife — with its angle, steel and sharpening history — in one blade log.</p>
+            <div class="detail__tags">
+              <span class="ms-tag ms-tag--accent">Android</span>
+              <span class="ms-tag ms-tag--accent">iOS</span>
+              <span class="ms-tag">Flutter</span>
+              <span class="ms-tag">Offline-first</span>
+              <span class="ms-tag">No account</span>
+            </div>
+            <div class="detail__cta store-badges">
+              <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.mordansoft.aok" target="_blank" rel="noopener" aria-label="Get AoK on Google Play"><img src="/assets/badges/google-play.svg" alt="Get it on Google Play"></a>
+              <a class="store-badge" href="https://apps.apple.com/us/app/angle-of-knife-sharpening/id6739965153" target="_blank" rel="noopener" aria-label="Download AoK on the App Store"><img src="/assets/badges/app-store.svg" alt="Download on the App Store"></a>
+            </div>
+            <div class="detail__specs">
+              <span><b>Offline-first</b></span>
+              <span>no account</span>
+              <span>8 languages</span>
+              <span>metric &amp; imperial</span>
+            </div>
+          </div>
+          <div class="detail-hero__mock" aria-hidden="true">
+            <div class="phone phone--b"><img src="/assets/img/aok/en_3_list.png" alt=""></div>
+            <div class="phone phone--a"><img src="/assets/img/aok/en_2_knife.png" alt=""></div>
+            <div class="detail-hero__facet"></div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section>
-      <h2>What it does</h2>
-      <p>AoK turns your phone into a real angle meter for knife sharpening. Lay it on the blade — get the exact angle. No guesswork, no ruined edges.</p>
-      <ul class="features">
-        <li>Live angle meter, updated in real time</li>
-        <li>Whetstone guide — audio beep when the blade hits the target angle</li>
-        <li>Works with any tool — whetstone, guided rod, belt sharpener, bench grinder</li>
-        <li>Blade log — save every knife with angle, steel, photo, and full sharpening history</li>
-        <li>Presets for chef's, pocket, hunting, kitchen utility, fruit &amp; veg knives, axe, and more</li>
-        <li>8 languages, metric and imperial</li>
-      </ul>
+    <section class="section">
+      <div class="ms-container">
+        <div class="section__head js-reveal">
+          <span class="ms-eyebrow">// What's inside</span>
+          <h2 class="section__title">Four things it does</h2>
+        </div>
+        <div class="detail-features">
+          <div class="ms-card ms-card--pad feature js-reveal" data-delay="1">
+            <span class="feature__icon"><i data-lucide="gauge"></i></span>
+            <div>
+              <h3 class="feature__title">Live angle meter</h3>
+              <p class="feature__text">Lay the phone on the blade and read the exact sharpening angle, updated in real time. No guesswork, no ruined edges.</p>
+            </div>
+          </div>
+          <div class="ms-card ms-card--pad feature js-reveal" data-delay="2">
+            <span class="feature__icon"><i data-lucide="volume-2"></i></span>
+            <div>
+              <h3 class="feature__title">Whetstone guide with audio</h3>
+              <p class="feature__text">Set a target angle and get an audio beep the moment the blade hits it. Works with any tool — whetstone, guided rod, belt sharpener, bench grinder.</p>
+            </div>
+          </div>
+          <div class="ms-card ms-card--pad feature js-reveal" data-delay="1">
+            <span class="feature__icon"><i data-lucide="clipboard-list"></i></span>
+            <div>
+              <h3 class="feature__title">A blade log for every knife</h3>
+              <p class="feature__text">Save every knife with angle, steel, photo and full sharpening history. Come back to the same edge next time — not guess.</p>
+            </div>
+          </div>
+          <div class="ms-card ms-card--pad feature js-reveal" data-delay="2">
+            <span class="feature__icon"><i data-lucide="layers"></i></span>
+            <div>
+              <h3 class="feature__title">Presets and units</h3>
+              <p class="feature__text">Ready presets for chef's, pocket, hunting, kitchen utility, fruit &amp; veg knives, axe, and more. Eight languages, metric or imperial.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section>
-      <h2>Legal</h2>
-      <p>
-        <a href="/legal/aok/privacy.html">Privacy Policy</a> ·
-        <a href="/legal/aok/terms.html">Terms of Service</a>
-      </p>
+    <section class="section">
+      <div class="ms-container">
+        <div class="section__head js-reveal">
+          <span class="ms-eyebrow">// Screens</span>
+          <h2 class="section__title">Inside the app</h2>
+        </div>
+        <div class="shots shots--pair js-reveal" data-delay="1">
+          <div class="phone"><img src="/assets/img/aok/en_2_knife.png" alt="AoK — knife card with angle, photo and history"></div>
+          <div class="phone"><img src="/assets/img/aok/en_3_list.png" alt="AoK — knives list: chef's, pocket, axe and more"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="ms-container">
+        <div class="section__head js-reveal">
+          <span class="ms-eyebrow">// Case study</span>
+          <h2 class="section__title">Concept to both stores</h2>
+        </div>
+        <div class="case-grid">
+          <div class="ms-card ms-card--pad js-reveal" data-delay="1">
+            <p class="case-block__label">Context</p>
+            <p class="case-block__text">The MordanSoft flagship product. Existing angle-meter apps stop at the reading; the sharpening loop — target, guide, log — was left to a spreadsheet or memory.</p>
+          </div>
+          <div class="ms-card ms-card--pad js-reveal" data-delay="2">
+            <p class="case-block__label">What we did</p>
+            <p class="case-block__text">Design, Flutter implementation, the sensor-fusion angle engine, the audio guide, the blade log, presets, eight-language localisation, and the Google Play + App Store releases.</p>
+          </div>
+          <div class="ms-card ms-card--pad js-reveal" data-delay="1">
+            <p class="case-block__label">Numbers</p>
+            <p class="case-block__text">Live on Google Play and the App Store. First cohort of retained users on file; deeper measurement in progress.</p>
+          </div>
+          <div class="ms-card ms-card--pad js-reveal" data-delay="2">
+            <p class="case-block__label">Stack</p>
+            <div class="case-stack">
+              <span class="ms-tag">Flutter</span>
+              <span class="ms-tag">Sensor fusion</span>
+              <span class="ms-tag">Firebase Analytics</span>
+              <span class="ms-tag">Crashlytics</span>
+              <span class="ms-tag">Offline-first</span>
+              <span class="ms-tag">8 languages</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section detail-close">
+      <div class="ms-container ms-container--narrow js-reveal">
+        <h2 class="detail-close__title">Measure. Match. Sharpen.</h2>
+        <p class="detail-close__text">AoK works offline, keeps every blade on your phone, and does not ask for an account.</p>
+        <div class="store-badges store-badges--lg" style="justify-content: center;">
+          <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.mordansoft.aok" target="_blank" rel="noopener" aria-label="Get AoK on Google Play"><img src="/assets/badges/google-play.svg" alt="Get it on Google Play"></a>
+          <a class="store-badge" href="https://apps.apple.com/us/app/angle-of-knife-sharpening/id6739965153" target="_blank" rel="noopener" aria-label="Download AoK on the App Store"><img src="/assets/badges/app-store.svg" alt="Download on the App Store"></a>
+        </div>
+      </div>
     </section>
   </main>
 
-  <footer class="container">
-    <p>&copy; 2026 MordanSoft · <a href="mailto:mordansoft@gmail.com">mordansoft@gmail.com</a></p>
+  <footer class="site-footer">
+    <div class="ms-container footer-inner">
+      <div class="footer-brand">
+        <span class="footer-brand__mark" aria-hidden="true">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="6" y="10" width="26" height="26" rx="7" fill="currentColor" opacity="0.22"></rect>
+            <rect x="12" y="14" width="26" height="26" rx="7" fill="currentColor" opacity="0.45"></rect>
+            <rect x="18" y="18" width="24" height="24" rx="7" fill="#E0632C"></rect>
+            <rect x="24" y="24" width="12" height="12" rx="3.5" fill="#000000" opacity="0.16"></rect>
+          </svg>
+        </span>
+        <div>
+          <div class="footer-brand__name">Mordan<b>Soft</b></div>
+          <div class="footer-copy">© 2026 MordanSoft</div>
+        </div>
+      </div>
+      <div class="footer-legal">
+        <h4>Legal</h4>
+        <a href="/legal/aok/privacy.html">AoK — Privacy</a>
+        <a href="/legal/aok/terms.html">AoK — Terms</a>
+      </div>
+    </div>
   </footer>
+
+  <script>
+    if (window.lucide) lucide.createIcons();
+    (function () {
+      var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var els = document.querySelectorAll('.js-reveal');
+      if (reduced || !('IntersectionObserver' in window)) { els.forEach(function (el) { el.classList.add('is-in'); }); return; }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('is-in'); io.unobserve(en.target); } });
+      }, { threshold: 0.08, rootMargin: '0px 0px -5% 0px' });
+      els.forEach(function (el) { io.observe(el); });
+    }());
+  </script>
+
 </body>
 </html>
