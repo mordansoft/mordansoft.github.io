@@ -163,6 +163,12 @@
       .feature { gap: var(--space-3); }
     }
     @media (max-width: 560px) { .topbar__tag { display: none; } .footer-inner { flex-direction: column; } }
+    .store-badges { display: inline-flex; align-items: center; gap: var(--space-3); flex-wrap: wrap; }
+    .store-badges--lg { gap: var(--space-4); }
+    .store-badge { display: inline-flex; height: 48px; border-radius: 8px; transition: transform .15s ease, opacity .15s ease; text-decoration: none; }
+    .store-badges--lg .store-badge { height: 56px; }
+    .store-badge:hover { transform: translateY(-1px); opacity: .9; text-decoration: none; }
+    .store-badge img { height: 100%; width: auto; display: block; }
   </style>
 </head>
 <body>
@@ -204,8 +210,9 @@
               <span class="ms-tag">Offline-first</span>
               <span class="ms-tag">No account</span>
             </div>
-            <div class="detail__cta">
-              <a class="ms-btn ms-btn--primary ms-btn--lg" href="https://play.google.com/store/apps/details?id=com.mordansoft.saltcure">Get it on Google Play</a>
+            <div class="detail__cta store-badges">
+              <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.mordansoft.saltcure" target="_blank" rel="noopener" aria-label="Get SaltCure on Google Play"><img src="../assets/badges/google-play.svg" alt="Get it on Google Play"></a>
+              <a class="store-badge" href="https://apps.apple.com/us/app/saltcure-meat-cure-calculator/id6812973901" target="_blank" rel="noopener" aria-label="Download SaltCure on the App Store"><img src="../assets/badges/app-store.svg" alt="Download on the App Store"></a>
             </div>
             <div class="detail__specs">
               <span><b>Offline-first</b></span>
@@ -312,7 +319,10 @@
       <div class="ms-container ms-container--narrow js-reveal">
         <h2 class="detail-close__title">No catch. No subscription.</h2>
         <p class="detail-close__text">SaltCure works offline, keeps your batches on your phone, and does not ask for an account.</p>
-        <a class="ms-btn ms-btn--primary ms-btn--lg" href="https://play.google.com/store/apps/details?id=com.mordansoft.saltcure">Get SaltCure <i data-lucide="arrow-right"></i></a>
+        <div class="store-badges store-badges--lg" style="justify-content: center;">
+          <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.mordansoft.saltcure" target="_blank" rel="noopener" aria-label="Get SaltCure on Google Play"><img src="../assets/badges/google-play.svg" alt="Get it on Google Play"></a>
+          <a class="store-badge" href="https://apps.apple.com/us/app/saltcure-meat-cure-calculator/id6812973901" target="_blank" rel="noopener" aria-label="Download SaltCure on the App Store"><img src="../assets/badges/app-store.svg" alt="Download on the App Store"></a>
+        </div>
       </div>
     </section>
   </main>

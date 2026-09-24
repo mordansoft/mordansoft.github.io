@@ -14,12 +14,10 @@
     }
     .aok-head img { width: 72px; height: 72px; border-radius: 16px; }
     .aok-head h1 { margin: 0; font-size: 1.75rem; letter-spacing: -0.01em; }
-    .cta {
-      display: inline-block; margin-top: 1rem;
-      background: var(--accent); color: #fff; padding: 0.65rem 1.1rem;
-      border-radius: 8px; font-weight: 600;
-    }
-    .cta:hover { text-decoration: none; opacity: .92; }
+    .store-badges { display: inline-flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; margin-top: 1rem; }
+    .store-badge { display: inline-flex; height: 48px; border-radius: 8px; transition: transform .15s ease, opacity .15s ease; }
+    .store-badge:hover { transform: translateY(-1px); opacity: .9; text-decoration: none; }
+    .store-badge img { height: 100%; width: auto; display: block; }
     .hero-screen {
       margin: 1.5rem 0 0.75rem;
     }
@@ -50,7 +48,10 @@
         <h1>AoK — Angle of Knife</h1>
       </div>
       <p class="tagline">Knife-sharpening angle meter — whetstone guide, blade log, sharper edges.</p>
-      <a class="cta" href="https://play.google.com/store/apps/details?id=com.mordansoft.aok" target="_blank" rel="noopener">Get it on Google Play →</a>
+      <div class="store-badges">
+        <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.mordansoft.aok" target="_blank" rel="noopener" aria-label="Get AoK on Google Play"><img src="/assets/badges/google-play.svg" alt="Get it on Google Play"></a>
+        <a class="store-badge" href="https://apps.apple.com/us/app/angle-of-knife-sharpening/id6739965153" target="_blank" rel="noopener" aria-label="Download AoK on the App Store"><img src="/assets/badges/app-store.svg" alt="Download on the App Store"></a>
+      </div>
     </div>
   </header>
 
