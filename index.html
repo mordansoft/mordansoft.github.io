@@ -168,6 +168,46 @@
     }
     .product-actions { display: flex; align-items: center; gap: var(--space-3); margin-top: var(--space-5); flex-wrap: wrap; }
 
+    /* ── Services ───────────────────────────────────────── */
+    .service-visual {
+      border-radius: var(--radius-xl); flex: none;
+      aspect-ratio: 1 / 1;
+      background: linear-gradient(160deg, var(--accent-subtle), color-mix(in oklch, var(--ember-400) 18%, var(--surface-elevated)));
+      box-shadow: var(--shadow-lg), inset 0 0 0 1px var(--border-faint);
+      display: grid; place-items: center;
+      color: var(--accent-text);
+    }
+    .service-visual i { width: 64px; height: 64px; }
+    .service-sub {
+      font-size: var(--text-base); color: var(--accent-text);
+      font-weight: 500; margin: var(--space-2) 0 0;
+      letter-spacing: var(--tracking-tight);
+    }
+    .service-body {
+      font-size: var(--text-base); color: var(--text-secondary);
+      line-height: var(--leading-normal); max-width: 60ch;
+      margin: var(--space-4) 0 var(--space-5);
+    }
+    .service-list {
+      list-style: none; padding: 0; margin: 0 0 var(--space-5);
+      display: flex; flex-direction: column; gap: var(--space-2);
+    }
+    .service-list li {
+      display: flex; gap: var(--space-3); align-items: flex-start;
+      font-size: var(--text-sm); color: var(--text-primary);
+      line-height: var(--leading-normal);
+    }
+    .service-list li i {
+      color: var(--accent-text); flex: none; margin-top: 3px;
+      width: 16px; height: 16px;
+    }
+    .service-note {
+      font-size: var(--text-sm); color: var(--text-muted);
+      font-style: italic; margin: 0 0 var(--space-5);
+      line-height: var(--leading-normal);
+      padding-left: var(--space-4); border-left: 2px solid var(--border);
+    }
+
     /* ── Contact ────────────────────────────────────────── */
     .contact-link {
       font-size: clamp(1.375rem, 4vw, var(--text-h2)); font-weight: 600;
@@ -361,6 +401,13 @@
               <p class="do-card__text">Long-term partnerships, not throwaway projects.</p>
             </div>
           </div>
+          <a class="ms-card ms-card--pad do-card js-reveal" data-delay="1" href="#app-data-review" style="text-decoration: none; color: inherit;">
+            <div class="do-card__icon"><i data-lucide="bar-chart-3"></i></div>
+            <div>
+              <h3 class="do-card__title">App data review</h3>
+              <p class="do-card__text">Your store, subscription and analytics numbers in one place — and what to fix first.</p>
+            </div>
+          </a>
         </div>
       </div>
     </section>
@@ -468,6 +515,48 @@
             </div>
           </div>
         </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5b. Services -->
+    <section class="section" id="services-offered">
+      <div class="ms-container">
+        <div class="section__head js-reveal">
+          <span class="ms-eyebrow">// Our services</span>
+          <h2 class="section__title">Our services</h2>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: var(--space-6); max-width: 760px;">
+          <div class="ms-card ms-card--raised ms-card--pad js-reveal" data-delay="1" id="app-data-review">
+            <div class="product-layout">
+              <div class="service-visual"><i data-lucide="bar-chart-3"></i></div>
+              <div>
+                <div class="product-head">
+                  <div>
+                    <h3 class="product-name">App data review</h3>
+                    <p class="service-sub">Stop guessing. Read the data.</p>
+                  </div>
+                </div>
+                <p class="service-body">
+                  Most small apps are steered by gut feel, because the numbers live in four different dashboards that never talk to each other. We pull your Google Play Console, App Store Connect, subscription service and analytics into one dataset, and hand back a written report: where installs, trials and paying users drop off, and what each drop costs you per month — with a ranked list of what to fix first.
+                </p>
+                <ul class="service-list">
+                  <li><i data-lucide="check"></i><span>One dataset from every source your app already has</span></li>
+                  <li><i data-lucide="check"></i><span>A report with the money attached to each drop-off point</span></li>
+                  <li><i data-lucide="check"></i><span>A ranked action list, most valuable first</span></li>
+                </ul>
+                <p class="service-note">
+                  We report what the numbers say. We don't promise growth — that depends on what you do with the findings.
+                </p>
+                <div class="product-actions">
+                  <a class="ms-btn ms-btn--primary" href="mailto:mordansoft@gmail.com?subject=App%20data%20review%20—%20quote%20request">
+                    Ask for a quote
+                    <span class="ms-btn__icon"><i data-lucide="arrow-up-right"></i></span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
