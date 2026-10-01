@@ -171,6 +171,9 @@
     .store-badges--lg .store-badge { height: 56px; }
     .store-badge:hover { transform: translateY(-1px); opacity: .9; text-decoration: none; }
     .store-badge img { height: 100%; width: auto; display: block; }
+    .lang-switch { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--text-secondary); text-decoration: none; border: 1px solid var(--border); border-radius: var(--radius-sm, 6px); padding: 2px 8px; margin-left: var(--space-4); }
+    .lang-switch:hover { color: var(--accent-text); border-color: var(--accent); text-decoration: none; }
+    .topbar__right { display: inline-flex; align-items: center; }
   </style>
 </head>
 <body>
@@ -188,7 +191,7 @@
         </span>
         <span class="brand__name">Mordan<b>Soft</b></span>
       </a>
-      <span class="topbar__tag">Mobile software studio</span>
+      <span class="topbar__right"><span class="topbar__tag">Mobile software studio</span><a class="lang-switch" href="/uk/aok/" lang="uk">УКР</a></span>
     </div>
   </div>
 
