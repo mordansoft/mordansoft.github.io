@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/brand/logo-tile.svg">
+  <title>Gig rehearsal — App data review — MordanSoft</title>
+
+  <link rel="stylesheet" href="../../_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/fonts.css">
+  <link rel="stylesheet" href="../../_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/colors.css">
+  <link rel="stylesheet" href="../../_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/typography.css">
+  <link rel="stylesheet" href="../../_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/spacing.css">
+  <link rel="stylesheet" href="../../_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/elevation.css">
+  <link rel="stylesheet" href="../../_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/base.css">
+  <link rel="stylesheet" href="../../_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/components/core/core.css">
+  <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+
+  <style>
+    body { background: var(--surface); }
+    .topbar { position: sticky; top: 0; z-index: 50; background: color-mix(in oklch, var(--surface) 88%, transparent); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid var(--border-faint); }
+    .topbar__inner { display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); height: 60px; }
+    .brand { display: inline-flex; align-items: center; gap: var(--space-3); color: var(--text-primary); text-decoration: none; font-weight: 600; letter-spacing: -0.02em; }
+    .brand b { color: var(--accent-text); font-weight: 600; }
+    .brand svg { width: 28px; height: 28px; }
+    .toggle { display: inline-flex; align-items: center; gap: var(--space-2); font-family: var(--font-mono); font-size: var(--text-xs); color: var(--text-secondary); cursor: pointer; user-select: none; }
+    .toggle input { accent-color: var(--accent); }
+
+    .banner { margin: var(--space-6) 0; padding: var(--space-4) var(--space-5); border: 1px dashed var(--border-strong); border-radius: var(--radius-lg); font-family: var(--font-mono); font-size: var(--text-xs); color: var(--text-muted); line-height: 1.6; }
+
+    /* item number badges */
+    .n { display: inline-flex; align-items: center; justify-content: center; min-width: 22px; height: 18px; padding: 0 5px; margin-right: 6px; border-radius: 9px; background: var(--accent); color: #fff; font-family: var(--font-mono); font-size: 10px; font-weight: 600; vertical-align: middle; letter-spacing: 0; }
+    body.hide-n .n { display: none; }
+    .ph { border: 1px dashed var(--border-strong); border-radius: var(--radius-md); color: var(--text-muted); font-family: var(--font-mono); font-size: var(--text-xs); display: grid; place-items: center; text-align: center; padding: var(--space-4); background: var(--surface-sunken); }
+
+    .eyebrow { font-family: var(--font-mono); font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin: 0 0 var(--space-3); }
+
+    /* ── 1. search card ── */
+    .search { padding: var(--space-8) 0; border-bottom: 1px solid var(--border-faint); }
+    .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: var(--space-5); }
+    .gcard { background: var(--surface-elevated); border: 1px solid var(--border-faint); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-xs); display: flex; flex-direction: column; }
+    .gcard img { display: block; width: 100%; aspect-ratio: 1280/769; object-fit: cover; }
+    .gcard__body { padding: var(--space-3) var(--space-4) var(--space-4); display: flex; flex-direction: column; gap: var(--space-2); flex: 1; }
+    .seller-mini { display: flex; align-items: center; gap: var(--space-2); font-size: var(--text-sm); color: var(--text-primary); font-weight: 600; }
+    .seller-mini .lvl { font-weight: 400; color: var(--text-muted); font-size: var(--text-xs); margin-left: auto; }
+    .ava { width: 26px; height: 26px; border-radius: 50%; background: linear-gradient(150deg, var(--ember-400), var(--ember-600)); color: #fff; display: grid; place-items: center; font-size: 11px; font-weight: 700; flex: none; }
+    .ava--lg { width: 88px; height: 88px; font-size: 28px; }
+    .gcard__title { font-size: var(--text-sm); color: var(--text-primary); line-height: 1.4; margin: 0; }
+    .gcard__rating { font-size: var(--text-xs); color: var(--text-muted); }
+    .gcard__badge { align-self: flex-start; font-family: var(--font-mono); font-size: 10px; color: var(--text-muted); border: 1px dashed var(--border-strong); border-radius: 6px; padding: 2px 6px; }
+    .gcard__price { margin-top: auto; font-size: var(--text-sm); font-weight: 700; color: var(--text-primary); }
+    .gcard--ghost { opacity: 0.55; }
+
+    /* ── 2. gig page ── */
+    .gig { display: grid; grid-template-columns: 1fr; gap: var(--space-10); padding: var(--space-10) 0 var(--space-16); }
+    @media (min-width: 1000px) { .gig { grid-template-columns: minmax(0, 1fr) 380px; } }
+    .crumbs { font-size: var(--text-sm); color: var(--text-muted); margin-bottom: var(--space-4); }
+    .gig__title { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 700; letter-spacing: var(--tracking-tighter); color: var(--text-primary); line-height: 1.2; margin: 0 0 var(--space-6); }
+    .seller { display: flex; gap: var(--space-5); align-items: center; margin-bottom: var(--space-5); }
+    .seller__name { font-size: var(--text-h4); font-weight: 700; color: var(--text-primary); margin: 0; }
+    .seller__meta { display: flex; flex-wrap: wrap; gap: var(--space-4); font-size: var(--text-sm); color: var(--text-secondary); margin-top: var(--space-1); }
+    .seller__meta span { display: inline-flex; align-items: center; gap: 4px; }
+    .seller__meta svg { width: 14px; height: 14px; }
+    .about-short h3 { font-size: var(--text-base); font-weight: 600; margin: 0 0 var(--space-2); color: var(--text-primary); }
+    .about-short p { margin: 0; color: var(--text-secondary); line-height: var(--leading-normal); }
+    .chips { display: flex; flex-wrap: wrap; gap: var(--space-2); margin: var(--space-4) 0 0; }
+
+    .block { margin-top: var(--space-10); }
+    .block h2 { font-size: var(--text-h4); font-weight: 600; color: var(--text-primary); margin: 0 0 var(--space-4); }
+    .desc p { margin: 0 0 var(--space-4); color: var(--text-secondary); line-height: var(--leading-normal); }
+    .desc ul { margin: 0 0 var(--space-4); padding-left: 1.2em; color: var(--text-secondary); line-height: var(--leading-normal); }
+    .desc li { margin-bottom: var(--space-2); }
+    .desc strong { color: var(--text-primary); }
+
+    .gallery { display: grid; gap: var(--space-3); }
+    .gallery__main { border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border-faint); }
+    .gallery__main img { display: block; width: 100%; }
+    .gallery__thumbs { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-3); }
+    .gallery__thumbs > * { aspect-ratio: 1280/769; }
+    .gallery__thumbs img { width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-md); border: 2px solid var(--accent); }
+
+    .meta-list { display: grid; gap: var(--space-2); font-size: var(--text-sm); color: var(--text-secondary); }
+    .meta-list b { color: var(--text-primary); font-weight: 600; margin-right: 6px; }
+
+    .cmp { width: 100%; border-collapse: collapse; font-size: var(--text-sm); }
+    .cmp th, .cmp td { border: 1px solid var(--border); padding: var(--space-3); vertical-align: top; text-align: center; color: var(--text-secondary); }
+    .cmp th:first-child, .cmp td:first-child { text-align: left; color: var(--text-muted); width: 26%; }
+    .cmp th { background: var(--surface-elevated); }
+    .cmp .price { font-size: var(--text-h5); font-weight: 700; color: var(--text-primary); display: block; }
+    .cmp .tier { font-weight: 600; color: var(--text-primary); display: block; margin: 2px 0 var(--space-2); }
+    .cmp .pname { font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.06em; display: block; margin-bottom: var(--space-2); }
+    .cmp .warn { color: var(--accent-text); font-weight: 600; }
+    .cmp-wrap { overflow-x: auto; }
+
+    .faq details { border-bottom: 1px solid var(--border); padding: var(--space-4) 0; }
+    .faq summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: var(--space-4); font-weight: 600; color: var(--text-primary); }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after { content: "+"; font-family: var(--font-mono); color: var(--text-muted); }
+    .faq details[open] summary::after { content: "–"; }
+    .faq p { margin: var(--space-3) 0 0; color: var(--text-secondary); line-height: var(--leading-normal); }
+
+    .about-seller { border: 1px solid var(--border); border-radius: var(--radius-lg); padding: var(--space-6); background: var(--surface-elevated); }
+    .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: var(--space-4); border-top: 1px solid var(--border-faint); border-bottom: 1px solid var(--border-faint); padding: var(--space-4) 0; margin: var(--space-5) 0; font-size: var(--text-sm); }
+    .stats span { display: block; color: var(--text-muted); font-size: var(--text-xs); }
+    .stats b { color: var(--text-primary); font-weight: 600; }
+
+    /* sidebar */
+    .side { position: relative; }
+    @media (min-width: 1000px) { .side__sticky { position: sticky; top: 84px; } }
+    .pkg { border: 1px solid var(--border); border-radius: var(--radius-lg); background: var(--surface-elevated); overflow: hidden; box-shadow: var(--shadow-sm); }
+    .pkg__tabs { display: grid; grid-template-columns: repeat(3, 1fr); border-bottom: 1px solid var(--border); }
+    .pkg__tabs button { all: unset; cursor: pointer; text-align: center; padding: var(--space-4) 0; font-weight: 600; font-size: var(--text-sm); color: var(--text-muted); border-bottom: 2px solid transparent; }
+    .pkg__tabs button[aria-selected="true"] { color: var(--text-primary); border-bottom-color: var(--accent); }
+    .pkg__body { padding: var(--space-5); display: flex; flex-direction: column; gap: var(--space-3); }
+    .pkg__head { display: flex; justify-content: space-between; align-items: baseline; gap: var(--space-3); }
+    .pkg__name { font-weight: 700; color: var(--text-primary); margin: 0; }
+    .pkg__price { font-size: var(--text-h4); font-weight: 700; color: var(--text-primary); }
+    .pkg__desc { color: var(--text-secondary); margin: 0; line-height: var(--leading-normal); }
+    .pkg__days { display: flex; align-items: center; gap: 6px; font-size: var(--text-sm); font-weight: 600; color: var(--text-primary); }
+    .pkg__days svg { width: 16px; height: 16px; }
+    .pkg__incl { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-2); font-size: var(--text-sm); }
+    .pkg__incl li { display: flex; gap: var(--space-2); align-items: center; color: var(--text-secondary); }
+    .pkg__incl li.off { color: var(--text-faint); }
+    .pkg__incl svg { width: 16px; height: 16px; flex: none; }
+    .pkg .ms-btn { justify-content: center; }
+    .side__extra { margin-top: var(--space-4); display: grid; gap: var(--space-3); }
+
+    .notes { margin-top: var(--space-6); border-left: 3px solid var(--accent); padding: var(--space-3) var(--space-4); background: var(--accent-subtle); border-radius: 0 var(--radius-md) var(--radius-md) 0; font-size: var(--text-sm); color: var(--text-secondary); }
+    .notes b { color: var(--text-primary); }
+
+    @media (max-width: 720px) { .ms-container { padding-left: var(--space-4); padding-right: var(--space-4); } .gallery__thumbs { grid-template-columns: repeat(2, 1fr); } .seller { gap: var(--space-4); } .ava--lg { width: 64px; height: 64px; font-size: 22px; } }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="ms-container topbar__inner">
+      <a class="brand" href="/">
+        <svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><rect x="6" y="10" width="26" height="26" rx="7" fill="currentColor" opacity="0.22"/><rect x="12" y="14" width="26" height="26" rx="7" fill="currentColor" opacity="0.45"/><rect x="18" y="18" width="24" height="24" rx="7" fill="#E0632C"/><rect x="24" y="24" width="12" height="12" rx="3.5" fill="#000" opacity="0.16"/></svg>
+        <span>Mordan<b>Soft</b> · gig rehearsal</span>
+      </a>
+      <label class="toggle"><input type="checkbox" id="toggle-n" checked> item numbers</label>
+    </div>
+  </div>
+
+  <main class="ms-container">
+    <div class="banner">
+      Rehearsal of the marketplace gig "App data review". Same block order as a marketplace gig page; numbers match nestor/fiverr/gig_anatomy.md.
+      Dashed boxes = not filled yet. Not a live listing.
+    </div>
+
+    <!-- ── 1. Search results card ───────────────────────── -->
+    <section class="search">
+      <p class="eyebrow">Search results — what a buyer sees before the click</p>
+      <div class="cards">
+        <article class="gcard">
+          <img src="../../assets/services/app-data-review-cover.png" alt="Gig cover: Stop guessing. Read the data.">
+          <div class="gcard__body">
+            <div class="seller-mini"><span class="ava">AA</span><span class="n">2</span>Artem A.<span class="lvl">New seller</span></div>
+            <p class="gcard__title"><span class="n">3</span>I will analyze your app data and show you where you lose users and revenue</p>
+            <span class="gcard__rating">No reviews yet</span>
+            <span class="gcard__badge"><span class="n">5</span>Offers video consultations — from Level Two</span>
+            <span class="gcard__price"><span class="n">4</span>From $45</span>
+          </div>
+        </article>
+        <article class="gcard gcard--ghost" aria-hidden="true">
+          <div class="ph" style="aspect-ratio:1280/769;border-radius:0;border:none;border-bottom:1px dashed var(--border-strong)">competitor card</div>
+          <div class="gcard__body"><div class="seller-mini"><span class="ava" style="background:var(--plane-3)"></span>Competitor<span class="lvl">Level 2</span></div><p class="gcard__title">I will be your mobile app growth consultant…</p><span class="gcard__rating">★ rating (reviews)</span><span class="gcard__price">From $—</span></div>
+        </article>
+        <article class="gcard gcard--ghost" aria-hidden="true">
+          <div class="ph" style="aspect-ratio:1280/769;border-radius:0;border:none;border-bottom:1px dashed var(--border-strong)">competitor card</div>
+          <div class="gcard__body"><div class="seller-mini"><span class="ava" style="background:var(--plane-3)"></span>Competitor<span class="lvl">Top Rated</span></div><p class="gcard__title">I will analyze your app metrics and monetization…</p><span class="gcard__rating">★ rating (reviews)</span><span class="gcard__price">From $—</span></div>
+        </article>
+      </div>
+      <p class="eyebrow" style="margin-top:var(--space-4)">Grey cards are generic stand-ins for neighbours in the results, not real sellers.</p>
+    </section>
+
+    <!-- ── 2. Gig page ───────────────────────────────────── -->
+    <div class="gig">
+      <div>
+        <div class="crumbs">Programming &amp; Tech / Mobile App Maintenance / Mobile App Consultation</div>
+        <h1 class="gig__title"><span class="n">3</span>I will analyze your app data and show you where you lose users and revenue</h1>
+
+        <div class="seller">
+          <span class="ava ava--lg">AA</span>
+          <div>
+            <p class="seller__name"><span class="n">2</span>Artem A.</p>
+            <div class="seller__meta">
+              <span><i data-lucide="map-pin"></i> Ukraine</span>
+              <span><i data-lucide="message-circle"></i> I speak Russian, Ukrainian, English</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-short">
+          <h3>Senior Flutter Developer</h3>
+          <p>I built and grew a Flutter app to 50,000+ installs - live on Google Play and the App Store, with real users, analytics, and backend sync. Senior Flutter developer with 7+ years of commercial experienc… <u>Read More</u></p>
+          <div class="chips">
+            <span class="ms-tag">Android development</span><span class="ms-tag">Flutter</span><span class="ms-tag">Dart</span><span class="ms-tag">Mobile apps development</span><span class="ms-tag">Firebase</span><span class="ms-tag">Rest API</span><span class="ms-tag">Git</span><span class="ms-tag">iOS development</span>
+          </div>
+        </div>
+
+        <div class="block">
+          <h2><span class="n">1</span><span class="n">10</span>Gallery</h2>
+          <div class="gallery">
+            <div class="gallery__main"><img src="../../assets/services/app-data-review-cover.png" alt="Gig cover"></div>
+            <div class="gallery__thumbs">
+              <img src="../../assets/services/app-data-review-cover.png" alt="">
+              <div class="ph">sample report p.1</div>
+              <div class="ph">sample report p.2</div>
+              <div class="ph">gig video</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="block desc">
+          <h2><span class="n">11</span><span class="n">12</span>About this gig</h2>
+          <p>Your app has installs and some revenue, but you are deciding what to build next by gut feel?</p>
+          <p>I am a senior Flutter developer with 7+ years in software, and I run my own subscription app on both stores: 50,000+ installs. Every pricing, paywall and retention decision I made there came out of a data pipeline I built for it. I point the same pipeline at your app.</p>
+          <p><strong>What you get:</strong></p>
+          <ul>
+            <li>Your numbers pulled out of Google Play Console, App Store Connect and your subscription service into one clean dataset</li>
+            <li>A written report: where installs, trials and paying users drop off, and what each drop costs you per month</li>
+            <li>A ranked list of concrete actions, most valuable first, with the reasoning behind the order</li>
+            <li>Premium: the export script plus questions to ask your own AI assistant, so you can keep doing this without me</li>
+          </ul>
+          <p><strong>Honest terms:</strong> I work with the data you already have. No events instrumented? We work from store and subscription data, and I will tell you exactly what to add. I report what the numbers say. I do not promise growth: that depends on what you do with the findings.</p>
+          <p>Send me your app link and tell me which decision you are stuck on.</p>
+          <div class="notes"><b>Fold:</b> on the marketplace only the first two paragraphs show before "Read More". They carry the pitch.</div>
+        </div>
+
+        <div class="block">
+          <h2><span class="n">13</span>Gig details</h2>
+          <div class="meta-list">
+            <div><b>Platform:</b>Cross-platforms</div>
+            <div><b>App type:</b>Native</div>
+            <div><b>Frameworks:</b>Flutter · Jetpack Compose · SwiftUI</div>
+            <div><b>Purpose:</b>Social networking · Entertainment · Health &amp; fitness · +5 more</div>
+            <div><b>Expertise:</b>Performance · Ads &amp; monetization · Firebase · Analytics · +1 more</div>
+            <div><b>Programming language:</b>Dart · Kotlin · Swift</div>
+            <div><b>Tools:</b>Android Studio · Xcode</div>
+          </div>
+        </div>
+
+        <div class="block" id="compare">
+          <h2><span class="n">6</span><span class="n">7</span><span class="n">8</span>Compare packages</h2>
+          <div class="cmp-wrap">
+            <table class="cmp">
+              <thead>
+                <tr>
+                  <th>Package</th>
+                  <th><span class="price">$45</span><span class="tier">Basic</span><span class="pname">Store and revenue review</span>Store and subscription data pulled together, written report on where you lose money</th>
+                  <th><span class="price">$95</span><span class="tier">Standard</span><span class="pname">Full data review</span>Basic plus your analytics events, funnel and retention, ranked list of actions</th>
+                  <th><span class="price">$220</span><span class="tier">Premium</span><span class="pname">Review plus your pipeline</span>Standard plus the export script and AI prompts, so you can repeat it yourself</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>App audit</td><td>✓</td><td>✓</td><td>✓</td></tr>
+                <tr><td>Project/production plan</td><td>–</td><td>✓</td><td>✓</td></tr>
+                <tr><td><span class="n">6.6</span>Hours of Work</td><td class="warn">1</td><td class="warn">2</td><td class="warn">3</td></tr>
+                <tr><td>Delivery Time</td><td>3 days</td><td>4 days</td><td>7 days</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="notes"><b>To fix (6.6):</b> "Hours of Work 1/2/3" is a default value; buyers read it as "$45 for one hour".</div>
+        </div>
+
+        <div class="block faq">
+          <h2><span class="n">16</span>FAQ</h2>
+          <details><summary>I do not have analytics set up at all. Can you still help?</summary><p>That is the common case, and Basic still works: your store consoles and subscription service already hold installs, conversion, churn, pricing and refunds. You get the report plus a short list of what is worth instrumenting next.</p></details>
+          <details><summary>Why can I not just read the dashboards myself?</summary><p>Dashboards answer the questions you already thought to ask, and they do not join up: Play Console does not know what App Store Connect or your paywall knows. The work here is putting them in one place and reading them against each other.</p></details>
+          <details><summary>Can you implement the fixes too?</summary><p>Yes, as a custom offer once we both know what is worth doing. The report stands on its own either way, and I will say plainly which items you can do yourself.</p></details>
+        </div>
+
+        <div class="block">
+          <h2><span class="n">14</span>About the seller</h2>
+          <div class="about-seller">
+            <div class="seller" style="margin-bottom:0">
+              <span class="ava ava--lg">AA</span>
+              <div>
+                <p class="seller__name">Artem A.</p>
+                <div class="seller__meta"><span>Senior Flutter Developer</span><span><span class="n">14.2</span>New seller</span></div>
+              </div>
+            </div>
+            <div class="stats">
+              <div><span><span class="n">14.3</span>From</span><b>Ukraine</b></div>
+              <div><span><span class="n">14.4</span>Member since</span><b>Jul 2026</b></div>
+              <div><span><span class="n">14.5</span>Avg. response time</span><b>—</b></div>
+              <div><span><span class="n">14.6</span>Last delivery</span><b>—</b></div>
+              <div><span><span class="n">14.7</span>Languages</span><b>English, Ukrainian, Russian</b></div>
+            </div>
+            <p style="margin:0;color:var(--text-secondary);line-height:var(--leading-normal)"><span class="n">14.1</span>I built and grew a Flutter app to 50,000+ installs - live on Google Play and the App Store, with real users, analytics, and backend sync. Senior Flutter developer with 7+ years of commercial experience building production mobile apps for Android and iOS. I improve and scale existing Flutter apps: feature development, bug fixing, performance, REST API integration, subscriptions and in-app purchases, analytics, and store releases. I work independently, deliver consistent results, and keep communication clear. Tell me about your app - I'll be glad to help.</p>
+          </div>
+        </div>
+
+        <div class="block">
+          <h2><span class="n">15</span>Portfolio</h2>
+          <div class="ph" style="min-height:120px">empty — AoK and 1–2 cases planned</div>
+        </div>
+
+        <div class="block">
+          <h2><span class="n">17</span>Reviews</h2>
+          <div class="ph" style="min-height:90px">no reviews yet — on the marketplace this block is hidden until the first one</div>
+        </div>
+
+        <div class="block">
+          <h2><span class="n">18</span>Related tags</h2>
+          <div class="chips"><span class="ms-tag">app analytics</span><span class="ms-tag">app growth</span><span class="ms-tag">retention analysis</span><span class="ms-tag">app monetization</span><span class="ms-tag">app consulting</span></div>
+          <div class="notes">The live page showed only 2 of the 5 tags (app monetization, app growth).</div>
+        </div>
+
+        <div class="block">
+          <h2><span class="n">19</span>More from Artem A.</h2>
+          <div class="cards">
+            <article class="gcard gcard--ghost"><img src="../../assets/lab/gig1_bugfix.png" alt=""><div class="gcard__body"><p class="gcard__title">I will fix bugs in your flutter app for android and ios</p><span class="gcard__badge">draft</span><span class="gcard__price">From $30</span></div></article>
+            <article class="gcard gcard--ghost"><img src="../../assets/lab/gig2_publish.png" alt=""><div class="gcard__body"><p class="gcard__title">I will publish your flutter app to google play and app store</p><span class="gcard__badge">draft</span><span class="gcard__price">From —</span></div></article>
+            <article class="gcard gcard--ghost"><img src="../../assets/lab/gig3_figma.png" alt=""><div class="gcard__body"><p class="gcard__title">I will convert your figma design to flutter app screens</p><span class="gcard__badge">draft</span><span class="gcard__price">From $100</span></div></article>
+          </div>
+        </div>
+      </div>
+
+      <!-- sidebar -->
+      <aside class="side">
+        <div class="side__sticky">
+          <div class="pkg">
+            <div class="pkg__tabs" role="tablist">
+              <button role="tab" aria-selected="true" data-p="0">Basic</button>
+              <button role="tab" aria-selected="false" data-p="1">Standard</button>
+              <button role="tab" aria-selected="false" data-p="2">Premium</button>
+            </div>
+            <div class="pkg__body">
+              <div class="pkg__head"><p class="pkg__name" id="p-name"></p><span class="pkg__price" id="p-price"></span></div>
+              <p class="pkg__desc" id="p-desc"></p>
+              <span class="pkg__days"><i data-lucide="clock"></i><span id="p-days"></span></span>
+              <ul class="pkg__incl" id="p-incl"></ul>
+              <a class="ms-btn ms-btn--primary" href="/services/app-data-review/">Continue <span class="ms-btn__icon"><i data-lucide="arrow-right"></i></span></a>
+              <a class="ms-btn ms-btn--link" href="#compare" style="justify-content:center">Compare packages</a>
+            </div>
+          </div>
+          <div class="side__extra">
+            <div class="ph"><span><span class="n">9</span>Hourly rate — from Level One</span></div>
+            <div class="ph"><span><span class="n">5</span>Book a video consultation — from Level Two</span></div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <script>
+    var P = [
+      { name: 'Store and revenue review', price: '$45', desc: 'Store and subscription data pulled together, written report on where you lose money', days: '3-day delivery', incl: [['1 Hour of Work', 1], ['App audit', 1], ['Project/production plan', 0]] },
+      { name: 'Full data review', price: '$95', desc: 'Basic plus your analytics events, funnel and retention, ranked list of actions', days: '4-day delivery', incl: [['2 Hours of Work', 1], ['App audit', 1], ['Project/production plan', 1]] },
+      { name: 'Review plus your pipeline', price: '$220', desc: 'Standard plus the export script and AI prompts, so you can repeat it yourself', days: '7-day delivery', incl: [['3 Hours of Work', 1], ['App audit', 1], ['Project/production plan', 1]] }
+    ];
+    function show(i) {
+      var p = P[i];
+      document.getElementById('p-name').textContent = p.name;
+      document.getElementById('p-price').textContent = p.price;
+      document.getElementById('p-desc').textContent = p.desc;
+      document.getElementById('p-days').textContent = p.days;
+      document.getElementById('p-incl').innerHTML = p.incl.map(function (x) {
+        return '<li class="' + (x[1] ? '' : 'off') + '"><i data-lucide="check"></i>' + x[0] + '</li>';
+      }).join('');
+      document.querySelectorAll('.pkg__tabs button').forEach(function (b) { b.setAttribute('aria-selected', String(+b.dataset.p === i)); });
+      if (window.lucide) lucide.createIcons();
+    }
+    document.querySelectorAll('.pkg__tabs button').forEach(function (b) { b.addEventListener('click', function () { show(+b.dataset.p); }); });
+    show(0);
+    var t = document.getElementById('toggle-n');
+    t.addEventListener('change', function () { document.body.classList.toggle('hide-n', !t.checked); });
+    if (window.lucide) lucide.createIcons();
+  </script>
+</body>
+</html>
