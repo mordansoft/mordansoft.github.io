@@ -50,14 +50,4 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://mordansoft.com/sloviko/"/>
     <xhtml:link rel="alternate" hreflang="uk" href="https://mordansoft.com/uk/sloviko/"/>
   </url>
-  <url>
-    <loc>https://mordansoft.com/saltcure/calculator/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mordansoft.com/saltcure/calculator/"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://mordansoft.com/uk/saltcure/calculator/"/>
-  </url>
-  <url>
-    <loc>https://mordansoft.com/uk/saltcure/calculator/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mordansoft.com/saltcure/calculator/"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://mordansoft.com/uk/saltcure/calculator/"/>
-  </url>
 </urlset>
