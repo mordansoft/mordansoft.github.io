@@ -50,4 +50,14 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://mordansoft.github.io/sloviko/"/>
     <xhtml:link rel="alternate" hreflang="uk" href="https://mordansoft.github.io/uk/sloviko/"/>
   </url>
+  <url>
+    <loc>https://mordansoft.github.io/saltcure/calculator/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mordansoft.github.io/saltcure/calculator/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://mordansoft.github.io/uk/saltcure/calculator/"/>
+  </url>
+  <url>
+    <loc>https://mordansoft.github.io/uk/saltcure/calculator/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mordansoft.github.io/saltcure/calculator/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://mordansoft.github.io/uk/saltcure/calculator/"/>
+  </url>
 </urlset>

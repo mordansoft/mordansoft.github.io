@@ -155,3 +155,8 @@ Mobile-first. Breakpoints in use:
    URLs is a separate task — the listing commit may trigger re-moderation.
 - Design-system CSS is referenced from `_ds/mordansoft-design-system-…/` in the
   project root; carry those tokens/components into the target codebase.
+
+## SaltCure web calculator (`/saltcure/calculator/`)
+
+Port of the app's `lib/domain/curing/*.dart` (`curing.mjs`), UI in `app.mjs`, safety texts generated from the app's ARB files (`arb.mjs`).
+Tests: `node --test saltcure/calculator/curing.test.mjs` (same vectors as the Dart tests, formulas_fsis.md §7). Any change to a limit or formula goes to the app **and** here, after the spec and a check with Povar.
