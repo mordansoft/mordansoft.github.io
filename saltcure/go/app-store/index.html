@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>SaltCure on the App Store</title>
+<!--
+  Attribution hop. Every "Download on the App Store" badge for SaltCure points
+  here instead of straight at the store. A view of this page IS a badge click —
+  the site is static and has no event tracking of its own.
+
+  TODO (blocked on the Provider ID): Apple ignores utm_* parameters. To see
+  these visits as a campaign in App Store Connect → App Analytics → Campaigns,
+  the store URL below needs Apple's own parameters appended:
+
+      ?pt=<PROVIDER_ID>&ct=saltcure_site&mt=8
+
+  <PROVIDER_ID> is MordanSoft's Provider ID from App Store Connect (payments
+  and financial reports). Until it is filled in, the link stays untagged and
+  iOS installs cannot be attributed to the site — only the click count here is
+  available. Changing it is a one-line edit in this file; the badges across the
+  site do not need touching.
+
+  The /us/ path segment was dropped on purpose so Apple serves each visitor
+  their own country's storefront.
+
+  The 1s delay is deliberate: it gives the analytics beacon time to fire before
+  the browser leaves. Do not drop it to 0.
+-->
+<meta http-equiv="refresh" content="1; url=https://apps.apple.com/app/saltcure-meat-cure-calculator/id6812973901">
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 24px;
+    box-sizing: border-box;
+    font-family: "IBM Plex Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+    background: oklch(0.978 0.004 74);
+    color: oklch(0.209 0.006 56);
+    text-align: center;
+  }
+  p { margin: 0; font-size: 17px; }
+  a { color: oklch(0.548 0.162 42); }
+  a:hover { color: oklch(0.432 0.008 60); }
+  @media (prefers-color-scheme: dark) {
+    body { background: oklch(0.122 0.005 52); color: oklch(0.955 0.004 80); }
+    a { color: oklch(0.785 0.150 54); }
+    a:hover { color: oklch(0.955 0.004 80); }
+  }
+</style>
+</head>
+<body>
+  <p>Opening the App Store…</p>
+  <p><a href="https://apps.apple.com/app/saltcure-meat-cure-calculator/id6812973901">Continue to SaltCure on the App Store</a></p>
+</body>
+</html>

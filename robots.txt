@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /saltcure/go/
 
-Sitemap: https://mordansoft.github.io/sitemap.xml
+Sitemap: https://mordansoft.com/sitemap.xml
