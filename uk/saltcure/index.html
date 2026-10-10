@@ -184,7 +184,15 @@
     .lang-switch { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--text-secondary); text-decoration: none; border: 1px solid var(--border); border-radius: var(--radius-sm, 6px); padding: 2px 8px; margin-left: var(--space-4); }
     .lang-switch:hover { color: var(--accent-text); border-color: var(--accent); text-decoration: none; }
     .topbar__right { display: inline-flex; align-items: center; }
+    /* ── FAQ ────────────────────────────────────────────── */
+    .faq { display: grid; gap: var(--space-4); }
+    .faq__item summary { cursor: pointer; font-weight: 600; color: var(--text-primary); list-style: none; }
+    .faq__item summary::-webkit-details-marker { display: none; }
+    .faq__item summary::after { content: "+"; float: right; color: var(--text-muted); }
+    .faq__item[open] summary::after { content: "–"; }
+    .faq__item p { margin: var(--space-3) 0 0 0; color: var(--text-secondary); line-height: var(--leading-normal); }
   </style>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Чому доза нітриту така важлива?", "acceptedAnswer": {"@type": "Answer", "text": "Нітрит у посолочній суміші разом із сіллю та холодом стримує розмноження C. botulinum у засоленому м'ясі й закріплює колір. Це не гарантія, а надлишок нітриту шкідливий. Тому дозу зважують на вагах із точністю 0,1 г, а не міряють ложкою. SaltCure рахує дозу в грамах від ваги м'яса (для мокрого посолу — від ваги води)."}}, {"@type": "Question", "name": "Які ліміти використовує SaltCure?", "acceptedAnswer": {"@type": "Answer", "text": "SaltCure рахує за опублікованими нормами USDA/FSIS (9 CFR 424.21 і 424.22). Для бекону стеля — 200 ppm нітриту при сухому посолі та 120 ppm у розсолі; для рубленого м'яса — 156 ppm. Для джерки із цілісного м'яза SaltCure навмисно застосовує той самий суворіший ліміт 156 ppm. Типова доза — 156 ppm для сухого бекону та 120 ppm для розсолу. Ці норми написані для промислових підприємств, а не для домашньої кухні. Ми беремо їх як найкраще публічне числове джерело, а відповідальність за готовий продукт лишається на вас."}}, {"@type": "Question", "name": "Cure #1, Cure #2 чи європейська нітритна сіль — у чому різниця?", "acceptedAnswer": {"@type": "Answer", "text": "Cure #1 містить 6,25% нітриту натрію. Cure #2 містить ще й нітрат натрію та призначена для тривалого сухого в'ялення без термообробки. Європейська нітритна сіль (Pökelsalz, peklosól) зазвичай містить лише 0,4–0,6% нітриту, тобто приблизно вдесятеро менше. Якщо обрати не той тип, доза відрізнятиметься приблизно в десять разів, тому SaltCure спершу питає, яка в вас сіль, і дає ввести точний відсоток нітриту з вашої пачки."}}, {"@type": "Question", "name": "Чи можна використовувати Cure #2 для бекону?", "acceptedAnswer": {"@type": "Answer", "text": "Ні. Правила USDA не дозволяють доданий нітрат у беконі, тому SaltCure повністю блокує Cure #2 для бекону."}}, {"@type": "Question", "name": "Чи достатньо просто висушити джерки?", "acceptedAnswer": {"@type": "Answer", "text": "Ні. Для джерки головний ризик — бактерії, а не нітрит. Рекомендація FSIS: перед сушінням прогріти м'ясо до 160 °F (71 °C), птицю до 165 °F (74 °C) у вологому середовищі, а потім сушити приблизно при 130–140 °F (54–60 °C)."}}, {"@type": "Question", "name": "Як зрозуміти, що партія зіпсувалась?", "acceptedAnswer": {"@type": "Answer", "text": "На довгому сухому в'ялені цілісних шматків (панчета, копа) біла пухнаста пліснява — норма. Будь-яка інша пліснява — зелена, чорна чи якась інша — або слизька поверхня означає, що всю партію треба викинути. На інших продуктах (бекон, джерки, усе, що не в'ялиться тижнями) будь-яка пліснява — привід викинути. Чистий вигляд не доводить, що м'ясо добре. Якщо сумніваєтесь — викидайте."}}]}</script>
 </head>
 <body>
 
@@ -295,6 +303,23 @@
           <div class="phone"><img src="../../assets/saltcure/screen-01.png" alt="SaltCure — калькулятор сухого засолу"></div>
           <div class="phone"><img src="../../assets/saltcure/screen-02.png" alt="SaltCure — шкала безпеки нітриту"></div>
           <div class="phone"><img src="../../assets/saltcure/screen-03.png" alt="SaltCure — журнал партій"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="ms-container">
+        <div class="section__head js-reveal">
+          <span class="ms-eyebrow">// Нітрит і безпека</span>
+          <h2 class="section__title">Питання про нітрит і безпеку</h2>
+        </div>
+        <div class="faq">
+          <details class="ms-card ms-card--pad faq__item js-reveal"><summary>Чому доза нітриту така важлива?</summary><p>Нітрит у посолочній суміші разом із сіллю та холодом стримує розмноження <i>C. botulinum</i> у засоленому м'ясі й закріплює колір. Це не гарантія, а надлишок нітриту шкідливий. Тому дозу зважують на вагах із точністю 0,1 г, а не міряють ложкою. SaltCure рахує дозу в грамах від ваги м'яса (для мокрого посолу — від ваги води).</p></details>
+          <details class="ms-card ms-card--pad faq__item js-reveal"><summary>Які ліміти використовує SaltCure?</summary><p>SaltCure рахує за опублікованими нормами USDA/FSIS (9 CFR 424.21 і 424.22). Для бекону стеля — 200 ppm нітриту при сухому посолі та 120 ppm у розсолі; для рубленого м'яса — 156 ppm. Для джерки із цілісного м'яза SaltCure навмисно застосовує той самий суворіший ліміт 156 ppm. Типова доза — 156 ppm для сухого бекону та 120 ppm для розсолу. Ці норми написані для промислових підприємств, а не для домашньої кухні. Ми беремо їх як найкраще публічне числове джерело, а відповідальність за готовий продукт лишається на вас.</p></details>
+          <details class="ms-card ms-card--pad faq__item js-reveal"><summary>Cure #1, Cure #2 чи європейська нітритна сіль — у чому різниця?</summary><p>Cure #1 містить 6,25% нітриту натрію. Cure #2 містить ще й нітрат натрію та призначена для тривалого сухого в'ялення без термообробки. Європейська нітритна сіль (Pökelsalz, peklosól) зазвичай містить лише 0,4–0,6% нітриту, тобто приблизно вдесятеро менше. Якщо обрати не той тип, доза відрізнятиметься приблизно в десять разів, тому SaltCure спершу питає, яка в вас сіль, і дає ввести точний відсоток нітриту з вашої пачки.</p></details>
+          <details class="ms-card ms-card--pad faq__item js-reveal"><summary>Чи можна використовувати Cure #2 для бекону?</summary><p>Ні. Правила USDA не дозволяють доданий нітрат у беконі, тому SaltCure повністю блокує Cure #2 для бекону.</p></details>
+          <details class="ms-card ms-card--pad faq__item js-reveal"><summary>Чи достатньо просто висушити джерки?</summary><p>Ні. Для джерки головний ризик — бактерії, а не нітрит. Рекомендація FSIS: перед сушінням прогріти м'ясо до 160 °F (71 °C), птицю до 165 °F (74 °C) у вологому середовищі, а потім сушити приблизно при 130–140 °F (54–60 °C).</p></details>
+          <details class="ms-card ms-card--pad faq__item js-reveal"><summary>Як зрозуміти, що партія зіпсувалась?</summary><p>На довгому сухому в'ялені цілісних шматків (панчета, копа) біла пухнаста пліснява — норма. Будь-яка інша пліснява — зелена, чорна чи якась інша — або слизька поверхня означає, що всю партію треба викинути. На інших продуктах (бекон, джерки, усе, що не в'ялиться тижнями) будь-яка пліснява — привід викинути. Чистий вигляд не доводить, що м'ясо добре. Якщо сумніваєтесь — викидайте.</p></details>
         </div>
       </div>
     </section>

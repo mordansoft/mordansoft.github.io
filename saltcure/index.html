@@ -184,7 +184,15 @@
     .lang-switch { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--text-secondary); text-decoration: none; border: 1px solid var(--border); border-radius: var(--radius-sm, 6px); padding: 2px 8px; margin-left: var(--space-4); }
     .lang-switch:hover { color: var(--accent-text); border-color: var(--accent); text-decoration: none; }
     .topbar__right { display: inline-flex; align-items: center; }
+    /* ── FAQ ────────────────────────────────────────────── */
+    .faq { display: grid; gap: var(--space-4); }
+    .faq__item summary { cursor: pointer; font-weight: 600; color: var(--text-primary); list-style: none; }
+    .faq__item summary::-webkit-details-marker { display: none; }
+    .faq__item summary::after { content: "+"; float: right; color: var(--text-muted); }
+    .faq__item[open] summary::after { content: "–"; }
+    .faq__item p { margin: var(--space-3) 0 0 0; color: var(--text-secondary); line-height: var(--leading-normal); }
   </style>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why does the nitrite dose matter so much?", "acceptedAnswer": {"@type": "Answer", "text": "Nitrite in curing salt works together with salt and cold to hold back the growth of C. botulinum in cured meat, and it fixes the colour. It is not a guarantee, and too much nitrite is harmful. That is why the dose is weighed on a scale to 0.1 g, never measured by spoon. SaltCure calculates the dose in grams from the weight of your meat (for a wet brine, from the weight of the water)."}}, {"@type": "Question", "name": "Which limits does SaltCure use?", "acceptedAnswer": {"@type": "Answer", "text": "SaltCure calculates by the published USDA/FSIS rules (9 CFR 424.21 and 424.22). For bacon the ceiling is 200 ppm nitrite with dry cure and 120 ppm in a brine; for ground meat it is 156 ppm. For jerky made from whole muscle SaltCure deliberately applies the same stricter 156 ppm. The default dose is 156 ppm for dry-cured bacon and 120 ppm for brine. These rules were written for commercial plants, not home kitchens. We use them as the best public numeric reference, and the responsibility for the finished product stays with you."}}, {"@type": "Question", "name": "Cure #1, Cure #2 or European curing salt — what is the difference?", "acceptedAnswer": {"@type": "Answer", "text": "Cure #1 contains 6.25% sodium nitrite. Cure #2 also contains sodium nitrate and is used for long dry-curing without cooking. European curing salt (Pökelsalz, peklosól) usually contains only 0.4–0.6% nitrite, roughly ten times less. If you pick the wrong type, the dose is off by about a factor of ten, so SaltCure asks which salt you have before it calculates anything, and you can enter the exact nitrite percentage from your pack."}}, {"@type": "Question", "name": "Can I use Cure #2 on bacon?", "acceptedAnswer": {"@type": "Answer", "text": "No. USDA rules do not allow added nitrate in bacon, so SaltCure blocks Cure #2 for bacon completely."}}, {"@type": "Question", "name": "Is drying enough for jerky?", "acceptedAnswer": {"@type": "Answer", "text": "No. For jerky the main risk is bacteria, not nitrite. FSIS guidance is to heat the meat to 160 °F (71 °C), poultry to 165 °F (74 °C), in a humid environment before drying, then dry at about 130–140 °F (54–60 °C)."}}, {"@type": "Question", "name": "How do I know if a batch has gone bad?", "acceptedAnswer": {"@type": "Answer", "text": "On long dry-cured whole cuts (such as pancetta or coppa), a white, fluffy mould is normal. Any other mould — green, black, or anything else — or a slimy surface means the whole batch should be thrown away. On other products (bacon, jerky, anything not dry-cured for weeks), any mould means discard. A clean look does not prove the meat is fine. When in doubt, throw it out."}}]}</script>
 </head>
 <body>
 
@@ -294,6 +302,23 @@
           <div class="phone"><img src="../assets/saltcure/screen-01.png" alt="SaltCure dry cure calculator"></div>
           <div class="phone"><img src="../assets/saltcure/screen-02.png" alt="SaltCure nitrite safety scale"></div>
           <div class="phone"><img src="../assets/saltcure/screen-03.png" alt="SaltCure batch tracker"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="ms-container">
+        <div class="section__head js-reveal">
+          <span class="ms-eyebrow">// Nitrite &amp; safety</span>
+          <h2 class="section__title">Questions about nitrite and safety</h2>
+        </div>
+        <div class="faq">
+          <details class="ms-card ms-card--pad faq__item js-reveal"><summary>Why does the nitrite dose matter so much?</summary><p>Nitrite in curing salt works together with salt and cold to hold back the growth of <i>C. botulinum</i> in cured meat, and it fixes the colour. It is not a guarantee, and too much nitrite is harmful. That is why the dose is weighed on a scale to 0.1 g, never measured by spoon. SaltCure calculates the dose in grams from the weight of your meat (for a wet brine, from the weight of the water).</p></details>
+          <details class="ms-card ms-card--pad faq__item js-reveal"><summary>Which limits does SaltCure use?</summary><p>SaltCure calculates by the published USDA/FSIS rules (9 CFR 424.21 and 424.22). For bacon the ceiling is 200 ppm nitrite with dry cure and 120 ppm in a brine; for ground meat it is 156 ppm. For jerky made from whole muscle SaltCure deliberately applies the same stricter 156 ppm. The default dose is 156 ppm for dry-cured bacon and 120 ppm for brine. These rules were written for commercial plants, not home kitchens. We use them as the best public numeric reference, and the responsibility for the finished product stays with you.</p></details>
+          <details class="ms-card ms-card--pad faq__item js-reveal"><summary>Cure #1, Cure #2 or European curing salt — what is the difference?</summary><p>Cure #1 contains 6.25% sodium nitrite. Cure #2 also contains sodium nitrate and is used for long dry-curing without cooking. European curing salt (Pökelsalz, peklosól) usually contains only 0.4–0.6% nitrite, roughly ten times less. If you pick the wrong type, the dose is off by about a factor of ten, so SaltCure asks which salt you have before it calculates anything, and you can enter the exact nitrite percentage from your pack.</p></details>
+          <details class="ms-card ms-card--pad faq__item js-reveal"><summary>Can I use Cure #2 on bacon?</summary><p>No. USDA rules do not allow added nitrate in bacon, so SaltCure blocks Cure #2 for bacon completely.</p></details>
+          <details class="ms-card ms-card--pad faq__item js-reveal"><summary>Is drying enough for jerky?</summary><p>No. For jerky the main risk is bacteria, not nitrite. FSIS guidance is to heat the meat to 160 °F (71 °C), poultry to 165 °F (74 °C), in a humid environment before drying, then dry at about 130–140 °F (54–60 °C).</p></details>
+          <details class="ms-card ms-card--pad faq__item js-reveal"><summary>How do I know if a batch has gone bad?</summary><p>On long dry-cured whole cuts (such as pancetta or coppa), a white, fluffy mould is normal. Any other mould — green, black, or anything else — or a slimy surface means the whole batch should be thrown away. On other products (bacon, jerky, anything not dry-cured for weeks), any mould means discard. A clean look does not prove the meat is fine. When in doubt, throw it out.</p></details>
         </div>
       </div>
     </section>
