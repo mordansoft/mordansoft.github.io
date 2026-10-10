@@ -192,36 +192,64 @@
     .faq__item[open] summary::after { content: "–"; }
     .faq__item p { margin: var(--space-3) 0 0 0; color: var(--text-secondary); line-height: var(--leading-normal); }
 
-    /* ── Calculator ─────────────────────────────────────── */
+    /* ── Calculator (mirrors the app's calculator screen) ───────────── */
+    :root { --z-accent: var(--accent); --z-success: #3DA35D; --z-warning: #C8962C; --z-danger: #C02717; --z-muted: var(--text-muted); }
     .calc-wrap { display: grid; gap: var(--space-8); grid-template-columns: 1fr; align-items: start; }
     @media (min-width: 900px) { .calc-wrap { grid-template-columns: 1.05fr 1fr; } .calc-out { position: sticky; top: 84px; } }
-    .calc-form { display: grid; gap: var(--space-5); }
-    .calc-form .ms-field select, .calc-form .ms-field input { width: 100%; }
-    .calc-two { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); }
-    .calc-weight { display: grid; grid-template-columns: 1fr auto; gap: var(--space-3); }
-    .calc-range { width: 100%; accent-color: var(--accent); }
-    .calc-ppm { display: grid; grid-template-columns: 1fr 110px; gap: var(--space-4); align-items: center; }
-    .calc-rows { margin: 0; display: grid; gap: var(--space-3); }
-    .calc-row { display: flex; justify-content: space-between; gap: var(--space-4); align-items: baseline; padding-bottom: var(--space-3); border-bottom: 1px solid var(--border-faint); }
-    .calc-row dt { color: var(--text-secondary); font-size: var(--text-sm); }
-    .calc-row dd { margin: 0; font-weight: 600; color: var(--text-primary); text-align: right; }
-    .calc-row--big dd { font-size: 1.75rem; letter-spacing: -0.02em; }
-    .calc-sub { font-weight: 400; font-size: var(--text-xs); color: var(--text-muted); }
+    .calc-col { display: grid; gap: var(--space-3); }
+    .mono { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+    .mut { color: var(--text-muted); }
+    .eyebrow { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); }
+    .eyebrow--c { text-align: center; font-size: 10px; margin-bottom: 4px; }
+    .cc { background: var(--surface-elevated, #fff); border: 1px solid var(--border); border-radius: var(--radius-lg, 14px); padding: 10px var(--space-4) 12px; }
+    .cc--strong { border-color: var(--border-strong, var(--border)); }
+    .cc select.ms-input { width: 100%; margin-top: 6px; }
+    .cc__h { display: flex; justify-content: space-between; align-items: baseline; gap: var(--space-3); }
+    .seg { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; padding: 3px; border-radius: var(--radius-md, 12px); background: var(--border); }
+    .seg button { height: 32px; border: 0; border-radius: 9px; background: transparent; font: 600 14px var(--font-sans, inherit); color: var(--text-muted); cursor: pointer; }
+    .seg button.on { background: var(--surface-elevated, #fff); color: var(--text-primary); box-shadow: 0 1px 3px rgba(0,0,0,.12); }
+    .unit-select { font: 600 12px var(--font-mono); color: var(--text-secondary); background: transparent; border: 1px solid var(--border); border-radius: 8px; padding: 2px 6px; }
+    .big { display: flex; align-items: baseline; justify-content: center; gap: 6px; margin: 6px 0 2px; }
+    .big__in { width: 100%; max-width: 9ch; text-align: right; border: 0; border-bottom: 1px dashed var(--border-strong, var(--border)); background: transparent; font: 700 34px var(--font-mono); color: var(--text-primary); padding: 0; letter-spacing: -0.02em; }
+    .big__in:focus { outline: none; border-bottom-color: var(--accent); }
+    .big__u { font: 500 14px var(--font-mono); color: var(--text-muted); min-width: 3ch; }
+    .big--sm .big__in { font-size: 26px; max-width: 7ch; }
+    .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 4px; }
+    .sl, .zs__input { width: 100%; accent-color: var(--accent); }
+    .sl { margin: 8px 0 0; -webkit-appearance: none; appearance: none; height: 18px; background: transparent; }
+    .sl::-webkit-slider-runnable-track { height: 4px; border-radius: 2px; background: linear-gradient(to right, var(--accent) var(--p, 50%), var(--border) var(--p, 50%)); }
+    .sl::-moz-range-track { height: 4px; border-radius: 2px; background: linear-gradient(to right, var(--accent) var(--p, 50%), var(--border) var(--p, 50%)); }
+    .sl::-webkit-slider-thumb { -webkit-appearance: none; width: 18px; height: 18px; margin-top: -7px; border-radius: 50%; background: var(--accent); border: 0; }
+    .sl::-moz-range-thumb { width: 18px; height: 18px; border-radius: 50%; background: var(--accent); border: 0; }
+    .zs { position: relative; height: 22px; margin: 6px 0 2px; }
+    .zs__track { position: absolute; left: 9px; right: 9px; top: 7px; height: 8px; border-radius: 4px; overflow: hidden; background: var(--border); }
+    .zs__zones { display: flex; height: 100%; }
+    .zs__zones i { display: block; opacity: .5; }
+    .zs__input { position: absolute; inset: 0; margin: 0; height: 22px; background: transparent; -webkit-appearance: none; appearance: none; }
+    .zs__input::-webkit-slider-runnable-track { height: 8px; background: transparent; }
+    .zs__input::-moz-range-track { height: 8px; background: transparent; }
+    .zs__input::-webkit-slider-thumb { -webkit-appearance: none; width: 18px; height: 18px; margin-top: -5px; border-radius: 50%; background: var(--accent); border: 0; }
+    .zs__input::-moz-range-thumb { width: 18px; height: 18px; border-radius: 50%; background: var(--accent); border: 0; }
+    .zs__input:disabled { opacity: .45; }
+    .headline { font: 700 18px var(--font-mono); color: var(--text-primary); text-align: right; margin-top: 8px; font-variant-numeric: tabular-nums; }
+    .headline span { font-weight: 400; font-size: 13px; color: var(--text-muted); }
+    .headline--sm { margin-top: 0; }
+    .calc-status { display: flex; justify-content: space-between; align-items: center; gap: var(--space-3); font: 10px var(--font-mono); letter-spacing: .06em; }
+    .calc-status__l { display: inline-flex; align-items: center; gap: 6px; }
+    .calc-status__r { color: var(--text-muted); }
+    .dot { width: 7px; height: 7px; border-radius: 50%; display: inline-block; }
+    .pct-row { display: grid; grid-template-columns: 1fr 100px; gap: var(--space-3); align-items: center; margin-top: 8px; font-size: var(--text-sm); color: var(--text-secondary); }
+    .cells { display: grid; grid-template-columns: repeat(auto-fit, minmax(96px, 1fr)); gap: var(--space-3); }
+    .cell { display: grid; gap: 2px; padding: var(--space-3); border: 1px solid var(--border-faint); border-radius: var(--radius-md, 10px); }
+    .cell b { font: 700 24px var(--font-mono); letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
     .calc-empty { color: var(--text-muted); margin: 0; }
-    .calc-note { font-size: var(--text-sm); color: var(--text-secondary); line-height: var(--leading-normal); margin: var(--space-4) 0 0 0; }
-    .calc-bands { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--space-4); }
-    .calc-chip { display: inline-block; padding: 2px 10px; border-radius: 999px; font-size: var(--text-xs); font-weight: 600; background: var(--surface-sunken, #eee); color: var(--text-secondary); }
-    .calc-chip--ok { background: color-mix(in oklch, #2f9e5b 18%, transparent); color: #1f7a43; }
-    .calc-chip--warn { background: color-mix(in oklch, #e0a32c 22%, transparent); color: #8a5d00; }
-    .calc-chip--bad { background: color-mix(in oklch, #d8453a 18%, transparent); color: #b3261e; }
+    .calc-hint { font-size: var(--text-xs); color: var(--text-muted); line-height: var(--leading-normal); margin: 8px 0 0; }
+    .calc-banner { font-size: var(--text-sm); color: var(--text-secondary); background: rgba(128,128,128,.10); border-radius: var(--radius-md, 10px); padding: var(--space-3) var(--space-4); margin: var(--space-4) 0 0; line-height: var(--leading-normal); }
     .calc-alert { border-radius: var(--radius-md, 10px); padding: var(--space-4); margin-bottom: var(--space-4); border: 1px solid; }
     .calc-alert p { margin: var(--space-2) 0 0 0; font-size: var(--text-sm); line-height: var(--leading-normal); }
-    .calc-alert .ms-btn { margin-top: var(--space-3); }
-    .calc-alert--warn { background: color-mix(in oklch, #e0a32c 12%, transparent); border-color: color-mix(in oklch, #e0a32c 50%, transparent); }
-    .calc-alert--bad { background: color-mix(in oklch, #d8453a 10%, transparent); border-color: color-mix(in oklch, #d8453a 50%, transparent); }
+    .calc-alert--warn { background: rgba(200,150,44,.12); border-color: rgba(200,150,44,.5); }
+    .calc-alert--bad { background: rgba(192,39,23,.10); border-color: rgba(192,39,23,.5); }
     .calc-disclaimer { font-size: var(--text-xs); color: var(--text-muted); line-height: var(--leading-normal); margin: 0; }
-    .calc-hint { font-size: var(--text-xs); color: var(--text-muted); line-height: var(--leading-normal); margin: 0; }
-    .calc-banner { font-size: var(--text-sm); color: var(--text-secondary); background: var(--surface-sunken, rgba(0,0,0,.04)); border-radius: var(--radius-md, 10px); padding: var(--space-3) var(--space-4); margin: 0; line-height: var(--leading-normal); }
     .calc-cta { margin-top: var(--space-10); }
     [hidden] { display: none !important; }
   </style>
@@ -255,41 +283,11 @@
           <p class="detail__blurb">Скільки нітритної солі відважити для бекону, джерки, панчети чи салямі. Сухий або мокрий посол, доза нітриту перевірена за опублікованими нормами USDA/FSIS — той самий рушій, що в застосунку SaltCure.</p>
         </div>
         <div class="calc-wrap">
-          <form class="calc-form ms-card ms-card--pad" onsubmit="return false" novalidate>
-            <div class="ms-field"><label class="ms-field__label" id="l-meat" for="meat"></label><select class="ms-input" id="meat"></select></div>
-            <div class="ms-field" id="method-row"><label class="ms-field__label" id="l-method" for="method"></label><select class="ms-input" id="method"></select></div>
-            <div class="ms-field">
-              <label class="ms-field__label" id="l-salt" for="cure"></label>
-              <select class="ms-input" id="cure"></select>
-              <p class="calc-hint" id="salt-hint"></p>
-            </div>
-            <div class="ms-field" id="pct-row" hidden><label class="ms-field__label" id="l-pct" for="pct"></label><input class="ms-input" id="pct" type="text" inputmode="decimal" value="0.6"></div>
-            <div class="ms-field">
-              <label class="ms-field__label" id="l-weight" for="weight"></label>
-              <div class="calc-weight"><input class="ms-input" id="weight" type="text" inputmode="decimal" value="1000"><select class="ms-input" id="unit" aria-label="Одиниці"></select></div>
-            </div>
-            <div class="ms-field" id="water-row" hidden><label class="ms-field__label" id="l-water" for="water"></label><input class="ms-input" id="water" type="text" inputmode="decimal" value="1000"><p class="calc-hint" id="water-hint"></p></div>
-            <div class="ms-field"><label class="ms-field__label" id="l-mode" for="mode"></label><select class="ms-input" id="mode"></select></div>
-            <div class="ms-field" id="ppm-row">
-              <label class="ms-field__label" id="l-ppm" for="ppm"></label>
-              <div class="calc-ppm"><input class="calc-range" id="ppm-range" type="range" min="0" max="200" step="1" value="156" aria-label="ppm"><input class="ms-input" id="ppm" type="text" inputmode="numeric" value="156"></div>
-              <p class="calc-hint" id="ppm-hint"></p>
-            </div>
-            <div class="ms-field" id="typed-row" hidden><label class="ms-field__label" id="l-typed" for="typed"></label><input class="ms-input" id="typed" type="text" inputmode="decimal" value="0"></div>
-            <div class="calc-two">
-              <div class="ms-field"><label class="ms-field__label" id="l-saltpct" for="saltpct"></label><input class="ms-input" id="saltpct" type="text" inputmode="decimal" value="2.5"></div>
-              <div class="ms-field"><label class="ms-field__label" id="l-sugar" for="sugar"></label><input class="ms-input" id="sugar" type="text" inputmode="decimal" value="1"></div>
-            </div>
-            <p class="calc-banner" id="jerky-note" hidden></p>
-            <p class="calc-banner" id="biltong-note" hidden></p>
-          </form>
+          <div class="calc-col" id="calc-app"></div>
           <div class="calc-out">
-            <div class="ms-card ms-card--pad">
-              <h2 class="feature__title" id="t-results"></h2>
-              <div id="out" aria-live="polite"></div>
-            </div>
+            <div class="cc"><div class="cc__h"><span class="eyebrow" id="t-results"></span></div><div id="out" aria-live="polite" style="margin-top: var(--space-3)"></div></div>
             <p class="calc-disclaimer" id="disclaimer" style="margin-top: var(--space-4)"></p>
-            <p class="calc-hint" style="margin-top: var(--space-3)"><a href="/uk/saltcure/#faq" id="faq-link"></a></p>
+            <p class="calc-hint"><a href="/uk/saltcure/#faq" id="faq-link"></a></p>
           </div>
         </div>
         <div class="ms-card ms-card--pad calc-cta">
