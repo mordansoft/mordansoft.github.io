@@ -10,17 +10,11 @@
   here instead of straight at the store. A view of this page IS a badge click —
   the site is static and has no event tracking of its own.
 
-  TODO (blocked on the Provider ID): Apple ignores utm_* parameters. To see
-  these visits as a campaign in App Store Connect → App Analytics → Campaigns,
-  the store URL below needs Apple's own parameters appended:
-
-      ?pt=<PROVIDER_ID>&ct=saltcure_site&mt=8
-
-  <PROVIDER_ID> is MordanSoft's Provider ID from App Store Connect (payments
-  and financial reports). Until it is filled in, the link stays untagged and
-  iOS installs cannot be attributed to the site — only the click count here is
-  available. Changing it is a one-line edit in this file; the badges across the
-  site do not need touching.
+  Apple ignores utm_* parameters, so the store URL carries Apple's own campaign
+  tags: pt=127531622 is MordanSoft's Provider ID (taken from App Store Connect →
+  App Analytics → Campaigns → Generate a Campaign Link, 17.10.2026), ct is the
+  campaign name. Visits show up in App Store Connect → App Analytics → Campaigns
+  as "saltcure_site" (Apple shows a campaign only once 5+ accounts installed).
 
   The /us/ path segment was dropped on purpose so Apple serves each visitor
   their own country's storefront.
@@ -28,7 +22,7 @@
   The 1s delay is deliberate: it gives the analytics beacon time to fire before
   the browser leaves. Do not drop it to 0.
 -->
-<meta http-equiv="refresh" content="1; url=https://apps.apple.com/app/saltcure-meat-cure-calculator/id6812973901">
+<meta http-equiv="refresh" content="1; url=https://apps.apple.com/app/saltcure-meat-cure-calculator/id6812973901?pt=127531622&amp;ct=saltcure_site&amp;mt=8">
 <style>
   :root { color-scheme: light dark; }
   body {
@@ -58,7 +52,7 @@
 </head>
 <body>
   <p>Opening the App Store…</p>
-  <p><a href="https://apps.apple.com/app/saltcure-meat-cure-calculator/id6812973901">Continue to SaltCure on the App Store</a></p>
+  <p><a href="https://apps.apple.com/app/saltcure-meat-cure-calculator/id6812973901?pt=127531622&amp;ct=saltcure_site&amp;mt=8">Continue to SaltCure on the App Store</a></p>
 <!-- web analytics -->
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "5a3f2bc95732486688415649c2f82eee"}'></script>
 <!-- /web analytics -->
