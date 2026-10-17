@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/svg+xml" href="/assets/img/brand/logo-tile.svg">
+  <meta name="apple-itunes-app" content="app-id=6812973901">
   <title>SaltCure — Curing Calculator &amp; Meat Curing Tracker (iOS, Android)</title>
   <meta name="description" content="Free curing calculator for bacon, pancetta, salami and jerky: dry and wet cure, nitrite doses checked against USDA/FSIS limits, batch tracker with reminders. iOS and Android, offline, no account.">
   <link rel="canonical" href="https://mordansoft.com/saltcure/">
@@ -191,6 +192,15 @@
     .faq__item summary::after { content: "+"; float: right; color: var(--text-muted); }
     .faq__item[open] summary::after { content: "–"; }
     .faq__item p { margin: var(--space-3) 0 0 0; color: var(--text-secondary); line-height: var(--leading-normal); }
+    /* ── Calculators + sources ─────────────────────────── */
+    .tool-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-4); }
+    @media (min-width: 720px) { .tool-grid { grid-template-columns: repeat(3, 1fr); } }
+    .tool-card { display: block; text-decoration: none; color: inherit; }
+    .tool-card:hover { text-decoration: none; border-color: var(--accent); }
+    .tool-card__title { font-weight: 600; color: var(--text-primary); margin: 0 0 var(--space-2); }
+    .tool-card__text { font-size: var(--text-sm); color: var(--text-secondary); margin: 0; line-height: var(--leading-normal); }
+    .src-list { margin: var(--space-4) 0 0; padding-left: 1.2em; color: var(--text-secondary); line-height: var(--leading-normal); }
+    .src-list li { margin-bottom: var(--space-2); }
   </style>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why does the nitrite dose matter so much?", "acceptedAnswer": {"@type": "Answer", "text": "Nitrite in curing salt works together with salt and cold to hold back the growth of C. botulinum in cured meat, and it fixes the colour. It is not a guarantee, and too much nitrite is harmful. That is why the dose is weighed on a scale to 0.1 g, never measured by spoon. SaltCure calculates the dose in grams from the weight of your meat (for a wet brine, from the weight of the water)."}}, {"@type": "Question", "name": "Which limits does SaltCure use?", "acceptedAnswer": {"@type": "Answer", "text": "SaltCure calculates by the published USDA/FSIS rules (9 CFR 424.21 and 424.22). For bacon the ceiling is 200 ppm nitrite with dry cure and 120 ppm in a brine; for ground meat it is 156 ppm. For jerky made from whole muscle SaltCure deliberately applies the same stricter 156 ppm. The default dose is 156 ppm for dry-cured bacon and 120 ppm for brine. These rules were written for commercial plants, not home kitchens. We use them as the best public numeric reference, and the responsibility for the finished product stays with you."}}, {"@type": "Question", "name": "Cure #1, Cure #2 or European curing salt — what is the difference?", "acceptedAnswer": {"@type": "Answer", "text": "Cure #1 contains 6.25% sodium nitrite. Cure #2 also contains sodium nitrate and is used for long dry-curing without cooking. European curing salt (Pökelsalz, peklosól) usually contains only 0.4–0.6% nitrite, roughly ten times less. If you pick the wrong type, the dose is off by about a factor of ten, so SaltCure asks which salt you have before it calculates anything, and you can enter the exact nitrite percentage from your pack."}}, {"@type": "Question", "name": "Can I use Cure #2 on bacon?", "acceptedAnswer": {"@type": "Answer", "text": "No. USDA rules do not allow added nitrate in bacon, so SaltCure blocks Cure #2 for bacon completely."}}, {"@type": "Question", "name": "Is drying enough for jerky?", "acceptedAnswer": {"@type": "Answer", "text": "No. For jerky the main risk is bacteria, not nitrite. FSIS guidance is to heat the meat to 160 °F (71 °C), poultry to 165 °F (74 °C), in a humid environment before drying, then dry at about 130–140 °F (54–60 °C)."}}, {"@type": "Question", "name": "How do I know if a batch has gone bad?", "acceptedAnswer": {"@type": "Answer", "text": "On long dry-cured whole cuts (such as pancetta or coppa), a white, fluffy mould is normal. Any other mould — green, black, or anything else — or a slimy surface means the whole batch should be thrown away. On other products (bacon, jerky, anything not dry-cured for weeks), any mould means discard. A clean look does not prove the meat is fine. When in doubt, throw it out."}}]}</script>
 </head>
@@ -310,6 +320,38 @@
     <section class="section">
       <div class="ms-container">
         <div class="section__head js-reveal">
+          <span class="ms-eyebrow">// Free in your browser</span>
+          <h2 class="section__title">Calculators on meat.mordansoft.com</h2>
+          <p class="section__lead">The same curing engine as the app, no install and no account.</p>
+        </div>
+        <div class="tool-grid">
+          <a class="ms-card ms-card--pad tool-card js-reveal" href="https://meat.mordansoft.com/curing-salt-calculator/"><h3 class="tool-card__title">Curing salt calculator</h3><p class="tool-card__text">Cure #1, Cure #2 or European curing salt: grams per weight, nitrite checked against the limits.</p></a>
+          <a class="ms-card ms-card--pad tool-card js-reveal" href="https://meat.mordansoft.com/brine-calculator/"><h3 class="tool-card__title">Brine calculator</h3><p class="tool-card__text">Wet brine strength and salt for a given weight of meat and water.</p></a>
+          <a class="ms-card ms-card--pad tool-card js-reveal" href="https://meat.mordansoft.com/dry-brine-calculator/"><h3 class="tool-card__title">Dry brine calculator</h3><p class="tool-card__text">Salt by weight for a dry brine, no nitrite.</p></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="ms-container">
+        <div class="section__head js-reveal">
+          <span class="ms-eyebrow">// Sources</span>
+          <h2 class="section__title">Where the numbers come from</h2>
+          <p class="section__lead">Every limit in SaltCure comes from a published USDA/FSIS rule, and the dose is shown next to its limit.</p>
+        </div>
+        <ul class="src-list js-reveal">
+          <li>Bacon: up to 200 ppm nitrite with dry cure and 120 ppm in a brine — <a href="https://www.law.cornell.edu/cfr/text/9/424.22" rel="noopener">9 CFR 424.22(b)</a>.</li>
+          <li>Other cured meat: up to 625 ppm for a dry-cured whole cut, 156 ppm for ground meat — <a href="https://www.law.cornell.edu/cfr/text/9/424.21" rel="noopener">9 CFR 424.21(c)</a>. For jerky SaltCure deliberately applies the stricter 156 ppm.</li>
+          <li>Nitrate (Cure #2) is not allowed in bacon, so the app blocks it there. The nitrite dose is always rounded down, never up.</li>
+          <li>These rules were written for commercial plants, not home kitchens. We use them as the best public numeric reference; the result is not an approval and not a guarantee, and responsibility for the finished product stays with you.</li>
+        </ul>
+        <p class="src-list__faq js-reveal"><a href="#faq">Read the questions about nitrite and safety</a></p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="ms-container">
+        <div class="section__head js-reveal">
           <span class="ms-eyebrow">// Nitrite &amp; safety</span>
           <h2 class="section__title">Questions about nitrite and safety</h2>
         </div>
@@ -338,10 +380,6 @@
           <div class="ms-card ms-card--pad js-reveal" data-delay="2">
             <p class="case-block__label">What we did</p>
             <p class="case-block__text">Design, Flutter implementation, the dosing engine with FSIS limit checks, the batch log with reminders, first-run screens, and the release on Google Play and the App Store.</p>
-          </div>
-          <div class="ms-card ms-card--pad js-reveal" data-delay="1">
-            <p class="case-block__label">Numbers</p>
-            <p class="case-block__text">Measurement in progress — first figures after the initial release window.</p>
           </div>
           <div class="ms-card ms-card--pad js-reveal" data-delay="2">
             <p class="case-block__label">Stack</p>

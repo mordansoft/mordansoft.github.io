@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/svg+xml" href="/assets/img/brand/logo-tile.svg">
+  <meta name="apple-itunes-app" content="app-id=6812973901">
   <title>SaltCure — калькулятор посолу та журнал партій (iOS, Android)</title>
   <meta name="description" content="Калькулятор посолу для бекону, панчети, салямі та джерки: сухий і мокрий посол, дози нітриту за лімітами USDA/FSIS, журнал партій з нагадуваннями. iOS та Android, офлайн, без акаунта.">
   <link rel="canonical" href="https://mordansoft.com/uk/saltcure/">
@@ -191,6 +192,15 @@
     .faq__item summary::after { content: "+"; float: right; color: var(--text-muted); }
     .faq__item[open] summary::after { content: "–"; }
     .faq__item p { margin: var(--space-3) 0 0 0; color: var(--text-secondary); line-height: var(--leading-normal); }
+    /* ── Calculators + sources ─────────────────────────── */
+    .tool-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-4); }
+    @media (min-width: 720px) { .tool-grid { grid-template-columns: repeat(3, 1fr); } }
+    .tool-card { display: block; text-decoration: none; color: inherit; }
+    .tool-card:hover { text-decoration: none; border-color: var(--accent); }
+    .tool-card__title { font-weight: 600; color: var(--text-primary); margin: 0 0 var(--space-2); }
+    .tool-card__text { font-size: var(--text-sm); color: var(--text-secondary); margin: 0; line-height: var(--leading-normal); }
+    .src-list { margin: var(--space-4) 0 0; padding-left: 1.2em; color: var(--text-secondary); line-height: var(--leading-normal); }
+    .src-list li { margin-bottom: var(--space-2); }
   </style>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Чому доза нітриту така важлива?", "acceptedAnswer": {"@type": "Answer", "text": "Нітрит у посолочній суміші разом із сіллю та холодом стримує розмноження C. botulinum у посоленому м'ясі й закріплює колір. Це не гарантія, а надлишок нітриту шкідливий. Тому дозу зважують на вагах із точністю 0,1 г, а не міряють ложкою. SaltCure рахує дозу в грамах від ваги м'яса (для мокрого посолу — від ваги води)."}}, {"@type": "Question", "name": "Які ліміти використовує SaltCure?", "acceptedAnswer": {"@type": "Answer", "text": "SaltCure рахує за опублікованими нормами USDA/FSIS (9 CFR 424.21 і 424.22). Для бекону стеля — 200 ppm нітриту при сухому посолі та 120 ppm у розсолі; для рубленого м'яса — 156 ppm. Для джерки із цілісного м'яза SaltCure навмисно застосовує той самий суворіший ліміт 156 ppm. Доза за замовчуванням — 156 ppm для сухого бекону та 120 ppm для розсолу. Ці норми написані для промислових підприємств, а не для домашньої кухні. Ми беремо їх як найкраще публічне числове джерело, а відповідальність за готовий продукт лишається на тобі."}}, {"@type": "Question", "name": "Cure #1, Cure #2 чи європейська нітритна сіль — у чому різниця?", "acceptedAnswer": {"@type": "Answer", "text": "Cure #1 містить 6,25% нітриту натрію. Cure #2 містить ще й нітрат натрію та призначена для тривалого сухого в'ялення без термообробки. Європейська нітритна сіль (Pökelsalz, peklosól) зазвичай містить лише 0,4–0,6% нітриту, тобто приблизно вдесятеро менше. Якщо обрати не той тип, доза відрізнятиметься приблизно в десять разів, тому SaltCure спершу питає, яка в тебе сіль, і дає ввести точний відсоток нітриту з твоєї пачки."}}, {"@type": "Question", "name": "Чи можна використовувати Cure #2 для бекону?", "acceptedAnswer": {"@type": "Answer", "text": "Ні. Правила USDA не дозволяють доданий нітрат у беконі, тому SaltCure повністю блокує Cure #2 для бекону."}}, {"@type": "Question", "name": "Чи достатньо просто висушити джерки?", "acceptedAnswer": {"@type": "Answer", "text": "Ні. Для джерки головний ризик — бактерії, а не нітрит. Рекомендація FSIS: перед сушінням прогріти м'ясо до 160 °F (71 °C), птицю до 165 °F (74 °C) у вологому середовищі, а потім сушити приблизно при 130–140 °F (54–60 °C)."}}, {"@type": "Question", "name": "Як зрозуміти, що партія зіпсувалась?", "acceptedAnswer": {"@type": "Answer", "text": "На довгому сухому в'ялені цілісних шматків (панчета, копа) біла пухнаста пліснява — норма. Будь-яка інша пліснява — зелена, чорна чи якась інша — або слизька поверхня означає, що всю партію треба викинути. На інших продуктах (бекон, джерки, усе, що не в'ялиться тижнями) будь-яка пліснява — привід викинути. Чистий вигляд не доводить, що м'ясо добре. Якщо сумніваєшся — викидай."}}]}</script>
 </head>
@@ -310,6 +320,38 @@
     <section class="section">
       <div class="ms-container">
         <div class="section__head js-reveal">
+          <span class="ms-eyebrow">// Безкоштовно в браузері</span>
+          <h2 class="section__title">Калькулятори на meat.mordansoft.com</h2>
+          <p class="section__lead">Той самий рушій посолу, що в застосунку: без встановлення й акаунта.</p>
+        </div>
+        <div class="tool-grid">
+          <a class="ms-card ms-card--pad tool-card js-reveal" href="https://meat.mordansoft.com/uk/curing-salt-calculator/"><h3 class="tool-card__title">Калькулятор нітритної солі</h3><p class="tool-card__text">Cure #1, Cure #2 чи європейська нітритна сіль: грами від ваги, нітрит перевірено за лімітами.</p></a>
+          <a class="ms-card ms-card--pad tool-card js-reveal" href="https://meat.mordansoft.com/brine-calculator/"><h3 class="tool-card__title">Brine calculator (EN)</h3><p class="tool-card__text">Міцність розсолу й сіль для заданої ваги мʼяса та води.</p></a>
+          <a class="ms-card ms-card--pad tool-card js-reveal" href="https://meat.mordansoft.com/dry-brine-calculator/"><h3 class="tool-card__title">Dry brine calculator (EN)</h3><p class="tool-card__text">Сіль за вагою для сухого посолу, без нітриту.</p></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="ms-container">
+        <div class="section__head js-reveal">
+          <span class="ms-eyebrow">// Джерела</span>
+          <h2 class="section__title">Звідки беруться числа</h2>
+          <p class="section__lead">Кожен ліміт у SaltCure береться з опублікованої норми USDA/FSIS, а дозу показано поруч із лімітом.</p>
+        </div>
+        <ul class="src-list js-reveal">
+          <li>Бекон: до 200 ppm нітриту при сухому посолі та 120 ppm у розсолі — <a href="https://www.law.cornell.edu/cfr/text/9/424.22" rel="noopener">9 CFR 424.22(b)</a>.</li>
+          <li>Інше засолене мʼясо: до 625 ppm для сухого посолу цілісного шматка, 156 ppm для рубленого — <a href="https://www.law.cornell.edu/cfr/text/9/424.21" rel="noopener">9 CFR 424.21(c)</a>. Для джерки SaltCure навмисно застосовує суворіший ліміт 156 ppm.</li>
+          <li>Нітрат (Cure #2) у беконі не дозволений, тому застосунок блокує його там. Дозу нітриту завжди округлюють униз, ніколи вгору.</li>
+          <li>Ці норми написані для промислових підприємств, а не для домашньої кухні. Ми беремо їх як найкраще публічне числове джерело; результат — не схвалення і не гарантія, а відповідальність за готовий продукт лишається на тобі.</li>
+        </ul>
+        <p class="src-list__faq js-reveal"><a href="#faq">Прочитати питання про нітрит і безпеку</a></p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="ms-container">
+        <div class="section__head js-reveal">
           <span class="ms-eyebrow">// Нітрит і безпека</span>
           <h2 class="section__title">Питання про нітрит і безпеку</h2>
         </div>
@@ -338,10 +380,6 @@
           <div class="ms-card ms-card--pad js-reveal" data-delay="2">
             <p class="case-block__label">Що ми зробили</p>
             <p class="case-block__text">Дизайн, реалізація на Flutter, рушій дозування з перевіркою лімітів FSIS, журнал партій із нагадуваннями, екрани першого запуску й реліз у Google Play та App Store.</p>
-          </div>
-          <div class="ms-card ms-card--pad js-reveal" data-delay="1">
-            <p class="case-block__label">Цифри</p>
-            <p class="case-block__text">Вимірювання триває — перші цифри після стартового періоду релізу.</p>
           </div>
           <div class="ms-card ms-card--pad js-reveal" data-delay="2">
             <p class="case-block__label">Стек</p>
