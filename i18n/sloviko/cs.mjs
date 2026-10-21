@@ -1,0 +1,23 @@
+// Sloviko — Čeština. Překlad: Ija, 2026-10-21.
+export default [
+  "Studio mobilního softwaru",
+  "Na všechny produkty",
+  "Sloviko",
+  "Uč se slova — jednou správnou odpovědí po druhé.",
+  "Minimální trenažér slovíček. Každá karta ukáže slovo; vybereš správný překlad ze šesti. Trefa — slovo je označeno jako naučené. To je celá aplikace.",
+  "Android", "iOS", "Flutter", "Offline-first", "Bez účtu",
+  "Offline-first", "bez trackingu", "bez předplatného",
+  "// Co dělá", "Udělaná, aby zůstala jednoduchá",
+  "Jeden úkol na obrazovku",
+  "Uvidíš slovo — vyber překlad ze šesti. Správné odpovědi označí slovo jako naučené. Žádná menu v cestě.",
+  "Funguje úplně offline",
+  "Celá sada slov žije na zařízení. Uč se v letadle, v metru, s vypnutou sítí.",
+  "Viditelný pokrok",
+  "Tichý počítadlo ukazuje, kolik slov už máš naučených ze sady. Fakta, ne tlak sérií.",
+  "Bez účtu",
+  "Otevři a začni. Bez registrace, bez emailu, bez zbytečných oprávnění.",
+  "Žádný háček. Žádné předplatné.",
+  "Sloviko je malá, soustředěná aplikace, která dělá jednu věc. Slova jsou tvá, data zůstávají v telefonu a není co rušit.",
+  "© 2026 MordanSoft", "Právní informace",
+  "Sloviko — Support", "Sloviko — Privacy", "Sloviko — Terms",
+];

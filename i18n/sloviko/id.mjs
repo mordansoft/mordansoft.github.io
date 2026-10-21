@@ -1,0 +1,23 @@
+// Sloviko — Bahasa Indonesia. Penerjemah: Ija, 2026-10-21.
+export default [
+  "Studio perangkat lunak seluler",
+  "Ke semua produk",
+  "Sloviko",
+  "Pelajari kata — satu jawaban benar dalam satu waktu.",
+  "Pelatih kosakata minimal. Setiap kartu menunjukkan sebuah kata; pilih terjemahan yang benar dari enam opsi. Benar — kata ditandai dipelajari. Itu seluruh aplikasinya.",
+  "Android", "iOS", "Flutter", "Offline-first", "Tanpa akun",
+  "Offline-first", "tanpa pelacakan", "tanpa langganan",
+  "// Yang dilakukan", "Dibuat agar tetap sederhana",
+  "Satu tugas per layar",
+  "Lihat kata — pilih terjemahan dari enam. Jawaban benar menandai kata sebagai dipelajari. Tanpa menu di jalan.",
+  "Berfungsi sepenuhnya offline",
+  "Seluruh set kata hidup di perangkat. Belajar di pesawat, di kereta bawah tanah, dengan jaringan mati.",
+  "Progres yang terlihat",
+  "Penghitung yang tenang menampilkan berapa kata yang sudah Anda pelajari dari set. Fakta, bukan tekanan rangkaian.",
+  "Tanpa akun",
+  "Buka dan mulai. Tanpa pendaftaran, tanpa email, tanpa izin yang tidak diperlukan aplikasi.",
+  "Tanpa jebakan. Tanpa langganan.",
+  "Sloviko adalah aplikasi kecil dan fokus yang melakukan satu hal. Kata-katanya milik Anda, datanya tetap di ponsel, dan tidak ada yang perlu dibatalkan.",
+  "© 2026 MordanSoft", "Legal",
+  "Sloviko — Support", "Sloviko — Privacy", "Sloviko — Terms",
+];

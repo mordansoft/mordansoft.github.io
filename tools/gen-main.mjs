@@ -52,9 +52,10 @@ for (const L of live) {
   if (L.dir) {
     h = h.replace(/(href|src)="(assets|_ds)\//g, '$1="../$2/');
     // Keep the visitor in their language when they jump to another localised page.
-    // SaltCure and AoK are translated in every locale; Sloviko, services, legal are English-only.
+    // SaltCure, AoK and Sloviko are translated in every locale; services and legal are English-only.
     h = h.replace(/href="\/saltcure\/"/g, `href="/${L.dir}/saltcure/"`);
     h = h.replace(/href="\/aok\/"/g, `href="/${L.dir}/aok/"`);
+    h = h.replace(/href="\/sloviko\/"/g, `href="/${L.dir}/sloviko/"`);
   }
   const outDir = L.dir ? `${ROOT}${L.dir}` : ROOT.replace(/\/$/, '');
   mkdirSync(outDir, { recursive: true });

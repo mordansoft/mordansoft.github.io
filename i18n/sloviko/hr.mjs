@@ -1,0 +1,23 @@
+// Sloviko — Hrvatski. Prijevod: Ija, 2026-10-21.
+export default [
+  "Studio mobilnog softvera",
+  "Na sve proizvode",
+  "Sloviko",
+  "Uči riječi — jednim točnim odgovorom u isto vrijeme.",
+  "Minimalni trenažer vokabulara. Svaka kartica pokaže riječ; biraš točan prijevod od šest. Pogodi — i riječ je označena naučena. To je cijela aplikacija.",
+  "Android", "iOS", "Flutter", "Offline-first", "Bez računa",
+  "Offline-first", "bez praćenja", "bez pretplate",
+  "// Što radi", "Napravljena da ostane jednostavna",
+  "Jedan zadatak po ekranu",
+  "Vidiš riječ — biraš prijevod od šest. Točni odgovori označe riječ kao naučenu. Bez izbornika na putu.",
+  "Radi potpuno offline",
+  "Cijeli skup riječi živi na uređaju. Uči u avionu, u metrou, s isključenom mrežom.",
+  "Vidljiv napredak",
+  "Tihi brojač pokazuje koliko si riječi iz skupa naučio. Činjenice, bez pritiska nizova.",
+  "Bez računa",
+  "Otvori i kreni. Bez registracije, bez emaila, bez nepotrebnih dopuštenja.",
+  "Bez kvake. Bez pretplate.",
+  "Sloviko je mala, fokusirana aplikacija koja radi jednu stvar. Riječi su tvoje, podaci ostaju na telefonu i nema što otkazati.",
+  "© 2026 MordanSoft", "Pravne informacije",
+  "Sloviko — Support", "Sloviko — Privacy", "Sloviko — Terms",
+];

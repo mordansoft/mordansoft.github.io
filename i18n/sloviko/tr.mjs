@@ -1,0 +1,23 @@
+// Sloviko — Türkçe. Çeviri: Ija, 2026-10-21.
+export default [
+  "Mobil yazılım stüdyosu",
+  "Tüm ürünlere",
+  "Sloviko",
+  "Kelime öğren — her seferinde bir doğru cevap.",
+  "Minimal bir kelime antrenörü. Her kart bir kelime gösterir; altı seçenekten doğru çeviriyi seçersin. Doğruysa — kelime öğrenildi olarak işaretlenir. Uygulamanın tamamı bu kadar.",
+  "Android", "iOS", "Flutter", "Offline-first", "Hesapsız",
+  "Offline-first", "izleme yok", "abonelik yok",
+  "// Ne yapar", "Basit kalsın diye yapıldı",
+  "Her ekranda bir görev",
+  "Bir kelime gör — altı seçenekten çeviriyi seç. Doğru cevaplar kelimeyi öğrenildi olarak işaretler. Yolda menü yok.",
+  "Tamamen çevrimdışı çalışır",
+  "Tüm kelime seti cihazda yaşar. Uçakta, metroda, ağı kapalı çalış.",
+  "Görülebilir ilerleme",
+  "Sessiz bir sayaç setten kaç kelime öğrendiğini tutar. Gerçekler, seri baskısı değil.",
+  "Hesap gerekmez",
+  "Aç ve başla. Kayıt yok, email yok, uygulamanın ihtiyacı olmayan izin yok.",
+  "Numara yok. Abonelik yok.",
+  "Sloviko, tek bir iş yapan küçük, odaklı bir uygulama. Kelimeler senin, veri telefonunda kalır ve iptal edilecek bir şey yok.",
+  "© 2026 MordanSoft", "Yasal",
+  "Sloviko — Support", "Sloviko — Privacy", "Sloviko — Terms",
+];

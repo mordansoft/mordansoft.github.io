@@ -5,27 +5,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/svg+xml" href="/assets/img/brand/logo-tile.svg">
   <title>Sloviko — MordanSoft</title>
-  <meta name="description" content="Sloviko — мінімалістичний тренажер слів. Обирай правильний переклад, вчи слово за словом. Працює офлайн, без акаунтів.">
+  <meta name="description" content="Sloviko — a minimal vocabulary trainer. Pick the right translation, learn word by word. Offline-first, no accounts.">
   <link rel="canonical" href="https://mordansoft.com/uk/sloviko/">
   <link rel="alternate" hreflang="en" href="https://mordansoft.com/sloviko/">
   <link rel="alternate" hreflang="uk" href="https://mordansoft.com/uk/sloviko/">
+  <link rel="alternate" hreflang="ru" href="https://mordansoft.com/ru/sloviko/">
+  <link rel="alternate" hreflang="pl" href="https://mordansoft.com/pl/sloviko/">
+  <link rel="alternate" hreflang="cs" href="https://mordansoft.com/cs/sloviko/">
+  <link rel="alternate" hreflang="sk" href="https://mordansoft.com/sk/sloviko/">
+  <link rel="alternate" hreflang="be" href="https://mordansoft.com/be/sloviko/">
+  <link rel="alternate" hreflang="bg" href="https://mordansoft.com/bg/sloviko/">
+  <link rel="alternate" hreflang="hr" href="https://mordansoft.com/hr/sloviko/">
+  <link rel="alternate" hreflang="sr" href="https://mordansoft.com/sr/sloviko/">
+  <link rel="alternate" hreflang="sl" href="https://mordansoft.com/sl/sloviko/">
+  <link rel="alternate" hreflang="es" href="https://mordansoft.com/es/sloviko/">
+  <link rel="alternate" hreflang="it" href="https://mordansoft.com/it/sloviko/">
+  <link rel="alternate" hreflang="kk" href="https://mordansoft.com/kk/sloviko/">
+  <link rel="alternate" hreflang="fr" href="https://mordansoft.com/fr/sloviko/">
+  <link rel="alternate" hreflang="pt-BR" href="https://mordansoft.com/pt-br/sloviko/">
+  <link rel="alternate" hreflang="tr" href="https://mordansoft.com/tr/sloviko/">
+  <link rel="alternate" hreflang="de" href="https://mordansoft.com/de/sloviko/">
+  <link rel="alternate" hreflang="id" href="https://mordansoft.com/id/sloviko/">
   <link rel="alternate" hreflang="x-default" href="https://mordansoft.com/sloviko/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="MordanSoft">
   <meta property="og:title" content="Sloviko — MordanSoft">
-  <meta property="og:description" content="Sloviko — мінімалістичний тренажер слів. Обирай правильний переклад, вчи слово за словом. Працює офлайн, без акаунтів.">
+  <meta property="og:description" content="Sloviko — a minimal vocabulary trainer. Pick the right translation, learn word by word. Offline-first, no accounts.">
   <meta property="og:url" content="https://mordansoft.com/uk/sloviko/">
   <meta property="og:locale" content="uk_UA">
   <meta name="twitter:card" content="summary">
 
   <!-- MordanSoft Design System -->
-  <link rel="stylesheet" href="../../_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/fonts.css">
-  <link rel="stylesheet" href="../../_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/colors.css">
-  <link rel="stylesheet" href="../../_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/typography.css">
-  <link rel="stylesheet" href="../../_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/spacing.css">
-  <link rel="stylesheet" href="../../_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/elevation.css">
-  <link rel="stylesheet" href="../../_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/base.css">
-  <link rel="stylesheet" href="../../_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/components/core/core.css">
+  <link rel="stylesheet" href="../_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/fonts.css">
+  <link rel="stylesheet" href="../_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/colors.css">
+  <link rel="stylesheet" href="../_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/typography.css">
+  <link rel="stylesheet" href="../_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/spacing.css">
+  <link rel="stylesheet" href="../_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/elevation.css">
+  <link rel="stylesheet" href="../_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/base.css">
+  <link rel="stylesheet" href="../_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/components/core/core.css">
 
   <!-- Lucide icons -->
   <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
@@ -167,8 +184,18 @@
     .store-badges--lg .store-badge { height: 56px; }
     .store-badge:hover { transform: translateY(-1px); opacity: .9; text-decoration: none; }
     .store-badge img { height: 100%; width: auto; display: block; }
-    .lang-switch { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--text-secondary); text-decoration: none; border: 1px solid var(--border); border-radius: var(--radius-sm, 6px); padding: 2px 8px; margin-left: var(--space-4); }
-    .lang-switch:hover { color: var(--accent-text); border-color: var(--accent); text-decoration: none; }
+    .lang-switch { position: relative; margin-left: var(--space-4); display: inline-block; }
+    .lang-switch > summary { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--text-secondary); background: var(--surface-elevated); border: 1px solid var(--border); border-radius: var(--radius-sm, 6px); padding: 4px 10px; cursor: pointer; list-style: none; display: inline-flex; align-items: center; gap: 6px; user-select: none; }
+    .lang-switch > summary::-webkit-details-marker { display: none; }
+    .lang-switch > summary::marker { content: ''; }
+    .lang-switch > summary:hover { color: var(--text-primary); border-color: var(--border-strong); }
+    .lang-switch[open] > summary { border-color: var(--accent); color: var(--text-primary); }
+    .lang-switch__menu { position: absolute; right: 0; top: calc(100% + 4px); margin: 0; padding: 4px; list-style: none; background: var(--surface-elevated); border: 1px solid var(--border); border-radius: var(--radius-sm, 6px); box-shadow: var(--shadow-lg); min-width: 220px; max-height: 360px; overflow-y: auto; z-index: 100; }
+    .lang-switch__menu li { margin: 0; }
+    .lang-switch__menu a { display: flex; align-items: center; gap: 10px; padding: 6px 10px; font-family: var(--font-sans); font-size: var(--text-sm); color: var(--text-primary); text-decoration: none; border-radius: var(--radius-xs); }
+    .lang-switch__menu a:hover { background: var(--plane-2); text-decoration: none; }
+    .lang-switch__menu a[aria-current="page"] { color: var(--accent-text); font-weight: 500; }
+    .lang-switch__flag { font-size: 15px; line-height: 1; flex: none; }
     .topbar__right { display: inline-flex; align-items: center; }
   </style>
 </head>
@@ -177,7 +204,7 @@
   <!-- Topbar -->
   <div class="topbar">
     <div class="ms-container topbar__inner">
-      <a class="brand" href="/uk/">
+      <a class="brand" href="/">
         <span class="brand__mark">
           <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="6" y="10" width="26" height="26" rx="7" fill="currentColor" opacity="0.22"></rect>
@@ -188,7 +215,7 @@
         </span>
         <span class="brand__name">Mordan<b>Soft</b></span>
       </a>
-      <span class="topbar__right"><span class="topbar__tag">Студія мобільної розробки</span><a class="lang-switch" href="/sloviko/" lang="en">EN</a></span>
+      <span class="topbar__right"><span class="topbar__tag">Мобільна софтверна студія</span><details class="lang-switch"><summary aria-label="Language"><span class="lang-switch__flag" aria-hidden="true">🇺🇦</span><span>Українська</span></summary><ul class="lang-switch__menu"><li><a href="/sloviko/" lang="en"><span class="lang-switch__flag" aria-hidden="true">🇬🇧</span><span>English</span></a></li><li><a href="/uk/sloviko/" lang="uk" aria-current="page"><span class="lang-switch__flag" aria-hidden="true">🇺🇦</span><span>Українська</span></a></li><li><a href="/ru/sloviko/" lang="ru"><span class="lang-switch__flag" aria-hidden="true">🇷🇺</span><span>Русский</span></a></li><li><a href="/pl/sloviko/" lang="pl"><span class="lang-switch__flag" aria-hidden="true">🇵🇱</span><span>Polski</span></a></li><li><a href="/cs/sloviko/" lang="cs"><span class="lang-switch__flag" aria-hidden="true">🇨🇿</span><span>Čeština</span></a></li><li><a href="/sk/sloviko/" lang="sk"><span class="lang-switch__flag" aria-hidden="true">🇸🇰</span><span>Slovenčina</span></a></li><li><a href="/be/sloviko/" lang="be"><span class="lang-switch__flag" aria-hidden="true">🇧🇾</span><span>Беларуская</span></a></li><li><a href="/bg/sloviko/" lang="bg"><span class="lang-switch__flag" aria-hidden="true">🇧🇬</span><span>Български</span></a></li><li><a href="/hr/sloviko/" lang="hr"><span class="lang-switch__flag" aria-hidden="true">🇭🇷</span><span>Hrvatski</span></a></li><li><a href="/sr/sloviko/" lang="sr"><span class="lang-switch__flag" aria-hidden="true">🇷🇸</span><span>Српски</span></a></li><li><a href="/sl/sloviko/" lang="sl"><span class="lang-switch__flag" aria-hidden="true">🇸🇮</span><span>Slovenščina</span></a></li><li><a href="/es/sloviko/" lang="es"><span class="lang-switch__flag" aria-hidden="true">🇪🇸</span><span>Español</span></a></li><li><a href="/it/sloviko/" lang="it"><span class="lang-switch__flag" aria-hidden="true">🇮🇹</span><span>Italiano</span></a></li><li><a href="/kk/sloviko/" lang="kk"><span class="lang-switch__flag" aria-hidden="true">🇰🇿</span><span>Қазақша</span></a></li><li><a href="/fr/sloviko/" lang="fr"><span class="lang-switch__flag" aria-hidden="true">🇫🇷</span><span>Français</span></a></li><li><a href="/pt-br/sloviko/" lang="pt-BR"><span class="lang-switch__flag" aria-hidden="true">🇧🇷</span><span>Português (Brasil)</span></a></li><li><a href="/tr/sloviko/" lang="tr"><span class="lang-switch__flag" aria-hidden="true">🇹🇷</span><span>Türkçe</span></a></li><li><a href="/de/sloviko/" lang="de"><span class="lang-switch__flag" aria-hidden="true">🇩🇪</span><span>Deutsch</span></a></li><li><a href="/id/sloviko/" lang="id"><span class="lang-switch__flag" aria-hidden="true">🇮🇩</span><span>Bahasa Indonesia</span></a></li></ul></details></span>
     </div>
   </div>
 
@@ -198,35 +225,35 @@
       <div class="detail-hero__wash" aria-hidden="true"></div>
       <div class="detail-hero__wash detail-hero__wash--b" aria-hidden="true"></div>
       <div class="ms-container">
-        <a class="ms-btn ms-btn--link detail__back" href="/uk/#products">
-          <i data-lucide="arrow-left"></i> Усі продукти
+        <a class="ms-btn ms-btn--link detail__back" href="/#products">
+          <i data-lucide="arrow-left"></i> До всіх продуктів
         </a>
         <div class="detail-hero__grid">
           <div class="detail-hero__copy" data-reveal>
-            <span class="detail__tile"><img src="../../assets/sloviko-icon.png" alt="Іконка застосунку Sloviko"></span>
+            <span class="detail__tile"><img src="../assets/sloviko-icon.png" alt="Sloviko app icon"></span>
             <h1 class="detail__title">Sloviko</h1>
-            <p class="detail__tagline">Вчи слова — по одній правильній відповіді.</p>
-            <p class="detail__blurb">Мінімалістичний тренажер слів. На кожній картці — слово, а ти обираєш правильний переклад із шести варіантів. Правильно — і слово позначено вивченим. Оце й увесь застосунок.</p>
+            <p class="detail__tagline">Вчи слова — по одній правильній відповіді за раз.</p>
+            <p class="detail__blurb">Мінімальний тренажер лексики. На кожній картці — слово; обираєш правильний переклад із шести варіантів. Відповідь правильна — слово позначається вивченим. Це і є весь застосунок.</p>
             <div class="detail__tags">
               <span class="ms-tag ms-tag--accent">Android</span>
               <span class="ms-tag ms-tag--accent">iOS</span>
               <span class="ms-tag">Flutter</span>
-              <span class="ms-tag">Працює офлайн</span>
+              <span class="ms-tag">Офлайн-перший</span>
               <span class="ms-tag">Без акаунта</span>
             </div>
             <div class="detail__cta store-badges">
-              <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.mordansoft.morseng" target="_blank" rel="noopener" aria-label="Завантажити Sloviko з Google Play"><img src="/assets/badges/google-play.svg" alt="Завантажити з Google Play"></a>
-              <a class="store-badge" href="https://apps.apple.com/us/app/sloviko-english-vocabulary/id6814202372" target="_blank" rel="noopener" aria-label="Завантажити Sloviko з App Store"><img src="/assets/badges/app-store.svg" alt="Завантажити з App Store"></a>
+              <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.mordansoft.morseng" target="_blank" rel="noopener" aria-label="Get Sloviko on Google Play"><img src="/assets/badges/google-play.svg" alt="Get it on Google Play"></a>
+              <a class="store-badge" href="https://apps.apple.com/us/app/sloviko-english-vocabulary/id6814202372" target="_blank" rel="noopener" aria-label="Download Sloviko on the App Store"><img src="/assets/badges/app-store.svg" alt="Download on the App Store"></a>
             </div>
             <div class="detail__specs">
-              <span><b>Працює офлайн</b></span>
-              <span>без стеження</span>
+              <span><b>Офлайн-перший</b></span>
+              <span>без трекінгу</span>
               <span>без підписки</span>
             </div>
           </div>
           <div class="detail-hero__mock" aria-hidden="true">
-            <div class="phone phone--b"><img src="../../assets/sloviko-screen-02.png" alt=""></div>
-            <div class="phone phone--a"><img src="../../assets/sloviko-screen-03.png" alt=""></div>
+            <div class="phone phone--b"><img src="../assets/sloviko-screen-02.png" alt=""></div>
+            <div class="phone phone--a"><img src="../assets/sloviko-screen-03.png" alt=""></div>
             <div class="detail-hero__facet"></div>
           </div>
         </div>
@@ -237,7 +264,7 @@
     <section class="section">
       <div class="ms-container">
         <div class="section__head js-reveal">
-          <span class="ms-eyebrow">// Що він робить</span>
+          <span class="ms-eyebrow">// Що робить</span>
           <h2 class="section__title">Зроблений, щоб лишатися простим</h2>
         </div>
         <div class="detail-features">
@@ -245,28 +272,28 @@
             <span class="feature__icon"><i data-lucide="check-check"></i></span>
             <div>
               <h3 class="feature__title">Одне завдання на екран</h3>
-              <p class="feature__text">Бачиш слово — обираєш переклад із шести варіантів. Правильна відповідь позначає слово вивченим — жодних меню на шляху.</p>
+              <p class="feature__text">Побач слово — обери переклад з шести варіантів. Правильні відповіді позначають слово вивченим. Жодних меню на шляху.</p>
             </div>
           </div>
           <div class="ms-card ms-card--pad feature js-reveal" data-delay="2">
             <span class="feature__icon"><i data-lucide="wifi-off"></i></span>
             <div>
               <h3 class="feature__title">Повністю офлайн</h3>
-              <p class="feature__text">Увесь набір слів живе на пристрої. Вчи в літаку, в метро, з вимкненою мережею.</p>
+              <p class="feature__text">Усі слова живуть на пристрої. Вчися в літаку, у метро, з вимкненою мережею.</p>
             </div>
           </div>
           <div class="ms-card ms-card--pad feature js-reveal" data-delay="1">
             <span class="feature__icon"><i data-lucide="bar-chart-3"></i></span>
             <div>
-              <h3 class="feature__title">Прогрес, який видно</h3>
-              <p class="feature__text">Ненав'язливий лічильник показує, скільки слів із набору вже вивчено. Факти, а не тиск серіями.</p>
+              <h3 class="feature__title">Видимий прогрес</h3>
+              <p class="feature__text">Тихий лічильник показує, скільки слів ти вже вивчив із набору. Факти, а не тиск серіями.</p>
             </div>
           </div>
           <div class="ms-card ms-card--pad feature js-reveal" data-delay="2">
             <span class="feature__icon"><i data-lucide="lock"></i></span>
             <div>
-              <h3 class="feature__title">Акаунт не потрібен</h3>
-              <p class="feature__text">Відкрий — і починай. Без реєстрації, без пошти, без дозволів, які застосунку не потрібні.</p>
+              <h3 class="feature__title">Без акаунта</h3>
+              <p class="feature__text">Відкрив — почав. Без реєстрації, без email, без зайвих дозволів.</p>
             </div>
           </div>
         </div>
@@ -276,11 +303,11 @@
     <!-- Closing -->
     <section class="section detail-close">
       <div class="ms-container ms-container--narrow js-reveal">
-        <h2 class="detail-close__title">Без підступу. Без підписки.</h2>
-        <p class="detail-close__text">Sloviko — невеликий застосунок, що робить одну річ. Слова твої, дані лишаються на телефоні, і скасовувати нічого не треба.</p>
+        <h2 class="detail-close__title">Без підводних каменів. Без підписки.</h2>
+        <p class="detail-close__text">Sloviko — невеликий, сфокусований застосунок, що робить одну річ. Слова твої, дані лишаються в телефоні, скасовувати нічого.</p>
         <div class="store-badges store-badges--lg" style="justify-content: center;">
-          <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.mordansoft.morseng" target="_blank" rel="noopener" aria-label="Завантажити Sloviko з Google Play"><img src="/assets/badges/google-play.svg" alt="Завантажити з Google Play"></a>
-          <a class="store-badge" href="https://apps.apple.com/us/app/sloviko-english-vocabulary/id6814202372" target="_blank" rel="noopener" aria-label="Завантажити Sloviko з App Store"><img src="/assets/badges/app-store.svg" alt="Завантажити з App Store"></a>
+          <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.mordansoft.morseng" target="_blank" rel="noopener" aria-label="Get Sloviko on Google Play"><img src="/assets/badges/google-play.svg" alt="Get it on Google Play"></a>
+          <a class="store-badge" href="https://apps.apple.com/us/app/sloviko-english-vocabulary/id6814202372" target="_blank" rel="noopener" aria-label="Download Sloviko on the App Store"><img src="/assets/badges/app-store.svg" alt="Download on the App Store"></a>
         </div>
       </div>
     </section>
@@ -304,10 +331,10 @@
         </div>
       </div>
       <div class="footer-legal">
-        <h4>Документи</h4>
-        <a href="/sloviko/support.html">Sloviko — підтримка</a>
-        <a href="/legal/sloviko/privacy.html">Sloviko — конфіденційність</a>
-        <a href="/legal/sloviko/terms.html">Sloviko — умови</a>
+        <h4>Правова інформація</h4>
+        <a href="/sloviko/support.html">Sloviko — Support</a>
+        <a href="/legal/sloviko/privacy.html">Sloviko — Privacy</a>
+        <a href="/legal/sloviko/terms.html">Sloviko — Terms</a>
       </div>
     </div>
   </footer>

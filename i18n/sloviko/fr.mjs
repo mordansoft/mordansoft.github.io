@@ -1,0 +1,23 @@
+// Sloviko — Français. Traduction : Ija, 2026-10-21.
+export default [
+  "Studio de logiciels mobiles",
+  "Vers tous les produits",
+  "Sloviko",
+  "Apprends des mots, une bonne réponse à la fois.",
+  "Un entraîneur de vocabulaire minimal. Chaque carte montre un mot ; tu choisis la bonne traduction parmi six. Juste — et le mot est noté appris. C’est toute l’app.",
+  "Android", "iOS", "Flutter", "Offline-first", "Sans compte",
+  "Offline-first", "sans tracking", "sans abonnement",
+  "// Ce qu’elle fait", "Faite pour rester simple",
+  "Une tâche par écran",
+  "Vois un mot — choisis sa traduction parmi six. Les bonnes réponses marquent le mot appris. Pas de menus en travers.",
+  "Fonctionne entièrement hors ligne",
+  "Tout le jeu de mots vit sur l’appareil. Étudie en avion, dans le métro, réseau coupé.",
+  "Un progrès visible",
+  "Un compteur discret montre combien de mots tu as appris sur le jeu. Des faits, pas de pression de séries.",
+  "Pas de compte requis",
+  "Ouvre et commence. Pas d’inscription, pas d’email, pas de permissions dont l’app n’a pas besoin.",
+  "Pas d’arnaque. Pas d’abonnement.",
+  "Sloviko est une petite app ciblée qui fait une seule chose. Les mots sont à toi, les données restent sur ton téléphone, il n’y a rien à résilier.",
+  "© 2026 MordanSoft", "Mentions légales",
+  "Sloviko — Support", "Sloviko — Privacy", "Sloviko — Terms",
+];

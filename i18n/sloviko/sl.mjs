@@ -1,0 +1,23 @@
+// Sloviko — Slovenščina. Prevod: Ija, 2026-10-21.
+export default [
+  "Studio mobilne programske opreme",
+  "K vsem izdelkom",
+  "Sloviko",
+  "Učenje besed — po enem pravilnem odgovoru naenkrat.",
+  "Minimalen trener besedišča. Vsaka kartica pokaže besedo; izbereš pravilen prevod med šestimi. Zadetek — beseda je označena kot naučena. To je cela aplikacija.",
+  "Android", "iOS", "Flutter", "Offline-first", "Brez računa",
+  "Offline-first", "brez sledenja", "brez naročnine",
+  "// Kaj počne", "Narejena, da ostane preprosta",
+  "Ena naloga na zaslon",
+  "Vidiš besedo — izberi prevod med šestimi. Pravilni odgovori označijo besedo kot naučeno. Brez menijev na poti.",
+  "Deluje popolnoma brez povezave",
+  "Cel nabor besed živi na napravi. Učenje na letalu, na metroju, brez omrežja.",
+  "Viden napredek",
+  "Tih števec kaže, koliko besed si že naučil iz nabora. Dejstva, ne pritisk nizov.",
+  "Brez računa",
+  "Odpri in začni. Brez registracije, brez e-pošte, brez nepotrebnih dovoljenj.",
+  "Brez trika. Brez naročnine.",
+  "Sloviko je majhna, osredotočena aplikacija, ki počne eno stvar. Besede so tvoje, podatki ostanejo na telefonu in ni ničesar za odpovedati.",
+  "© 2026 MordanSoft", "Pravne informacije",
+  "Sloviko — Support", "Sloviko — Privacy", "Sloviko — Terms",
+];
