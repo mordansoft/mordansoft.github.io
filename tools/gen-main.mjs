@@ -49,7 +49,12 @@ for (const L of live) {
   h = h.replace(/(<link rel="canonical" href=")[^"]*(">)/, `$1${urlOf(L)}$2`)
     .replace(/(<meta property="og:url" content=")[^"]*(">)/, `$1${urlOf(L)}$2`)
     .replace(/(<meta property="og:locale" content=")[^"]*(">)/, `$1${L.og}$2`);
-  if (L.dir) h = h.replace(/(href|src)="(assets|_ds)\//g, '$1="../$2/');
+  if (L.dir) {
+    h = h.replace(/(href|src)="(assets|_ds)\//g, '$1="../$2/');
+    // Keep the visitor in their language when they jump to SaltCure (localised in every locale).
+    // AoK, Sloviko, services, legal are English-only — leave those hrefs on root.
+    h = h.replace(/href="\/saltcure\/"/g, `href="/${L.dir}/saltcure/"`);
+  }
   const outDir = L.dir ? `${ROOT}${L.dir}` : ROOT.replace(/\/$/, '');
   mkdirSync(outDir, { recursive: true });
   writeFileSync(`${outDir}/index.html`, h);
