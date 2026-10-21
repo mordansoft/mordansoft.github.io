@@ -9,6 +9,23 @@
   <link rel="canonical" href="https://mordansoft.com/services/app-data-review/">
   <link rel="alternate" hreflang="en" href="https://mordansoft.com/services/app-data-review/">
   <link rel="alternate" hreflang="uk" href="https://mordansoft.com/uk/services/app-data-review/">
+  <link rel="alternate" hreflang="ru" href="https://mordansoft.com/ru/services/app-data-review/">
+  <link rel="alternate" hreflang="pl" href="https://mordansoft.com/pl/services/app-data-review/">
+  <link rel="alternate" hreflang="cs" href="https://mordansoft.com/cs/services/app-data-review/">
+  <link rel="alternate" hreflang="sk" href="https://mordansoft.com/sk/services/app-data-review/">
+  <link rel="alternate" hreflang="be" href="https://mordansoft.com/be/services/app-data-review/">
+  <link rel="alternate" hreflang="bg" href="https://mordansoft.com/bg/services/app-data-review/">
+  <link rel="alternate" hreflang="hr" href="https://mordansoft.com/hr/services/app-data-review/">
+  <link rel="alternate" hreflang="sr" href="https://mordansoft.com/sr/services/app-data-review/">
+  <link rel="alternate" hreflang="sl" href="https://mordansoft.com/sl/services/app-data-review/">
+  <link rel="alternate" hreflang="es" href="https://mordansoft.com/es/services/app-data-review/">
+  <link rel="alternate" hreflang="it" href="https://mordansoft.com/it/services/app-data-review/">
+  <link rel="alternate" hreflang="kk" href="https://mordansoft.com/kk/services/app-data-review/">
+  <link rel="alternate" hreflang="fr" href="https://mordansoft.com/fr/services/app-data-review/">
+  <link rel="alternate" hreflang="pt-BR" href="https://mordansoft.com/pt-br/services/app-data-review/">
+  <link rel="alternate" hreflang="tr" href="https://mordansoft.com/tr/services/app-data-review/">
+  <link rel="alternate" hreflang="de" href="https://mordansoft.com/de/services/app-data-review/">
+  <link rel="alternate" hreflang="id" href="https://mordansoft.com/id/services/app-data-review/">
   <link rel="alternate" hreflang="x-default" href="https://mordansoft.com/services/app-data-review/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="MordanSoft">
@@ -206,8 +223,18 @@
     .faq details[open] summary::after { content: "–"; }
     .faq p { margin: var(--space-3) 0 0; font-size: var(--text-base); color: var(--text-secondary); line-height: var(--leading-normal); }
     @media (min-width: 900px) { .packages { grid-template-columns: repeat(3, 1fr); } .terms { grid-template-columns: 1fr 1fr; } }
-    .lang-switch { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--text-secondary); text-decoration: none; border: 1px solid var(--border); border-radius: var(--radius-sm, 6px); padding: 2px 8px; margin-left: var(--space-4); }
-    .lang-switch:hover { color: var(--accent-text); border-color: var(--accent); text-decoration: none; }
+    .lang-switch { position: relative; margin-left: var(--space-4); display: inline-block; }
+    .lang-switch > summary { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--text-secondary); background: var(--surface-elevated); border: 1px solid var(--border); border-radius: var(--radius-sm, 6px); padding: 4px 10px; cursor: pointer; list-style: none; display: inline-flex; align-items: center; gap: 6px; user-select: none; }
+    .lang-switch > summary::-webkit-details-marker { display: none; }
+    .lang-switch > summary::marker { content: ''; }
+    .lang-switch > summary:hover { color: var(--text-primary); border-color: var(--border-strong); }
+    .lang-switch[open] > summary { border-color: var(--accent); color: var(--text-primary); }
+    .lang-switch__menu { position: absolute; right: 0; top: calc(100% + 4px); margin: 0; padding: 4px; list-style: none; background: var(--surface-elevated); border: 1px solid var(--border); border-radius: var(--radius-sm, 6px); box-shadow: var(--shadow-lg); min-width: 220px; max-height: 360px; overflow-y: auto; z-index: 100; }
+    .lang-switch__menu li { margin: 0; }
+    .lang-switch__menu a { display: flex; align-items: center; gap: 10px; padding: 6px 10px; font-family: var(--font-sans); font-size: var(--text-sm); color: var(--text-primary); text-decoration: none; border-radius: var(--radius-xs); }
+    .lang-switch__menu a:hover { background: var(--plane-2); text-decoration: none; }
+    .lang-switch__menu a[aria-current="page"] { color: var(--accent-text); font-weight: 500; }
+    .lang-switch__flag { font-size: 15px; line-height: 1; flex: none; }
     .topbar__right { display: inline-flex; align-items: center; }
   </style>
 </head>
@@ -226,7 +253,7 @@
         </span>
         <span class="brand__name">Mordan<b>Soft</b></span>
       </a>
-      <span class="topbar__right"><span class="topbar__tag">Mobile software studio</span><a class="lang-switch" href="/uk/services/app-data-review/" lang="uk">УКР</a></span>
+      <span class="topbar__right"><span class="topbar__tag">Mobile software studio</span><details class="lang-switch"><summary aria-label="Language"><span class="lang-switch__flag" aria-hidden="true">🇬🇧</span><span>English</span></summary><ul class="lang-switch__menu"><li><a href="/services/app-data-review/" lang="en" aria-current="page"><span class="lang-switch__flag" aria-hidden="true">🇬🇧</span><span>English</span></a></li><li><a href="/uk/services/app-data-review/" lang="uk"><span class="lang-switch__flag" aria-hidden="true">🇺🇦</span><span>Українська</span></a></li><li><a href="/ru/services/app-data-review/" lang="ru"><span class="lang-switch__flag" aria-hidden="true">🇷🇺</span><span>Русский</span></a></li><li><a href="/pl/services/app-data-review/" lang="pl"><span class="lang-switch__flag" aria-hidden="true">🇵🇱</span><span>Polski</span></a></li><li><a href="/cs/services/app-data-review/" lang="cs"><span class="lang-switch__flag" aria-hidden="true">🇨🇿</span><span>Čeština</span></a></li><li><a href="/sk/services/app-data-review/" lang="sk"><span class="lang-switch__flag" aria-hidden="true">🇸🇰</span><span>Slovenčina</span></a></li><li><a href="/be/services/app-data-review/" lang="be"><span class="lang-switch__flag" aria-hidden="true">🇧🇾</span><span>Беларуская</span></a></li><li><a href="/bg/services/app-data-review/" lang="bg"><span class="lang-switch__flag" aria-hidden="true">🇧🇬</span><span>Български</span></a></li><li><a href="/hr/services/app-data-review/" lang="hr"><span class="lang-switch__flag" aria-hidden="true">🇭🇷</span><span>Hrvatski</span></a></li><li><a href="/sr/services/app-data-review/" lang="sr"><span class="lang-switch__flag" aria-hidden="true">🇷🇸</span><span>Српски</span></a></li><li><a href="/sl/services/app-data-review/" lang="sl"><span class="lang-switch__flag" aria-hidden="true">🇸🇮</span><span>Slovenščina</span></a></li><li><a href="/es/services/app-data-review/" lang="es"><span class="lang-switch__flag" aria-hidden="true">🇪🇸</span><span>Español</span></a></li><li><a href="/it/services/app-data-review/" lang="it"><span class="lang-switch__flag" aria-hidden="true">🇮🇹</span><span>Italiano</span></a></li><li><a href="/kk/services/app-data-review/" lang="kk"><span class="lang-switch__flag" aria-hidden="true">🇰🇿</span><span>Қазақша</span></a></li><li><a href="/fr/services/app-data-review/" lang="fr"><span class="lang-switch__flag" aria-hidden="true">🇫🇷</span><span>Français</span></a></li><li><a href="/pt-br/services/app-data-review/" lang="pt-BR"><span class="lang-switch__flag" aria-hidden="true">🇧🇷</span><span>Português (Brasil)</span></a></li><li><a href="/tr/services/app-data-review/" lang="tr"><span class="lang-switch__flag" aria-hidden="true">🇹🇷</span><span>Türkçe</span></a></li><li><a href="/de/services/app-data-review/" lang="de"><span class="lang-switch__flag" aria-hidden="true">🇩🇪</span><span>Deutsch</span></a></li><li><a href="/id/services/app-data-review/" lang="id"><span class="lang-switch__flag" aria-hidden="true">🇮🇩</span><span>Bahasa Indonesia</span></a></li></ul></details></span>
     </div>
   </div>
 
