@@ -6,11 +6,6 @@
     <xhtml:link rel="alternate" hreflang="uk" href="https://mordansoft.com/uk/services/app-data-review/"/>
   </url>
   <url>
-    <loc>https://mordansoft.com/uk/aok/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mordansoft.com/aok/"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://mordansoft.com/uk/aok/"/>
-  </url>
-  <url>
     <loc>https://mordansoft.com/uk/services/app-data-review/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://mordansoft.com/services/app-data-review/"/>
     <xhtml:link rel="alternate" hreflang="uk" href="https://mordansoft.com/uk/services/app-data-review/"/>
@@ -415,6 +410,420 @@
     <xhtml:link rel="alternate" hreflang="tr" href="https://mordansoft.com/tr/saltcure/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://mordansoft.com/de/saltcure/"/>
     <xhtml:link rel="alternate" hreflang="id" href="https://mordansoft.com/id/saltcure/"/>
+  </url>
+  <url>
+    <loc>https://mordansoft.com/uk/aok/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mordansoft.com/aok/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://mordansoft.com/uk/aok/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mordansoft.com/ru/aok/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://mordansoft.com/pl/aok/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mordansoft.com/cs/aok/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://mordansoft.com/sk/aok/"/>
+    <xhtml:link rel="alternate" hreflang="be" href="https://mordansoft.com/be/aok/"/>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://mordansoft.com/bg/aok/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://mordansoft.com/hr/aok/"/>
+    <xhtml:link rel="alternate" hreflang="sr" href="https://mordansoft.com/sr/aok/"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://mordansoft.com/sl/aok/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mordansoft.com/es/aok/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://mordansoft.com/it/aok/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://mordansoft.com/kk/aok/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mordansoft.com/fr/aok/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://mordansoft.com/pt-br/aok/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://mordansoft.com/tr/aok/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mordansoft.com/de/aok/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://mordansoft.com/id/aok/"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mordansoft.com/ru/aok/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mordansoft.com/aok/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://mordansoft.com/uk/aok/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mordansoft.com/ru/aok/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://mordansoft.com/pl/aok/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mordansoft.com/cs/aok/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://mordansoft.com/sk/aok/"/>
+    <xhtml:link rel="alternate" hreflang="be" href="https://mordansoft.com/be/aok/"/>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://mordansoft.com/bg/aok/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://mordansoft.com/hr/aok/"/>
+    <xhtml:link rel="alternate" hreflang="sr" href="https://mordansoft.com/sr/aok/"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://mordansoft.com/sl/aok/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mordansoft.com/es/aok/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://mordansoft.com/it/aok/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://mordansoft.com/kk/aok/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mordansoft.com/fr/aok/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://mordansoft.com/pt-br/aok/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://mordansoft.com/tr/aok/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mordansoft.com/de/aok/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://mordansoft.com/id/aok/"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mordansoft.com/pl/aok/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mordansoft.com/aok/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://mordansoft.com/uk/aok/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mordansoft.com/ru/aok/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://mordansoft.com/pl/aok/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mordansoft.com/cs/aok/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://mordansoft.com/sk/aok/"/>
+    <xhtml:link rel="alternate" hreflang="be" href="https://mordansoft.com/be/aok/"/>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://mordansoft.com/bg/aok/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://mordansoft.com/hr/aok/"/>
+    <xhtml:link rel="alternate" hreflang="sr" href="https://mordansoft.com/sr/aok/"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://mordansoft.com/sl/aok/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mordansoft.com/es/aok/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://mordansoft.com/it/aok/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://mordansoft.com/kk/aok/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mordansoft.com/fr/aok/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://mordansoft.com/pt-br/aok/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://mordansoft.com/tr/aok/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mordansoft.com/de/aok/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://mordansoft.com/id/aok/"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mordansoft.com/cs/aok/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mordansoft.com/aok/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://mordansoft.com/uk/aok/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mordansoft.com/ru/aok/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://mordansoft.com/pl/aok/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mordansoft.com/cs/aok/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://mordansoft.com/sk/aok/"/>
+    <xhtml:link rel="alternate" hreflang="be" href="https://mordansoft.com/be/aok/"/>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://mordansoft.com/bg/aok/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://mordansoft.com/hr/aok/"/>
+    <xhtml:link rel="alternate" hreflang="sr" href="https://mordansoft.com/sr/aok/"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://mordansoft.com/sl/aok/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mordansoft.com/es/aok/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://mordansoft.com/it/aok/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://mordansoft.com/kk/aok/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mordansoft.com/fr/aok/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://mordansoft.com/pt-br/aok/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://mordansoft.com/tr/aok/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mordansoft.com/de/aok/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://mordansoft.com/id/aok/"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mordansoft.com/sk/aok/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mordansoft.com/aok/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://mordansoft.com/uk/aok/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mordansoft.com/ru/aok/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://mordansoft.com/pl/aok/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mordansoft.com/cs/aok/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://mordansoft.com/sk/aok/"/>
+    <xhtml:link rel="alternate" hreflang="be" href="https://mordansoft.com/be/aok/"/>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://mordansoft.com/bg/aok/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://mordansoft.com/hr/aok/"/>
+    <xhtml:link rel="alternate" hreflang="sr" href="https://mordansoft.com/sr/aok/"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://mordansoft.com/sl/aok/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mordansoft.com/es/aok/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://mordansoft.com/it/aok/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://mordansoft.com/kk/aok/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mordansoft.com/fr/aok/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://mordansoft.com/pt-br/aok/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://mordansoft.com/tr/aok/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mordansoft.com/de/aok/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://mordansoft.com/id/aok/"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mordansoft.com/be/aok/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mordansoft.com/aok/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://mordansoft.com/uk/aok/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mordansoft.com/ru/aok/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://mordansoft.com/pl/aok/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mordansoft.com/cs/aok/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://mordansoft.com/sk/aok/"/>
+    <xhtml:link rel="alternate" hreflang="be" href="https://mordansoft.com/be/aok/"/>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://mordansoft.com/bg/aok/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://mordansoft.com/hr/aok/"/>
+    <xhtml:link rel="alternate" hreflang="sr" href="https://mordansoft.com/sr/aok/"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://mordansoft.com/sl/aok/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mordansoft.com/es/aok/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://mordansoft.com/it/aok/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://mordansoft.com/kk/aok/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mordansoft.com/fr/aok/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://mordansoft.com/pt-br/aok/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://mordansoft.com/tr/aok/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mordansoft.com/de/aok/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://mordansoft.com/id/aok/"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mordansoft.com/bg/aok/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mordansoft.com/aok/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://mordansoft.com/uk/aok/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mordansoft.com/ru/aok/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://mordansoft.com/pl/aok/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mordansoft.com/cs/aok/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://mordansoft.com/sk/aok/"/>
+    <xhtml:link rel="alternate" hreflang="be" href="https://mordansoft.com/be/aok/"/>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://mordansoft.com/bg/aok/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://mordansoft.com/hr/aok/"/>
+    <xhtml:link rel="alternate" hreflang="sr" href="https://mordansoft.com/sr/aok/"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://mordansoft.com/sl/aok/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mordansoft.com/es/aok/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://mordansoft.com/it/aok/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://mordansoft.com/kk/aok/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mordansoft.com/fr/aok/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://mordansoft.com/pt-br/aok/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://mordansoft.com/tr/aok/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mordansoft.com/de/aok/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://mordansoft.com/id/aok/"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mordansoft.com/hr/aok/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mordansoft.com/aok/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://mordansoft.com/uk/aok/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mordansoft.com/ru/aok/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://mordansoft.com/pl/aok/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mordansoft.com/cs/aok/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://mordansoft.com/sk/aok/"/>
+    <xhtml:link rel="alternate" hreflang="be" href="https://mordansoft.com/be/aok/"/>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://mordansoft.com/bg/aok/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://mordansoft.com/hr/aok/"/>
+    <xhtml:link rel="alternate" hreflang="sr" href="https://mordansoft.com/sr/aok/"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://mordansoft.com/sl/aok/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mordansoft.com/es/aok/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://mordansoft.com/it/aok/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://mordansoft.com/kk/aok/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mordansoft.com/fr/aok/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://mordansoft.com/pt-br/aok/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://mordansoft.com/tr/aok/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mordansoft.com/de/aok/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://mordansoft.com/id/aok/"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mordansoft.com/sr/aok/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mordansoft.com/aok/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://mordansoft.com/uk/aok/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mordansoft.com/ru/aok/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://mordansoft.com/pl/aok/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mordansoft.com/cs/aok/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://mordansoft.com/sk/aok/"/>
+    <xhtml:link rel="alternate" hreflang="be" href="https://mordansoft.com/be/aok/"/>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://mordansoft.com/bg/aok/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://mordansoft.com/hr/aok/"/>
+    <xhtml:link rel="alternate" hreflang="sr" href="https://mordansoft.com/sr/aok/"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://mordansoft.com/sl/aok/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mordansoft.com/es/aok/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://mordansoft.com/it/aok/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://mordansoft.com/kk/aok/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mordansoft.com/fr/aok/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://mordansoft.com/pt-br/aok/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://mordansoft.com/tr/aok/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mordansoft.com/de/aok/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://mordansoft.com/id/aok/"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mordansoft.com/sl/aok/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mordansoft.com/aok/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://mordansoft.com/uk/aok/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mordansoft.com/ru/aok/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://mordansoft.com/pl/aok/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mordansoft.com/cs/aok/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://mordansoft.com/sk/aok/"/>
+    <xhtml:link rel="alternate" hreflang="be" href="https://mordansoft.com/be/aok/"/>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://mordansoft.com/bg/aok/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://mordansoft.com/hr/aok/"/>
+    <xhtml:link rel="alternate" hreflang="sr" href="https://mordansoft.com/sr/aok/"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://mordansoft.com/sl/aok/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mordansoft.com/es/aok/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://mordansoft.com/it/aok/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://mordansoft.com/kk/aok/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mordansoft.com/fr/aok/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://mordansoft.com/pt-br/aok/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://mordansoft.com/tr/aok/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mordansoft.com/de/aok/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://mordansoft.com/id/aok/"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mordansoft.com/es/aok/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mordansoft.com/aok/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://mordansoft.com/uk/aok/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mordansoft.com/ru/aok/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://mordansoft.com/pl/aok/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mordansoft.com/cs/aok/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://mordansoft.com/sk/aok/"/>
+    <xhtml:link rel="alternate" hreflang="be" href="https://mordansoft.com/be/aok/"/>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://mordansoft.com/bg/aok/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://mordansoft.com/hr/aok/"/>
+    <xhtml:link rel="alternate" hreflang="sr" href="https://mordansoft.com/sr/aok/"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://mordansoft.com/sl/aok/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mordansoft.com/es/aok/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://mordansoft.com/it/aok/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://mordansoft.com/kk/aok/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mordansoft.com/fr/aok/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://mordansoft.com/pt-br/aok/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://mordansoft.com/tr/aok/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mordansoft.com/de/aok/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://mordansoft.com/id/aok/"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mordansoft.com/it/aok/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mordansoft.com/aok/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://mordansoft.com/uk/aok/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mordansoft.com/ru/aok/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://mordansoft.com/pl/aok/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mordansoft.com/cs/aok/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://mordansoft.com/sk/aok/"/>
+    <xhtml:link rel="alternate" hreflang="be" href="https://mordansoft.com/be/aok/"/>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://mordansoft.com/bg/aok/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://mordansoft.com/hr/aok/"/>
+    <xhtml:link rel="alternate" hreflang="sr" href="https://mordansoft.com/sr/aok/"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://mordansoft.com/sl/aok/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mordansoft.com/es/aok/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://mordansoft.com/it/aok/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://mordansoft.com/kk/aok/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mordansoft.com/fr/aok/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://mordansoft.com/pt-br/aok/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://mordansoft.com/tr/aok/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mordansoft.com/de/aok/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://mordansoft.com/id/aok/"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mordansoft.com/kk/aok/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mordansoft.com/aok/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://mordansoft.com/uk/aok/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mordansoft.com/ru/aok/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://mordansoft.com/pl/aok/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mordansoft.com/cs/aok/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://mordansoft.com/sk/aok/"/>
+    <xhtml:link rel="alternate" hreflang="be" href="https://mordansoft.com/be/aok/"/>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://mordansoft.com/bg/aok/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://mordansoft.com/hr/aok/"/>
+    <xhtml:link rel="alternate" hreflang="sr" href="https://mordansoft.com/sr/aok/"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://mordansoft.com/sl/aok/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mordansoft.com/es/aok/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://mordansoft.com/it/aok/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://mordansoft.com/kk/aok/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mordansoft.com/fr/aok/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://mordansoft.com/pt-br/aok/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://mordansoft.com/tr/aok/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mordansoft.com/de/aok/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://mordansoft.com/id/aok/"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mordansoft.com/fr/aok/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mordansoft.com/aok/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://mordansoft.com/uk/aok/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mordansoft.com/ru/aok/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://mordansoft.com/pl/aok/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mordansoft.com/cs/aok/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://mordansoft.com/sk/aok/"/>
+    <xhtml:link rel="alternate" hreflang="be" href="https://mordansoft.com/be/aok/"/>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://mordansoft.com/bg/aok/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://mordansoft.com/hr/aok/"/>
+    <xhtml:link rel="alternate" hreflang="sr" href="https://mordansoft.com/sr/aok/"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://mordansoft.com/sl/aok/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mordansoft.com/es/aok/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://mordansoft.com/it/aok/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://mordansoft.com/kk/aok/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mordansoft.com/fr/aok/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://mordansoft.com/pt-br/aok/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://mordansoft.com/tr/aok/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mordansoft.com/de/aok/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://mordansoft.com/id/aok/"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mordansoft.com/pt-br/aok/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mordansoft.com/aok/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://mordansoft.com/uk/aok/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mordansoft.com/ru/aok/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://mordansoft.com/pl/aok/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mordansoft.com/cs/aok/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://mordansoft.com/sk/aok/"/>
+    <xhtml:link rel="alternate" hreflang="be" href="https://mordansoft.com/be/aok/"/>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://mordansoft.com/bg/aok/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://mordansoft.com/hr/aok/"/>
+    <xhtml:link rel="alternate" hreflang="sr" href="https://mordansoft.com/sr/aok/"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://mordansoft.com/sl/aok/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mordansoft.com/es/aok/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://mordansoft.com/it/aok/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://mordansoft.com/kk/aok/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mordansoft.com/fr/aok/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://mordansoft.com/pt-br/aok/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://mordansoft.com/tr/aok/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mordansoft.com/de/aok/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://mordansoft.com/id/aok/"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mordansoft.com/tr/aok/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mordansoft.com/aok/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://mordansoft.com/uk/aok/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mordansoft.com/ru/aok/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://mordansoft.com/pl/aok/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mordansoft.com/cs/aok/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://mordansoft.com/sk/aok/"/>
+    <xhtml:link rel="alternate" hreflang="be" href="https://mordansoft.com/be/aok/"/>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://mordansoft.com/bg/aok/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://mordansoft.com/hr/aok/"/>
+    <xhtml:link rel="alternate" hreflang="sr" href="https://mordansoft.com/sr/aok/"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://mordansoft.com/sl/aok/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mordansoft.com/es/aok/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://mordansoft.com/it/aok/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://mordansoft.com/kk/aok/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mordansoft.com/fr/aok/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://mordansoft.com/pt-br/aok/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://mordansoft.com/tr/aok/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mordansoft.com/de/aok/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://mordansoft.com/id/aok/"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mordansoft.com/de/aok/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mordansoft.com/aok/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://mordansoft.com/uk/aok/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mordansoft.com/ru/aok/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://mordansoft.com/pl/aok/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mordansoft.com/cs/aok/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://mordansoft.com/sk/aok/"/>
+    <xhtml:link rel="alternate" hreflang="be" href="https://mordansoft.com/be/aok/"/>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://mordansoft.com/bg/aok/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://mordansoft.com/hr/aok/"/>
+    <xhtml:link rel="alternate" hreflang="sr" href="https://mordansoft.com/sr/aok/"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://mordansoft.com/sl/aok/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mordansoft.com/es/aok/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://mordansoft.com/it/aok/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://mordansoft.com/kk/aok/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mordansoft.com/fr/aok/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://mordansoft.com/pt-br/aok/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://mordansoft.com/tr/aok/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mordansoft.com/de/aok/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://mordansoft.com/id/aok/"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mordansoft.com/id/aok/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mordansoft.com/aok/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://mordansoft.com/uk/aok/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mordansoft.com/ru/aok/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://mordansoft.com/pl/aok/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://mordansoft.com/cs/aok/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://mordansoft.com/sk/aok/"/>
+    <xhtml:link rel="alternate" hreflang="be" href="https://mordansoft.com/be/aok/"/>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://mordansoft.com/bg/aok/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://mordansoft.com/hr/aok/"/>
+    <xhtml:link rel="alternate" hreflang="sr" href="https://mordansoft.com/sr/aok/"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://mordansoft.com/sl/aok/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mordansoft.com/es/aok/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://mordansoft.com/it/aok/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://mordansoft.com/kk/aok/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mordansoft.com/fr/aok/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://mordansoft.com/pt-br/aok/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://mordansoft.com/tr/aok/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mordansoft.com/de/aok/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://mordansoft.com/id/aok/"/>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://mordansoft.com/</loc>
