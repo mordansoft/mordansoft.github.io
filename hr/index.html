@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/brand/logo-tile.svg">
+  <title>MordanSoft — mobile software studio</title>
+  <meta name="description" content="MordanSoft builds mobile apps — our own and for clients who need them done right. Flutter studio shipping apps and the data reviews that keep them growing.">
+  <link rel="canonical" href="https://mordansoft.com/hr/">
+  <link rel="alternate" hreflang="en" href="https://mordansoft.com/">
+  <link rel="alternate" hreflang="uk" href="https://mordansoft.com/uk/">
+  <link rel="alternate" hreflang="ru" href="https://mordansoft.com/ru/">
+  <link rel="alternate" hreflang="pl" href="https://mordansoft.com/pl/">
+  <link rel="alternate" hreflang="cs" href="https://mordansoft.com/cs/">
+  <link rel="alternate" hreflang="sk" href="https://mordansoft.com/sk/">
+  <link rel="alternate" hreflang="be" href="https://mordansoft.com/be/">
+  <link rel="alternate" hreflang="bg" href="https://mordansoft.com/bg/">
+  <link rel="alternate" hreflang="hr" href="https://mordansoft.com/hr/">
+  <link rel="alternate" hreflang="sr" href="https://mordansoft.com/sr/">
+  <link rel="alternate" hreflang="sl" href="https://mordansoft.com/sl/">
+  <link rel="alternate" hreflang="es" href="https://mordansoft.com/es/">
+  <link rel="alternate" hreflang="it" href="https://mordansoft.com/it/">
+  <link rel="alternate" hreflang="kk" href="https://mordansoft.com/kk/">
+  <link rel="alternate" hreflang="fr" href="https://mordansoft.com/fr/">
+  <link rel="alternate" hreflang="pt-BR" href="https://mordansoft.com/pt-br/">
+  <link rel="alternate" hreflang="tr" href="https://mordansoft.com/tr/">
+  <link rel="alternate" hreflang="de" href="https://mordansoft.com/de/">
+  <link rel="alternate" hreflang="id" href="https://mordansoft.com/id/">
+  <link rel="alternate" hreflang="x-default" href="https://mordansoft.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="MordanSoft">
+  <meta property="og:title" content="MordanSoft — mobile software studio">
+  <meta property="og:description" content="MordanSoft builds mobile apps — our own and for clients who need them done right.">
+  <meta property="og:url" content="https://mordansoft.com/hr/">
+  <meta property="og:locale" content="hr_HR">
+  <meta name="twitter:card" content="summary">
+
+  <!-- MordanSoft Design System -->
+  <link rel="stylesheet" href="../_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/fonts.css">
+  <link rel="stylesheet" href="../_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/colors.css">
+  <link rel="stylesheet" href="../_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/typography.css">
+  <link rel="stylesheet" href="../_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/spacing.css">
+  <link rel="stylesheet" href="../_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/elevation.css">
+  <link rel="stylesheet" href="../_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/base.css">
+  <link rel="stylesheet" href="../_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/components/core/core.css">
+
+  <!-- Lucide icons -->
+  <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+
+  <style>
+    .topbar { position: sticky; top: 0; z-index: 50; background: color-mix(in oklch, var(--surface) 85%, transparent); backdrop-filter: saturate(140%) blur(14px); -webkit-backdrop-filter: saturate(140%) blur(14px); border-bottom: 1px solid var(--border-faint); }
+    .topbar__inner { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+    .brand { display: inline-flex; align-items: center; gap: var(--space-3); color: var(--text-primary); text-decoration: none; }
+    .brand:hover { text-decoration: none; }
+    .brand__mark { width: 28px; height: 28px; display: inline-flex; color: var(--text-primary); flex: none; }
+    .brand__mark svg { width: 100%; height: 100%; }
+    .brand__name { font-weight: 600; font-size: 1.0625rem; letter-spacing: -0.02em; color: var(--text-primary); }
+    .brand__name b { color: var(--accent-text); font-weight: 600; }
+    .topbar__nav { display: inline-flex; align-items: center; gap: var(--space-6); }
+    .topbar__nav a { color: var(--text-secondary); font-size: var(--text-sm); text-decoration: none; }
+    .topbar__nav a:hover { color: var(--text-primary); text-decoration: none; }
+    .lang-switch { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--text-secondary); background: var(--surface-elevated); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 4px 8px; cursor: pointer; }
+    .lang-switch:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+
+    .hero { position: relative; isolation: isolate; overflow: hidden; padding: var(--space-20) 0 var(--space-16); }
+    .hero__wash { position: absolute; border-radius: 50%; filter: blur(90px); z-index: -1; pointer-events: none; }
+    .hero__wash--a { width: 560px; height: 560px; top: -160px; right: -120px; opacity: 0.40; background: radial-gradient(circle, var(--ember-400), transparent 66%); }
+    .hero__wash--b { width: 460px; height: 460px; top: 120px; left: -200px; opacity: 0.28; background: radial-gradient(circle, var(--plane-3), transparent 70%); }
+    .hero__grid { display: grid; grid-template-columns: 1fr; gap: var(--space-12); align-items: center; }
+    .hero__inner { position: relative; max-width: 560px; }
+    .hero__title { margin: var(--space-4) 0 0; font-size: var(--text-display-xl); font-weight: 700; letter-spacing: var(--tracking-tightest); line-height: var(--leading-display); color: var(--text-primary); }
+    .hero__title--accent { color: var(--accent-text); }
+    .hero__lead { margin-top: var(--space-6); font-size: var(--text-lead); color: var(--text-secondary); line-height: var(--leading-snug); max-width: 50ch; }
+    .hero__cta { display: flex; align-items: center; gap: var(--space-3); margin-top: var(--space-8); flex-wrap: wrap; }
+    .hero__chips { display: flex; align-items: center; gap: var(--space-2); margin-top: var(--space-6); flex-wrap: wrap; }
+
+    .hero__collage { position: relative; min-height: 440px; }
+    .hero-card { position: absolute; background: var(--surface-elevated); border: 1px solid var(--border-faint); border-radius: var(--radius-xl); box-shadow: var(--shadow-lg); padding: var(--space-5); display: flex; flex-direction: column; gap: var(--space-3); }
+    .hero-card--main { top: 0; left: 20px; width: 280px; min-height: 420px; background: var(--grey-900); color: var(--grey-100); border-color: var(--grey-900); padding: var(--space-6); }
+    .hero-card--main .hero-card__label { color: var(--grey-500); }
+    .hero-card--sub-a { top: 50px; right: 0; width: 220px; }
+    .hero-card--sub-b { bottom: 10px; right: 20px; width: 240px; }
+    .hero-card__row { display: flex; align-items: center; gap: var(--space-3); }
+    .hero-card__icon { width: 44px; height: 44px; border-radius: var(--radius-md); flex: none; display: grid; place-items: center; background: var(--accent-subtle); color: var(--accent); }
+    .hero-card--main .hero-card__icon { background: var(--ember-500); color: var(--grey-0); }
+    .hero-card__name { font-weight: 600; font-size: var(--text-base); }
+    .hero-card__label { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--text-muted); margin-top: 2px; }
+    .hero-card__headline { font-size: var(--text-h5); font-weight: 600; line-height: var(--leading-snug); }
+    .hero-card__panel { background: rgba(255,255,255,0.06); border-radius: var(--radius-md); padding: var(--space-3) var(--space-4); }
+    .hero-card__panel-label { font-family: var(--font-mono); font-size: var(--text-xs); opacity: 0.6; letter-spacing: 0.08em; }
+    .hero-card__panel-value { font-family: var(--font-mono); font-size: 2.25rem; font-weight: 500; margin-top: var(--space-1); }
+    .hero-card__hero-art { height: 150px; border-radius: var(--radius-md); background: linear-gradient(135deg, var(--grey-700), var(--grey-850)); margin-top: var(--space-2); }
+    .hero-card__desc { font-size: var(--text-sm); color: var(--text-secondary); }
+    .hero-card--main .hero-card__desc { color: var(--grey-400); }
+
+    @media (min-width: 960px) {
+      .hero { padding: var(--space-24) 0; }
+      .hero__grid { grid-template-columns: 1.05fr 0.95fr; gap: var(--space-16); }
+    }
+
+    [data-reveal-delay="1"] { animation-delay: 90ms; }
+    [data-reveal-delay="2"] { animation-delay: 180ms; }
+    [data-reveal-delay="3"] { animation-delay: 270ms; }
+
+    .proof { background: var(--surface-inverse); color: var(--grey-100); padding: var(--space-12) 0; }
+    .proof__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-8); }
+    @media (min-width: 720px) { .proof__grid { grid-template-columns: repeat(4, 1fr); } }
+    .proof__num { font-family: var(--font-mono); font-size: 2.75rem; font-weight: 500; letter-spacing: -0.02em; line-height: 1; color: var(--grey-0); }
+    .proof__label { font-family: var(--font-mono); font-size: var(--text-xs); letter-spacing: 0.10em; text-transform: uppercase; color: var(--grey-500); margin-top: var(--space-2); }
+
+    .section { padding: var(--section-y) 0; border-bottom: 1px solid var(--border-faint); }
+    .section:last-of-type { border-bottom: none; }
+    .section--muted { background: var(--plane-2); border-bottom: none; }
+    .section__head { display: flex; flex-direction: column; gap: var(--space-3); max-width: 760px; margin-bottom: var(--space-10); }
+    .section__head--split { max-width: none; display: grid; grid-template-columns: 1fr; gap: var(--space-5); align-items: end; }
+    @media (min-width: 820px) { .section__head--split { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); } }
+    .section__title { font-size: var(--text-h1); font-weight: 600; letter-spacing: var(--tracking-tighter); color: var(--text-primary); }
+    .section__kicker { font-size: var(--text-base); color: var(--text-muted); max-width: 36ch; }
+
+    .products { display: grid; grid-template-columns: 1fr; gap: var(--space-5); }
+    @media (min-width: 720px) { .products { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1020px) { .products { grid-template-columns: repeat(3, 1fr); } }
+    .product { background: var(--surface-elevated); border: 1px solid var(--border-faint); border-radius: var(--radius-lg); padding: var(--space-6); display: flex; flex-direction: column; gap: var(--space-4); box-shadow: var(--shadow-sm); }
+    .product__head { display: flex; align-items: center; gap: var(--space-3); }
+    .product__icon { width: 56px; height: 56px; border-radius: var(--radius-md); flex: none; overflow: hidden; background: var(--grey-100); }
+    .product__icon img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .product__name { font-size: var(--text-h4); font-weight: 600; letter-spacing: var(--tracking-tight); color: var(--text-primary); margin: 0; }
+    .product__sub { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--text-muted); margin-top: 2px; }
+    .product__desc { font-size: var(--text-sm); color: var(--text-secondary); line-height: var(--leading-normal); min-height: 4.5em; }
+    .product__shot { height: 180px; border-radius: var(--radius-md); overflow: hidden; background: var(--surface-sunken); display: grid; place-items: center; }
+    .product__shot img { max-width: 100%; max-height: 100%; object-fit: contain; }
+    .product__foot { display: flex; align-items: center; justify-content: space-between; padding-top: var(--space-4); border-top: 1px solid var(--border-faint); }
+    .product__badges { display: inline-flex; gap: var(--space-2); flex-wrap: wrap; }
+    .product__link { font-size: var(--text-sm); font-weight: 500; color: var(--accent-text); text-decoration: none; }
+    .product__link:hover { text-decoration: none; color: var(--accent-press); }
+    .badge-pill { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-mono); font-size: var(--text-xs); padding: 4px 10px; border-radius: var(--radius-pill); background: var(--surface-sunken); color: var(--text-secondary); }
+
+    .do-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-4); }
+    @media (min-width: 640px) { .do-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 980px) { .do-grid { grid-template-columns: repeat(4, 1fr); } }
+    .do-card { background: var(--surface-elevated); border: 1px solid var(--border-faint); border-radius: var(--radius-lg); padding: var(--space-5); display: flex; flex-direction: column; gap: var(--space-2); }
+    .do-card__num { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--accent-text); letter-spacing: 0.1em; }
+    .do-card__title { font-size: var(--text-h5); font-weight: 600; color: var(--text-primary); margin: var(--space-1) 0 0; }
+    .do-card__text { font-size: var(--text-sm); color: var(--text-secondary); line-height: var(--leading-normal); margin: var(--space-2) 0 0; }
+
+    .review-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-10); align-items: start; }
+    @media (min-width: 940px) { .review-grid { grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: var(--space-16); } }
+    .review-sub { font-size: var(--text-h5); font-weight: 500; color: var(--accent-text); margin: var(--space-4) 0 0; }
+    .review-body { font-size: var(--text-base); color: var(--text-secondary); line-height: var(--leading-normal); margin: var(--space-5) 0 0; max-width: 56ch; }
+    .review-list { list-style: none; padding: 0; margin: var(--space-5) 0 0; display: flex; flex-direction: column; gap: var(--space-3); }
+    .review-list li { display: flex; gap: var(--space-3); font-size: var(--text-sm); color: var(--text-primary); line-height: var(--leading-normal); }
+    .review-list li span.diamond { color: var(--accent-text); font-family: var(--font-mono); flex: none; }
+    .review-note { font-size: var(--text-sm); color: var(--text-muted); font-style: italic; margin: var(--space-5) 0 0; padding-left: var(--space-4); border-left: 2px solid var(--border); line-height: var(--leading-normal); }
+    .review-actions { display: flex; gap: var(--space-3); margin-top: var(--space-6); flex-wrap: wrap; }
+
+    .sample { background: var(--surface-elevated); border: 1px solid var(--border-faint); border-radius: var(--radius-lg); padding: var(--space-6); box-shadow: var(--shadow-sm); }
+    .sample__caption { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--text-muted); margin-top: var(--space-2); }
+    .sample__tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border-faint); border: 1px solid var(--border-faint); border-radius: var(--radius-md); overflow: hidden; margin-top: var(--space-5); }
+    .sample__tile { background: var(--surface-elevated); padding: var(--space-4); }
+    .sample__tile-label { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--text-muted); letter-spacing: 0.08em; }
+    .sample__tile-what { font-size: var(--text-base); font-weight: 500; color: var(--text-primary); margin-top: var(--space-2); }
+    .sample__tile-value { font-family: var(--font-mono); font-size: var(--text-h3); font-weight: 500; color: var(--text-primary); margin-top: var(--space-2); }
+    .sample__tile-value--accent { color: var(--accent-text); }
+    .sample__list { background: var(--plane-2); border-radius: var(--radius-md); padding: var(--space-5); margin-top: var(--space-4); font-family: var(--font-mono); font-size: var(--text-sm); color: var(--text-secondary); line-height: 1.9; }
+    .sample__list b { color: var(--accent-text); font-weight: 500; }
+    .sample__list .dim { opacity: 0.45; }
+    .sample__disclaimer { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--text-muted); margin-top: var(--space-4); letter-spacing: 0.03em; }
+
+    .contact { background: var(--surface-inverse); color: var(--grey-100); }
+    .contact__grid { display: grid; grid-template-columns: 1fr; gap: var(--space-10); }
+    @media (min-width: 940px) { .contact__grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: var(--space-16); } }
+    .contact .section__title { color: var(--grey-0); }
+    .contact__eyebrow { color: var(--accent); font-family: var(--font-mono); font-size: var(--text-eyebrow); letter-spacing: var(--tracking-eyebrow); text-transform: uppercase; }
+    .contact__lead { font-size: var(--text-base); color: var(--grey-400); margin-top: var(--space-5); max-width: 44ch; }
+    .contact__rows { display: flex; flex-direction: column; gap: var(--space-3); margin-top: var(--space-8); }
+    .contact__row { display: flex; gap: var(--space-4); align-items: center; font-size: var(--text-sm); }
+    .contact__row-label { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--grey-500); letter-spacing: 0.1em; width: 72px; flex: none; }
+    .contact__row a { color: var(--grey-100); text-decoration: none; }
+    .contact__row a:hover { color: var(--accent); text-decoration: none; }
+
+    .form { background: var(--surface-elevated); color: var(--text-primary); border-radius: var(--radius-lg); padding: var(--space-6); }
+    .form__row { display: grid; grid-template-columns: 1fr; gap: var(--space-4); margin-bottom: var(--space-4); }
+    @media (min-width: 580px) { .form__row--two { grid-template-columns: 1fr 1fr; } }
+    .form label { display: block; font-size: var(--text-sm); font-weight: 500; color: var(--text-secondary); margin-bottom: var(--space-2); }
+    .form input, .form select, .form textarea { width: 100%; box-sizing: border-box; font: inherit; font-size: var(--text-sm); padding: var(--space-3) var(--space-4); border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--surface-elevated); color: var(--text-primary); }
+    .form input:focus, .form select:focus, .form textarea:focus { outline: 2px solid var(--accent); outline-offset: 1px; border-color: var(--accent); }
+    .form textarea { resize: vertical; min-height: 110px; }
+    .form__foot { display: flex; justify-content: space-between; align-items: center; gap: var(--space-4); flex-wrap: wrap; margin-top: var(--space-2); }
+    .form__hint { font-size: var(--text-xs); color: var(--text-muted); }
+
+    .site-footer { background: var(--surface-elevated); border-top: 1px solid var(--border); padding: var(--space-12) 0 var(--space-16); }
+    .footer-inner { display: grid; grid-template-columns: 1fr; gap: var(--space-8); }
+    @media (min-width: 820px) { .footer-inner { grid-template-columns: 1.2fr 1fr 1fr 1fr; } }
+    .footer-brand { display: flex; align-items: flex-start; gap: var(--space-3); }
+    .footer-brand__mark { width: 32px; height: 32px; flex: none; color: var(--text-primary); }
+    .footer-brand__mark svg { width: 100%; height: 100%; }
+    .footer-brand__name { font-weight: 600; font-size: 1rem; letter-spacing: -0.015em; color: var(--text-primary); }
+    .footer-brand__name b { color: var(--accent-text); font-weight: 600; }
+    .footer-brand__tag { font-size: var(--text-sm); color: var(--text-muted); margin-top: var(--space-2); line-height: var(--leading-normal); max-width: 32ch; }
+    .footer-copy { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--text-muted); margin-top: var(--space-4); }
+    .footer-col h4 { font-family: var(--font-mono); font-size: var(--text-xs); font-weight: 500; text-transform: uppercase; letter-spacing: 0.10em; color: var(--text-muted); margin: 0 0 var(--space-3) 0; }
+    .footer-col a { display: block; font-size: var(--text-sm); color: var(--text-secondary); text-decoration: none; padding: var(--space-1) 0; }
+    .footer-col a:hover { color: var(--accent-text); text-decoration: none; }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .js-reveal { opacity: 0; transform: translateY(16px); transition: opacity 420ms var(--ease-out), transform 420ms var(--ease-out); }
+      .js-reveal.is-in { opacity: 1; transform: none; }
+      .js-reveal[data-delay="1"] { transition-delay: 80ms; }
+      .js-reveal[data-delay="2"] { transition-delay: 160ms; }
+      .js-reveal[data-delay="3"] { transition-delay: 240ms; }
+      .js-reveal[data-delay="4"] { transition-delay: 320ms; }
+    }
+
+    @media (max-width: 960px) { .hero__collage { display: none; } }
+    @media (max-width: 720px) {
+      .ms-container { padding-left: var(--space-5); padding-right: var(--space-5); }
+      .hero { padding: var(--space-12) 0 var(--space-10); }
+      .hero__title { font-size: clamp(2.25rem, 11vw, 3.25rem); }
+      .hero__lead { font-size: 1.0625rem; margin-top: var(--space-5); max-width: none; }
+      .hero__cta .ms-btn { width: 100%; justify-content: center; }
+      .section { padding: var(--space-12) 0; }
+      .section__head { margin-bottom: var(--space-8); }
+      .section__title { font-size: clamp(1.5rem, 6.5vw, 2rem); }
+      .proof__num { font-size: 2.25rem; }
+    }
+    @media (max-width: 560px) { .topbar__nav { display: none; } }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="ms-container topbar__inner">
+      <a class="brand" href="/">
+        <span class="brand__mark">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="6" y="10" width="26" height="26" rx="7" fill="currentColor" opacity="0.22"></rect>
+            <rect x="12" y="14" width="26" height="26" rx="7" fill="currentColor" opacity="0.45"></rect>
+            <rect x="18" y="18" width="24" height="24" rx="7" fill="#E0632C"></rect>
+            <rect x="24" y="24" width="12" height="12" rx="3.5" fill="#000000" opacity="0.16"></rect>
+          </svg>
+        </span>
+        <span class="brand__name">Mordan<b>Soft</b></span>
+      </a>
+      <nav class="topbar__nav" aria-label="Primary">
+        <a href="#services">Usluge</a>
+        <a href="#products">Naše aplikacije</a>
+        <a href="#review">App data review</a>
+        <a href="#contact">Kontakt</a>
+        <select class="lang-switch" aria-label="Language" onchange="location.href=this.value"><option value="/">English</option><option value="/uk/">Українська</option><option value="/ru/">Русский</option><option value="/pl/">Polski</option><option value="/cs/">Čeština</option><option value="/sk/">Slovenčina</option><option value="/be/">Беларуская</option><option value="/bg/">Български</option><option value="/hr/" selected>Hrvatski</option><option value="/sr/">Српски</option><option value="/sl/">Slovenščina</option><option value="/es/">Español</option><option value="/it/">Italiano</option><option value="/kk/">Қазақша</option><option value="/fr/">Français</option><option value="/pt-br/">Português (Brasil)</option><option value="/tr/">Türkçe</option><option value="/de/">Deutsch</option><option value="/id/">Bahasa Indonesia</option></select>
+      </nav>
+    </div>
+  </div>
+
+  <header class="hero">
+    <div class="hero__wash hero__wash--a" aria-hidden="true"></div>
+    <div class="hero__wash hero__wash--b" aria-hidden="true"></div>
+    <div class="ms-container">
+      <div class="hero__grid">
+        <div class="hero__inner">
+          <span class="ms-eyebrow" data-reveal style="color: var(--accent-text)">// Neovisni mobilni studio · od 2014.</span>
+          <h1 class="hero__title" data-reveal data-reveal-delay="1">Mobilne aplikacije,<br>objavljene<br>i <span class="hero__title--accent">i dalje održavane u trgovinama.</span></h1>
+          <p class="hero__lead" data-reveal data-reveal-delay="2">Flutter studio koji vodi developer s više od 13 godina iskustva. Rad po ugovoru za osnivače i timove te naše vlastite male aplikacije u trgovinama.</p>
+          <div class="hero__cta" data-reveal data-reveal-delay="3">
+            <a class="ms-btn ms-btn--primary ms-btn--lg" href="#services">
+              Za osnivače i timove
+              <span class="ms-btn__icon"><i data-lucide="arrow-right"></i></span>
+            </a>
+            <a class="ms-btn ms-btn--secondary ms-btn--lg" href="#products">
+              Pogledajte aplikacije
+              <span class="ms-btn__icon"><i data-lucide="arrow-right"></i></span>
+            </a>
+          </div>
+          <div class="hero__chips" data-reveal data-reveal-delay="3">
+            <span class="badge-pill">U trgovinama od 2014.</span>
+            <span class="badge-pill">Flutter · iOS · Android</span>
+          </div>
+        </div>
+        <div class="hero__collage" aria-hidden="true">
+          <div class="hero-card hero-card--main">
+            <div class="hero-card__label">AoK — Angle of Knife</div>
+            <div class="hero-card__icon"><i data-lucide="triangle-ruler"></i></div>
+            <div class="hero-card__headline">Kad je nož više od noža</div>
+            <div class="hero-card__panel">
+              <div class="hero-card__panel-label">TRENUTNI KUT</div>
+              <div class="hero-card__panel-value">17.5°</div>
+            </div>
+            <div class="hero-card__hero-art"></div>
+          </div>
+          <div class="hero-card hero-card--sub-a">
+            <div class="hero-card__row">
+              <div class="hero-card__icon"><i data-lucide="beef"></i></div>
+              <div>
+                <div class="hero-card__name">SaltCure</div>
+                <div class="hero-card__label">Kalkulator soljenja mesa</div>
+              </div>
+            </div>
+            <div class="hero-card__desc">Kalkulator nitrita za domaću charcuterie.</div>
+          </div>
+          <div class="hero-card hero-card--sub-b">
+            <div class="hero-card__row">
+              <div class="hero-card__icon"><i data-lucide="book-open"></i></div>
+              <div>
+                <div class="hero-card__name">Sloviko</div>
+                <div class="hero-card__label">Trenažer vokabulara</div>
+              </div>
+            </div>
+            <div class="hero-card__desc">Minimalni trenažer riječ po riječ, offline.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="proof" aria-label="Studio in numbers">
+    <div class="ms-container">
+      <div class="proof__grid">
+        <div><div class="proof__num">10+</div><div class="proof__label">Aplikacija u trgovinama</div></div>
+        <div><div class="proof__num">100K+</div><div class="proof__label">Instalacija ukupno</div></div>
+        <div><div class="proof__num">★ 4.6</div><div class="proof__label">Prosječna ocjena</div></div>
+        <div><div class="proof__num">13+</div><div class="proof__label">Godina u produkciji</div></div>
+      </div>
+    </div>
+  </section>
+
+  <main>
+
+    <section class="section" id="products">
+      <div class="ms-container">
+        <div class="section__head section__head--split js-reveal">
+          <div>
+            <span class="ms-eyebrow">// Naše aplikacije</span>
+            <h2 class="section__title">Proizvodi MORS u punom ciklusu.<br>Objavljeni, održavani, mjereni.</h2>
+          </div>
+          <p class="section__kicker">Svaki je nastao iz vlastite stvarne potrebe — kuhinja, suhomesnati proizvodi, jezici.</p>
+        </div>
+        <div class="products">
+
+          <article class="product js-reveal" data-delay="1">
+            <div class="product__head">
+              <div class="product__icon"><img src="../assets/aok-icon.png" alt="AoK app icon"></div>
+              <div><h3 class="product__name">AoK</h3><div class="product__sub">Angle of Knife</div></div>
+            </div>
+            <p class="product__desc">Pomoćnik za oštrenje kuhinjskih i džepnih noževa. Uči kut, broji poteze, vodi dnevnik oštrice.</p>
+            <div class="product__shot"><img src="../assets/shots/03_knife_card.png" alt="AoK knife card screen" loading="lazy"></div>
+            <div class="product__foot">
+              <div class="product__badges">
+                <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.mordansoft.aok" target="_blank" rel="noopener" aria-label="Get AoK on Google Play"><img src="../assets/badges/google-play.svg" alt="Google Play" style="height:28px"></a>
+                <a class="store-badge" href="https://apps.apple.com/us/app/angle-of-knife-sharpening/id6739965153" target="_blank" rel="noopener" aria-label="Download AoK on the App Store"><img src="../assets/badges/app-store.svg" alt="App Store" style="height:28px"></a>
+              </div>
+              <a class="product__link" href="/aok/">Otvori &rarr;</a>
+            </div>
+          </article>
+
+          <article class="product js-reveal" data-delay="2">
+            <div class="product__head">
+              <div class="product__icon"><img src="../assets/saltcure/icon.png" alt="SaltCure app icon"></div>
+              <div><h3 class="product__name">SaltCure</h3><div class="product__sub">Meat Cure Calculator</div></div>
+            </div>
+            <p class="product__desc">Kalkulator soli za soljenje i dnevnik serija za domaću charcuterie. Offline, bez računa, dnevnik za ispis.</p>
+            <div class="product__shot"><img src="../assets/saltcure/screen-01.png" alt="SaltCure cure calculator screen" loading="lazy"></div>
+            <div class="product__foot">
+              <div class="product__badges">
+                <a class="store-badge" href="/saltcure/go/play/" target="_blank" rel="noopener" aria-label="Get SaltCure on Google Play"><img src="../assets/badges/google-play.svg" alt="Google Play" style="height:28px"></a>
+                <a class="store-badge" href="/saltcure/go/app-store/" target="_blank" rel="noopener" aria-label="Download SaltCure on the App Store"><img src="../assets/badges/app-store.svg" alt="App Store" style="height:28px"></a>
+              </div>
+              <a class="product__link" href="/saltcure/">Otvori &rarr;</a>
+            </div>
+          </article>
+
+          <article class="product js-reveal" data-delay="3">
+            <div class="product__head">
+              <div class="product__icon"><img src="../assets/sloviko-icon.png" alt="Sloviko app icon"></div>
+              <div><h3 class="product__name">Sloviko</h3><div class="product__sub">Trenažer vokabulara</div></div>
+            </div>
+            <p class="product__desc">Minimalni trenažer vokabulara — odaberi točan prijevod, uči riječ po riječ. Offline, bez računa.</p>
+            <div class="product__shot"><img src="../assets/sloviko-screen-03.png" alt="Sloviko word screen" loading="lazy"></div>
+            <div class="product__foot">
+              <div class="product__badges">
+                <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.mordansoft.morseng" target="_blank" rel="noopener" aria-label="Get Sloviko on Google Play"><img src="../assets/badges/google-play.svg" alt="Google Play" style="height:28px"></a>
+                <a class="store-badge" href="https://apps.apple.com/us/app/sloviko-english-vocabulary/id6814202372" target="_blank" rel="noopener" aria-label="Download Sloviko on the App Store"><img src="../assets/badges/app-store.svg" alt="App Store" style="height:28px"></a>
+              </div>
+              <a class="product__link" href="/sloviko/">Otvori &rarr;</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--muted" id="services">
+      <div class="ms-container">
+        <div class="section__head js-reveal">
+          <span class="ms-eyebrow">// Za osnivače i timove</span>
+          <h2 class="section__title">Objavljujemo aplikacije.<br>I nakon toga čitamo brojke.</h2>
+        </div>
+        <div class="do-grid">
+          <div class="do-card js-reveal" data-delay="1"><div class="do-card__num">01</div><h3 class="do-card__title">Razvoj mobilnih aplikacija</h3><p class="do-card__text">Flutter, iOS, Android — od ideje do objave u trgovini.</p></div>
+          <div class="do-card js-reveal" data-delay="2"><div class="do-card__num">02</div><h3 class="do-card__title">Backend i podaci</h3><p class="do-card__text">Python, SQL, integracije sa sustavima koje već koristite.</p></div>
+          <div class="do-card js-reveal" data-delay="3"><div class="do-card__num">03</div><h3 class="do-card__title">Isporuka uz AI</h3><p class="do-card__text">Suvremeni alati — brži buildovi, čistiji diffovi, manje izgubljenih primopredaja.</p></div>
+          <div class="do-card js-reveal" data-delay="4"><div class="do-card__num">04</div><h3 class="do-card__title">Održavanje i podrška</h3><p class="do-card__text">Duga partnerstva, ne jednokratni projekti.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="review">
+      <div class="ms-container">
+        <div class="review-grid">
+          <div class="js-reveal">
+            <span class="ms-eyebrow">// Naša znakovna usluga</span>
+            <h2 class="section__title" style="margin-top: var(--space-3)">App data review.</h2>
+            <p class="review-sub">Dosta nagađanja. Čitaj podatke.</p>
+            <p class="review-body">Male se aplikacije često vode po osjećaju jer brojke žive u četiri nadzorne ploče koje međusobno ne razgovaraju. Spajamo Google Play Console, App Store Connect, servis pretplata i analitiku u jedan skup podataka te vraćamo pisano izvješće: gdje otpadaju instalacije, probe i oni koji plaćaju i koliko svaki pad košta mjesečno.</p>
+            <ul class="review-list">
+              <li><span class="diamond">◆</span><span>Jedan skup iz svih izvora koje aplikacija već ima</span></li>
+              <li><span class="diamond">◆</span><span>Izvješće s novcem uz svaku točku pada</span></li>
+              <li><span class="diamond">◆</span><span>Prioritetni popis koraka, najvrjednije prvo</span></li>
+            </ul>
+            <p class="review-note">Izvještavamo što govore brojke. Rast ne obećavamo — ovisi o tome što ćete učiniti s nalazima.</p>
+            <div class="review-actions">
+              <a class="ms-btn ms-btn--primary" href="#contact">Zatraži ponudu<span class="ms-btn__icon"><i data-lucide="arrow-right"></i></span></a>
+              <a class="ms-btn ms-btn--secondary" href="/services/app-data-review/">Detalji</a>
+            </div>
+          </div>
+
+          <div class="sample js-reveal" data-delay="1">
+            <span class="ms-eyebrow">// Ogledno izvješće</span>
+            <div class="sample__caption">Izmišljen slučaj · fitness aplikacija s pretplatom · 48K instalacija/mj</div>
+            <div class="sample__tiles">
+              <div class="sample__tile"><div class="sample__tile-label">PRIJE</div><div class="sample__tile-what">Instalacija &rarr; proba</div><div class="sample__tile-value">6.1%</div></div>
+              <div class="sample__tile"><div class="sample__tile-label">PRONAĐENO</div><div class="sample__tile-what">Vrata paywalla</div><div class="sample__tile-value sample__tile-value--accent">−38%</div></div>
+              <div class="sample__tile"><div class="sample__tile-label">TROŠAK</div><div class="sample__tile-what">Mjesečno</div><div class="sample__tile-value">$4,200</div></div>
+            </div>
+            <div class="sample__list">
+              <div><b>01</b> &nbsp;Pomaknite paywall nakon prvog treninga &nbsp;·&nbsp; proc. +$3.1K/mj</div>
+              <div><b>02</b> &nbsp;Popravite D1 pad onboardinga na Androidu 14 &nbsp;·&nbsp; proc. +$900/mj</div>
+              <div><b>03</b> &nbsp;A/B oglasa u trgovini &nbsp;·&nbsp; proc. +12% instalacija</div>
+              <div class="dim"><b>04</b> &nbsp;Eksperiment s doživotnom cijenom &nbsp;·&nbsp; proc. +$2.4K/mj</div>
+              <div class="dim"><b>05</b> &nbsp;Tekst podsjetnika za probu &nbsp;·&nbsp; proc. +$600/mj</div>
+            </div>
+            <div class="sample__disclaimer">// BROJKE SU ILUSTRATIVNE. VAŠE IZVJEŠĆE KORISTI VAŠE PODATKE.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="ms-container">
+        <div class="contact__grid">
+          <div>
+            <span class="contact__eyebrow">// Javite se</span>
+            <h2 class="section__title" style="margin-top: var(--space-3)">Recite nam o<br>svojoj aplikaciji.</h2>
+            <p class="contact__lead">Nekoliko podataka pomaže da odgovorimo točno. Odgovaramo u dva radna dana — pon-pet, kijevsko vrijeme.</p>
+            <div class="contact__rows">
+              <div class="contact__row"><span class="contact__row-label">EMAIL</span><a href="mailto:mordansoft@gmail.com">mordansoft@gmail.com</a></div>
+              <div class="contact__row"><span class="contact__row-label">GITHUB</span><a href="https://github.com/artemasieiev" target="_blank" rel="noopener">@artemasieiev</a></div>
+            </div>
+          </div>
+
+          <form class="form" id="contact-form" novalidate>
+            <div class="form__row form__row--two">
+              <div><label for="cf-name">Vaše ime</label><input type="text" id="cf-name" name="name" placeholder="Ime Prezime" required></div>
+              <div><label for="cf-email">Email</label><input type="email" id="cf-email" name="email" placeholder="ime@tvrtka.hr" required></div>
+            </div>
+            <div class="form__row form__row--two">
+              <div><label for="cf-topic">O čemu se radi?</label><select id="cf-topic" name="topic"><option>App data review</option><option>Izgraditi novu Flutter aplikaciju</option><option>Pomoć s postojećom aplikacijom</option><option>Nešto drugo</option></select></div>
+              <div><label for="cf-installs">Instalacija dosad</label><select id="cf-installs" name="installs"><option>Još nije objavljeno</option><option>Ispod 10K</option><option>10K – 100K</option><option>100K – 1M</option><option>Preko 1M</option></select></div>
+            </div>
+            <div class="form__row">
+              <div><label for="cf-message">Što trebate?</label><textarea id="cf-message" name="message" rows="4" placeholder="Nekoliko redaka o aplikaciji, pitanje, rok ako postoji." required></textarea></div>
+            </div>
+            <div class="form__foot">
+              <span class="form__hint">Bez računa, bez newslettera. Samo odgovor.</span>
+              <button type="submit" class="ms-btn ms-btn--primary">Pošalji<span class="ms-btn__icon"><i data-lucide="arrow-right"></i></span></button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="ms-container footer-inner">
+      <div>
+        <div class="footer-brand">
+          <span class="footer-brand__mark" aria-hidden="true">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="6" y="10" width="26" height="26" rx="7" fill="currentColor" opacity="0.22"></rect>
+              <rect x="12" y="14" width="26" height="26" rx="7" fill="currentColor" opacity="0.45"></rect>
+              <rect x="18" y="18" width="24" height="24" rx="7" fill="#E0632C"></rect>
+              <rect x="24" y="24" width="12" height="12" rx="3.5" fill="#000000" opacity="0.16"></rect>
+            </svg>
+          </span>
+          <div>
+            <div class="footer-brand__name">Mordan<b>Soft</b></div>
+            <div class="footer-brand__tag">Neovisni studio za mobilni softver. Ukrajina.</div>
+          </div>
+        </div>
+        <div class="footer-copy">© 2026 MordanSoft</div>
+      </div>
+      <div class="footer-col">
+        <h4>Aplikacije</h4>
+        <a href="/aok/">AoK — Angle of Knife</a>
+        <a href="/saltcure/">SaltCure</a>
+        <a href="/sloviko/">Sloviko</a>
+      </div>
+      <div class="footer-col">
+        <h4>Usluge</h4>
+        <a href="/services/app-data-review/">App data review</a>
+        <a href="#services">Mobilni razvoj</a>
+        <a href="#contact">Kontakt</a>
+      </div>
+      <div class="footer-col">
+        <h4>Pravne informacije</h4>
+        <a href="/legal/aok/privacy.html">AoK — Privacy</a>
+        <a href="/legal/aok/terms.html">AoK — Terms</a>
+        <a href="/legal/sloviko/privacy.html">Sloviko — Privacy</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    if (window.lucide) lucide.createIcons();
+    (function () {
+      var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var els = document.querySelectorAll('.js-reveal');
+      if (reduced) { els.forEach(function (el) { el.classList.add('is-in'); }); return; }
+      if (!('IntersectionObserver' in window)) { els.forEach(function (el) { el.classList.add('is-in'); }); return; }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('is-in'); io.unobserve(en.target); } });
+      }, { threshold: 0.08, rootMargin: '0px 0px -5% 0px' });
+      els.forEach(function (el) { io.observe(el); });
+    }());
+    (function () {
+      var form = document.getElementById('contact-form');
+      if (!form) return;
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var name = form.name.value.trim(); var email = form.email.value.trim();
+        var topic = form.topic.value; var installs = form.installs.value;
+        var message = form.message.value.trim();
+        if (!name || !email || !message) { alert('Molimo ispunite ime, email i poruku.'); return; }
+        var subject = '[mordansoft.com] ' + topic + ' — ' + name;
+        var body = 'From: ' + name + ' <' + email + '>\n' + 'Topic: ' + topic + '\n' + 'Installs: ' + installs + '\n\n' + message + '\n';
+        window.location.href = 'mailto:mordansoft@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+      });
+    }());
+  </script>
+
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "5a3f2bc95732486688415649c2f82eee"}'></script>
+</body>
+</html>
