@@ -10,14 +10,14 @@ const BASE = 'https://mordansoft.com';
 const MEAT = 'https://meat.mordansoft.com';
 // Same languages, folders and names as the meat.mordansoft.com calculators.
 const LANGS = [
-  ['en', '', 'en_US', 'English'], ['uk', 'uk', 'uk_UA', 'Українська'], ['ru', 'ru', 'ru_RU', 'Русский'],
-  ['pl', 'pl', 'pl_PL', 'Polski'], ['cs', 'cs', 'cs_CZ', 'Čeština'], ['sk', 'sk', 'sk_SK', 'Slovenčina'],
-  ['be', 'be', 'be_BY', 'Беларуская'], ['bg', 'bg', 'bg_BG', 'Български'], ['hr', 'hr', 'hr_HR', 'Hrvatski'],
-  ['sr', 'sr', 'sr_RS', 'Српски'], ['sl', 'sl', 'sl_SI', 'Slovenščina'], ['es', 'es', 'es_ES', 'Español'],
-  ['it', 'it', 'it_IT', 'Italiano'], ['kk', 'kk', 'kk_KZ', 'Қазақша'], ['fr', 'fr', 'fr_FR', 'Français'],
-  ['pt-BR', 'pt-br', 'pt_BR', 'Português (Brasil)'], ['tr', 'tr', 'tr_TR', 'Türkçe'], ['de', 'de', 'de_DE', 'Deutsch'],
-  ['id', 'id', 'id_ID', 'Bahasa Indonesia'],
-].map(([code, dir, og, name]) => ({ code, dir, og, name }));
+  ['en', '', 'en_US', 'English', '🇬🇧'], ['uk', 'uk', 'uk_UA', 'Українська', '🇺🇦'], ['ru', 'ru', 'ru_RU', 'Русский', '🇷🇺'],
+  ['pl', 'pl', 'pl_PL', 'Polski', '🇵🇱'], ['cs', 'cs', 'cs_CZ', 'Čeština', '🇨🇿'], ['sk', 'sk', 'sk_SK', 'Slovenčina', '🇸🇰'],
+  ['be', 'be', 'be_BY', 'Беларуская', '🇧🇾'], ['bg', 'bg', 'bg_BG', 'Български', '🇧🇬'], ['hr', 'hr', 'hr_HR', 'Hrvatski', '🇭🇷'],
+  ['sr', 'sr', 'sr_RS', 'Српски', '🇷🇸'], ['sl', 'sl', 'sl_SI', 'Slovenščina', '🇸🇮'], ['es', 'es', 'es_ES', 'Español', '🇪🇸'],
+  ['it', 'it', 'it_IT', 'Italiano', '🇮🇹'], ['kk', 'kk', 'kk_KZ', 'Қазақша', '🇰🇿'], ['fr', 'fr', 'fr_FR', 'Français', '🇫🇷'],
+  ['pt-BR', 'pt-br', 'pt_BR', 'Português (Brasil)', '🇧🇷'], ['tr', 'tr', 'tr_TR', 'Türkçe', '🇹🇷'], ['de', 'de', 'de_DE', 'Deutsch', '🇩🇪'],
+  ['id', 'id', 'id_ID', 'Bahasa Indonesia', '🇮🇩'],
+].map(([code, dir, og, name, flag]) => ({ code, dir, og, name, flag }));
 const LEARN = ['en', 'uk']; // knowledge base languages on meat.mordansoft.com
 
 const pathOf = (L) => `/${L.dir ? L.dir + '/' : ''}saltcure/`;
@@ -28,8 +28,12 @@ const live = LANGS.filter((L) => L.code === 'uk' || existsSync(`${ROOT}i18n/salt
 
 const alternates = [...live.map((L) => `  <link rel="alternate" hreflang="${L.code}" href="${urlOf(L)}">`),
   `  <link rel="alternate" hreflang="x-default" href="${urlOf(LANGS[0])}">`].join('\n');
-const menu = (cur) => `<select class="lang-switch" aria-label="Language" onchange="location.href=this.value">${live.map((L) =>
-  `<option value="${pathOf(L)}"${L.code === cur ? ' selected' : ''}>${L.name}</option>`).join('')}</select>`;
+const menu = (cur) => {
+  const curL = live.find((L) => L.code === cur) || live[0];
+  const items = live.map((L) =>
+    `<li><a href="${pathOf(L)}" lang="${L.code}"${L.code === cur ? ' aria-current="page"' : ''}><span class="lang-switch__flag" aria-hidden="true">${L.flag}</span><span>${L.name}</span></a></li>`).join('');
+  return `<details class="lang-switch"><summary aria-label="Language"><span class="lang-switch__flag" aria-hidden="true">${curL.flag}</span><span>${curL.name}</span></summary><ul class="lang-switch__menu">${items}</ul></details>`;
+};
 const meatPath = (L, slug) => (slug === 'learn' && !LEARN.includes(L.code) ? `${MEAT}/learn/` : `${MEAT}/${L.dir ? L.dir + '/' : ''}${slug}/`);
 const strip = (s) => s.replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/&nbsp;/g, ' ');
 
@@ -37,7 +41,7 @@ function head(h, L) {
   const must = (re, to) => { if (!re.test(h)) throw new Error(`${L.code}: page drifted: ${re}`); h = h.replace(re, to); };
   must(/<html lang="[^"]*">/, `<html lang="${L.code}">`);
   must(/(\s*<link rel="alternate" hreflang="[^"]*" href="[^"]*">)+/, `\n${alternates}`);
-  must(/<a class="lang-switch"[^>]*>[^<]*<\/a>|<select class="lang-switch"[\s\S]*?<\/select>/, menu(L.code));
+  must(/<a class="lang-switch"[^>]*>[^<]*<\/a>|<select class="lang-switch"[\s\S]*?<\/select>|<details class="lang-switch"[\s\S]*?<\/details>/, menu(L.code));
   return h;
 }
 

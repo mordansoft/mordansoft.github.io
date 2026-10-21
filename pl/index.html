@@ -59,8 +59,18 @@
     .topbar__nav { display: inline-flex; align-items: center; gap: var(--space-6); }
     .topbar__nav a { color: var(--text-secondary); font-size: var(--text-sm); text-decoration: none; }
     .topbar__nav a:hover { color: var(--text-primary); text-decoration: none; }
-    .lang-switch { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--text-secondary); background: var(--surface-elevated); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 4px 8px; cursor: pointer; }
-    .lang-switch:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+    .lang-switch { position: relative; }
+    .lang-switch > summary { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--text-secondary); background: var(--surface-elevated); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 4px 10px; cursor: pointer; list-style: none; display: inline-flex; align-items: center; gap: 6px; user-select: none; }
+    .lang-switch > summary::-webkit-details-marker { display: none; }
+    .lang-switch > summary::marker { content: ''; }
+    .lang-switch > summary:hover { color: var(--text-primary); border-color: var(--border-strong); }
+    .lang-switch[open] > summary { border-color: var(--accent); color: var(--text-primary); }
+    .lang-switch__menu { position: absolute; right: 0; top: calc(100% + 4px); margin: 0; padding: 4px; list-style: none; background: var(--surface-elevated); border: 1px solid var(--border); border-radius: var(--radius-sm); box-shadow: var(--shadow-lg); min-width: 220px; max-height: 360px; overflow-y: auto; z-index: 100; }
+    .lang-switch__menu li { margin: 0; }
+    .lang-switch__menu a { display: flex; align-items: center; gap: 10px; padding: 6px 10px; font-family: var(--font-sans); font-size: var(--text-sm); color: var(--text-primary); text-decoration: none; border-radius: var(--radius-xs); }
+    .lang-switch__menu a:hover { background: var(--plane-2); text-decoration: none; }
+    .lang-switch__menu a[aria-current="page"] { color: var(--accent-text); font-weight: 500; }
+    .lang-switch__flag { font-size: 15px; line-height: 1; flex: none; }
 
     .hero { position: relative; isolation: isolate; overflow: hidden; padding: var(--space-20) 0 var(--space-16); }
     .hero__wash { position: absolute; border-radius: 50%; filter: blur(90px); z-index: -1; pointer-events: none; }
@@ -246,7 +256,7 @@
         <a href="#products">Nasze aplikacje</a>
         <a href="#review">App data review</a>
         <a href="#contact">Kontakt</a>
-        <select class="lang-switch" aria-label="Language" onchange="location.href=this.value"><option value="/">English</option><option value="/uk/">Українська</option><option value="/ru/">Русский</option><option value="/pl/" selected>Polski</option><option value="/cs/">Čeština</option><option value="/sk/">Slovenčina</option><option value="/be/">Беларуская</option><option value="/bg/">Български</option><option value="/hr/">Hrvatski</option><option value="/sr/">Српски</option><option value="/sl/">Slovenščina</option><option value="/es/">Español</option><option value="/it/">Italiano</option><option value="/kk/">Қазақша</option><option value="/fr/">Français</option><option value="/pt-br/">Português (Brasil)</option><option value="/tr/">Türkçe</option><option value="/de/">Deutsch</option><option value="/id/">Bahasa Indonesia</option></select>
+        <details class="lang-switch"><summary aria-label="Language"><span class="lang-switch__flag" aria-hidden="true">🇵🇱</span><span>Polski</span></summary><ul class="lang-switch__menu"><li><a href="/" lang="en"><span class="lang-switch__flag" aria-hidden="true">🇬🇧</span><span>English</span></a></li><li><a href="/uk/" lang="uk"><span class="lang-switch__flag" aria-hidden="true">🇺🇦</span><span>Українська</span></a></li><li><a href="/ru/" lang="ru"><span class="lang-switch__flag" aria-hidden="true">🇷🇺</span><span>Русский</span></a></li><li><a href="/pl/" lang="pl" aria-current="page"><span class="lang-switch__flag" aria-hidden="true">🇵🇱</span><span>Polski</span></a></li><li><a href="/cs/" lang="cs"><span class="lang-switch__flag" aria-hidden="true">🇨🇿</span><span>Čeština</span></a></li><li><a href="/sk/" lang="sk"><span class="lang-switch__flag" aria-hidden="true">🇸🇰</span><span>Slovenčina</span></a></li><li><a href="/be/" lang="be"><span class="lang-switch__flag" aria-hidden="true">🇧🇾</span><span>Беларуская</span></a></li><li><a href="/bg/" lang="bg"><span class="lang-switch__flag" aria-hidden="true">🇧🇬</span><span>Български</span></a></li><li><a href="/hr/" lang="hr"><span class="lang-switch__flag" aria-hidden="true">🇭🇷</span><span>Hrvatski</span></a></li><li><a href="/sr/" lang="sr"><span class="lang-switch__flag" aria-hidden="true">🇷🇸</span><span>Српски</span></a></li><li><a href="/sl/" lang="sl"><span class="lang-switch__flag" aria-hidden="true">🇸🇮</span><span>Slovenščina</span></a></li><li><a href="/es/" lang="es"><span class="lang-switch__flag" aria-hidden="true">🇪🇸</span><span>Español</span></a></li><li><a href="/it/" lang="it"><span class="lang-switch__flag" aria-hidden="true">🇮🇹</span><span>Italiano</span></a></li><li><a href="/kk/" lang="kk"><span class="lang-switch__flag" aria-hidden="true">🇰🇿</span><span>Қазақша</span></a></li><li><a href="/fr/" lang="fr"><span class="lang-switch__flag" aria-hidden="true">🇫🇷</span><span>Français</span></a></li><li><a href="/pt-br/" lang="pt-BR"><span class="lang-switch__flag" aria-hidden="true">🇧🇷</span><span>Português (Brasil)</span></a></li><li><a href="/tr/" lang="tr"><span class="lang-switch__flag" aria-hidden="true">🇹🇷</span><span>Türkçe</span></a></li><li><a href="/de/" lang="de"><span class="lang-switch__flag" aria-hidden="true">🇩🇪</span><span>Deutsch</span></a></li><li><a href="/id/" lang="id"><span class="lang-switch__flag" aria-hidden="true">🇮🇩</span><span>Bahasa Indonesia</span></a></li></ul></details>
       </nav>
     </div>
   </div>
