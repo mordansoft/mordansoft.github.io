@@ -66,8 +66,10 @@ for (const L of live) {
 
 // sitemap: refresh root main-page entries (strip old homepages, add fresh with alternates)
 let sm = readFileSync(`${ROOT}sitemap.xml`, 'utf8');
-// remove existing homepage entries (root and <locale>/, no sub-path)
-sm = sm.replace(/  <url>\s*<loc>https:\/\/mordansoft\.com\/(?:[a-z-]+\/)?<\/loc>[\s\S]*?<\/url>\n/g, '');
+// remove existing homepage entries (root and <locale>/, no sub-path). Only real locales:
+// any one-segment match would also drop /aok/, /saltcure/ and the other product pages.
+const locales = LANGS.filter((L) => L.dir).map((L) => L.dir).join('|');
+sm = sm.replace(new RegExp(`  <url>\\s*<loc>https://mordansoft\\.com/(?:(?:${locales})/)?</loc>[\\s\\S]*?</url>\\n`, 'g'), '');
 const alt = live.map((L) => `    <xhtml:link rel="alternate" hreflang="${L.code}" href="${urlOf(L)}"/>`).join('\n');
 const block = live.map((L) => `  <url>\n    <loc>${urlOf(L)}</loc>\n${alt}\n    <priority>${L.code === 'en' ? '1.0' : '0.9'}</priority>\n  </url>\n`).join('');
 sm = sm.replace('</urlset>', block + '</urlset>');
