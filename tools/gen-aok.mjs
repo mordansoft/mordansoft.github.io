@@ -62,6 +62,8 @@ for (const L of live) {
   h = h.replace(/(<link rel="canonical" href=")[^"]*(">)/, `$1${urlOf(L)}$2`)
     .replace(/(<meta property="og:url" content=")[^"]*(">)/, `$1${urlOf(L)}$2`)
     .replace(/(<meta property="og:locale" content=")[^"]*(">)/, `$1${L.og}$2`);
+  // One folder deeper than the template: /ru/x/ reaches /_ds and /assets through one more ../.
+  if (L.dir) h = h.replace(/(href|src)="\.\.\//g, '$1="../../');
   const outDir = `${ROOT}${L.dir ? L.dir + '/' : ''}aok`;
   mkdirSync(outDir, { recursive: true });
   writeFileSync(`${outDir}/index.html`, h);
