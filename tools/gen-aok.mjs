@@ -54,18 +54,22 @@ function head(h, L) {
 }
 
 const built = [];
+const stale = [];
 for (const L of live) {
   const T = L.code === 'en' ? EN : (await import(`../i18n/aok/${L.code}.mjs`)).default;
-  if (T.length !== EN.length) throw new Error(`aok/${L.code}: ${T.length} strings, en has ${EN.length}`);
+  // A locale Ия has not re-translated yet keeps its previous page instead of
+  // being rebuilt half in English. Alternates and the sitemap still list it.
+  if (T.length !== EN.length) { stale.push(L.code); continue; }
   let h = tpl.replace(/\{\{(\d+)\}\}/g, (_, n) => T[+n]);
   h = head(h, L);
   h = h.replace(/(<link rel="canonical" href=")[^"]*(">)/, `$1${urlOf(L)}$2`)
     .replace(/(<meta property="og:url" content=")[^"]*(">)/, `$1${urlOf(L)}$2`)
     .replace(/(<meta property="og:locale" content=")[^"]*(">)/, `$1${L.og}$2`);
-  // The whetstone guide screen exists localised for some languages — use it where it does.
-  if (existsSync(`${ROOT}assets/img/aok/s4_guide_${L.code}.png`)) {
-    h = h.replace('/assets/img/aok/s4_guide.png', `/assets/img/aok/s4_guide_${L.code}.png`);
-  }
+  // App screens are shot in every build language: swap the English ones for this
+  // locale where the file exists (assets/img/aok/screens/<shot>_<lang>.webp).
+  h = h.replace(/\/assets\/img\/aok\/screens\/([a-z]+)_en\.webp/g, (m, shot) =>
+    existsSync(`${ROOT}assets/img/aok/screens/${shot}_${L.code}.webp`)
+      ? `/assets/img/aok/screens/${shot}_${L.code}.webp` : m);
   // One folder deeper than the template: /ru/x/ reaches /_ds and /assets through one more ../.
   if (L.dir) h = h.replace(/(href|src)="\.\.\//g, '$1="../../');
   const outDir = `${ROOT}${L.dir ? L.dir + '/' : ''}aok`;
@@ -82,3 +86,4 @@ const block = live.map((L) => `  <url>\n    <loc>${urlOf(L)}</loc>\n${alt}\n    
 sm = sm.replace('</urlset>', block + '</urlset>');
 writeFileSync(`${ROOT}sitemap.xml`, sm);
 console.log(`aok page in ${built.length} languages: ${built.join(' ')}; sitemap updated`);
+if (stale.length) console.log(`not rebuilt (string count differs from en — awaiting translation): ${stale.join(' ')}`);
