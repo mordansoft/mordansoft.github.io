@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/brand/logo-tile.svg">
+  <title>AoK — Angle of Knife — MordanSoft</title>
+  <meta name="description" content="AoK — Angle of Knife. Turn your phone into a real knife-sharpening angle meter: live angle, audio guide, steel guide, knife log. Offline-first, no account.">
+  <link rel="canonical" href="https://mordansoft.com/ko/aok/">
+  <link rel="alternate" hreflang="en" href="https://mordansoft.com/aok/">
+  <link rel="alternate" hreflang="uk" href="https://mordansoft.com/uk/aok/">
+  <link rel="alternate" hreflang="ru" href="https://mordansoft.com/ru/aok/">
+  <link rel="alternate" hreflang="de" href="https://mordansoft.com/de/aok/">
+  <link rel="alternate" hreflang="es" href="https://mordansoft.com/es/aok/">
+  <link rel="alternate" hreflang="fr" href="https://mordansoft.com/fr/aok/">
+  <link rel="alternate" hreflang="it" href="https://mordansoft.com/it/aok/">
+  <link rel="alternate" hreflang="pt-BR" href="https://mordansoft.com/pt-br/aok/">
+  <link rel="alternate" hreflang="pl" href="https://mordansoft.com/pl/aok/">
+  <link rel="alternate" hreflang="tr" href="https://mordansoft.com/tr/aok/">
+  <link rel="alternate" hreflang="ja" href="https://mordansoft.com/ja/aok/">
+  <link rel="alternate" hreflang="ko" href="https://mordansoft.com/ko/aok/">
+  <link rel="alternate" hreflang="x-default" href="https://mordansoft.com/aok/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="MordanSoft">
+  <meta property="og:title" content="AoK — Angle of Knife — MordanSoft">
+  <meta property="og:description" content="AoK — Angle of Knife. Turn your phone into a real knife-sharpening angle meter: live angle, audio guide, steel guide, knife log. Offline-first, no account.">
+  <meta property="og:url" content="https://mordansoft.com/ko/aok/">
+  <meta property="og:locale" content="ko_KR">
+  <meta name="twitter:card" content="summary">
+
+  <!-- MordanSoft Design System -->
+  <link rel="stylesheet" href="../../_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/fonts.css">
+  <link rel="stylesheet" href="../../_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/colors.css">
+  <link rel="stylesheet" href="../../_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/typography.css">
+  <link rel="stylesheet" href="../../_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/spacing.css">
+  <link rel="stylesheet" href="../../_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/elevation.css">
+  <link rel="stylesheet" href="../../_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/base.css">
+  <link rel="stylesheet" href="../../_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/components/core/core.css">
+
+  <!-- Lucide icons -->
+  <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+
+  <style>
+    /* ── Topbar ─────────────────────────────────────────── */
+    .topbar {
+      position: sticky; top: 0; z-index: 50;
+      background: color-mix(in oklch, var(--surface) 85%, transparent);
+      backdrop-filter: saturate(140%) blur(14px);
+      -webkit-backdrop-filter: saturate(140%) blur(14px);
+      border-bottom: 1px solid var(--border-faint);
+    }
+    .topbar__inner { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+    .brand { display: inline-flex; align-items: center; gap: var(--space-3); color: var(--text-primary); text-decoration: none; }
+    .brand:hover { text-decoration: none; }
+    .brand__mark { width: 28px; height: 28px; display: inline-flex; color: var(--text-primary); flex: none; }
+    .brand__mark svg { width: 100%; height: 100%; }
+    .brand__name { font-weight: 600; font-size: 1.0625rem; letter-spacing: -0.02em; color: var(--text-primary); }
+    .brand__name b { color: var(--accent-text); font-weight: 600; }
+    .topbar__tag { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--text-muted); }
+
+    /* ── Shared section furniture ───────────────────────── */
+    .section { padding: clamp(2.75rem, 1.5rem + 3.6vw, 5.25rem) 0; }
+    .section--hair { border-top: 1px solid var(--border-faint); }
+    .section--tight { padding: clamp(2.25rem, 1.25rem + 2.6vw, 3.5rem) 0; }
+    .section--tight .section__head { margin-bottom: var(--space-8); }
+    .section__head { margin: 0 auto var(--space-10); display: flex; flex-direction: column; gap: var(--space-3); max-width: 640px; text-align: center; align-items: center; }
+    .section__title { font-size: var(--text-h1); font-weight: 650; letter-spacing: var(--tracking-tighter); line-height: 1.1; color: var(--text-primary); margin: 0; }
+    .section__lead { font-size: var(--text-lead); color: var(--text-secondary); line-height: var(--leading-normal); margin: 0; max-width: 52ch; }
+
+    /* A dark band inside the light page: the DS tokens flip, so every
+       child component keeps working. Grain + one warm light source. */
+    .band-dark {
+      position: relative; isolation: isolate; overflow: hidden;
+      background: var(--surface);
+      color: var(--text-primary);
+    }
+    .band-dark::before {
+      content: ''; position: absolute; inset: 0; z-index: -2; pointer-events: none;
+      background:
+        radial-gradient(90% 60% at 18% 0%, oklch(0.305 0.070 48 / 0.85), transparent 62%),
+        radial-gradient(70% 55% at 92% 100%, oklch(0.245 0.007 58 / 0.9), transparent 70%);
+    }
+    .band-dark::after {
+      content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none; opacity: 0.16; mix-blend-mode: overlay;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+    }
+
+    /* ── Hero ───────────────────────────────────────────── */
+    .hero { position: relative; isolation: isolate; overflow: hidden; padding: var(--space-10) 0 var(--space-16); text-align: center; }
+    .hero__wash {
+      position: absolute; border-radius: 50%; filter: blur(100px); z-index: -1; pointer-events: none;
+      width: 760px; height: 620px; top: -220px; left: 50%; margin-left: -380px; opacity: 0.42;
+      background: radial-gradient(circle, var(--ember-400), transparent 66%);
+    }
+    .hero__wash--b {
+      left: -220px; margin-left: 0; top: 260px; width: 520px; height: 520px; opacity: 0.30;
+      background: radial-gradient(circle, var(--plane-3), transparent 70%);
+    }
+    .detail__back { display: inline-flex; align-items: center; gap: var(--space-2); margin-bottom: var(--space-8); font-size: var(--text-sm); }
+    .hero__copy { display: flex; flex-direction: column; align-items: center; gap: var(--space-5); }
+    .hero__tile { width: 72px; height: 72px; border-radius: var(--radius-xl); overflow: hidden; display: block; box-shadow: var(--shadow-lg); }
+    .hero__tile img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .hero__title {
+      margin: 0; font-size: clamp(2.5rem, 1.2rem + 4.4vw, 4.25rem); font-weight: 700;
+      letter-spacing: var(--tracking-tightest); line-height: 1.04; color: var(--text-primary); max-width: 18ch;
+    }
+    .hero__title b { color: var(--accent-text); font-weight: 700; }
+    .hero__lead { margin: 0; font-size: var(--text-lead); color: var(--text-secondary); line-height: var(--leading-snug); max-width: 54ch; }
+    .hero__specs { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-2) var(--space-5); font-family: var(--font-mono); font-size: var(--text-xs); color: var(--text-muted); }
+    .hero__specs span { display: inline-flex; align-items: center; gap: var(--space-2); }
+    .hero__specs span::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); opacity: 0.75; }
+
+    /* hero stage: the meter is the hero object, one phone leaning on it */
+    .stage { position: relative; margin: var(--space-12) auto 0; max-width: 820px; }
+    .stage__glow {
+      position: absolute; inset: -14% -10% -24%; z-index: 0; border-radius: 50%;
+      background: radial-gradient(58% 58% at 50% 55%, var(--accent) 0%, transparent 70%);
+      opacity: 0.30; filter: blur(60px); pointer-events: none;
+    }
+    .device-land {
+      position: relative; z-index: 1; border-radius: 34px; padding: 10px;
+      background: linear-gradient(155deg, #343437, #171719);
+      box-shadow: var(--shadow-xl), 0 0 0 1px rgba(0,0,0,0.45), 0 44px 80px -34px rgba(60, 24, 0, 0.55);
+      transform: rotate(-1.2deg);
+    }
+    .device-land img { display: block; width: 100%; height: auto; border-radius: 25px; }
+    .phone {
+      position: relative; width: 232px; flex: none; border-radius: 34px; padding: 8px;
+      background: linear-gradient(155deg, #343437, #171719);
+      box-shadow: var(--shadow-xl), 0 0 0 1px rgba(0,0,0,0.4);
+    }
+    .phone img { display: block; width: 100%; height: auto; border-radius: 27px; }
+    .stage .stage__phone {
+      position: absolute; z-index: 2; left: -1%; bottom: -14%; width: 168px;
+      border-radius: 26px; padding: 6px; transform: rotate(-7deg);
+    }
+    .stage .stage__phone img { border-radius: 21px; }
+
+    /* ── Steps + the live-angle figure ──────────────────── */
+    .steps { display: grid; grid-template-columns: 1fr; gap: var(--space-6); }
+    .step { display: flex; gap: var(--space-4); align-items: flex-start; }
+    .step__no {
+      flex: none; width: 34px; height: 34px; border-radius: var(--radius-md); display: grid; place-items: center;
+      font-family: var(--font-mono); font-size: var(--text-sm); font-weight: 600;
+      color: var(--accent-text); background: var(--accent-subtle);
+    }
+    .step__title { margin: 0 0 var(--space-2); font-size: var(--text-h5); font-weight: 600; color: var(--text-primary); }
+    .step__text { margin: 0; font-size: var(--text-base); color: var(--text-secondary); line-height: var(--leading-normal); }
+
+    .angle-fig { margin: 0 auto var(--space-10); max-width: 680px; display: flex; flex-direction: column; align-items: center; gap: var(--space-6); }
+    .angle-fig svg { display: block; width: 100%; height: auto; overflow: visible; }
+    .angle-fig__readout {
+      margin: 0; display: inline-flex; align-items: baseline; gap: var(--space-2);
+      font-family: var(--font-mono); font-size: clamp(1.75rem, 5vw, 2.5rem); font-weight: 600;
+      letter-spacing: -0.03em; line-height: 1; padding: var(--space-3) var(--space-8);
+      border-radius: var(--radius-pill); color: var(--accent-text); background: var(--accent-subtle);
+      transition: color 240ms var(--ease-out), background-color 240ms var(--ease-out), box-shadow 240ms var(--ease-out);
+    }
+    .angle-fig.is-hit .angle-fig__readout { color: var(--success); background: var(--success-subtle); box-shadow: 0 0 36px -6px var(--success); }
+    .angle-fig__blade { transform-box: fill-box; transform-origin: 0% 100%; }
+    .angle-fig__target { transition: stroke-opacity 240ms var(--ease-out); }
+    .angle-fig.is-hit .angle-fig__target { stroke-opacity: 0.5; }
+    .angle-fig__wedge { transition: fill-opacity 240ms var(--ease-out); }
+    .angle-fig.is-hit .angle-fig__wedge { fill: var(--success); fill-opacity: 0.18; }
+
+    /* ── Feature grid ───────────────────────────────────── */
+    .features { display: grid; grid-template-columns: 1fr; gap: var(--space-5); }
+    .feature { display: flex; flex-direction: column; gap: var(--space-4); }
+    .feature__icon { width: 40px; height: 40px; border-radius: var(--radius-md); flex: none; display: grid; place-items: center; background: var(--accent-subtle); color: var(--accent-text); }
+    .feature__title { font-size: var(--text-h5); font-weight: 600; color: var(--text-primary); margin: 0 0 var(--space-2); }
+    .feature__text { font-size: var(--text-base); color: var(--text-secondary); line-height: var(--leading-normal); margin: 0; }
+    .feature__steels { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--space-4); font-family: var(--font-mono); font-size: var(--text-xs); color: var(--text-muted); }
+    .feature__steels span { border: 1px solid var(--border); border-radius: var(--radius-pill); padding: 2px 10px; }
+
+    /* ── Screens strip ──────────────────────────────────── */
+    .shots { display: grid; grid-template-columns: repeat(5, 1fr); gap: var(--space-5); align-items: start; }
+    .shot { display: flex; flex-direction: column; gap: var(--space-4); align-items: center; }
+    .shot .phone { width: 100%; border-radius: 26px; padding: 6px; }
+    .shot .phone img { border-radius: 21px; }
+    .shot__caption { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--text-muted); text-align: center; line-height: 1.45; }
+
+
+    /* ── Chips row ──────────────────────────────────────── */
+    .chips { display: flex; flex-wrap: wrap; gap: var(--space-2); justify-content: center; max-width: 820px; margin-inline: auto; }
+
+    /* ── Case study ─────────────────────────────────────── */
+    .case-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-5); }
+    .case-block__label { font-family: var(--font-mono); font-size: var(--text-xs); font-weight: 500; text-transform: uppercase; letter-spacing: 0.10em; color: var(--text-muted); margin: 0 0 var(--space-3) 0; }
+    .case-block__text { font-size: var(--text-base); color: var(--text-secondary); line-height: var(--leading-normal); margin: 0; }
+    .case-stack { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+
+    /* ── Closing ────────────────────────────────────────── */
+    .close-band { text-align: center; }
+    .close-band__title { font-size: clamp(2rem, 1rem + 3.4vw, 3.25rem); font-weight: 700; letter-spacing: var(--tracking-tightest); line-height: 1.06; color: var(--text-primary); margin: 0; }
+    .close-band__text { font-size: var(--text-lead); color: var(--text-secondary); line-height: var(--leading-normal); margin: var(--space-4) auto var(--space-8); max-width: 48ch; }
+
+    /* ── Footer ─────────────────────────────────────────── */
+    .site-footer { background: var(--surface-elevated); border-top: 1px solid var(--border); padding: var(--space-12) 0 var(--space-16); }
+    .footer-inner { display: flex; justify-content: space-between; gap: var(--space-10); flex-wrap: wrap; }
+    .footer-brand { display: flex; align-items: flex-start; gap: var(--space-3); }
+    .footer-brand__mark { width: 32px; height: 32px; flex: none; color: var(--text-primary); }
+    .footer-brand__mark svg { width: 100%; height: 100%; }
+    .footer-brand__name { font-weight: 600; font-size: 1rem; letter-spacing: -0.015em; color: var(--text-primary); }
+    .footer-copy { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--text-muted); margin-top: var(--space-2); }
+    .footer-brand__name b { color: var(--accent-text); font-weight: 600; }
+    .footer-legal h4 { font-family: var(--font-mono); font-size: var(--text-xs); font-weight: 500; text-transform: uppercase; letter-spacing: 0.10em; color: var(--text-muted); margin: 0 0 var(--space-3) 0; }
+    .footer-legal a { display: block; font-size: var(--text-sm); color: var(--text-secondary); text-decoration: none; padding: var(--space-1) 0; }
+    .footer-legal a:hover { color: var(--accent-text); text-decoration: none; }
+
+    /* ── Store badges ───────────────────────────────────── */
+    .store-badges { display: inline-flex; align-items: center; gap: var(--space-3); flex-wrap: wrap; justify-content: center; }
+    .store-badges--lg { gap: var(--space-4); }
+    .store-badge { display: inline-flex; height: 52px; border-radius: 8px; transition: transform .15s ease, opacity .15s ease; text-decoration: none; }
+    .store-badges--lg .store-badge { height: 58px; }
+    .store-badge:hover { transform: translateY(-1px); opacity: .9; text-decoration: none; }
+    .store-badge img { height: 100%; width: auto; display: block; }
+
+    /* ── Reveal ─────────────────────────────────────────── */
+    @media (prefers-reduced-motion: no-preference) {
+      .js-reveal { opacity: 0; transform: translateY(16px); transition: opacity 460ms var(--ease-out), transform 460ms var(--ease-out); }
+      .js-reveal.is-in { opacity: 1; transform: none; }
+      .js-reveal[data-delay="1"] { transition-delay: 80ms; }
+      .js-reveal[data-delay="2"] { transition-delay: 160ms; }
+      .js-reveal[data-delay="3"] { transition-delay: 240ms; }
+      .js-reveal[data-delay="4"] { transition-delay: 320ms; }
+    }
+
+    /* ── Responsive ─────────────────────────────────────── */
+    @media (min-width: 720px) {
+      .features { grid-template-columns: 1fr 1fr; gap: var(--space-6); }
+      .steps { grid-template-columns: 1fr 1fr; gap: var(--space-8) var(--space-10); }
+      .plans { grid-template-columns: 1fr 1fr; gap: var(--space-6); }
+      .case-grid { grid-template-columns: 1fr 1fr; gap: var(--space-6); }
+    }
+    @media (min-width: 1040px) { .features { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 900px) {
+      .shots { grid-template-columns: repeat(3, 1fr); }
+      .shot:nth-child(n+4) { display: none; }
+    }
+    @media (max-width: 860px) { .stage__phone { display: none; } .hero__wash { opacity: 0.26; } }
+    @media (max-width: 720px) {
+      .ms-container { padding-left: var(--space-5); padding-right: var(--space-5); }
+      .hero { padding: var(--space-6) 0 var(--space-10); }
+      .detail__back { margin-bottom: var(--space-6); }
+      .hero__title { font-size: clamp(2.125rem, 9.5vw, 3rem); }
+      .hero__lead { font-size: 1.0625rem; }
+      .hero__tile { width: 60px; height: 60px; }
+      .stage { margin-top: var(--space-8); }
+      .section { padding: var(--space-10) 0; }
+      .section__head { margin-bottom: var(--space-6); }
+      .section__title { font-size: clamp(1.625rem, 7vw, 2rem); }
+      .section__lead { font-size: 1rem; }
+      .shots { grid-template-columns: repeat(2, 1fr); gap: var(--space-4); }
+      .angle-fig { margin-bottom: var(--space-8); }
+      /* The meter screen is landscape: at phone width the readout is unreadable, so crop into the blade. */
+      .device-land { border-radius: 22px; padding: 6px; overflow: hidden; }
+      .device-land img { width: 165%; max-width: none; margin-left: -32%; border-radius: 17px; }
+      .store-badge { height: 46px; }
+      .footer-inner { gap: var(--space-8); }
+      .footer-legal a { padding: var(--space-2) 0; }
+    }
+    @media (max-width: 560px) {
+      .topbar__tag { display: none; }
+      .footer-inner { flex-direction: column; }
+      .hero__wash--b { display: none; }
+      .shots { grid-template-columns: 1fr; max-width: 280px; margin-inline: auto; }
+      .shot:nth-child(n+4) { display: flex; }
+    }
+    .lang-switch { position: relative; margin-left: var(--space-4); display: inline-block; }
+    .lang-switch > summary { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--text-secondary); background: var(--surface-elevated); border: 1px solid var(--border); border-radius: var(--radius-sm, 6px); padding: 4px 10px; cursor: pointer; list-style: none; display: inline-flex; align-items: center; gap: 6px; user-select: none; }
+    .lang-switch > summary::-webkit-details-marker { display: none; }
+    .lang-switch > summary::marker { content: ''; }
+    .lang-switch > summary:hover { color: var(--text-primary); border-color: var(--border-strong); }
+    .lang-switch[open] > summary { border-color: var(--accent); color: var(--text-primary); }
+    .lang-switch__menu { position: absolute; right: 0; top: calc(100% + 4px); margin: 0; padding: 4px; list-style: none; background: var(--surface-elevated); border: 1px solid var(--border); border-radius: var(--radius-sm, 6px); box-shadow: var(--shadow-lg); min-width: 220px; max-height: 360px; overflow-y: auto; z-index: 100; }
+    .lang-switch__menu li { margin: 0; }
+    .lang-switch__menu a { display: flex; align-items: center; gap: 10px; padding: 6px 10px; font-family: var(--font-sans); font-size: var(--text-sm); color: var(--text-primary); text-decoration: none; border-radius: var(--radius-xs); }
+    .lang-switch__menu a:hover { background: var(--plane-2); text-decoration: none; }
+    .lang-switch__menu a[aria-current="page"] { color: var(--accent-text); font-weight: 500; }
+    .lang-switch__flag { font-size: 15px; line-height: 1; flex: none; }
+    .topbar__right { display: inline-flex; align-items: center; }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="ms-container topbar__inner">
+      <a class="brand" href="/">
+        <span class="brand__mark">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="6" y="10" width="26" height="26" rx="7" fill="currentColor" opacity="0.22"></rect>
+            <rect x="12" y="14" width="26" height="26" rx="7" fill="currentColor" opacity="0.45"></rect>
+            <rect x="18" y="18" width="24" height="24" rx="7" fill="#E0632C"></rect>
+            <rect x="24" y="24" width="12" height="12" rx="3.5" fill="#000000" opacity="0.16"></rect>
+          </svg>
+        </span>
+        <span class="brand__name">Mordan<b>Soft</b></span>
+      </a>
+      <span class="topbar__right"><span class="topbar__tag">모바일 소프트웨어 스튜디오</span><details class="lang-switch"><summary aria-label="Language"><span class="lang-switch__flag" aria-hidden="true">🇰🇷</span><span>한국어</span></summary><ul class="lang-switch__menu"><li><a href="/aok/" lang="en"><span class="lang-switch__flag" aria-hidden="true">🇬🇧</span><span>English</span></a></li><li><a href="/uk/aok/" lang="uk"><span class="lang-switch__flag" aria-hidden="true">🇺🇦</span><span>Українська</span></a></li><li><a href="/ru/aok/" lang="ru"><span class="lang-switch__flag" aria-hidden="true">🇷🇺</span><span>Русский</span></a></li><li><a href="/de/aok/" lang="de"><span class="lang-switch__flag" aria-hidden="true">🇩🇪</span><span>Deutsch</span></a></li><li><a href="/es/aok/" lang="es"><span class="lang-switch__flag" aria-hidden="true">🇪🇸</span><span>Español</span></a></li><li><a href="/fr/aok/" lang="fr"><span class="lang-switch__flag" aria-hidden="true">🇫🇷</span><span>Français</span></a></li><li><a href="/it/aok/" lang="it"><span class="lang-switch__flag" aria-hidden="true">🇮🇹</span><span>Italiano</span></a></li><li><a href="/pt-br/aok/" lang="pt-BR"><span class="lang-switch__flag" aria-hidden="true">🇧🇷</span><span>Português (Brasil)</span></a></li><li><a href="/pl/aok/" lang="pl"><span class="lang-switch__flag" aria-hidden="true">🇵🇱</span><span>Polski</span></a></li><li><a href="/tr/aok/" lang="tr"><span class="lang-switch__flag" aria-hidden="true">🇹🇷</span><span>Türkçe</span></a></li><li><a href="/ja/aok/" lang="ja"><span class="lang-switch__flag" aria-hidden="true">🇯🇵</span><span>日本語</span></a></li><li><a href="/ko/aok/" lang="ko" aria-current="page"><span class="lang-switch__flag" aria-hidden="true">🇰🇷</span><span>한국어</span></a></li></ul></details></span>
+    </div>
+  </div>
+
+  <main>
+    <!-- ── Hero ──────────────────────────────────────────── -->
+    <section class="hero">
+      <div class="hero__wash" aria-hidden="true"></div>
+      <div class="hero__wash hero__wash--b" aria-hidden="true"></div>
+      <div class="ms-container">
+        <a class="ms-btn ms-btn--link detail__back" href="/#products">
+          <i data-lucide="arrow-left"></i> 모든 제품
+        </a>
+        <div class="hero__copy" data-reveal>
+          <span class="hero__tile"><img src="/assets/img/aok/icon.png" alt="AoK app icon" width="72" height="72"></span>
+          <span class="ms-eyebrow">// 칼 연마 각도계</span>
+          <h1 class="hero__title">연마하는 동안 <b>정확한 각도</b>를 확인하세요.</h1>
+          <p class="hero__lead">폰을 칼날 위에 올려 두세요. AoK가 칼날과 숫돌 사이의 각도를 실시간으로 읽고, 목표 각도에 닿는 순간 소리로 알려 주며, 모든 칼의 각도, 강재, 연마 기록을 하나의 기록에 모아 줍니다.</p>
+          <div class="store-badges">
+            <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.mordansoft.aok" target="_blank" rel="noopener" aria-label="Get AoK on Google Play"><img src="/assets/badges/google-play.svg" alt="Get it on Google Play"></a>
+            <a class="store-badge" href="https://apps.apple.com/us/app/angle-of-knife-sharpening/id6739965153" target="_blank" rel="noopener" aria-label="Download AoK on the App Store"><img src="/assets/badges/app-store.svg" alt="Download on the App Store"></a>
+          </div>
+          <div class="hero__specs">
+            <span>오프라인 우선</span>
+            <span>계정 없음</span>
+            <span>12개 언어</span>
+            <span>iPhone, iPad, Android</span>
+          </div>
+        </div>
+
+        <div class="stage">
+          <div class="stage__glow" aria-hidden="true"></div>
+          <div class="device-land"><img src="/assets/img/aok/screens/meter_en.webp" alt="AoK 각도계: 칼날이 15.0°를 유지하고 있습니다" width="1600" height="736"></div>
+          <div class="phone stage__phone" aria-hidden="true"><img src="/assets/img/aok/screens/quick_en.webp" alt="" loading="lazy" width="620" height="1347"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── How it works (dark band) ──────────────────────── -->
+    <section class="section band-dark" data-theme="dark">
+      <div class="ms-container">
+        <div class="section__head js-reveal">
+          <span class="ms-eyebrow">// 사용 방법</span>
+          <h2 class="section__title">날카로운 날까지 네 단계</h2>
+          <p class="section__lead">작업대도, 가이드도, 감도 필요 없습니다. 각도가 내내 화면에 보입니다.</p>
+        </div>
+
+        <figure class="angle-fig js-reveal" id="angleFig" aria-label="15° 목표 각도까지 올라가는 칼날">
+          <svg viewBox="0 100 680 150" xmlns="http://www.w3.org/2000/svg" role="img">
+            <defs>
+              <linearGradient id="steel" x1="0" y1="0" x2="1" y2="0.3">
+                <stop offset="0%" stop-color="#6f6f75"/>
+                <stop offset="38%" stop-color="#f2f2f5"/>
+                <stop offset="72%" stop-color="#a3a3a9"/>
+                <stop offset="100%" stop-color="#dcdce1"/>
+              </linearGradient>
+              <linearGradient id="stone" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="currentColor" stop-opacity="0.30"/>
+                <stop offset="100%" stop-color="currentColor" stop-opacity="0.08"/>
+              </linearGradient>
+            </defs>
+            <!-- target ray + arc -->
+            <path class="angle-fig__target" id="angleTarget" d="M120 210 L520 210" fill="none" stroke="var(--accent)" stroke-opacity="0.85" stroke-width="2" stroke-dasharray="6 8"/>
+            <path class="angle-fig__wedge" id="angleArc" d="" fill="var(--accent)" fill-opacity="0.14"/>
+            <!-- whetstone -->
+            <rect x="40" y="210" width="600" height="22" rx="5" fill="url(#stone)"/>
+            <rect x="40" y="210" width="600" height="1.5" fill="currentColor" opacity="0.35"/>
+            <!-- blade -->
+            <g class="angle-fig__blade" id="angleBlade">
+              <path d="M0 0 L330 -17 L338 -1 L330 15 Z" transform="translate(120,209)" fill="url(#steel)"/>
+              <path d="M0 0 L330 -17 L338 -1 Z" transform="translate(120,209)" fill="#ffffff" opacity="0.22"/>
+              <rect x="-104" y="-14" width="108" height="28" rx="8" transform="translate(120,209)" fill="#241f1b"/>
+              <rect x="-104" y="-14" width="108" height="3" rx="1.5" transform="translate(120,209)" fill="#ffffff" opacity="0.10"/>
+            </g>
+          </svg>
+          <figcaption class="angle-fig__readout"><span id="angleValue">0.0</span>°</figcaption>
+        </figure>
+
+        <div class="steps">
+          <div class="step js-reveal" data-delay="1"><span class="step__no">1</span><div><h3 class="step__title">빠른 연마 열기</h3><p class="step__text">칼을 먼저 등록하지 않고 메인 화면에서 바로 시작하거나, 기록에서 칼을 고르세요.</p></div></div>
+          <div class="step js-reveal" data-delay="2"><span class="step__no">2</span><div><h3 class="step__title">목표 각도 정하기</h3><p class="step__text">직접 입력하거나 내 칼 종류의 프리셋을 고르세요. 양날 연마는 앱이 알아서 절반 각도를 목표로 잡습니다.</p></div></div>
+          <div class="step js-reveal" data-delay="3"><span class="step__no">3</span><div><h3 class="step__title">폰을 칼날에 올리기</h3><p class="step__text">칼날을 숫돌 위로 움직이는 동안 각도계가 실시간 각도를 보여 줍니다.</p></div></div>
+          <div class="step js-reveal" data-delay="4"><span class="step__no">4</span><div><h3 class="step__title">소리로 연마하기</h3><p class="step__text">목표 각도에 닿으면 앱이 소리로 알려 주고 초록색으로 바뀌어, 눈은 계속 날에 둘 수 있습니다. 끝나면 연마 기록이 칼의 기록에 저장됩니다.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── What's inside ─────────────────────────────────── -->
+    <section class="section">
+      <div class="ms-container">
+        <div class="section__head js-reveal">
+          <span class="ms-eyebrow">// 기능</span>
+          <h2 class="section__title">연마에 필요한 모든 것</h2>
+        </div>
+        <div class="features">
+          <div class="ms-card ms-card--pad feature js-reveal" data-delay="1">
+            <span class="feature__icon"><i data-lucide="gauge"></i></span>
+            <div><h3 class="feature__title">실시간 각도계</h3><p class="feature__text">폰을 칼날에 올리면 정확한 연마 각도를 읽을 수 있고, 움직이는 대로 갱신됩니다. 숫돌, 가이드, 벨트 연마기, 그라인더는 물론 도끼, 끌, 대팻날에도 쓸 수 있습니다.</p></div>
+          </div>
+          <div class="ms-card ms-card--pad feature js-reveal" data-delay="2">
+            <span class="feature__icon"><i data-lucide="volume-2"></i></span>
+            <div><h3 class="feature__title">소리 가이드</h3><p class="feature__text">목표 각도를 정하면 칼날이 맞는 순간 앱이 소리로 알려 줍니다. 숫자를 확인하려고 날에서 눈을 뗄 필요가 없습니다.</p></div>
+          </div>
+          <div class="ms-card ms-card--pad feature js-reveal" data-delay="3">
+            <span class="feature__icon"><i data-lucide="calculator"></i></span>
+            <div><h3 class="feature__title">간격 계산기</h3><p class="feature__text">가이드가 없나요? 칼날 폭과 원하는 각도를 입력하면 숫돌 위로 칼등을 몇 밀리미터 들어야 하는지, 그 높이를 받치려면 동전이 몇 개 필요한지 알려 줍니다.</p></div>
+          </div>
+          <div class="ms-card ms-card--pad feature js-reveal" data-delay="1">
+            <span class="feature__icon"><i data-lucide="microscope"></i></span>
+            <div>
+              <h3 class="feature__title">강재 가이드와 관리 팁</h3><p class="feature__text">칼날에 새겨진 강재를 고르세요. 가이드가 경도, 날 유지력, 인성, 녹에 대한 저항, 갈기 쉬운 정도를 알려 주고, 바로 그 강재를 관리하는 방법과 내 각도에서 날이 어디에 알맞은지도 보여 줍니다.</p>
+              <div class="feature__steels" aria-hidden="true"><span>VG-10</span><span>X50CrMoV15</span><span>14C28N</span><span>8Cr13MoV</span><span>440C</span><span>AUS-8</span></div>
+            </div>
+          </div>
+          <div class="ms-card ms-card--pad feature js-reveal" data-delay="2">
+            <span class="feature__icon"><i data-lucide="coffee"></i></span>
+            <div><h3 class="feature__title">숫돌이 없나요? 머그컵이면 충분합니다</h3><p class="feature__text">세라믹 머그컵의 유약을 바르지 않은 바닥 고리에서 가는 방법을 단계별로 안내합니다. 어떤 머그컵이 맞는지, 어떤 각도를 유지할지, 칼날을 어떻게 움직일지, 한쪽에 얼마나 걸리는지, 버를 어떻게 없앨지 알려 줍니다. 곧은 날용이며, 톱니 칼에는 다른 도구가 필요합니다.</p></div>
+          </div>
+          <div class="ms-card ms-card--pad feature js-reveal" data-delay="3">
+            <span class="feature__icon"><i data-lucide="clipboard-list"></i></span>
+            <div><h3 class="feature__title">칼 기록과 알림</h3><p class="feature__text">모든 칼의 각도, 강재, 사진과 모든 연마 기록이 담깁니다. 칼을 갈 때가 되면 앱이 알려 드립니다.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Screens (dark band) ───────────────────────────── -->
+    <section class="section band-dark" data-theme="dark">
+      <div class="ms-container">
+        <div class="section__head js-reveal">
+          <span class="ms-eyebrow">// 화면</span>
+          <h2 class="section__title">앱 안을 살펴보세요</h2>
+        </div>
+        <div class="shots">
+          <div class="shot js-reveal"><div class="phone"><img src="/assets/img/aok/screens/list_en.webp" alt="사진과 함께 보는 내 칼" loading="lazy" width="620" height="1347"></div><p class="shot__caption">사진과 함께 보는 내 칼</p></div>
+          <div class="shot js-reveal" data-delay="1"><div class="phone"><img src="/assets/img/aok/screens/quick_en.webp" alt="준비 없이 바로 빠른 연마" loading="lazy" width="620" height="1347"></div><p class="shot__caption">준비 없이 바로 빠른 연마</p></div>
+          <div class="shot js-reveal" data-delay="2"><div class="phone"><img src="/assets/img/aok/screens/card_en.webp" alt="칼마다 하나씩, 칼 정보 카드" loading="lazy" width="620" height="1347"></div><p class="shot__caption">칼마다 하나씩, 칼 정보 카드</p></div>
+          <div class="shot js-reveal" data-delay="3"><div class="phone"><img src="/assets/img/aok/screens/care_en.webp" alt="내 강재가 좋아하는 것" loading="lazy" width="620" height="1347"></div><p class="shot__caption">내 강재가 좋아하는 것</p></div>
+          <div class="shot js-reveal" data-delay="4"><div class="phone"><img src="/assets/img/aok/screens/mug_en.webp" alt="숫돌이 없나요? 머그컵이면 됩니다" loading="lazy" width="620" height="1347"></div><p class="shot__caption">숫돌이 없나요? 머그컵이면 됩니다</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Works for ─────────────────────────────────────── -->
+    <section class="section section--hair section--tight">
+      <div class="ms-container">
+        <div class="section__head js-reveal">
+          <span class="ms-eyebrow">// 활용 대상</span>
+          <h2 class="section__title">어떤 칼날, 어떤 도구든</h2>
+        </div>
+        <div class="chips js-reveal" data-delay="1">
+          <span class="ms-tag">셰프 나이프</span>
+          <span class="ms-tag">주머니칼</span>
+          <span class="ms-tag">사냥용 칼</span>
+          <span class="ms-tag">다용도 칼</span>
+          <span class="ms-tag">채소 칼</span>
+          <span class="ms-tag">도끼</span>
+          <span class="ms-tag">끌</span>
+          <span class="ms-tag">대팻날</span>
+          <span class="ms-tag ms-tag--accent">숫돌</span>
+          <span class="ms-tag ms-tag--accent">가이드</span>
+          <span class="ms-tag ms-tag--accent">벨트 연마기</span>
+          <span class="ms-tag ms-tag--accent">그라인더</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Case study ────────────────────────────────────── -->
+    <section class="section section--hair">
+      <div class="ms-container">
+        <div class="section__head js-reveal">
+          <span class="ms-eyebrow">// 사례</span>
+          <h2 class="section__title">아이디어에서 두 스토어까지</h2>
+        </div>
+        <div class="case-grid">
+          <div class="ms-card ms-card--pad js-reveal" data-delay="1">
+            <p class="case-block__label">배경</p>
+            <p class="case-block__text">MordanSoft의 대표 제품입니다. 다른 각도계 앱은 각도를 보여 주는 데서 끝나고, 목표, 가이드, 강재, 기록으로 이어지는 연마 과정은 스프레드시트나 기억에 맡겨져 있었습니다.</p>
+          </div>
+          <div class="ms-card ms-card--pad js-reveal" data-delay="2">
+            <p class="case-block__label">진행한 작업</p>
+            <p class="case-block__text">디자인, Flutter 구현, 센서 퓨전 각도 엔진, 소리 가이드, 강재 가이드, 칼 기록, 새 구매 화면을 포함한 Free/Premium 구분, 12개 언어 현지화, 폰과 태블릿 레이아웃, Google Play와 App Store 출시.</p>
+          </div>
+          <div class="ms-card ms-card--pad js-reveal" data-delay="1">
+            <p class="case-block__label">결과</p>
+            <p class="case-block__text">Google Play와 App Store에서 12개 언어로 폰과 태블릿에 출시되어 있습니다. Free/Premium 구분의 성과는 측정 중입니다.</p>
+          </div>
+          <div class="ms-card ms-card--pad js-reveal" data-delay="2">
+            <p class="case-block__label">기술 스택</p>
+            <div class="case-stack">
+              <span class="ms-tag">Flutter</span>
+              <span class="ms-tag">Sensor fusion</span>
+              <span class="ms-tag">Firebase Analytics</span>
+              <span class="ms-tag">Crashlytics</span>
+              <span class="ms-tag">오프라인 우선</span>
+              <span class="ms-tag">12개 언어</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Closing (dark band) ───────────────────────────── -->
+    <section class="section band-dark close-band" data-theme="dark">
+      <div class="ms-container ms-container--narrow js-reveal">
+        <h2 class="close-band__title">측정하고, 맞추고, 갈아 보세요.</h2>
+        <p class="close-band__text">AoK는 오프라인에서 작동하고, 모든 칼날을 내 폰에 보관하며, 계정을 요구하지 않습니다.</p>
+        <div class="store-badges store-badges--lg">
+          <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.mordansoft.aok" target="_blank" rel="noopener" aria-label="Get AoK on Google Play"><img src="/assets/badges/google-play.svg" alt="Get it on Google Play"></a>
+          <a class="store-badge" href="https://apps.apple.com/us/app/angle-of-knife-sharpening/id6739965153" target="_blank" rel="noopener" aria-label="Download AoK on the App Store"><img src="/assets/badges/app-store.svg" alt="Download on the App Store"></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="ms-container footer-inner">
+      <div class="footer-brand">
+        <span class="footer-brand__mark" aria-hidden="true">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="6" y="10" width="26" height="26" rx="7" fill="currentColor" opacity="0.22"></rect>
+            <rect x="12" y="14" width="26" height="26" rx="7" fill="currentColor" opacity="0.45"></rect>
+            <rect x="18" y="18" width="24" height="24" rx="7" fill="#E0632C"></rect>
+            <rect x="24" y="24" width="12" height="12" rx="3.5" fill="#000000" opacity="0.16"></rect>
+          </svg>
+        </span>
+        <div>
+          <div class="footer-brand__name">Mordan<b>Soft</b></div>
+          <div class="footer-copy">© 2026 MordanSoft</div>
+        </div>
+      </div>
+      <div class="footer-legal">
+        <h4>법적 고지</h4>
+        <a href="/aok/support.html">AoK — Support</a>
+        <a href="/legal/aok/privacy.html">AoK — Privacy</a>
+        <a href="/legal/aok/terms.html">AoK — Terms</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    if (window.lucide) lucide.createIcons();
+    (function () {
+      var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var els = document.querySelectorAll('.js-reveal');
+      if (reduced || !('IntersectionObserver' in window)) { els.forEach(function (el) { el.classList.add('is-in'); }); }
+      else {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('is-in'); io.unobserve(en.target); } });
+        }, { threshold: 0.08, rootMargin: '0px 0px -5% 0px' });
+        els.forEach(function (el) { io.observe(el); });
+      }
+
+      // Live-angle figure: the blade rises to the target angle as the section
+      // scrolls through the viewport — the same readout the app shows.
+      var fig = document.getElementById('angleFig');
+      var blade = document.getElementById('angleBlade');
+      var value = document.getElementById('angleValue');
+      var target = document.getElementById('angleTarget');
+      if (!fig || !blade || !value) return;
+      var TARGET = 15.0;
+      var rad = TARGET * Math.PI / 180;
+      // dashed ray at the target angle, plus the arc between it and the stone
+      target.setAttribute('d', 'M120 209 L' + (120 + 420 * Math.cos(rad)).toFixed(1) + ' ' + (209 - 420 * Math.sin(rad)).toFixed(1));
+      var arc = document.getElementById('angleArc');
+      if (arc) {
+        var R = 300;
+        arc.setAttribute('d', 'M120 209 L' + (120 + R) + ' 209 A' + R + ' ' + R + ' 0 0 0 ' +
+          (120 + R * Math.cos(rad)).toFixed(1) + ' ' + (209 - R * Math.sin(rad)).toFixed(1) + ' Z');
+      }
+      function paint(a) {
+        blade.style.transform = 'rotate(' + (-a).toFixed(2) + 'deg)';
+        value.textContent = a.toFixed(1);
+        fig.classList.toggle('is-hit', Math.abs(a - TARGET) < 0.35);
+      }
+      if (reduced) { paint(TARGET); return; }
+      paint(0);
+      var ticking = false;
+      function onScroll() {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(function () {
+          ticking = false;
+          var r = fig.getBoundingClientRect();
+          var vh = window.innerHeight || 800;
+          // 0 when the figure enters from below, 1 once it sits in the upper third
+          var p = (vh - r.top - r.height * 0.35) / (vh * 0.55);
+          p = Math.max(0, Math.min(1, p));
+          paint(TARGET * p);
+        });
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', onScroll);
+      onScroll();
+    }());
+  </script>
+
+<!-- web analytics -->
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "5a3f2bc95732486688415649c2f82eee"}'></script>
+<!-- /web analytics -->
+</body>
+</html>

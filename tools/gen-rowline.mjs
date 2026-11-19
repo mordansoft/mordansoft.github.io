@@ -6,12 +6,9 @@ const ROOT = new URL('..', import.meta.url).pathname;
 const BASE = 'https://mordansoft.com';
 const LANGS = [
   ['en', '', 'en_US', 'English', '🇬🇧'], ['uk', 'uk', 'uk_UA', 'Українська', '🇺🇦'], ['ru', 'ru', 'ru_RU', 'Русский', '🇷🇺'],
-  ['pl', 'pl', 'pl_PL', 'Polski', '🇵🇱'], ['cs', 'cs', 'cs_CZ', 'Čeština', '🇨🇿'], ['sk', 'sk', 'sk_SK', 'Slovenčina', '🇸🇰'],
-  ['be', 'be', 'be_BY', 'Беларуская', '🇧🇾'], ['bg', 'bg', 'bg_BG', 'Български', '🇧🇬'], ['hr', 'hr', 'hr_HR', 'Hrvatski', '🇭🇷'],
-  ['sr', 'sr', 'sr_RS', 'Српски', '🇷🇸'], ['sl', 'sl', 'sl_SI', 'Slovenščina', '🇸🇮'], ['es', 'es', 'es_ES', 'Español', '🇪🇸'],
-  ['it', 'it', 'it_IT', 'Italiano', '🇮🇹'], ['kk', 'kk', 'kk_KZ', 'Қазақша', '🇰🇿'], ['fr', 'fr', 'fr_FR', 'Français', '🇫🇷'],
-  ['pt-BR', 'pt-br', 'pt_BR', 'Português (Brasil)', '🇧🇷'], ['tr', 'tr', 'tr_TR', 'Türkçe', '🇹🇷'], ['de', 'de', 'de_DE', 'Deutsch', '🇩🇪'],
-  ['id', 'id', 'id_ID', 'Bahasa Indonesia', '🇮🇩'],
+  ['de', 'de', 'de_DE', 'Deutsch', '🇩🇪'], ['es', 'es', 'es_ES', 'Español', '🇪🇸'], ['fr', 'fr', 'fr_FR', 'Français', '🇫🇷'],
+  ['it', 'it', 'it_IT', 'Italiano', '🇮🇹'], ['pt-BR', 'pt-br', 'pt_BR', 'Português (Brasil)', '🇧🇷'], ['pl', 'pl', 'pl_PL', 'Polski', '🇵🇱'],
+  ['tr', 'tr', 'tr_TR', 'Türkçe', '🇹🇷'], ['ja', 'ja', 'ja_JP', '日本語', '🇯🇵'], ['ko', 'ko', 'ko_KR', '한국어', '🇰🇷'],
 ].map(([code, dir, og, name, flag]) => ({ code, dir, og, name, flag }));
 
 const pathOf = (L) => `/${L.dir ? L.dir + '/' : ''}rowline/`;
@@ -59,6 +56,7 @@ for (const L of live) {
   h = h.replace(/(<link rel="canonical" href=")[^"]*(">)/, `$1${urlOf(L)}$2`)
     .replace(/(<meta property="og:url" content=")[^"]*(">)/, `$1${urlOf(L)}$2`)
     .replace(/(<meta property="og:locale" content=")[^"]*(">)/, `$1${L.og}$2`);
+  if (L.dir) h = h.replace(/(href|src)="\.\.\//g, '$1="../../'); // pages one folder deeper
   const outDir = `${ROOT}${L.dir ? L.dir + '/' : ''}rowline`;
   mkdirSync(outDir, { recursive: true });
   writeFileSync(`${outDir}/index.html`, h);
