@@ -112,4 +112,9 @@ export default [
   "AoK — Privacy",
   "AoK — Terms",
   "Sloviko — Privacy",
+  "Contador de vueltas para punto y ganchillo",
+  "Un contador que guarda el patrón entero: vueltas, repeticiones y notas que aparecen justo donde importan. Sin conexión, sin cuenta.",
+  "// En el taller — aún no está en las tiendas",
+  "Tareas de los niños, un ticket al día",
+  "Los padres ponen las tareas, el niño las confirma y el ticket del día dice claramente si puede salir. Ahora en revisión en las tiendas.",
 ];

@@ -112,4 +112,9 @@ export default [
   "AoK — Privacy",
   "AoK — Terms",
   "Sloviko — Privacy",
+  "Contador de carreiras para tricô e crochê",
+  "Um contador que guarda a receita inteira: carreiras, repetições e notas que aparecem onde importam. Offline, sem conta.",
+  "// Na oficina — ainda não está nas lojas",
+  "Tarefas das crianças, um tíquete por dia",
+  "Os pais definem as tarefas, a criança confirma, e o tíquete do dia diz sem rodeios se pode sair. Em análise nas lojas.",
 ];

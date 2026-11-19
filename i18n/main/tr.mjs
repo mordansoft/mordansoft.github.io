@@ -112,4 +112,9 @@ export default [
   "AoK — Privacy",
   "AoK — Terms",
   "Sloviko — Privacy",
+  "Örgü ve tığ işi için sıra sayacı",
+  "Tüm deseni tutan bir sıra sayacı — sıralar, tekrarlar ve tam gerektiği yerde beliren notlar. Çevrimdışı, hesap yok.",
+  "// Atölyede — henüz mağazalarda değil",
+  "Çocuk işleri, günde bir bilet",
+  "Ebeveyn görevleri verir, çocuk yaptığını onaylar, günün bileti de dışarı çıkabilir mi, açıkça söyler. Şu anda mağaza incelemesinde.",
 ];

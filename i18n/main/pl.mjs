@@ -112,4 +112,9 @@ export default [
   "AoK — Privacy",
   "AoK — Terms",
   "Sloviko — Privacy",
+  "Licznik rzędów do dziewiarstwa i szydełka",
+  "Licznik rzędów, który trzyma cały wzór — rzędy, powtórzenia, notatki pojawiające się tam, gdzie trzeba. Offline, bez konta.",
+  "// W pracowni — jeszcze nie w sklepach",
+  "Obowiązki dzieci, jeden bilet dziennie",
+  "Rodzice ustalają zadania, dziecko je potwierdza, a bilet dnia wprost mówi, czy można wyjść. Teraz w weryfikacji w sklepach.",
 ];

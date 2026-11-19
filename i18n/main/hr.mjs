@@ -112,4 +112,9 @@ export default [
   "AoK — Privacy",
   "AoK — Terms",
   "Sloviko — Privacy",
+  "Brojač redova za pletenje i heklanje",
+  "Brojač redova koji drži cijeli uzorak — redove, ponavljanja, bilješke koje iskoče ondje gdje trebaju. Offline, bez računa.",
+  "// U radionici — još nije u trgovinama",
+  "Dječje obaveze, jedna karta na dan",
+  "Roditelji zadaju zadatke, dijete ih potvrđuje, a karta dana jasno kaže smije li van. Trenutačno je na provjeri u trgovinama.",
 ];

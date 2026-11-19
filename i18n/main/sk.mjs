@@ -112,4 +112,9 @@ export default [
   "AoK — Privacy",
   "AoK — Terms",
   "Sloviko — Privacy",
+  "Počítadlo radov pre pletenie a háčkovanie",
+  "Počítadlo radov, ktoré udrží celý vzor — rady, opakovania, poznámky, ktoré vyskočia tam, kde majú. Offline, bez účtu.",
+  "// V dielni — ešte nie v obchodoch",
+  "Detské povinnosti, jeden lístok na deň",
+  "Rodičia zadajú úlohy, dieťa ich potvrdí a lístok dňa jasne povie, či môže von. Práve prechádza kontrolou v obchodoch.",
 ];

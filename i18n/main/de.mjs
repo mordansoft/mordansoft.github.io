@@ -112,4 +112,9 @@ export default [
   "AoK — Privacy",
   "AoK — Terms",
   "Sloviko — Privacy",
+  "Reihenzähler fürs Stricken und Häkeln",
+  "Ein Reihenzähler, der die ganze Anleitung hält — Reihen, Wiederholungen und Notizen, die genau dort auftauchen, wo sie zählen. Offline, ohne Konto.",
+  "// In der Werkstatt — noch nicht in den Stores",
+  "Aufgaben der Kinder, ein Ticket pro Tag",
+  "Eltern geben die Aufgaben vor, das Kind bestätigt sie, und das Tagesticket sagt klar, ob es rausdarf. Derzeit in der Store-Prüfung.",
 ];

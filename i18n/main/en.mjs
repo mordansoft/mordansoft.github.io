@@ -112,4 +112,9 @@ export default [
   "AoK — Privacy",
   "AoK — Terms",
   "Sloviko — Privacy",
+  "Knitting & crochet row counter",
+  "A row counter that holds the whole pattern — rows, repeats, notes that pop up where they matter. Offline, no account.",
+  "// In the workshop — not in the stores yet",
+  "Kids' chores, one ticket a day",
+  "Parents set the tasks, the child confirms them, and the day's ticket says plainly whether they can go out. In store review now.",
 ];

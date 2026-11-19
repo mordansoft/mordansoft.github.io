@@ -112,4 +112,9 @@ export default [
   "AoK — Privacy",
   "AoK — Terms",
   "Sloviko — Privacy",
+  "Počítadlo řad pro pletení a háčkování",
+  "Počítadlo řad, které udrží celý vzor — řady, opakování, poznámky, které vyskočí tam, kde mají. Offline, bez účtu.",
+  "// V dílně — ještě ne v obchodech",
+  "Dětské povinnosti, jeden lístek na den",
+  "Rodiče zadají úkoly, dítě je potvrdí a lístek dne jasně řekne, jestli může ven. Právě prochází kontrolou v obchodech.",
 ];

@@ -112,4 +112,9 @@ export default [
   "AoK — Privacy",
   "AoK — Terms",
   "Sloviko — Privacy",
+  "Contafile per maglia e uncinetto",
+  "Un contafile che tiene l'intero schema: file, ripetizioni e note che compaiono dove servono. Offline, senza account.",
+  "// In officina — non ancora negli store",
+  "Faccende dei bambini, un biglietto al giorno",
+  "I genitori assegnano i compiti, il bambino li conferma e il biglietto del giorno dice chiaramente se può uscire. Ora in revisione negli store.",
 ];

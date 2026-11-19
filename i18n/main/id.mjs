@@ -112,4 +112,9 @@ export default [
   "AoK — Privacy",
   "AoK — Terms",
   "Sloviko — Privacy",
+  "Penghitung baris untuk rajut dan kait",
+  "Penghitung baris yang menyimpan seluruh pola — baris, pengulangan, dan catatan yang muncul tepat saat dibutuhkan. Offline, tanpa akun.",
+  "// Di bengkel — belum ada di toko",
+  "Tugas anak, satu tiket sehari",
+  "Orang tua menetapkan tugas, anak mengonfirmasinya, dan tiket hari itu menjawab dengan jelas apakah boleh keluar. Sedang ditinjau di toko.",
 ];

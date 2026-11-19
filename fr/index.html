@@ -84,24 +84,13 @@
     .hero__cta { display: flex; align-items: center; gap: var(--space-3); margin-top: var(--space-8); flex-wrap: wrap; }
     .hero__chips { display: flex; align-items: center; gap: var(--space-2); margin-top: var(--space-6); flex-wrap: wrap; }
 
-    .hero__collage { position: relative; min-height: 440px; }
-    .hero-card { position: absolute; background: var(--surface-elevated); border: 1px solid var(--border-faint); border-radius: var(--radius-xl); box-shadow: var(--shadow-lg); padding: var(--space-5); display: flex; flex-direction: column; gap: var(--space-3); }
-    .hero-card--main { top: 0; left: 20px; width: 280px; min-height: 420px; background: var(--grey-900); color: var(--grey-100); border-color: var(--grey-900); padding: var(--space-6); }
-    .hero-card--main .hero-card__label { color: var(--grey-500); }
-    .hero-card--sub-a { top: 50px; right: 0; width: 220px; }
-    .hero-card--sub-b { bottom: 10px; right: 20px; width: 240px; }
-    .hero-card__row { display: flex; align-items: center; gap: var(--space-3); }
-    .hero-card__icon { width: 44px; height: 44px; border-radius: var(--radius-md); flex: none; display: grid; place-items: center; background: var(--accent-subtle); color: var(--accent); }
-    .hero-card--main .hero-card__icon { background: var(--ember-500); color: var(--grey-0); }
-    .hero-card__name { font-weight: 600; font-size: var(--text-base); }
-    .hero-card__label { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--text-muted); margin-top: 2px; }
-    .hero-card__headline { font-size: var(--text-h5); font-weight: 600; line-height: var(--leading-snug); }
-    .hero-card__panel { background: rgba(255,255,255,0.06); border-radius: var(--radius-md); padding: var(--space-3) var(--space-4); }
-    .hero-card__panel-label { font-family: var(--font-mono); font-size: var(--text-xs); opacity: 0.6; letter-spacing: 0.08em; }
-    .hero-card__panel-value { font-family: var(--font-mono); font-size: 2.25rem; font-weight: 500; margin-top: var(--space-1); }
-    .hero-card__hero-art { height: 150px; border-radius: var(--radius-md); background: linear-gradient(135deg, var(--grey-700), var(--grey-850)); margin-top: var(--space-2); }
-    .hero-card__desc { font-size: var(--text-sm); color: var(--text-secondary); }
-    .hero-card--main .hero-card__desc { color: var(--grey-400); }
+    .hero__collage { position: relative; min-height: 560px; }
+    .hero-shot { position: absolute; margin: 0; border-radius: var(--radius-lg); overflow: hidden; background: var(--grey-900); border: 1px solid var(--border-faint); box-shadow: var(--shadow-lg); }
+    .hero-shot img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+    .hero-shot__tag { position: absolute; inset: auto 0 0 0; padding: var(--space-6) var(--space-3) var(--space-2); font-family: var(--font-mono); font-size: var(--text-xs); letter-spacing: 0.06em; color: var(--grey-100); background: linear-gradient(to top, rgba(0,0,0,0.78), rgba(0,0,0,0)); }
+    .hero-shot--main { top: 0; left: 10px; width: 230px; height: 500px; z-index: 2; }
+    .hero-shot--a { top: 30px; right: 0; width: 170px; height: 230px; z-index: 1; }
+    .hero-shot--b { top: 300px; right: 36px; width: 170px; height: 230px; z-index: 3; }
 
     @media (min-width: 960px) {
       .hero { padding: var(--space-24) 0; }
@@ -130,6 +119,7 @@
     .products { display: grid; grid-template-columns: 1fr; gap: var(--space-5); }
     @media (min-width: 720px) { .products { grid-template-columns: repeat(2, 1fr); } }
     @media (min-width: 1020px) { .products { grid-template-columns: repeat(3, 1fr); } }
+    @media (min-width: 1320px) { .products { grid-template-columns: repeat(4, 1fr); } }
     .product { background: var(--surface-elevated); border: 1px solid var(--border-faint); border-radius: var(--radius-lg); padding: var(--space-6); display: flex; flex-direction: column; gap: var(--space-4); box-shadow: var(--shadow-sm); }
     .product__head { display: flex; align-items: center; gap: var(--space-3); }
     .product__icon { width: 56px; height: 56px; border-radius: var(--radius-md); flex: none; overflow: hidden; background: var(--grey-100); }
@@ -137,8 +127,18 @@
     .product__name { font-size: var(--text-h4); font-weight: 600; letter-spacing: var(--tracking-tight); color: var(--text-primary); margin: 0; }
     .product__sub { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--text-muted); margin-top: 2px; }
     .product__desc { font-size: var(--text-sm); color: var(--text-secondary); line-height: var(--leading-normal); min-height: 4.5em; }
-    .product__shot { height: 180px; border-radius: var(--radius-md); overflow: hidden; background: var(--surface-sunken); display: grid; place-items: center; }
-    .product__shot img { max-width: 100%; max-height: 100%; object-fit: contain; }
+    .workshop { margin-top: var(--space-8); border-top: 1px solid var(--border-faint); padding-top: var(--space-6); }
+    .workshop__head { font-family: var(--font-mono); font-size: var(--text-xs); letter-spacing: 0.08em; color: var(--text-muted); text-transform: uppercase; }
+    .workshop__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: var(--space-5); margin-top: var(--space-4); max-width: 520px; }
+    .wip { display: flex; gap: var(--space-4); align-items: flex-start; padding: var(--space-4); border: 1px solid var(--border-faint); border-radius: var(--radius-lg); background: var(--surface-elevated); }
+    .wip__shot { width: 72px; height: 96px; flex: none; border-radius: var(--radius-md); overflow: hidden; background: var(--surface-sunken); }
+    .wip__shot img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+    .wip__name { font-weight: 600; }
+    .wip__sub { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--text-muted); margin-top: 2px; }
+    .wip__link { font-size: var(--text-sm); display: inline-block; margin-top: var(--space-2); }
+    .wip__desc { font-size: var(--text-sm); color: var(--text-secondary); margin-top: var(--space-2); }
+    .product__shot { height: 260px; border-radius: var(--radius-md); overflow: hidden; background: var(--surface-sunken); }
+    .product__shot img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top center; }
     .product__foot { display: flex; align-items: center; justify-content: space-between; padding-top: var(--space-4); border-top: 1px solid var(--border-faint); }
     .product__badges { display: inline-flex; gap: var(--space-2); flex-wrap: wrap; }
     .product__link { font-size: var(--text-sm); font-weight: 500; color: var(--accent-text); text-decoration: none; }
@@ -286,36 +286,18 @@
           </div>
         </div>
         <div class="hero__collage" aria-hidden="true">
-          <div class="hero-card hero-card--main">
-            <div class="hero-card__label">AoK — Angle of Knife</div>
-            <div class="hero-card__icon"><i data-lucide="triangle-ruler"></i></div>
-            <div class="hero-card__headline">Quand un couteau est plus qu’un couteau</div>
-            <div class="hero-card__panel">
-              <div class="hero-card__panel-label">ANGLE ACTUEL</div>
-              <div class="hero-card__panel-value">17.5°</div>
-            </div>
-            <div class="hero-card__hero-art"></div>
-          </div>
-          <div class="hero-card hero-card--sub-a">
-            <div class="hero-card__row">
-              <div class="hero-card__icon"><i data-lucide="beef"></i></div>
-              <div>
-                <div class="hero-card__name">SaltCure</div>
-                <div class="hero-card__label">Calculateur de salaison</div>
-              </div>
-            </div>
-            <div class="hero-card__desc">Calculateur de nitrite pour la charcuterie maison.</div>
-          </div>
-          <div class="hero-card hero-card--sub-b">
-            <div class="hero-card__row">
-              <div class="hero-card__icon"><i data-lucide="book-open"></i></div>
-              <div>
-                <div class="hero-card__name">Sloviko</div>
-                <div class="hero-card__label">Entraîneur de vocabulaire</div>
-              </div>
-            </div>
-            <div class="hero-card__desc">Entraîneur minimal mot à mot, hors ligne.</div>
-          </div>
+          <figure class="hero-shot hero-shot--main">
+            <img src="../assets/img/aok/screens/cover_en.webp" alt="" width="285" height="620">
+            <figcaption class="hero-shot__tag">AoK — Angle of Knife</figcaption>
+          </figure>
+          <figure class="hero-shot hero-shot--a">
+            <img src="../assets/img/saltcure/screens/calc_en.webp" alt="" width="620" height="1347" loading="lazy">
+            <figcaption class="hero-shot__tag">SaltCure</figcaption>
+          </figure>
+          <figure class="hero-shot hero-shot--b">
+            <img src="../assets/img/sloviko/en_word.png" alt="" width="620" height="1300" loading="lazy">
+            <figcaption class="hero-shot__tag">Sloviko</figcaption>
+          </figure>
         </div>
       </div>
     </div>
@@ -351,7 +333,7 @@
               <div><h3 class="product__name">AoK</h3><div class="product__sub">Angle of Knife</div></div>
             </div>
             <p class="product__desc">Compagnon pour affûter couteaux de cuisine et de poche. Enseigne l’angle, compte les passes, consigne le fil.</p>
-            <div class="product__shot"><img src="../assets/img/aok/s2_list.png" alt="AoK — the knives list" loading="lazy"></div>
+            <div class="product__shot"><img src="../assets/img/aok/screens/list_en.webp" alt="AoK — the knives list" loading="lazy"></div>
             <div class="product__foot">
               <div class="product__badges">
                 <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.mordansoft.aok" target="_blank" rel="noopener" aria-label="Get AoK on Google Play"><img src="../assets/badges/google-play.svg" alt="Google Play" style="height:28px"></a>
@@ -367,7 +349,7 @@
               <div><h3 class="product__name">SaltCure</h3><div class="product__sub">Meat Cure Calculator</div></div>
             </div>
             <p class="product__desc">Calculateur de sel de salaison et carnet de lots pour la charcuterie maison. Hors ligne, sans compte, carnet imprimable.</p>
-            <div class="product__shot"><img src="../assets/saltcure/screen-01.png" alt="SaltCure cure calculator screen" loading="lazy"></div>
+            <div class="product__shot"><img src="../assets/img/saltcure/screens/calc_en.webp" alt="SaltCure — the cure calculator" loading="lazy"></div>
             <div class="product__foot">
               <div class="product__badges">
                 <a class="store-badge" href="/saltcure/go/play/" target="_blank" rel="noopener" aria-label="Get SaltCure on Google Play"><img src="../assets/badges/google-play.svg" alt="Google Play" style="height:28px"></a>
@@ -383,7 +365,7 @@
               <div><h3 class="product__name">Sloviko</h3><div class="product__sub">Entraîneur de vocabulaire</div></div>
             </div>
             <p class="product__desc">Entraîneur minimal de vocabulaire — choisis la bonne traduction, apprends mot par mot. Hors ligne, sans compte.</p>
-            <div class="product__shot"><img src="../assets/sloviko-screen-03.png" alt="Sloviko word screen" loading="lazy"></div>
+            <div class="product__shot"><img src="../assets/img/sloviko/en_word.png" alt="Sloviko — picking the right translation" loading="lazy"></div>
             <div class="product__foot">
               <div class="product__badges">
                 <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.mordansoft.morseng" target="_blank" rel="noopener" aria-label="Get Sloviko on Google Play"><img src="../assets/badges/google-play.svg" alt="Google Play" style="height:28px"></a>
@@ -393,6 +375,36 @@
             </div>
           </article>
 
+          <article class="product js-reveal" data-delay="4">
+            <div class="product__head">
+              <div class="product__icon"><img src="../assets/img/rowline/icon.png" alt="Rowline app icon"></div>
+              <div><h3 class="product__name">Rowline</h3><div class="product__sub">Compte-rangs pour tricot et crochet</div></div>
+            </div>
+            <p class="product__desc">Un compte-rangs qui garde tout le patron : rangs, répétitions et notes qui surgissent là où il faut. Hors ligne, sans compte.</p>
+            <div class="product__shot"><img src="../assets/img/rowline/counters_en.png" alt="Rowline — the counters on the work screen" loading="lazy"></div>
+            <div class="product__foot">
+              <div class="product__badges">
+                <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.mordansoft.rowline" target="_blank" rel="noopener" aria-label="Get Rowline on Google Play"><img src="../assets/badges/google-play.svg" alt="Google Play" style="height:28px"></a>
+              </div>
+              <a class="product__link" href="/rowline/">Ouvrir &rarr;</a>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="workshop js-reveal">
+          <div class="workshop__head">// À l'atelier — pas encore sur les stores</div>
+          <div class="workshop__grid">
+            <article class="wip">
+              <div class="wip__shot"><img src="../assets/img/beanjar/ticket_en.png" alt="Beanjar — the ticket of the day" loading="lazy"></div>
+              <div>
+                <div class="wip__name">Beanjar</div>
+                <div class="wip__sub">Les tâches des enfants, un ticket par jour</div>
+                <p class="wip__desc">Les parents fixent les tâches, l'enfant les valide, et le ticket du jour dit clairement s'il peut sortir. En cours de validation sur les stores.</p>
+                <a class="wip__link" href="/beanjar/">Ouvrir &rarr;</a>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
     </section>

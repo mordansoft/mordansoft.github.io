@@ -112,4 +112,9 @@ export default [
   "AoK — Privacy",
   "AoK — Terms",
   "Sloviko — Privacy",
+  "Števec vrst za pletenje in kvačkanje",
+  "Števec vrst, ki drži cel vzorec — vrste, ponovitve, opombe, ki skočijo tja, kjer morajo. Brez povezave, brez računa.",
+  "// V delavnici — še ni v trgovinah",
+  "Otroške obveznosti, ena karta na dan",
+  "Starši zadajo opravila, otrok jih potrdi, karta dneva pa jasno pove, ali lahko ven. Trenutno je v pregledu v trgovinah.",
 ];

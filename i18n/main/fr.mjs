@@ -112,4 +112,9 @@ export default [
   "AoK — Privacy",
   "AoK — Terms",
   "Sloviko — Privacy",
+  "Compte-rangs pour tricot et crochet",
+  "Un compte-rangs qui garde tout le patron : rangs, répétitions et notes qui surgissent là où il faut. Hors ligne, sans compte.",
+  "// À l'atelier — pas encore sur les stores",
+  "Les tâches des enfants, un ticket par jour",
+  "Les parents fixent les tâches, l'enfant les valide, et le ticket du jour dit clairement s'il peut sortir. En cours de validation sur les stores.",
 ];
