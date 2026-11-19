@@ -66,13 +66,13 @@
     .hero__cta { display: flex; align-items: center; gap: var(--space-3); margin-top: var(--space-8); flex-wrap: wrap; }
     .hero__chips { display: flex; align-items: center; gap: var(--space-2); margin-top: var(--space-6); flex-wrap: wrap; }
 
-    .hero__collage { position: relative; min-height: 560px; }
+    .hero__collage { position: relative; min-height: 580px; }
     .hero-shot { position: absolute; margin: 0; border-radius: var(--radius-lg); overflow: hidden; background: var(--grey-900); border: 1px solid var(--border-faint); box-shadow: var(--shadow-lg); }
     .hero-shot img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top center; }
     .hero-shot__tag { position: absolute; inset: auto 0 0 0; padding: var(--space-6) var(--space-3) var(--space-2); font-family: var(--font-mono); font-size: var(--text-xs); letter-spacing: 0.06em; color: var(--grey-100); background: linear-gradient(to top, rgba(0,0,0,0.78), rgba(0,0,0,0)); }
-    .hero-shot--main { top: 0; left: 10px; width: 230px; height: 500px; z-index: 2; }
-    .hero-shot--a { top: 30px; right: 0; width: 170px; height: 230px; z-index: 1; }
-    .hero-shot--b { top: 300px; right: 36px; width: 170px; height: 230px; z-index: 3; }
+    .hero-shot--main { top: 0; left: 0; width: 250px; height: 444px; z-index: 2; transform: rotate(-3deg); }
+    .hero-shot--a { top: 80px; right: 0; width: 220px; height: 477px; z-index: 1; transform: rotate(3deg); }
+    .hero-shot video { display: block; width: 100%; height: 100%; object-fit: cover; }
 
     @media (min-width: 960px) {
       .hero { padding: var(--space-24) 0; }
@@ -113,14 +113,14 @@
     .workshop__head { font-family: var(--font-mono); font-size: var(--text-xs); letter-spacing: 0.08em; color: var(--text-muted); text-transform: uppercase; }
     .workshop__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: var(--space-5); margin-top: var(--space-4); max-width: 520px; }
     .wip { display: flex; gap: var(--space-4); align-items: flex-start; padding: var(--space-4); border: 1px solid var(--border-faint); border-radius: var(--radius-lg); background: var(--surface-elevated); }
-    .wip__shot { width: 72px; height: 96px; flex: none; border-radius: var(--radius-md); overflow: hidden; background: var(--surface-sunken); }
-    .wip__shot img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+    .wip__shot { width: 168px; aspect-ratio: 1024 / 500; height: auto; flex: none; border-radius: var(--radius-md); overflow: hidden; background: var(--surface-sunken); }
+    .wip__shot img { display: block; width: 100%; height: 100%; object-fit: cover; }
     .wip__name { font-weight: 600; }
     .wip__sub { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--text-muted); margin-top: 2px; }
     .wip__link { font-size: var(--text-sm); display: inline-block; margin-top: var(--space-2); }
     .wip__desc { font-size: var(--text-sm); color: var(--text-secondary); margin-top: var(--space-2); }
-    .product__shot { height: 260px; border-radius: var(--radius-md); overflow: hidden; background: var(--surface-sunken); }
-    .product__shot img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+    .product__shot { aspect-ratio: 1024 / 500; border-radius: var(--radius-md); overflow: hidden; background: var(--surface-sunken); }
+    .product__shot img { display: block; width: 100%; height: 100%; object-fit: cover; }
     .product__foot { display: flex; align-items: center; justify-content: space-between; padding-top: var(--space-4); border-top: 1px solid var(--border-faint); }
     .product__badges { display: inline-flex; gap: var(--space-2); flex-wrap: wrap; }
     .product__link { font-size: var(--text-sm); font-weight: 500; color: var(--accent-text); text-decoration: none; }
@@ -286,16 +286,12 @@
         </div>
         <div class="hero__collage" aria-hidden="true">
           <figure class="hero-shot hero-shot--main">
-            <img src="assets/img/aok/screens/cover_en.webp" alt="" width="285" height="620">
+            <video src="assets/video/aok_en.mp4" poster="/assets/video/aok_en_poster.jpg" autoplay muted loop playsinline preload="metadata"></video>
             <figcaption class="hero-shot__tag">AoK — Angle of Knife</figcaption>
           </figure>
           <figure class="hero-shot hero-shot--a">
-            <img src="assets/img/saltcure/screens/calc_en.webp" alt="" width="620" height="1347" loading="lazy">
+            <video src="assets/video/saltcure_en.mp4" poster="/assets/video/saltcure_en_poster.jpg" autoplay muted loop playsinline preload="metadata"></video>
             <figcaption class="hero-shot__tag">SaltCure</figcaption>
-          </figure>
-          <figure class="hero-shot hero-shot--b">
-            <img src="assets/img/sloviko/en_word.png" alt="" width="620" height="1300" loading="lazy">
-            <figcaption class="hero-shot__tag">Sloviko</figcaption>
           </figure>
         </div>
       </div>
@@ -384,12 +380,12 @@
         <div class="products">
 
           <article class="product js-reveal" data-delay="1">
+            <div class="product__shot"><img src="assets/img/banners/aok.jpg" alt="AoK — the knives list" width="1024" height="500" loading="lazy"></div>
             <div class="product__head">
               <div class="product__icon"><img src="assets/img/aok/icon.png" alt="AoK app icon"></div>
               <div><h3 class="product__name">{{27}}</h3><div class="product__sub">{{28}}</div></div>
             </div>
             <p class="product__desc">{{29}}</p>
-            <div class="product__shot"><img src="assets/img/aok/screens/list_en.webp" alt="AoK — the knives list" loading="lazy"></div>
             <div class="product__foot">
               <div class="product__badges">
                 <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.mordansoft.aok" target="_blank" rel="noopener" aria-label="Get AoK on Google Play"><img src="assets/badges/google-play.svg" alt="Google Play" style="height:28px"></a>
@@ -400,12 +396,12 @@
           </article>
 
           <article class="product js-reveal" data-delay="2">
+            <div class="product__shot"><img src="assets/img/banners/saltcure.jpg" alt="SaltCure — the cure calculator" width="1024" height="500" loading="lazy"></div>
             <div class="product__head">
               <div class="product__icon"><img src="assets/saltcure/icon.png" alt="SaltCure app icon"></div>
               <div><h3 class="product__name">{{31}}</h3><div class="product__sub">{{32}}</div></div>
             </div>
             <p class="product__desc">{{33}}</p>
-            <div class="product__shot"><img src="assets/img/saltcure/screens/calc_en.webp" alt="SaltCure — the cure calculator" loading="lazy"></div>
             <div class="product__foot">
               <div class="product__badges">
                 <a class="store-badge" href="/saltcure/go/play/" target="_blank" rel="noopener" aria-label="Get SaltCure on Google Play"><img src="assets/badges/google-play.svg" alt="Google Play" style="height:28px"></a>
@@ -416,12 +412,12 @@
           </article>
 
           <article class="product js-reveal" data-delay="3">
+            <div class="product__shot"><img src="assets/img/banners/sloviko.jpg" alt="Sloviko — picking the right translation" width="1024" height="500" loading="lazy"></div>
             <div class="product__head">
               <div class="product__icon"><img src="assets/sloviko-icon.png" alt="Sloviko app icon"></div>
               <div><h3 class="product__name">{{35}}</h3><div class="product__sub">{{36}}</div></div>
             </div>
             <p class="product__desc">{{37}}</p>
-            <div class="product__shot"><img src="assets/img/sloviko/en_word.png" alt="Sloviko — picking the right translation" loading="lazy"></div>
             <div class="product__foot">
               <div class="product__badges">
                 <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.mordansoft.morseng" target="_blank" rel="noopener" aria-label="Get Sloviko on Google Play"><img src="assets/badges/google-play.svg" alt="Google Play" style="height:28px"></a>
@@ -432,12 +428,12 @@
           </article>
 
           <article class="product js-reveal" data-delay="4">
+            <div class="product__shot"><img src="assets/img/banners/rowline.jpg" alt="Rowline — the counters on the work screen" width="1024" height="500" loading="lazy"></div>
             <div class="product__head">
               <div class="product__icon"><img src="assets/img/rowline/icon.png" alt="Rowline app icon"></div>
               <div><h3 class="product__name">Rowline</h3><div class="product__sub">{{112}}</div></div>
             </div>
             <p class="product__desc">{{113}}</p>
-            <div class="product__shot"><img src="assets/img/rowline/counters_en.png" alt="Rowline — the counters on the work screen" loading="lazy"></div>
             <div class="product__foot">
               <div class="product__badges">
                 <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.mordansoft.rowline" target="_blank" rel="noopener" aria-label="Get Rowline on Google Play"><img src="assets/badges/google-play.svg" alt="Google Play" style="height:28px"></a>
@@ -452,7 +448,7 @@
           <div class="workshop__head">{{114}}</div>
           <div class="workshop__grid">
             <article class="wip">
-              <div class="wip__shot"><img src="assets/img/beanjar/ticket_en.png" alt="Beanjar — the ticket of the day" loading="lazy"></div>
+              <div class="wip__shot"><img src="assets/img/banners/beanjar.jpg" alt="Beanjar" width="1024" height="500" loading="lazy"></div>
               <div>
                 <div class="wip__name">Beanjar</div>
                 <div class="wip__sub">{{115}}</div>
