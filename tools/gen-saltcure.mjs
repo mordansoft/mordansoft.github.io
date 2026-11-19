@@ -1,7 +1,6 @@
 // Builds /saltcure/ in every language from tools/saltcure.template.html + i18n/saltcure/<lang>.mjs.
 //   node tools/gen-saltcure.mjs
 // i18n/saltcure/en.mjs is the master: a list of strings in template order ({{n}} = string n).
-// The Ukrainian page (uk/saltcure/) is written by hand and only gets the language menu and links.
 // Also rewrites the /saltcure/ entries of sitemap.xml with every language as an alternate.
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 
@@ -24,7 +23,7 @@ const pathOf = (L) => `/${L.dir ? L.dir + '/' : ''}saltcure/`;
 const urlOf = (L) => BASE + pathOf(L);
 const tpl = readFileSync(`${ROOT}tools/saltcure.template.html`, 'utf8');
 const EN = (await import('../i18n/saltcure/en.mjs')).default;
-const live = LANGS.filter((L) => L.code === 'uk' || existsSync(`${ROOT}i18n/saltcure/${L.code}.mjs`));
+const live = LANGS.filter((L) => existsSync(`${ROOT}i18n/saltcure/${L.code}.mjs`));
 
 const alternates = [...live.map((L) => `  <link rel="alternate" hreflang="${L.code}" href="${urlOf(L)}">`),
   `  <link rel="alternate" hreflang="x-default" href="${urlOf(LANGS[0])}">`].join('\n');
@@ -48,16 +47,6 @@ function head(h, L) {
 const built = [];
 const skipped = [];
 for (const L of live) {
-  if (L.code === 'uk') {
-    // Hand-written page: language menu, alternates, and its brine links now that those pages exist in Ukrainian.
-    const p = `${ROOT}uk/saltcure/index.html`;
-    let h = head(readFileSync(p, 'utf8'), L)
-      .replace(`${MEAT}/brine-calculator/"><h3 class="tool-card__title">Brine calculator (EN)</h3>`, `${MEAT}/uk/brine-calculator/"><h3 class="tool-card__title">Калькулятор розсолу</h3>`)
-      .replace(`${MEAT}/dry-brine-calculator/"><h3 class="tool-card__title">Dry brine calculator (EN)</h3>`, `${MEAT}/uk/dry-brine-calculator/"><h3 class="tool-card__title">Калькулятор сухого розсолу</h3>`);
-    writeFileSync(p, h);
-    built.push(L.code);
-    continue;
-  }
   const T = (await import(`../i18n/saltcure/${L.code}.mjs`)).default;
   if (T.length !== EN.length) { skipped.push(`${L.code} (${T.length}/${EN.length})`); continue; } // old page stays until the language is retranslated
   let h = tpl.replace(/\{\{(\d+)\}\}/g, (_, n) => T[+n]);
