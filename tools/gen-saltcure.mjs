@@ -46,6 +46,7 @@ function head(h, L) {
 }
 
 const built = [];
+const skipped = [];
 for (const L of live) {
   if (L.code === 'uk') {
     // Hand-written page: language menu, alternates, and its brine links now that those pages exist in Ukrainian.
@@ -58,9 +59,12 @@ for (const L of live) {
     continue;
   }
   const T = (await import(`../i18n/saltcure/${L.code}.mjs`)).default;
-  if (T.length !== EN.length) throw new Error(`saltcure/${L.code}: ${T.length} strings, en has ${EN.length}`);
+  if (T.length !== EN.length) { skipped.push(`${L.code} (${T.length}/${EN.length})`); continue; } // old page stays until the language is retranslated
   let h = tpl.replace(/\{\{(\d+)\}\}/g, (_, n) => T[+n]);
   h = head(h, L);
+  // App screens exist per build language: swap the English ones where the locale file exists.
+  h = h.replace(/\/assets\/img\/saltcure\/screens\/([a-z]+)_en\.webp/g, (m, shot) =>
+    existsSync(`${ROOT}assets/img/saltcure/screens/${shot}_${L.code}.webp`) ? `/assets/img/saltcure/screens/${shot}_${L.code}.webp` : m);
   h = h.replace(/(<link rel="canonical" href=")[^"]*(">)/, `$1${urlOf(L)}$2`)
     .replace(/(<meta property="og:url" content=")[^"]*(">)/, `$1${urlOf(L)}$2`)
     .replace(/(<meta property="og:locale" content=")[^"]*(">)/, `$1${L.og}$2`)
@@ -83,4 +87,5 @@ sm = sm.replace(/  <url>\s*<loc>https:\/\/mordansoft\.com\/(?:[a-z-]+\/)?saltcur
 const alt = live.map((L) => `    <xhtml:link rel="alternate" hreflang="${L.code}" href="${urlOf(L)}"/>`).join('\n');
 sm = sm.replace('</urlset>', live.map((L) => `  <url>\n    <loc>${urlOf(L)}</loc>\n${alt}\n  </url>\n`).join('') + '</urlset>');
 writeFileSync(`${ROOT}sitemap.xml`, sm);
+if (skipped.length) console.log(`skipped (old page kept): ${skipped.join(', ')}`);
 console.log(`saltcure page in ${built.length} languages: ${built.join(' ')}; sitemap updated`);
