@@ -1,39 +1,32 @@
 <!DOCTYPE html>
-<html lang="cs">
+<html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/svg+xml" href="/assets/img/brand/logo-tile.svg">
-  <title>SaltCure — kalkulačka nakládání masa a deník šarží (iOS, Android)</title>
-  <meta name="description" content="Kalkulačka nakládání pro slaninu, pancettu, salámy a jerky: nasucho i v láku, dávky dusitanu ověřené podle limitů USDA/FSIS, deník šarží s připomínkami, recepty krok za krokem s fotkami. iOS a Android, offline, bez účtu.">
-  <link rel="canonical" href="https://mordansoft.com/cs/saltcure/">
+  <title>SaltCure — 염지 계산기 &amp; 고기 염지 기록장 (iOS, Android)</title>
+  <meta name="description" content="베이컨, 판체타, 살라미, 저키를 위한 염지 계산기: 건염지와 염지액, USDA/FSIS 상한과 비교한 아질산염 양, 알림이 있는 배치 기록장, 단계별 사진 레시피. iOS와 Android, 오프라인, 계정 없음.">
+  <link rel="canonical" href="https://mordansoft.com/ko/saltcure/">
   <link rel="alternate" hreflang="en" href="https://mordansoft.com/saltcure/">
   <link rel="alternate" hreflang="uk" href="https://mordansoft.com/uk/saltcure/">
   <link rel="alternate" hreflang="ru" href="https://mordansoft.com/ru/saltcure/">
-  <link rel="alternate" hreflang="pl" href="https://mordansoft.com/pl/saltcure/">
-  <link rel="alternate" hreflang="cs" href="https://mordansoft.com/cs/saltcure/">
-  <link rel="alternate" hreflang="sk" href="https://mordansoft.com/sk/saltcure/">
-  <link rel="alternate" hreflang="be" href="https://mordansoft.com/be/saltcure/">
-  <link rel="alternate" hreflang="bg" href="https://mordansoft.com/bg/saltcure/">
-  <link rel="alternate" hreflang="hr" href="https://mordansoft.com/hr/saltcure/">
-  <link rel="alternate" hreflang="sr" href="https://mordansoft.com/sr/saltcure/">
-  <link rel="alternate" hreflang="sl" href="https://mordansoft.com/sl/saltcure/">
-  <link rel="alternate" hreflang="es" href="https://mordansoft.com/es/saltcure/">
-  <link rel="alternate" hreflang="it" href="https://mordansoft.com/it/saltcure/">
-  <link rel="alternate" hreflang="kk" href="https://mordansoft.com/kk/saltcure/">
-  <link rel="alternate" hreflang="fr" href="https://mordansoft.com/fr/saltcure/">
-  <link rel="alternate" hreflang="pt-BR" href="https://mordansoft.com/pt-br/saltcure/">
-  <link rel="alternate" hreflang="tr" href="https://mordansoft.com/tr/saltcure/">
   <link rel="alternate" hreflang="de" href="https://mordansoft.com/de/saltcure/">
-  <link rel="alternate" hreflang="id" href="https://mordansoft.com/id/saltcure/">
+  <link rel="alternate" hreflang="es" href="https://mordansoft.com/es/saltcure/">
+  <link rel="alternate" hreflang="fr" href="https://mordansoft.com/fr/saltcure/">
+  <link rel="alternate" hreflang="it" href="https://mordansoft.com/it/saltcure/">
+  <link rel="alternate" hreflang="pt-BR" href="https://mordansoft.com/pt-br/saltcure/">
+  <link rel="alternate" hreflang="pl" href="https://mordansoft.com/pl/saltcure/">
+  <link rel="alternate" hreflang="tr" href="https://mordansoft.com/tr/saltcure/">
+  <link rel="alternate" hreflang="ja" href="https://mordansoft.com/ja/saltcure/">
+  <link rel="alternate" hreflang="ko" href="https://mordansoft.com/ko/saltcure/">
   <link rel="alternate" hreflang="x-default" href="https://mordansoft.com/saltcure/">
   <meta name="apple-itunes-app" content="app-id=6812973901">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="MordanSoft">
-  <meta property="og:title" content="SaltCure — kalkulačka nakládání masa a deník šarží (iOS, Android)">
-  <meta property="og:description" content="Kalkulačka nakládání pro slaninu, pancettu, salámy a jerky: nasucho i v láku, dávky dusitanu ověřené podle limitů USDA/FSIS, deník šarží s připomínkami, recepty krok za krokem s fotkami. iOS a Android, offline, bez účtu.">
-  <meta property="og:url" content="https://mordansoft.com/cs/saltcure/">
-  <meta property="og:locale" content="cs_CZ">
+  <meta property="og:title" content="SaltCure — 염지 계산기 &amp; 고기 염지 기록장 (iOS, Android)">
+  <meta property="og:description" content="베이컨, 판체타, 살라미, 저키를 위한 염지 계산기: 건염지와 염지액, USDA/FSIS 상한과 비교한 아질산염 양, 알림이 있는 배치 기록장, 단계별 사진 레시피. iOS와 Android, 오프라인, 계정 없음.">
+  <meta property="og:url" content="https://mordansoft.com/ko/saltcure/">
+  <meta property="og:locale" content="ko_KR">
   <meta name="twitter:card" content="summary">
 
   <!-- MordanSoft Design System -->
@@ -242,7 +235,12 @@
     .topbar__right { display: inline-flex; align-items: center; }
 
     /* ══ SaltCure ══ */
-    .hero__title { max-width: 16ch; }
+    .hero__title { max-width: 16ch; text-wrap: balance; }
+    .section__title, .close-band__title { text-wrap: balance; }
+    html[lang="ko"] body { word-break: keep-all; }
+    html[lang="ja"] .hero__title, html[lang="ja"] .section__title { line-break: strict; }
+    html[lang="ja"] .nb { display: inline-block; }
+    html[lang="ja"] .hero__title { max-width: 22ch; }
     .stage--phones { max-width: 920px; display: flex; justify-content: center; align-items: flex-end; gap: 0; min-height: 0; }
     .stage--phones .phone { position: relative; flex: none; }
     .stage--phones .phone--main { width: 286px; z-index: 3; transform: translateY(0); border-radius: 40px; padding: 9px; }
@@ -334,7 +332,7 @@
     @media (max-width: 720px) { .stage--phones .phone--main { width: min(250px, 66vw); } .dose__foot { flex-direction: column; gap: var(--space-2); } }
     @media (max-width: 560px) { .scr { max-width: 280px; margin-inline: auto; grid-template-columns: 1fr; } }
   </style>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","inLanguage":"cs","mainEntity":[{"@type":"Question","name":"Proč je dávka dusitanu tak důležitá?","acceptedAnswer":{"@type":"Answer","text":"Dusitan v solicí směsi spolu se solí a chladem brzdí růst C. botulinum v nakládaném mase a fixuje barvu. Není to záruka a nadbytek dusitanu škodí. Proto se dávka váží na vahách s přesností 0,1 g, ne lžící. SaltCure počítá dávku v gramech z hmotnosti masa (u láku z hmotnosti vody)."}},{"@type":"Question","name":"Jaké limity SaltCure používá?","acceptedAnswer":{"@type":"Answer","text":"SaltCure počítá podle zveřejněných pravidel USDA/FSIS (9 CFR 424.21 a 424.22). Pro slaninu je strop 200 ppm dusitanu nasucho a 120 ppm v láku; pro mleté maso 156 ppm. Pro jerky z celého svalu SaltCure záměrně používá stejný přísnější limit 156 ppm. Výchozí dávka je 156 ppm pro slaninu nasucho a 120 ppm pro lák. Tato pravidla vznikla pro průmyslové provozy, ne pro domácí kuchyň. Bereme je jako nejlepší veřejně dostupné číselné vodítko a odpovědnost za hotový výrobek zůstává na tobě."}},{"@type":"Question","name":"Cure #1, Cure #2, nebo evropská solicí směs — jaký je rozdíl?","acceptedAnswer":{"@type":"Answer","text":"Cure #1 obsahuje 6,25 % dusitanu sodného. Cure #2 obsahuje navíc dusičnan sodný a používá se pro dlouhé zrání bez tepelné úpravy. Evropská solicí směs (Pökelsalz, peklosól) obvykle obsahuje jen 0,4–0,6 % dusitanu, tedy zhruba desetkrát méně. Když zvolíš špatný typ, dávka se splete zhruba desetkrát, a proto se SaltCure nejdřív zeptá, jakou sůl máš, a nechá tě zadat přesné procento dusitanu z balení."}},{"@type":"Question","name":"Můžu použít Cure #2 na slaninu?","acceptedAnswer":{"@type":"Answer","text":"Ne. Pravidla USDA nepovolují přidaný dusičnan ve slanině, proto SaltCure Cure #2 pro slaninu úplně blokuje."}},{"@type":"Question","name":"Stačí jerky jen usušit?","acceptedAnswer":{"@type":"Answer","text":"Ne. U jerky jsou hlavním rizikem bakterie, ne dusitan. Doporučení FSIS: před sušením prohřát maso na 160 °F (71 °C), drůbež na 165 °F (74 °C) ve vlhkém prostředí, pak sušit zhruba při 130–140 °F (54–60 °C)."}},{"@type":"Question","name":"Jak poznám, že se šarže zkazila?","acceptedAnswer":{"@type":"Answer","text":"Na dlouho zrajících celých kusech (pancetta, coppa) je bílá chlupatá plíseň normální. Jakákoli jiná plíseň — zelená, černá či jiná — nebo slizký povrch znamená, že celou šarži je třeba vyhodit. Na jiných výrobcích (slanina, jerky, cokoli, co nezraje týdny) znamená jakákoli plíseň vyhodit. Čistý vzhled nedokazuje, že je maso v pořádku. Když si nejsi jistý, vyhoď to."}}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","inLanguage":"ko","mainEntity":[{"@type":"Question","name":"아질산염 양이 왜 그렇게 중요한가요?","acceptedAnswer":{"@type":"Answer","text":"큐어링 솔트의 아질산염은 소금, 낮은 온도와 함께 염지육에서 C. botulinum의 증식을 억제하고 색을 고정합니다. 보증은 아니며, 아질산염이 너무 많으면 해롭습니다. 그래서 양은 숟가락이 아니라 0.1 g 단위 저울로 잽니다. SaltCure는 고기 무게(염지액의 경우 물의 무게)를 기준으로 양을 그램 단위로 계산합니다."}},{"@type":"Question","name":"SaltCure는 어떤 상한을 쓰나요?","acceptedAnswer":{"@type":"Answer","text":"SaltCure는 공개된 USDA/FSIS 규정(9 CFR 424.21 및 424.22)에 따라 계산합니다. 베이컨의 상한은 건염지 아질산염 200 ppm, 염지액 120 ppm이며, 간 고기는 156 ppm입니다. 통근육으로 만드는 저키에도 SaltCure는 의도적으로 같은 더 엄격한 156 ppm을 적용합니다. 기본 양은 건염지 베이컨 156 ppm, 염지액 120 ppm입니다. 이 규정은 가정 주방이 아니라 상업 공장을 위해 만들어졌습니다. 저희는 공개된 가장 좋은 수치 기준으로 사용할 뿐이며, 완성된 제품에 대한 책임은 사용자에게 있습니다."}},{"@type":"Question","name":"Cure #1, Cure #2, 유럽식 큐어링 솔트, 무엇이 다른가요?","acceptedAnswer":{"@type":"Answer","text":"Cure #1에는 아질산나트륨이 6.25% 들어 있습니다. Cure #2에는 질산나트륨도 들어 있으며, 가열하지 않는 긴 건조 숙성에 씁니다. 유럽식 큐어링 솔트(Pökelsalz, peklosól)는 보통 아질산염이 0.4~0.6%만 들어 있어 약 10배 적습니다. 종류를 잘못 고르면 양이 약 10배 어긋나므로, SaltCure는 계산하기 전에 어떤 소금인지 먼저 묻고, 포장에 적힌 정확한 아질산염 %도 입력할 수 있습니다."}},{"@type":"Question","name":"베이컨에 Cure #2를 써도 되나요?","acceptedAnswer":{"@type":"Answer","text":"아니요. USDA 규정은 베이컨에 질산염을 첨가하는 것을 허용하지 않으므로, SaltCure는 베이컨에서 Cure #2를 완전히 막습니다."}},{"@type":"Question","name":"저키는 말리기만 하면 충분한가요?","acceptedAnswer":{"@type":"Answer","text":"아니요. 저키에서 주된 위험은 아질산염이 아니라 세균입니다. FSIS 지침은 말리기 전에 습한 환경에서 고기를 160 °F(71 °C), 가금류는 165 °F(74 °C)까지 가열한 뒤, 약 130~140 °F(54~60 °C)에서 말리라는 것입니다."}},{"@type":"Question","name":"배치가 상했는지 어떻게 알 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"판체타나 코파처럼 오래 건조 숙성하는 통고기에서는 희고 보송한 곰팡이는 정상입니다. 그 밖의 곰팡이(초록색, 검은색 등)나 끈적한 표면이 있으면 배치 전체를 버려야 합니다. 다른 제품(베이컨, 저키 등 몇 주씩 건조 숙성하지 않는 것)은 곰팡이가 하나라도 있으면 버리세요. 겉이 깨끗하다고 고기가 괜찮다는 증거는 아닙니다. 의심스러우면 버리세요."}}]}</script>
 </head>
 <body>
 
@@ -351,7 +349,7 @@
         </span>
         <span class="brand__name">Mordan<b>Soft</b></span>
       </a>
-      <span class="topbar__right"><span class="topbar__tag">Studio mobilních aplikací</span><details class="lang-switch"><summary aria-label="Language"><span class="lang-switch__flag" aria-hidden="true">🇨🇿</span><span>Čeština</span></summary><ul class="lang-switch__menu"><li><a href="/saltcure/" lang="en"><span class="lang-switch__flag" aria-hidden="true">🇬🇧</span><span>English</span></a></li><li><a href="/uk/saltcure/" lang="uk"><span class="lang-switch__flag" aria-hidden="true">🇺🇦</span><span>Українська</span></a></li><li><a href="/ru/saltcure/" lang="ru"><span class="lang-switch__flag" aria-hidden="true">🇷🇺</span><span>Русский</span></a></li><li><a href="/pl/saltcure/" lang="pl"><span class="lang-switch__flag" aria-hidden="true">🇵🇱</span><span>Polski</span></a></li><li><a href="/cs/saltcure/" lang="cs" aria-current="page"><span class="lang-switch__flag" aria-hidden="true">🇨🇿</span><span>Čeština</span></a></li><li><a href="/sk/saltcure/" lang="sk"><span class="lang-switch__flag" aria-hidden="true">🇸🇰</span><span>Slovenčina</span></a></li><li><a href="/be/saltcure/" lang="be"><span class="lang-switch__flag" aria-hidden="true">🇧🇾</span><span>Беларуская</span></a></li><li><a href="/bg/saltcure/" lang="bg"><span class="lang-switch__flag" aria-hidden="true">🇧🇬</span><span>Български</span></a></li><li><a href="/hr/saltcure/" lang="hr"><span class="lang-switch__flag" aria-hidden="true">🇭🇷</span><span>Hrvatski</span></a></li><li><a href="/sr/saltcure/" lang="sr"><span class="lang-switch__flag" aria-hidden="true">🇷🇸</span><span>Српски</span></a></li><li><a href="/sl/saltcure/" lang="sl"><span class="lang-switch__flag" aria-hidden="true">🇸🇮</span><span>Slovenščina</span></a></li><li><a href="/es/saltcure/" lang="es"><span class="lang-switch__flag" aria-hidden="true">🇪🇸</span><span>Español</span></a></li><li><a href="/it/saltcure/" lang="it"><span class="lang-switch__flag" aria-hidden="true">🇮🇹</span><span>Italiano</span></a></li><li><a href="/kk/saltcure/" lang="kk"><span class="lang-switch__flag" aria-hidden="true">🇰🇿</span><span>Қазақша</span></a></li><li><a href="/fr/saltcure/" lang="fr"><span class="lang-switch__flag" aria-hidden="true">🇫🇷</span><span>Français</span></a></li><li><a href="/pt-br/saltcure/" lang="pt-BR"><span class="lang-switch__flag" aria-hidden="true">🇧🇷</span><span>Português (Brasil)</span></a></li><li><a href="/tr/saltcure/" lang="tr"><span class="lang-switch__flag" aria-hidden="true">🇹🇷</span><span>Türkçe</span></a></li><li><a href="/de/saltcure/" lang="de"><span class="lang-switch__flag" aria-hidden="true">🇩🇪</span><span>Deutsch</span></a></li><li><a href="/id/saltcure/" lang="id"><span class="lang-switch__flag" aria-hidden="true">🇮🇩</span><span>Bahasa Indonesia</span></a></li></ul></details></span>
+      <span class="topbar__right"><span class="topbar__tag">모바일 소프트웨어 스튜디오</span><details class="lang-switch"><summary aria-label="Language"><span class="lang-switch__flag" aria-hidden="true">🇰🇷</span><span>한국어</span></summary><ul class="lang-switch__menu"><li><a href="/saltcure/" lang="en"><span class="lang-switch__flag" aria-hidden="true">🇬🇧</span><span>English</span></a></li><li><a href="/uk/saltcure/" lang="uk"><span class="lang-switch__flag" aria-hidden="true">🇺🇦</span><span>Українська</span></a></li><li><a href="/ru/saltcure/" lang="ru"><span class="lang-switch__flag" aria-hidden="true">🇷🇺</span><span>Русский</span></a></li><li><a href="/de/saltcure/" lang="de"><span class="lang-switch__flag" aria-hidden="true">🇩🇪</span><span>Deutsch</span></a></li><li><a href="/es/saltcure/" lang="es"><span class="lang-switch__flag" aria-hidden="true">🇪🇸</span><span>Español</span></a></li><li><a href="/fr/saltcure/" lang="fr"><span class="lang-switch__flag" aria-hidden="true">🇫🇷</span><span>Français</span></a></li><li><a href="/it/saltcure/" lang="it"><span class="lang-switch__flag" aria-hidden="true">🇮🇹</span><span>Italiano</span></a></li><li><a href="/pt-br/saltcure/" lang="pt-BR"><span class="lang-switch__flag" aria-hidden="true">🇧🇷</span><span>Português (Brasil)</span></a></li><li><a href="/pl/saltcure/" lang="pl"><span class="lang-switch__flag" aria-hidden="true">🇵🇱</span><span>Polski</span></a></li><li><a href="/tr/saltcure/" lang="tr"><span class="lang-switch__flag" aria-hidden="true">🇹🇷</span><span>Türkçe</span></a></li><li><a href="/ja/saltcure/" lang="ja"><span class="lang-switch__flag" aria-hidden="true">🇯🇵</span><span>日本語</span></a></li><li><a href="/ko/saltcure/" lang="ko" aria-current="page"><span class="lang-switch__flag" aria-hidden="true">🇰🇷</span><span>한국어</span></a></li></ul></details></span>
     </div>
   </div>
 
@@ -361,22 +359,22 @@
       <div class="hero__wash" aria-hidden="true"></div>
       <div class="hero__wash hero__wash--b" aria-hidden="true"></div>
       <div class="ms-container">
-        <a class="ms-btn ms-btn--link detail__back" href="/#products"><i data-lucide="arrow-left"></i> Všechny produkty</a>
+        <a class="ms-btn ms-btn--link detail__back" href="/#products"><i data-lucide="arrow-left"></i> 모든 제품</a>
         <div class="hero__copy" data-reveal>
-          <span class="hero__tile"><img src="/assets/saltcure/icon.png" alt="Ikona aplikace SaltCure" width="72" height="72"></span>
-          <span class="ms-eyebrow">// Nakládání masa na gram přesně</span>
-          <h1 class="hero__title">Nakládáš doma? <b>Nehádej</b> s dávkou soli.</h1>
-          <p class="hero__lead">SaltCure spočítá nakládání na gram, vede každou šarži od prvního dne do hotova a provede tě receptem krok za krokem: slanina, pancetta, jerky, kuřecí šunka.</p>
+          <span class="hero__tile"><img src="/assets/saltcure/icon.png" alt="SaltCure 앱 아이콘" width="72" height="72"></span>
+          <span class="ms-eyebrow">// 고기 염지, 그램 단위로</span>
+          <h1 class="hero__title">집에서 염지하세요. 소금 양은 <b>감으로 정하지 마세요</b>.</h1>
+          <p class="hero__lead">SaltCure는 염지에 필요한 양을 그램 단위로 계산하고, 모든 배치를 첫날부터 완성까지 기록하며, 레시피를 한 단계씩 안내합니다. 베이컨, 판체타, 저키, 닭가슴살 햄까지.</p>
           <div class="store-badges">
-            <a class="store-badge" href="/saltcure/go/play/" target="_blank" rel="noopener" aria-label="Stáhnout SaltCure z Google Play"><img src="/assets/badges/google-play.svg" alt="Nyní na Google Play"></a>
-            <a class="store-badge" href="/saltcure/go/app-store/" target="_blank" rel="noopener" aria-label="Stáhnout SaltCure z App Store"><img src="/assets/badges/app-store.svg" alt="Stáhněte si v App Store"></a>
+            <a class="store-badge" href="/saltcure/go/play/" target="_blank" rel="noopener" aria-label="Google Play에서 SaltCure 받기"><img src="/assets/badges/google-play.svg" alt="Google Play에서 받기"></a>
+            <a class="store-badge" href="/saltcure/go/app-store/" target="_blank" rel="noopener" aria-label="App Store에서 SaltCure 다운로드"><img src="/assets/badges/app-store.svg" alt="App Store에서 다운로드"></a>
           </div>
-          <div class="hero__specs"><span>Offline</span><span>Bez účtu</span><span>dávky ověřené podle USDA/FSIS</span><span>12 jazyků</span></div>
+          <div class="hero__specs"><span>오프라인 우선</span><span>계정 없음</span><span>USDA/FSIS 기준 양 확인</span><span>12개 언어</span></div>
         </div>
         <div class="stage stage--phones">
           <div class="stage__glow" aria-hidden="true"></div>
           <div class="phone phone--l" aria-hidden="true"><img src="/assets/img/saltcure/screens/recipes_en.webp" alt="" width="620" height="1347"></div>
-          <div class="phone phone--main"><img src="/assets/img/saltcure/screens/calc_en.webp" alt="Kalkulačka SaltCure: na 1200 g slaniny je potřeba 2,9 g Cure #1, 151 ppm, doporučená dávka" width="620" height="1347"></div>
+          <div class="phone phone--main"><img src="/assets/img/saltcure/screens/calc_en.webp" alt="SaltCure 계산기: 베이컨 1200 g에는 Cure #1 2.9 g, 151 ppm이 필요하며 권장 양입니다" width="620" height="1347"></div>
           <div class="phone phone--r" aria-hidden="true"><img src="/assets/img/saltcure/screens/showcase_en.webp" alt="" width="620" height="1347"></div>
         </div>
       </div>
@@ -386,23 +384,23 @@
     <section class="section band-dark" data-theme="dark">
       <div class="ms-container">
         <div class="section__head js-reveal">
-          <span class="ms-eyebrow">// Jak to funguje</span>
-          <h2 class="section__title">Jediné číslo, které se nedá odhadnout od oka</h2>
-          <p class="section__lead">Dusitanová sůl se dávkuje po gramech, ne po lžících. SaltCure ji spočítá pro tvoje maso a ukáže, kde dávka stojí vůči limitu.</p>
+          <span class="ms-eyebrow">// 사용 방법</span>
+          <h2 class="section__title">눈대중으로 정할 수 없는 단 하나의 숫자</h2>
+          <p class="section__lead">큐어링 솔트는 숟가락이 아니라 그램으로 넣습니다. SaltCure가 내 고기에 맞춰 무게를 계산하고, 상한 대비 현재 양이 어디쯤인지 보여 줍니다.</p>
         </div>
 
-        <figure class="dose js-reveal" id="dose" aria-label="Ukazatel dávky: dávka dusitanové soli roste od nuly k doporučeným 2,9 g">
-          <div class="dose__row"><span class="dose__label">// Dusitanová sůl</span><span class="dose__meat">1200 g · Cure #1 · 6.25%</span></div>
+        <figure class="dose js-reveal" id="dose" aria-label="양 게이지: 큐어링 솔트 양이 0에서 권장 2.9 g까지 늘어납니다">
+          <div class="dose__row"><span class="dose__label">// 큐어링 솔트</span><span class="dose__meat">1200 g · Cure #1 · 6.25%</span></div>
           <div class="dose__read"><span class="dose__g"><span id="doseG">0.0</span><small>g</small></span><span class="dose__ppm"><span id="dosePpm">0</span> ppm</span></div>
           <div class="dose__track"><span class="dose__knob" id="doseKnob"></span></div>
-          <div class="dose__foot"><span class="dose__verdict" id="doseVerdict" data-low="Pod bezpečnou hranicí" data-hit="Doporučená dávka">Pod bezpečnou hranicí</span><span class="dose__rec">doporučeno 156 ppm</span></div>
+          <div class="dose__foot"><span class="dose__verdict" id="doseVerdict" data-low="안전한 양에 못 미침" data-hit="권장 양">안전한 양에 못 미침</span><span class="dose__rec">권장 156 ppm</span></div>
         </figure>
 
         <div class="steps">
-          <div class="step js-reveal" data-delay="1"><span class="step__no">1</span><div><h3 class="step__title">Vyber pokrm</h3><p class="step__text">Slanina, pancetta, biltong, jerky, salám, nebo vlastní. Nasucho nebo v láku.</p></div></div>
-          <div class="step js-reveal" data-delay="2"><span class="step__no">2</span><div><h3 class="step__title">Řekni, jakou máš sůl</h3><p class="step__text">Cure #1, Cure #2, peklosól, NPS nebo vlastní procento dusitanu. Zaměněný sáček znamená desetinásobnou chybu, proto se aplikace ptá hned na začátku.</p></div></div>
-          <div class="step js-reveal" data-delay="3"><span class="step__no">3</span><div><h3 class="step__title">Zvaž maso</h3><p class="step__text">Sůl, cukr, koření i dusitanová sůl se řídí hmotností, v gramech nebo uncích.</p></div></div>
-          <div class="step js-reveal" data-delay="4"><span class="step__no">4</span><div><h3 class="step__title">Odvaž dávku</h3><p class="step__text">Dusitanová sůl na 0,1 g, vedle ní ppm s limitem a jasná rada, jak to opravit, když dávka nesedí.</p></div></div>
+          <div class="step js-reveal" data-delay="1"><span class="step__no">1</span><div><h3 class="step__title">요리 고르기</h3><p class="step__text">베이컨, 판체타, 빌통, 저키, 살라미, 또는 나만의 요리. 건염지 또는 염지액.</p></div></div>
+          <div class="step js-reveal" data-delay="2"><span class="step__no">2</span><div><h3 class="step__title">가진 소금 알려 주기</h3><p class="step__text">Cure #1, Cure #2, 페클로솔, NPS 또는 직접 입력한 아질산염 %. 포장을 잘못 고르면 10배 차이가 나므로 앱이 먼저 물어봅니다.</p></div></div>
+          <div class="step js-reveal" data-delay="3"><span class="step__no">3</span><div><h3 class="step__title">고기 무게 재기</h3><p class="step__text">소금, 설탕, 향신료, 큐어링 솔트 모두 무게에 맞춰 계산합니다. 그램 또는 온스로 쓸 수 있습니다.</p></div></div>
+          <div class="step js-reveal" data-delay="4"><span class="step__no">4</span><div><h3 class="step__title">양 재기</h3><p class="step__text">큐어링 솔트는 0.1 g 단위로, ppm과 상한을 나란히 보여 주고, 양이 맞지 않으면 고치는 방법도 알려 줍니다.</p></div></div>
         </div>
       </div>
     </section>
@@ -411,19 +409,19 @@
     <section class="section">
       <div class="ms-container">
         <div class="section__head js-reveal">
-          <span class="ms-eyebrow">// Recepty</span>
-          <h2 class="section__title">Každý recept jsme nakládali a snědli u nás v kuchyni</h2>
-          <p class="section__lead">Fotky jsou z té konkrétní šarže, ne z fotobanky. Každý recept je cesta krok za krokem s časem práce a čekání, fotkou, jak má vypadat, a jasnou poznámkou, co nikdy nedělat.</p>
+          <span class="ms-eyebrow">// 레시피</span>
+          <h2 class="section__title">모든 레시피는 저희 주방에서 직접 염지하고 먹어 본 것입니다</h2>
+          <p class="section__lead">사진은 스톡 이미지가 아니라 그 배치를 찍은 것입니다. 각 레시피는 작업 시간과 대기 시간이 있는 단계별 경로이고, 완성 모습 사진과 절대 하면 안 되는 일에 대한 쉬운 설명이 들어 있습니다.</p>
         </div>
         <div class="photos">
-          <figure class="photo js-reveal"><img src="/assets/img/saltcure/photos/bacon.webp" alt="Slanina" loading="lazy" width="900" height="675"><figcaption>Slanina</figcaption></figure>
-          <figure class="photo js-reveal" data-delay="1"><img src="/assets/img/saltcure/photos/canadian_bacon.webp" alt="Kanadská slanina" loading="lazy" width="900" height="675"><figcaption>Kanadská slanina</figcaption></figure>
-          <figure class="photo js-reveal" data-delay="2"><img src="/assets/img/saltcure/photos/chicken_ham.webp" alt="Kuřecí šunka" loading="lazy" width="900" height="675"><figcaption>Kuřecí šunka</figcaption></figure>
-          <figure class="photo js-reveal"><img src="/assets/img/saltcure/photos/beef_jerky.webp" alt="Hovězí jerky" loading="lazy" width="900" height="675"><figcaption>Hovězí jerky</figcaption></figure>
-          <figure class="photo js-reveal" data-delay="1"><img src="/assets/img/saltcure/photos/baked_belly.webp" alt="Pečený vepřový bok" loading="lazy" width="900" height="675"><figcaption>Pečený vepřový bok</figcaption></figure>
-          <figure class="photo js-reveal" data-delay="2"><img src="/assets/img/saltcure/photos/pork_stew.webp" alt="Konzervovaný vepřový guláš" loading="lazy" width="900" height="675"><figcaption>Konzervovaný vepřový guláš</figcaption></figure>
+          <figure class="photo js-reveal"><img src="/assets/img/saltcure/photos/bacon.webp" alt="베이컨" loading="lazy" width="900" height="675"><figcaption>베이컨</figcaption></figure>
+          <figure class="photo js-reveal" data-delay="1"><img src="/assets/img/saltcure/photos/canadian_bacon.webp" alt="캐나디안 베이컨" loading="lazy" width="900" height="675"><figcaption>캐나디안 베이컨</figcaption></figure>
+          <figure class="photo js-reveal" data-delay="2"><img src="/assets/img/saltcure/photos/chicken_ham.webp" alt="닭가슴살 햄" loading="lazy" width="900" height="675"><figcaption>닭가슴살 햄</figcaption></figure>
+          <figure class="photo js-reveal"><img src="/assets/img/saltcure/photos/beef_jerky.webp" alt="소고기 저키" loading="lazy" width="900" height="675"><figcaption>소고기 저키</figcaption></figure>
+          <figure class="photo js-reveal" data-delay="1"><img src="/assets/img/saltcure/photos/baked_belly.webp" alt="구운 삼겹살" loading="lazy" width="900" height="675"><figcaption>구운 삼겹살</figcaption></figure>
+          <figure class="photo js-reveal" data-delay="2"><img src="/assets/img/saltcure/photos/pork_stew.webp" alt="돼지고기 병조림" loading="lazy" width="900" height="675"><figcaption>돼지고기 병조림</figcaption></figure>
         </div>
-        <p class="photos-note js-reveal">A cesta pro tvůj vlastní pokrm, se stejnými kroky.</p>
+        <p class="photos-note js-reveal">그리고 나만의 요리를 위한 길도 있습니다. 같은 단계로 진행합니다.</p>
       </div>
     </section>
 
@@ -431,14 +429,14 @@
     <section class="section band-dark" data-theme="dark">
       <div class="ms-container">
         <div class="section__head js-reveal">
-          <span class="ms-eyebrow">// V aplikaci</span>
-          <h2 class="section__title">Kalkulačka, recepty, kroky: vše v kapse</h2>
+          <span class="ms-eyebrow">// 앱 살펴보기</span>
+          <h2 class="section__title">계산기, 레시피, 단계를 한 주머니에</h2>
         </div>
         <div class="scr">
-          <div class="scr__item js-reveal"><div class="phone"><img src="/assets/img/saltcure/screens/calc_en.webp" alt="Dávka na gram přesně" loading="lazy" width="620" height="1347"></div><p class="scr__cap">Dávka na gram přesně</p></div>
-          <div class="scr__item js-reveal" data-delay="1"><div class="phone"><img src="/assets/img/saltcure/screens/recipes_en.webp" alt="Recepty s fotkami" loading="lazy" width="620" height="1347"></div><p class="scr__cap">Recepty s fotkami</p></div>
-          <div class="scr__item js-reveal" data-delay="2"><div class="phone"><img src="/assets/img/saltcure/screens/showcase_en.webp" alt="Časy ještě před začátkem" loading="lazy" width="620" height="1347"></div><p class="scr__cap">Časy ještě před začátkem</p></div>
-          <div class="scr__item js-reveal" data-delay="3"><div class="phone"><img src="/assets/img/saltcure/screens/step_en.webp" alt="U každého kroku vidíš, jak vypadá" loading="lazy" width="620" height="1347"></div><p class="scr__cap">U každého kroku vidíš, jak vypadá</p></div>
+          <div class="scr__item js-reveal"><div class="phone"><img src="/assets/img/saltcure/screens/calc_en.webp" alt="그램 단위 양" loading="lazy" width="620" height="1347"></div><p class="scr__cap">그램 단위 양</p></div>
+          <div class="scr__item js-reveal" data-delay="1"><div class="phone"><img src="/assets/img/saltcure/screens/recipes_en.webp" alt="사진이 있는 레시피" loading="lazy" width="620" height="1347"></div><p class="scr__cap">사진이 있는 레시피</p></div>
+          <div class="scr__item js-reveal" data-delay="2"><div class="phone"><img src="/assets/img/saltcure/screens/showcase_en.webp" alt="시작 전에 보는 시간표" loading="lazy" width="620" height="1347"></div><p class="scr__cap">시작 전에 보는 시간표</p></div>
+          <div class="scr__item js-reveal" data-delay="3"><div class="phone"><img src="/assets/img/saltcure/screens/step_en.webp" alt="단계마다 완성 모습 보여 주기" loading="lazy" width="620" height="1347"></div><p class="scr__cap">단계마다 완성 모습 보여 주기</p></div>
         </div>
       </div>
     </section>
@@ -447,16 +445,16 @@
     <section class="section">
       <div class="ms-container">
         <div class="section__head js-reveal">
-          <span class="ms-eyebrow">// Co je uvnitř</span>
-          <h2 class="section__title">Stvořeno pro dlouhé čekání</h2>
+          <span class="ms-eyebrow">// 앱 안에는</span>
+          <h2 class="section__title">긴 기다림을 위해 만들었습니다</h2>
         </div>
         <div class="features">
-          <div class="ms-card ms-card--pad feature js-reveal" data-delay="1"><span class="feature__icon"><i data-lucide="calculator"></i></span><div><h3 class="feature__title">Nasucho i v láku</h3><p class="feature__text">Rovnovážné dávkování pro obě metody, se solí, cukrem a kořením v procentech hmotnosti masa.</p></div></div>
-          <div class="ms-card ms-card--pad feature js-reveal" data-delay="2"><span class="feature__icon"><i data-lucide="shield-check"></i></span><div><h3 class="feature__title">Tvůj standard dusitanu</h3><p class="feature__text">Cure #1, Cure #2, peklosól, NPS nebo vlastní procento, ověřené podle limitů USDA/FSIS. Americké kalkulačky počítají s jedním standardem; tahle ne.</p></div></div>
-          <div class="ms-card ms-card--pad feature js-reveal" data-delay="3"><span class="feature__icon"><i data-lucide="clipboard-list"></i></span><div><h3 class="feature__title">Deník každé šarže</h3><p class="feature__text">Dny, denní připomínka otočení a zvláštní na den, kdy je hotovo. Sada fotek od syrového kusu po plátky, poznámky a hodnocení.</p></div></div>
-          <div class="ms-card ms-card--pad feature js-reveal" data-delay="1"><span class="feature__icon"><i data-lucide="trending-down"></i></span><div><h3 class="feature__title">Graf úbytku hmotnosti</h3><p class="feature__text">Denní tempo a cílový rozsah pro pokrm, takže vidíš, jak dlouho ještě sušit.</p></div></div>
-          <div class="ms-card ms-card--pad feature js-reveal" data-delay="2"><span class="feature__icon"><i data-lucide="flame"></i></span><div><h3 class="feature__title">Koření s dávkou</h3><p class="feature__text">Pepř, česnek, koriandr, chilli, jalovec, fenykl a další, každé v procentech hmotnosti masa, s poznámkou, k čemu se hodí.</p></div></div>
-          <div class="ms-card ms-card--pad feature js-reveal" data-delay="3"><span class="feature__icon"><i data-lucide="tablet-smartphone"></i></span><div><h3 class="feature__title">Telefon nebo tablet</h3><p class="feature__text">Gramy nebo unce, °C nebo °F, 12 jazyků. Tvoje šarže žijí v telefonu.</p></div></div>
+          <div class="ms-card ms-card--pad feature js-reveal" data-delay="1"><span class="feature__icon"><i data-lucide="calculator"></i></span><div><h3 class="feature__title">건염지와 염지액</h3><p class="feature__text">두 방법 모두 평형 염지로 계산하며, 소금, 설탕, 향신료는 고기 대비 %로 정합니다.</p></div></div>
+          <div class="ms-card ms-card--pad feature js-reveal" data-delay="2"><span class="feature__icon"><i data-lucide="shield-check"></i></span><div><h3 class="feature__title">나의 아질산염 기준</h3><p class="feature__text">Cure #1, Cure #2, 페클로솔, NPS 또는 직접 입력한 %를 USDA/FSIS 상한과 비교합니다. 미국식 계산기는 한 가지 기준만 가정하지만, SaltCure는 그렇지 않습니다.</p></div></div>
+          <div class="ms-card ms-card--pad feature js-reveal" data-delay="3"><span class="feature__icon"><i data-lucide="clipboard-list"></i></span><div><h3 class="feature__title">배치마다 기록장</h3><p class="feature__text">날짜, 매일 뒤집기 알림, 완성일 알림을 따로. 생고기부터 슬라이스까지 사진 세트, 메모, 평점도 남깁니다.</p></div></div>
+          <div class="ms-card ms-card--pad feature js-reveal" data-delay="1"><span class="feature__icon"><i data-lucide="trending-down"></i></span><div><h3 class="feature__title">감량 그래프</h3><p class="feature__text">하루 감량 속도와 그 요리의 목표 범위를 보여 주어, 얼마나 더 말려야 하는지 알 수 있습니다.</p></div></div>
+          <div class="ms-card ms-card--pad feature js-reveal" data-delay="2"><span class="feature__icon"><i data-lucide="flame"></i></span><div><h3 class="feature__title">향신료 양 계산</h3><p class="feature__text">후추, 마늘, 고수, 고춧가루, 주니퍼베리, 펜넬 등을 각각 고기 대비 %로, 무엇과 어울리는지 설명과 함께 알려 줍니다.</p></div></div>
+          <div class="ms-card ms-card--pad feature js-reveal" data-delay="3"><span class="feature__icon"><i data-lucide="tablet-smartphone"></i></span><div><h3 class="feature__title">휴대폰과 태블릿</h3><p class="feature__text">그램 또는 온스, °C 또는 °F, 12개 언어. 배치 기록은 내 휴대폰에 저장됩니다.</p></div></div>
         </div>
       </div>
     </section>
@@ -465,14 +463,14 @@
     <section class="section section--hair">
       <div class="ms-container">
         <div class="section__head js-reveal">
-          <span class="ms-eyebrow">// Zdarma v prohlížeči</span>
-          <h2 class="section__title">Kalkulačky na meat.mordansoft.com</h2>
-          <p class="section__lead">Stejný výpočet jako v aplikaci — bez instalace a bez účtu.</p>
+          <span class="ms-eyebrow">// 브라우저에서 무료</span>
+          <h2 class="section__title">meat.mordansoft.com의 계산기</h2>
+          <p class="section__lead">앱과 같은 염지 계산 엔진입니다. 설치도 계정도 필요 없습니다.</p>
         </div>
         <div class="tool-grid">
-          <a class="ms-card ms-card--pad tool-card js-reveal" href="https://meat.mordansoft.com/cs/curing-salt-calculator/"><h3 class="tool-card__title">Kalkulačka dusitanové soli</h3><p class="tool-card__text">Cure #1, Cure #2 nebo evropská solicí směs: gramy podle hmotnosti, dusitan ověřený podle limitů.</p></a>
-          <a class="ms-card ms-card--pad tool-card js-reveal" data-delay="1" href="https://meat.mordansoft.com/cs/brine-calculator/"><h3 class="tool-card__title">Kalkulačka láku</h3><p class="tool-card__text">Síla láku a sůl pro zadanou hmotnost masa a vody.</p></a>
-          <a class="ms-card ms-card--pad tool-card js-reveal" data-delay="2" href="https://meat.mordansoft.com/cs/dry-brine-calculator/"><h3 class="tool-card__title">Kalkulačka solení nasucho</h3><p class="tool-card__text">Sůl podle hmotnosti pro solení nasucho, bez dusitanu.</p></a>
+          <a class="ms-card ms-card--pad tool-card js-reveal" href="https://meat.mordansoft.com/curing-salt-calculator/"><h3 class="tool-card__title">큐어링 솔트 계산기</h3><p class="tool-card__text">Cure #1, Cure #2 또는 유럽식 큐어링 솔트: 무게별 그램 수와 상한 대비 아질산염 확인.</p></a>
+          <a class="ms-card ms-card--pad tool-card js-reveal" data-delay="1" href="https://meat.mordansoft.com/brine-calculator/"><h3 class="tool-card__title">염지액 계산기</h3><p class="tool-card__text">고기와 물의 무게에 맞는 염지액 농도와 소금 양.</p></a>
+          <a class="ms-card ms-card--pad tool-card js-reveal" data-delay="2" href="https://meat.mordansoft.com/dry-brine-calculator/"><h3 class="tool-card__title">건염지 계산기</h3><p class="tool-card__text">아질산염 없는 건염지의 무게별 소금 양.</p></a>
         </div>
       </div>
     </section>
@@ -481,17 +479,17 @@
     <section class="section section--hair">
       <div class="ms-container">
         <div class="section__head js-reveal">
-          <span class="ms-eyebrow">// Zdroje</span>
-          <h2 class="section__title">Odkud jsou čísla</h2>
-          <p class="section__lead">Každý limit dusitanu v SaltCure vychází ze zveřejněného pravidla USDA/FSIS a dávka je zobrazená vedle svého limitu.</p>
+          <span class="ms-eyebrow">// 출처</span>
+          <h2 class="section__title">숫자는 어디서 왔나요</h2>
+          <p class="section__lead">SaltCure의 모든 아질산염 상한은 공개된 USDA/FSIS 규정에 근거하며, 양은 상한과 나란히 표시됩니다.</p>
         </div>
         <ul class="src-list js-reveal">
-          <li>Slanina: až 200 ppm dusitanu nasucho a 120 ppm v láku — <a href="https://www.law.cornell.edu/cfr/text/9/424.22" rel="noopener">9 CFR 424.22(b)</a>.</li>
-          <li>Jiné nakládané maso: až 625 ppm na vstupu pro celý kus nakládaný nasucho (nejvýš 200 ppm v hotovém výrobku), 156 ppm pro mleté maso — <a href="https://www.law.cornell.edu/cfr/text/9/424.21" rel="noopener">9 CFR 424.21(c)</a>. Pro jerky SaltCure záměrně používá přísnějších 156 ppm.</li>
-          <li>Dusičnan (Cure #2) ve slanině povolený není, a proto ho tam aplikace blokuje. Dávka dusitanu se vždy zaokrouhluje dolů, nikdy nahoru.</li>
-          <li>Tato pravidla vznikla pro průmyslové provozy, ne pro domácí kuchyň. Bereme je jako nejlepší veřejně dostupné číselné vodítko; výsledek není schválení ani záruka a odpovědnost za hotový výrobek zůstává na tobě.</li>
+          <li>베이컨: 건염지는 아질산염 최대 200 ppm, 염지액은 120 ppm — <a href="https://www.law.cornell.edu/cfr/text/9/424.22" rel="noopener">9 CFR 424.22(b)</a>.</li>
+          <li>그 밖의 염지육: 통고기 건염지는 투입 기준 최대 625 ppm(완제품은 200 ppm 이하), 간 고기는 156 ppm — <a href="https://www.law.cornell.edu/cfr/text/9/424.21" rel="noopener">9 CFR 424.21(c)</a>. 저키에는 SaltCure가 의도적으로 더 엄격한 156 ppm을 적용합니다.</li>
+          <li>베이컨에는 질산염(Cure #2)이 허용되지 않아 앱에서 선택을 막습니다. 아질산염 양은 항상 내림하며, 올림하지 않습니다.</li>
+          <li>이 규정은 가정 주방이 아니라 상업 공장을 위해 만들어졌습니다. 저희는 공개된 가장 좋은 수치 기준으로 사용할 뿐이며, 결과는 승인도 보증도 아니고 완성된 제품에 대한 책임은 사용자에게 있습니다.</li>
         </ul>
-        <p class="src-list__faq js-reveal"><a href="#faq">Přečti si otázky o dusitanu a bezpečnosti</a></p>
+        <p class="src-list__faq js-reveal"><a href="#faq">아질산염과 안전에 관한 질문 보기</a></p>
       </div>
     </section>
 
@@ -499,18 +497,18 @@
     <section class="section section--hair">
       <div class="ms-container">
         <div class="section__head js-reveal">
-          <span class="ms-eyebrow">// Dusitan a bezpečnost</span>
-          <h2 class="section__title">Otázky o dusitanu a bezpečnosti</h2>
+          <span class="ms-eyebrow">// 아질산염 &amp; 안전</span>
+          <h2 class="section__title">아질산염과 안전에 관한 질문</h2>
         </div>
         <div class="faq" id="faq">
-          <details class="ms-card ms-card--pad faq__item js-reveal"><summary>Proč je dávka dusitanu tak důležitá?</summary><p>Dusitan v solicí směsi spolu se solí a chladem brzdí růst <i>C. botulinum</i> v nakládaném mase a fixuje barvu. Není to záruka a nadbytek dusitanu škodí. Proto se dávka váží na vahách s přesností 0,1 g, ne lžící. SaltCure počítá dávku v gramech z hmotnosti masa (u láku z hmotnosti vody).</p></details>
-          <details class="ms-card ms-card--pad faq__item js-reveal"><summary>Jaké limity SaltCure používá?</summary><p>SaltCure počítá podle zveřejněných pravidel USDA/FSIS (9 CFR 424.21 a 424.22). Pro slaninu je strop 200 ppm dusitanu nasucho a 120 ppm v láku; pro mleté maso 156 ppm. Pro jerky z celého svalu SaltCure záměrně používá stejný přísnější limit 156 ppm. Výchozí dávka je 156 ppm pro slaninu nasucho a 120 ppm pro lák. Tato pravidla vznikla pro průmyslové provozy, ne pro domácí kuchyň. Bereme je jako nejlepší veřejně dostupné číselné vodítko a odpovědnost za hotový výrobek zůstává na tobě.</p></details>
-          <details class="ms-card ms-card--pad faq__item js-reveal"><summary>Cure #1, Cure #2, nebo evropská solicí směs — jaký je rozdíl?</summary><p>Cure #1 obsahuje 6,25 % dusitanu sodného. Cure #2 obsahuje navíc dusičnan sodný a používá se pro dlouhé zrání bez tepelné úpravy. Evropská solicí směs (Pökelsalz, peklosól) obvykle obsahuje jen 0,4–0,6 % dusitanu, tedy zhruba desetkrát méně. Když zvolíš špatný typ, dávka se splete zhruba desetkrát, a proto se SaltCure nejdřív zeptá, jakou sůl máš, a nechá tě zadat přesné procento dusitanu z balení.</p></details>
-          <details class="ms-card ms-card--pad faq__item js-reveal"><summary>Můžu použít Cure #2 na slaninu?</summary><p>Ne. Pravidla USDA nepovolují přidaný dusičnan ve slanině, proto SaltCure Cure #2 pro slaninu úplně blokuje.</p></details>
-          <details class="ms-card ms-card--pad faq__item js-reveal"><summary>Stačí jerky jen usušit?</summary><p>Ne. U jerky jsou hlavním rizikem bakterie, ne dusitan. Doporučení FSIS: před sušením prohřát maso na 160 °F (71 °C), drůbež na 165 °F (74 °C) ve vlhkém prostředí, pak sušit zhruba při 130–140 °F (54–60 °C).</p></details>
-          <details class="ms-card ms-card--pad faq__item js-reveal"><summary>Jak poznám, že se šarže zkazila?</summary><p>Na dlouho zrajících celých kusech (pancetta, coppa) je bílá chlupatá plíseň normální. Jakákoli jiná plíseň — zelená, černá či jiná — nebo slizký povrch znamená, že celou šarži je třeba vyhodit. Na jiných výrobcích (slanina, jerky, cokoli, co nezraje týdny) znamená jakákoli plíseň vyhodit. Čistý vzhled nedokazuje, že je maso v pořádku. Když si nejsi jistý, vyhoď to.</p></details>
+          <details class="ms-card ms-card--pad faq__item js-reveal"><summary>아질산염 양이 왜 그렇게 중요한가요?</summary><p>큐어링 솔트의 아질산염은 소금, 낮은 온도와 함께 염지육에서 <i>C. botulinum</i>의 증식을 억제하고 색을 고정합니다. 보증은 아니며, 아질산염이 너무 많으면 해롭습니다. 그래서 양은 숟가락이 아니라 0.1 g 단위 저울로 잽니다. SaltCure는 고기 무게(염지액의 경우 물의 무게)를 기준으로 양을 그램 단위로 계산합니다.</p></details>
+          <details class="ms-card ms-card--pad faq__item js-reveal"><summary>SaltCure는 어떤 상한을 쓰나요?</summary><p>SaltCure는 공개된 USDA/FSIS 규정(9 CFR 424.21 및 424.22)에 따라 계산합니다. 베이컨의 상한은 건염지 아질산염 200 ppm, 염지액 120 ppm이며, 간 고기는 156 ppm입니다. 통근육으로 만드는 저키에도 SaltCure는 의도적으로 같은 더 엄격한 156 ppm을 적용합니다. 기본 양은 건염지 베이컨 156 ppm, 염지액 120 ppm입니다. 이 규정은 가정 주방이 아니라 상업 공장을 위해 만들어졌습니다. 저희는 공개된 가장 좋은 수치 기준으로 사용할 뿐이며, 완성된 제품에 대한 책임은 사용자에게 있습니다.</p></details>
+          <details class="ms-card ms-card--pad faq__item js-reveal"><summary>Cure #1, Cure #2, 유럽식 큐어링 솔트, 무엇이 다른가요?</summary><p>Cure #1에는 아질산나트륨이 6.25% 들어 있습니다. Cure #2에는 질산나트륨도 들어 있으며, 가열하지 않는 긴 건조 숙성에 씁니다. 유럽식 큐어링 솔트(Pökelsalz, peklosól)는 보통 아질산염이 0.4~0.6%만 들어 있어 약 10배 적습니다. 종류를 잘못 고르면 양이 약 10배 어긋나므로, SaltCure는 계산하기 전에 어떤 소금인지 먼저 묻고, 포장에 적힌 정확한 아질산염 %도 입력할 수 있습니다.</p></details>
+          <details class="ms-card ms-card--pad faq__item js-reveal"><summary>베이컨에 Cure #2를 써도 되나요?</summary><p>아니요. USDA 규정은 베이컨에 질산염을 첨가하는 것을 허용하지 않으므로, SaltCure는 베이컨에서 Cure #2를 완전히 막습니다.</p></details>
+          <details class="ms-card ms-card--pad faq__item js-reveal"><summary>저키는 말리기만 하면 충분한가요?</summary><p>아니요. 저키에서 주된 위험은 아질산염이 아니라 세균입니다. FSIS 지침은 말리기 전에 습한 환경에서 고기를 160 °F(71 °C), 가금류는 165 °F(74 °C)까지 가열한 뒤, 약 130~140 °F(54~60 °C)에서 말리라는 것입니다.</p></details>
+          <details class="ms-card ms-card--pad faq__item js-reveal"><summary>배치가 상했는지 어떻게 알 수 있나요?</summary><p>판체타나 코파처럼 오래 건조 숙성하는 통고기에서는 희고 보송한 곰팡이는 정상입니다. 그 밖의 곰팡이(초록색, 검은색 등)나 끈적한 표면이 있으면 배치 전체를 버려야 합니다. 다른 제품(베이컨, 저키 등 몇 주씩 건조 숙성하지 않는 것)은 곰팡이가 하나라도 있으면 버리세요. 겉이 깨끗하다고 고기가 괜찮다는 증거는 아닙니다. 의심스러우면 버리세요.</p></details>
         </div>
-        <p class="more-link js-reveal">Víc, se zdrojem u každého čísla: <a href="https://meat.mordansoft.com/learn/">co je dusitanová sůl, co dusitan dělá v mase, které dávky jsou nebezpečné a na jakých pravidlech SaltCure stojí</a> (anglicky).</p>
+        <p class="more-link js-reveal">모든 숫자의 출처와 함께 더 보기: <a href="https://meat.mordansoft.com/learn/">큐어링 솔트란 무엇인지, 아질산염이 고기에서 하는 일, 어떤 양이 위험한지, SaltCure가 근거로 삼은 규정</a>.</p>
       </div>
     </section>
 
@@ -518,15 +516,15 @@
     <section class="section section--hair">
       <div class="ms-container">
         <div class="section__head js-reveal">
-          <span class="ms-eyebrow">// Případová studie</span>
-          <h2 class="section__title">Od konceptu po vydání v obchodech</h2>
+          <span class="ms-eyebrow">// 사례 연구</span>
+          <h2 class="section__title">콘셉트에서 스토어 출시까지</h2>
         </div>
         <div class="case-grid">
-          <div class="ms-card ms-card--pad js-reveal" data-delay="1"><p class="case-block__label">Kontext</p><p class="case-block__text">Vlastní produkt MordanSoft v nice domácího nakládání a uzenářství. Existující aplikace v této kategorii nemají skoro žádné recenze, což nechalo otevřený vstup.</p></div>
-          <div class="ms-card ms-card--pad js-reveal" data-delay="2"><p class="case-block__label">Co jsme udělali</p><p class="case-block__text">Design, implementace ve Flutteru, výpočet dávek s kontrolou limitů FSIS, deník šarží s připomínkami, obrazovky prvního spuštění a vydání na Google Play a App Store.</p></div>
+          <div class="ms-card ms-card--pad js-reveal" data-delay="1"><p class="case-block__label">배경</p><p class="case-block__text">가정 염지와 샤퀴트리 분야의 MordanSoft 자체 제품입니다. 이 분야의 기존 앱은 리뷰가 거의 없어, 진입할 여지가 있었습니다.</p></div>
+          <div class="ms-card ms-card--pad js-reveal" data-delay="2"><p class="case-block__label">우리가 한 일</p><p class="case-block__text">디자인, Flutter 구현, FSIS 상한 확인이 들어간 양 계산 엔진, 알림이 있는 배치 기록장, 첫 실행 화면, Google Play와 App Store 출시.</p></div>
           <div class="ms-card ms-card--pad js-reveal" data-delay="1">
-            <p class="case-block__label">Technologie</p>
-            <div class="case-stack"><span class="ms-tag">Flutter</span><span class="ms-tag">Firebase Analytics</span><span class="ms-tag">Crashlytics</span><span class="ms-tag">Offline</span><span class="ms-tag">Bez účtů</span></div>
+            <p class="case-block__label">기술 스택</p>
+            <div class="case-stack"><span class="ms-tag">Flutter</span><span class="ms-tag">Firebase Analytics</span><span class="ms-tag">Crashlytics</span><span class="ms-tag">오프라인 우선</span><span class="ms-tag">계정 없음</span></div>
           </div>
         </div>
       </div>
@@ -535,11 +533,11 @@
     <!-- Closing (dark band) -->
     <section class="section band-dark close-band" data-theme="dark">
       <div class="ms-container ms-container--narrow js-reveal">
-        <h2 class="close-band__title">Tvoje první slanina, bez hádání.</h2>
-        <p class="close-band__text">SaltCure funguje offline, drží tvoje šarže v telefonu a nechce účet.</p>
+        <h2 class="close-band__title">첫 베이컨을, 감 없이도.</h2>
+        <p class="close-band__text">SaltCure는 오프라인으로 작동하고, 배치를 내 휴대폰에 보관하며, 계정을 요구하지 않습니다.</p>
         <div class="store-badges store-badges--lg">
-          <a class="store-badge" href="/saltcure/go/play/" target="_blank" rel="noopener" aria-label="Stáhnout SaltCure z Google Play"><img src="/assets/badges/google-play.svg" alt="Nyní na Google Play"></a>
-          <a class="store-badge" href="/saltcure/go/app-store/" target="_blank" rel="noopener" aria-label="Stáhnout SaltCure z App Store"><img src="/assets/badges/app-store.svg" alt="Stáhněte si v App Store"></a>
+          <a class="store-badge" href="/saltcure/go/play/" target="_blank" rel="noopener" aria-label="Google Play에서 SaltCure 받기"><img src="/assets/badges/google-play.svg" alt="Google Play에서 받기"></a>
+          <a class="store-badge" href="/saltcure/go/app-store/" target="_blank" rel="noopener" aria-label="App Store에서 SaltCure 다운로드"><img src="/assets/badges/app-store.svg" alt="App Store에서 다운로드"></a>
         </div>
       </div>
     </section>

@@ -1,39 +1,32 @@
 <!DOCTYPE html>
-<html lang="bg">
+<html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/svg+xml" href="/assets/img/brand/logo-tile.svg">
-  <title>SaltCure — калкулатор за осоляване и дневник на партидите (iOS, Android)</title>
-  <meta name="description" content="Калкулатор за осоляване на бекон, панчета, салам и джърки: сухо и мокро осоляване, дози нитрит по лимитите на USDA/FSIS, дневник на партидите с напомняния, рецепти стъпка по стъпка със снимки. iOS и Android, офлайн, без акаунт.">
-  <link rel="canonical" href="https://mordansoft.com/bg/saltcure/">
+  <title>SaltCure — 塩漬け計算機＆肉の塩漬け記録帳（iOS、Android）</title>
+  <meta name="description" content="ベーコン、パンチェッタ、サラミ、ジャーキーの塩漬け計算機。乾塩法とソミュール液に対応し、亜硝酸塩の量を USDA/FSIS の上限と照合します。リマインダー付きのバッチ記録、写真つきの手順レシピも。iOS と Android、オフラインで使え、アカウントは不要です。">
+  <link rel="canonical" href="https://mordansoft.com/ja/saltcure/">
   <link rel="alternate" hreflang="en" href="https://mordansoft.com/saltcure/">
   <link rel="alternate" hreflang="uk" href="https://mordansoft.com/uk/saltcure/">
   <link rel="alternate" hreflang="ru" href="https://mordansoft.com/ru/saltcure/">
-  <link rel="alternate" hreflang="pl" href="https://mordansoft.com/pl/saltcure/">
-  <link rel="alternate" hreflang="cs" href="https://mordansoft.com/cs/saltcure/">
-  <link rel="alternate" hreflang="sk" href="https://mordansoft.com/sk/saltcure/">
-  <link rel="alternate" hreflang="be" href="https://mordansoft.com/be/saltcure/">
-  <link rel="alternate" hreflang="bg" href="https://mordansoft.com/bg/saltcure/">
-  <link rel="alternate" hreflang="hr" href="https://mordansoft.com/hr/saltcure/">
-  <link rel="alternate" hreflang="sr" href="https://mordansoft.com/sr/saltcure/">
-  <link rel="alternate" hreflang="sl" href="https://mordansoft.com/sl/saltcure/">
-  <link rel="alternate" hreflang="es" href="https://mordansoft.com/es/saltcure/">
-  <link rel="alternate" hreflang="it" href="https://mordansoft.com/it/saltcure/">
-  <link rel="alternate" hreflang="kk" href="https://mordansoft.com/kk/saltcure/">
-  <link rel="alternate" hreflang="fr" href="https://mordansoft.com/fr/saltcure/">
-  <link rel="alternate" hreflang="pt-BR" href="https://mordansoft.com/pt-br/saltcure/">
-  <link rel="alternate" hreflang="tr" href="https://mordansoft.com/tr/saltcure/">
   <link rel="alternate" hreflang="de" href="https://mordansoft.com/de/saltcure/">
-  <link rel="alternate" hreflang="id" href="https://mordansoft.com/id/saltcure/">
+  <link rel="alternate" hreflang="es" href="https://mordansoft.com/es/saltcure/">
+  <link rel="alternate" hreflang="fr" href="https://mordansoft.com/fr/saltcure/">
+  <link rel="alternate" hreflang="it" href="https://mordansoft.com/it/saltcure/">
+  <link rel="alternate" hreflang="pt-BR" href="https://mordansoft.com/pt-br/saltcure/">
+  <link rel="alternate" hreflang="pl" href="https://mordansoft.com/pl/saltcure/">
+  <link rel="alternate" hreflang="tr" href="https://mordansoft.com/tr/saltcure/">
+  <link rel="alternate" hreflang="ja" href="https://mordansoft.com/ja/saltcure/">
+  <link rel="alternate" hreflang="ko" href="https://mordansoft.com/ko/saltcure/">
   <link rel="alternate" hreflang="x-default" href="https://mordansoft.com/saltcure/">
   <meta name="apple-itunes-app" content="app-id=6812973901">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="MordanSoft">
-  <meta property="og:title" content="SaltCure — калкулатор за осоляване и дневник на партидите (iOS, Android)">
-  <meta property="og:description" content="Калкулатор за осоляване на бекон, панчета, салам и джърки: сухо и мокро осоляване, дози нитрит по лимитите на USDA/FSIS, дневник на партидите с напомняния, рецепти стъпка по стъпка със снимки. iOS и Android, офлайн, без акаунт.">
-  <meta property="og:url" content="https://mordansoft.com/bg/saltcure/">
-  <meta property="og:locale" content="bg_BG">
+  <meta property="og:title" content="SaltCure — 塩漬け計算機＆肉の塩漬け記録帳（iOS、Android）">
+  <meta property="og:description" content="ベーコン、パンチェッタ、サラミ、ジャーキーの塩漬け計算機。乾塩法とソミュール液に対応し、亜硝酸塩の量を USDA/FSIS の上限と照合します。リマインダー付きのバッチ記録、写真つきの手順レシピも。iOS と Android、オフラインで使え、アカウントは不要です。">
+  <meta property="og:url" content="https://mordansoft.com/ja/saltcure/">
+  <meta property="og:locale" content="ja_JP">
   <meta name="twitter:card" content="summary">
 
   <!-- MordanSoft Design System -->
@@ -242,7 +235,12 @@
     .topbar__right { display: inline-flex; align-items: center; }
 
     /* ══ SaltCure ══ */
-    .hero__title { max-width: 16ch; }
+    .hero__title { max-width: 16ch; text-wrap: balance; }
+    .section__title, .close-band__title { text-wrap: balance; }
+    html[lang="ko"] body { word-break: keep-all; }
+    html[lang="ja"] .hero__title, html[lang="ja"] .section__title { line-break: strict; }
+    html[lang="ja"] .nb { display: inline-block; }
+    html[lang="ja"] .hero__title { max-width: 22ch; }
     .stage--phones { max-width: 920px; display: flex; justify-content: center; align-items: flex-end; gap: 0; min-height: 0; }
     .stage--phones .phone { position: relative; flex: none; }
     .stage--phones .phone--main { width: 286px; z-index: 3; transform: translateY(0); border-radius: 40px; padding: 9px; }
@@ -334,7 +332,7 @@
     @media (max-width: 720px) { .stage--phones .phone--main { width: min(250px, 66vw); } .dose__foot { flex-direction: column; gap: var(--space-2); } }
     @media (max-width: 560px) { .scr { max-width: 280px; margin-inline: auto; grid-template-columns: 1fr; } }
   </style>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","inLanguage":"bg","mainEntity":[{"@type":"Question","name":"Защо дозата нитрит е толкова важна?","acceptedAnswer":{"@type":"Answer","text":"Нитритът в нитритната сол заедно със солта и студа задържа растежа на C. botulinum в осоленото месо и фиксира цвета. Това не е гаранция, а излишъкът от нитрит е вреден. Затова дозата се претегля на везна с точност 0,1 г, а не се мери с лъжица. SaltCure изчислява дозата в грамове спрямо теглото на месото (при саламура — спрямо теглото на водата)."}},{"@type":"Question","name":"Какви лимити ползва SaltCure?","acceptedAnswer":{"@type":"Answer","text":"SaltCure изчислява по публикуваните правила на USDA/FSIS (9 CFR 424.21 и 424.22). За бекона таванът е 200 ppm нитрит при сухо осоляване и 120 ppm в саламура; за каймата — 156 ppm. За джърки от цял мускул SaltCure съзнателно прилага същия по-строг лимит от 156 ppm. Дозата по подразбиране е 156 ppm за сух бекон и 120 ppm за саламура. Тези правила са писани за промишлени предприятия, а не за домашна кухня. Ползваме ги като най-добрия публичен числов ориентир, а отговорността за готовия продукт остава твоя."}},{"@type":"Question","name":"Cure #1, Cure #2 или европейска нитритна сол — каква е разликата?","acceptedAnswer":{"@type":"Answer","text":"Cure #1 съдържа 6,25% натриев нитрит. Cure #2 съдържа и натриев нитрат и е за дълго зреене без термична обработка. Европейската нитритна сол (Pökelsalz, peklosól) обикновено съдържа само 0,4–0,6% нитрит — около десет пъти по-малко. Ако избереш грешния вид, дозата ще е грешна около десет пъти, затова SaltCure първо пита каква сол имаш и те оставя да въведеш точния процент нитрит от опаковката."}},{"@type":"Question","name":"Мога ли да ползвам Cure #2 за бекон?","acceptedAnswer":{"@type":"Answer","text":"Не. Правилата на USDA не допускат добавен нитрат в бекона, затова SaltCure напълно блокира Cure #2 за бекон."}},{"@type":"Question","name":"Достатъчно ли е джърките просто да се изсушат?","acceptedAnswer":{"@type":"Answer","text":"Не. При джърки основният риск са бактериите, а не нитритът. Препоръка на FSIS: преди сушене загрей месото до 160 °F (71 °C), птиците до 165 °F (74 °C) във влажна среда, после суши при около 130–140 °F (54–60 °C)."}},{"@type":"Question","name":"Как да разбера, че партидата се е развалила?","acceptedAnswer":{"@type":"Answer","text":"При дълго зреещите цели парчета (панчета, копа) бялата пухкава плесен е нормална. Всяка друга плесен — зелена, черна или каквато и да е друга — или хлъзгава повърхност означава, че цялата партида трябва да се изхвърли. При другите продукти (бекон, джърки, всичко, което не зрее седмици) всяка плесен означава изхвърляне. Чистият вид не доказва, че месото е наред. Ако се съмняваш — изхвърли."}}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","inLanguage":"ja","mainEntity":[{"@type":"Question","name":"亜硝酸塩の量はなぜそんなに大事なのですか？","acceptedAnswer":{"@type":"Answer","text":"キュアリングソルトの亜硝酸塩は、塩と低温とあわせて、塩漬け肉のC. botulinumの増殖を抑え、色を定着させます。保証ではなく、多すぎる亜硝酸塩は有害です。だから量はスプーンではなく、0.1 g単位のはかりで量ります。SaltCure は肉の重さ（ソミュール液では水の重さ）からグラム数を計算します。"}},{"@type":"Question","name":"SaltCure はどの上限を使っていますか？","acceptedAnswer":{"@type":"Answer","text":"SaltCure は、公開されている USDA/FSIS の規則（9 CFR 424.21 と 424.22）に沿って計算します。ベーコンの上限は亜硝酸塩で、乾塩法200 ppm、ソミュール液120 ppm、ひき肉は156 ppmです。かたまり肉のジャーキーにも、あえて同じ厳しめの156 ppmを適用しています。標準の量は、乾塩法のベーコンで156 ppm、ソミュール液で120 ppmです。これらの規則は家庭のキッチンではなく、商業工場向けに定められたものです。私たちは数値の面でもっとも参考にしやすい公開資料として使っており、できあがった食品の責任はあなたにあります。"}},{"@type":"Question","name":"Cure #1、Cure #2、ヨーロッパのキュアリングソルト：何が違うのですか？","acceptedAnswer":{"@type":"Answer","text":"Cure #1 は亜硝酸ナトリウムを6.25％含みます。Cure #2 はさらに硝酸ナトリウムも含み、加熱せずに長く乾燥熟成させるときに使います。ヨーロッパのキュアリングソルト（Pökelsalz、peklosól）の亜硝酸塩は通常0.4〜0.6％で、約10分の1です。種類を取り違えると量が約10倍ずれるため、SaltCure は計算の前にどの塩かを尋ねます。パッケージに書かれた亜硝酸塩の％をそのまま入力することもできます。"}},{"@type":"Question","name":"ベーコンに Cure #2 は使えますか？","acceptedAnswer":{"@type":"Answer","text":"いいえ。USDA の規則ではベーコンへの硝酸塩の添加は認められていないため、SaltCure はベーコンでの Cure #2 を完全にブロックします。"}},{"@type":"Question","name":"ジャーキーは乾燥させるだけで十分ですか？","acceptedAnswer":{"@type":"Answer","text":"いいえ。ジャーキーでおもに注意するのは亜硝酸塩ではなく細菌です。FSIS の指針では、乾燥の前に湿度のある環境で、肉は160 °F（71 °C）、鶏肉は165 °F（74 °C）まで加熱し、そのあと約130〜140 °F（54〜60 °C）で乾燥させます。"}},{"@type":"Question","name":"バッチがダメになったかどうか、どう見分けますか？","acceptedAnswer":{"@type":"Answer","text":"パンチェッタやコッパのような長く乾燥熟成させるかたまり肉では、白くふわふわしたカビは普通です。それ以外のカビ（緑、黒、そのほか何色でも）やぬめりがあれば、バッチ全体を捨ててください。ベーコンやジャーキーなど、何週間も乾燥熟成させないものは、カビが出たら捨てます。見た目がきれいでも、大丈夫とは限りません。迷ったら捨ててください。"}}]}</script>
 </head>
 <body>
 
@@ -351,7 +349,7 @@
         </span>
         <span class="brand__name">Mordan<b>Soft</b></span>
       </a>
-      <span class="topbar__right"><span class="topbar__tag">Студио за мобилни приложения</span><details class="lang-switch"><summary aria-label="Language"><span class="lang-switch__flag" aria-hidden="true">🇧🇬</span><span>Български</span></summary><ul class="lang-switch__menu"><li><a href="/saltcure/" lang="en"><span class="lang-switch__flag" aria-hidden="true">🇬🇧</span><span>English</span></a></li><li><a href="/uk/saltcure/" lang="uk"><span class="lang-switch__flag" aria-hidden="true">🇺🇦</span><span>Українська</span></a></li><li><a href="/ru/saltcure/" lang="ru"><span class="lang-switch__flag" aria-hidden="true">🇷🇺</span><span>Русский</span></a></li><li><a href="/pl/saltcure/" lang="pl"><span class="lang-switch__flag" aria-hidden="true">🇵🇱</span><span>Polski</span></a></li><li><a href="/cs/saltcure/" lang="cs"><span class="lang-switch__flag" aria-hidden="true">🇨🇿</span><span>Čeština</span></a></li><li><a href="/sk/saltcure/" lang="sk"><span class="lang-switch__flag" aria-hidden="true">🇸🇰</span><span>Slovenčina</span></a></li><li><a href="/be/saltcure/" lang="be"><span class="lang-switch__flag" aria-hidden="true">🇧🇾</span><span>Беларуская</span></a></li><li><a href="/bg/saltcure/" lang="bg" aria-current="page"><span class="lang-switch__flag" aria-hidden="true">🇧🇬</span><span>Български</span></a></li><li><a href="/hr/saltcure/" lang="hr"><span class="lang-switch__flag" aria-hidden="true">🇭🇷</span><span>Hrvatski</span></a></li><li><a href="/sr/saltcure/" lang="sr"><span class="lang-switch__flag" aria-hidden="true">🇷🇸</span><span>Српски</span></a></li><li><a href="/sl/saltcure/" lang="sl"><span class="lang-switch__flag" aria-hidden="true">🇸🇮</span><span>Slovenščina</span></a></li><li><a href="/es/saltcure/" lang="es"><span class="lang-switch__flag" aria-hidden="true">🇪🇸</span><span>Español</span></a></li><li><a href="/it/saltcure/" lang="it"><span class="lang-switch__flag" aria-hidden="true">🇮🇹</span><span>Italiano</span></a></li><li><a href="/kk/saltcure/" lang="kk"><span class="lang-switch__flag" aria-hidden="true">🇰🇿</span><span>Қазақша</span></a></li><li><a href="/fr/saltcure/" lang="fr"><span class="lang-switch__flag" aria-hidden="true">🇫🇷</span><span>Français</span></a></li><li><a href="/pt-br/saltcure/" lang="pt-BR"><span class="lang-switch__flag" aria-hidden="true">🇧🇷</span><span>Português (Brasil)</span></a></li><li><a href="/tr/saltcure/" lang="tr"><span class="lang-switch__flag" aria-hidden="true">🇹🇷</span><span>Türkçe</span></a></li><li><a href="/de/saltcure/" lang="de"><span class="lang-switch__flag" aria-hidden="true">🇩🇪</span><span>Deutsch</span></a></li><li><a href="/id/saltcure/" lang="id"><span class="lang-switch__flag" aria-hidden="true">🇮🇩</span><span>Bahasa Indonesia</span></a></li></ul></details></span>
+      <span class="topbar__right"><span class="topbar__tag">モバイルソフトウェアスタジオ</span><details class="lang-switch"><summary aria-label="Language"><span class="lang-switch__flag" aria-hidden="true">🇯🇵</span><span>日本語</span></summary><ul class="lang-switch__menu"><li><a href="/saltcure/" lang="en"><span class="lang-switch__flag" aria-hidden="true">🇬🇧</span><span>English</span></a></li><li><a href="/uk/saltcure/" lang="uk"><span class="lang-switch__flag" aria-hidden="true">🇺🇦</span><span>Українська</span></a></li><li><a href="/ru/saltcure/" lang="ru"><span class="lang-switch__flag" aria-hidden="true">🇷🇺</span><span>Русский</span></a></li><li><a href="/de/saltcure/" lang="de"><span class="lang-switch__flag" aria-hidden="true">🇩🇪</span><span>Deutsch</span></a></li><li><a href="/es/saltcure/" lang="es"><span class="lang-switch__flag" aria-hidden="true">🇪🇸</span><span>Español</span></a></li><li><a href="/fr/saltcure/" lang="fr"><span class="lang-switch__flag" aria-hidden="true">🇫🇷</span><span>Français</span></a></li><li><a href="/it/saltcure/" lang="it"><span class="lang-switch__flag" aria-hidden="true">🇮🇹</span><span>Italiano</span></a></li><li><a href="/pt-br/saltcure/" lang="pt-BR"><span class="lang-switch__flag" aria-hidden="true">🇧🇷</span><span>Português (Brasil)</span></a></li><li><a href="/pl/saltcure/" lang="pl"><span class="lang-switch__flag" aria-hidden="true">🇵🇱</span><span>Polski</span></a></li><li><a href="/tr/saltcure/" lang="tr"><span class="lang-switch__flag" aria-hidden="true">🇹🇷</span><span>Türkçe</span></a></li><li><a href="/ja/saltcure/" lang="ja" aria-current="page"><span class="lang-switch__flag" aria-hidden="true">🇯🇵</span><span>日本語</span></a></li><li><a href="/ko/saltcure/" lang="ko"><span class="lang-switch__flag" aria-hidden="true">🇰🇷</span><span>한국어</span></a></li></ul></details></span>
     </div>
   </div>
 
@@ -361,22 +359,22 @@
       <div class="hero__wash" aria-hidden="true"></div>
       <div class="hero__wash hero__wash--b" aria-hidden="true"></div>
       <div class="ms-container">
-        <a class="ms-btn ms-btn--link detail__back" href="/#products"><i data-lucide="arrow-left"></i> Всички продукти</a>
+        <a class="ms-btn ms-btn--link detail__back" href="/#products"><i data-lucide="arrow-left"></i> すべてのプロダクト</a>
         <div class="hero__copy" data-reveal>
-          <span class="hero__tile"><img src="/assets/saltcure/icon.png" alt="Икона на приложението SaltCure" width="72" height="72"></span>
-          <span class="ms-eyebrow">// Осоляване на месо, до грам</span>
-          <h1 class="hero__title">Осолявай вкъщи. <b>Не гадай</b> със солта.</h1>
-          <p class="hero__lead">SaltCure изчислява осоляването до грам, следи всяка партида от първия ден до готовност и те превежда през рецептата стъпка по стъпка: бекон, панчета, джърки, пилешка шунка.</p>
+          <span class="hero__tile"><img src="/assets/saltcure/icon.png" alt="SaltCure アプリのアイコン" width="72" height="72"></span>
+          <span class="ms-eyebrow">// 肉の塩漬けを、グラム単位で</span>
+          <h1 class="hero__title">おうちで塩漬け。<span class="nb">塩の量は<b>勘に頼らない</b>。</span></h1>
+          <p class="hero__lead">SaltCure は塩漬けの配合をグラム単位で計算し、仕込みの初日から完成までをバッチごとに記録し、レシピを一歩ずつ案内します。ベーコン、パンチェッタ、ジャーキー、鶏ハムに対応しています。</p>
           <div class="store-badges">
-            <a class="store-badge" href="/saltcure/go/play/" target="_blank" rel="noopener" aria-label="Изтегли SaltCure от Google Play"><img src="/assets/badges/google-play.svg" alt="Изтегли от Google Play"></a>
-            <a class="store-badge" href="/saltcure/go/app-store/" target="_blank" rel="noopener" aria-label="Изтегли SaltCure от App Store"><img src="/assets/badges/app-store.svg" alt="Изтегли от App Store"></a>
+            <a class="store-badge" href="/saltcure/go/play/" target="_blank" rel="noopener" aria-label="Google Play で SaltCure を入手"><img src="/assets/badges/google-play.svg" alt="Google Play で手に入れよう"></a>
+            <a class="store-badge" href="/saltcure/go/app-store/" target="_blank" rel="noopener" aria-label="App Store で SaltCure をダウンロード"><img src="/assets/badges/app-store.svg" alt="App Store でダウンロード"></a>
           </div>
-          <div class="hero__specs"><span>Офлайн</span><span>Без акаунт</span><span>дози, проверени по USDA/FSIS</span><span>12 езика</span></div>
+          <div class="hero__specs"><span>オフライン優先</span><span>アカウント不要</span><span>USDA/FSIS 照合済みの量</span><span>12言語対応</span></div>
         </div>
         <div class="stage stage--phones">
           <div class="stage__glow" aria-hidden="true"></div>
           <div class="phone phone--l" aria-hidden="true"><img src="/assets/img/saltcure/screens/recipes_en.webp" alt="" width="620" height="1347"></div>
-          <div class="phone phone--main"><img src="/assets/img/saltcure/screens/calc_en.webp" alt="Калкулатор SaltCure: за 1200 г бекон трябват 2.9 г Cure #1, 151 ppm, препоръчителната доза" width="620" height="1347"></div>
+          <div class="phone phone--main"><img src="/assets/img/saltcure/screens/calc_en.webp" alt="SaltCure の計算画面：ベーコン1200 g に Cure #1 は2.9 g、151 ppm、推奨の量" width="620" height="1347"></div>
           <div class="phone phone--r" aria-hidden="true"><img src="/assets/img/saltcure/screens/showcase_en.webp" alt="" width="620" height="1347"></div>
         </div>
       </div>
@@ -386,23 +384,23 @@
     <section class="section band-dark" data-theme="dark">
       <div class="ms-container">
         <div class="section__head js-reveal">
-          <span class="ms-eyebrow">// Как работи</span>
-          <h2 class="section__title">Единственото, което не се мери на око</h2>
-          <p class="section__lead">Нитритната сол се дозира в грамове, не с лъжица. SaltCure я изчислява за твоето месо и показва докъде е дозата спрямо лимита.</p>
+          <span class="ms-eyebrow">// 使い方</span>
+          <h2 class="section__title">目分量では決められない、ひとつの数字</h2>
+          <p class="section__lead">キュアリングソルトは、スプーンではなくグラムで量ります。SaltCure があなたの肉に合わせて計算し、上限に対して今の量がどのあたりかを示します。</p>
         </div>
 
-        <figure class="dose js-reveal" id="dose" aria-label="Скала на дозата: нитритната сол расте от нула до препоръчителните 2.9 г">
-          <div class="dose__row"><span class="dose__label">// Нитритна сол</span><span class="dose__meat">1200 g · Cure #1 · 6.25%</span></div>
+        <figure class="dose js-reveal" id="dose" aria-label="量のゲージ：キュアリングソルトの量がゼロから推奨の2.9 gまで増えていく">
+          <div class="dose__row"><span class="dose__label">// キュアリングソルト</span><span class="dose__meat">1200 g · Cure #1 · 6.25%</span></div>
           <div class="dose__read"><span class="dose__g"><span id="doseG">0.0</span><small>g</small></span><span class="dose__ppm"><span id="dosePpm">0</span> ppm</span></div>
           <div class="dose__track"><span class="dose__knob" id="doseKnob"></span></div>
-          <div class="dose__foot"><span class="dose__verdict" id="doseVerdict" data-low="Под безопасното ниво" data-hit="Препоръчителна доза">Под безопасното ниво</span><span class="dose__rec">препоръчително 156 ppm</span></div>
+          <div class="dose__foot"><span class="dose__verdict" id="doseVerdict" data-low="安全な量に届かない" data-hit="推奨">安全な量に届かない</span><span class="dose__rec">推奨 156 ppm</span></div>
         </figure>
 
         <div class="steps">
-          <div class="step js-reveal" data-delay="1"><span class="step__no">1</span><div><h3 class="step__title">Избери ястието</h3><p class="step__text">Бекон, панчета, билтонг, джърки, салам или твое. Сухо осоляване или саламура.</p></div></div>
-          <div class="step js-reveal" data-delay="2"><span class="step__no">2</span><div><h3 class="step__title">Кажи каква сол имаш</h3><p class="step__text">Cure #1, Cure #2, peklosól, NPS или собствен процент нитрит. Грешният пакет е грешка от десет пъти, затова приложението пита първо.</p></div></div>
-          <div class="step js-reveal" data-delay="3"><span class="step__no">3</span><div><h3 class="step__title">Претегли месото</h3><p class="step__text">Солта, захарта, подправките и нитритната сол следват теглото — в грамове или унции.</p></div></div>
-          <div class="step js-reveal" data-delay="4"><span class="step__no">4</span><div><h3 class="step__title">Отмери дозата</h3><p class="step__text">Нитритна сол до 0,1 г, до нея ppm и лимитът, а ако дозата не е наред — какво точно да поправиш.</p></div></div>
+          <div class="step js-reveal" data-delay="1"><span class="step__no">1</span><div><h3 class="step__title">料理を選ぶ</h3><p class="step__text">ベーコン、パンチェッタ、ビルトン、ジャーキー、サラミ、またはオリジナル。乾塩法でもソミュール液でも。</p></div></div>
+          <div class="step js-reveal" data-delay="2"><span class="step__no">2</span><div><h3 class="step__title">手元の塩を選ぶ</h3><p class="step__text">Cure #1、Cure #2、Peklosól、NPS、または亜硝酸塩の％を自分で入力。袋を取り違えると10倍の間違いになるので、アプリが先に聞きます。</p></div></div>
+          <div class="step js-reveal" data-delay="3"><span class="step__no">3</span><div><h3 class="step__title">肉の重さを量る</h3><p class="step__text">塩、砂糖、スパイス、キュアリングソルトは、すべて肉の重さに合わせて決まります。グラムでもオンスでも。</p></div></div>
+          <div class="step js-reveal" data-delay="4"><span class="step__no">4</span><div><h3 class="step__title">量を量る</h3><p class="step__text">キュアリングソルトは0.1 g単位。ppm を上限の隣に表示し、量が合わないときは直し方もはっきり示します。</p></div></div>
         </div>
       </div>
     </section>
@@ -411,19 +409,19 @@
     <section class="section">
       <div class="ms-container">
         <div class="section__head js-reveal">
-          <span class="ms-eyebrow">// Рецепти</span>
-          <h2 class="section__title">Всяка рецепта е осолена и изядена в нашата кухня</h2>
-          <p class="section__lead">Снимките са на същата партида, не от сток. Рецептата е път от стъпки: колко работиш с ръце и колко чакаш, как трябва да изглежда и какво никога да не правиш.</p>
+          <span class="ms-eyebrow">// レシピ</span>
+          <h2 class="section__title">どのレシピも、私たちのキッチンで漬けて、食べたものです</h2>
+          <p class="section__lead">写真はストック写真ではなく、そのバッチを撮ったものです。レシピは手順の道すじになっていて、手を動かす時間と待ち時間、仕上がりの写真、そして「絶対にしないこと」のひとことが添えてあります。</p>
         </div>
         <div class="photos">
-          <figure class="photo js-reveal"><img src="/assets/img/saltcure/photos/bacon.webp" alt="Бекон" loading="lazy" width="900" height="675"><figcaption>Бекон</figcaption></figure>
-          <figure class="photo js-reveal" data-delay="1"><img src="/assets/img/saltcure/photos/canadian_bacon.webp" alt="Канадски бекон" loading="lazy" width="900" height="675"><figcaption>Канадски бекон</figcaption></figure>
-          <figure class="photo js-reveal" data-delay="2"><img src="/assets/img/saltcure/photos/chicken_ham.webp" alt="Пилешка шунка" loading="lazy" width="900" height="675"><figcaption>Пилешка шунка</figcaption></figure>
-          <figure class="photo js-reveal"><img src="/assets/img/saltcure/photos/beef_jerky.webp" alt="Джърки от говеждо" loading="lazy" width="900" height="675"><figcaption>Джърки от говеждо</figcaption></figure>
-          <figure class="photo js-reveal" data-delay="1"><img src="/assets/img/saltcure/photos/baked_belly.webp" alt="Печен свински корем" loading="lazy" width="900" height="675"><figcaption>Печен свински корем</figcaption></figure>
-          <figure class="photo js-reveal" data-delay="2"><img src="/assets/img/saltcure/photos/pork_stew.webp" alt="Свинско на консерва" loading="lazy" width="900" height="675"><figcaption>Свинско на консерва</figcaption></figure>
+          <figure class="photo js-reveal"><img src="/assets/img/saltcure/photos/bacon.webp" alt="ベーコン" loading="lazy" width="900" height="675"><figcaption>ベーコン</figcaption></figure>
+          <figure class="photo js-reveal" data-delay="1"><img src="/assets/img/saltcure/photos/canadian_bacon.webp" alt="カナディアンベーコン" loading="lazy" width="900" height="675"><figcaption>カナディアンベーコン</figcaption></figure>
+          <figure class="photo js-reveal" data-delay="2"><img src="/assets/img/saltcure/photos/chicken_ham.webp" alt="鶏ハム" loading="lazy" width="900" height="675"><figcaption>鶏ハム</figcaption></figure>
+          <figure class="photo js-reveal"><img src="/assets/img/saltcure/photos/beef_jerky.webp" alt="ビーフジャーキー" loading="lazy" width="900" height="675"><figcaption>ビーフジャーキー</figcaption></figure>
+          <figure class="photo js-reveal" data-delay="1"><img src="/assets/img/saltcure/photos/baked_belly.webp" alt="焼き豚バラ" loading="lazy" width="900" height="675"><figcaption>焼き豚バラ</figcaption></figure>
+          <figure class="photo js-reveal" data-delay="2"><img src="/assets/img/saltcure/photos/pork_stew.webp" alt="豚肉の瓶詰め" loading="lazy" width="900" height="675"><figcaption>豚肉の瓶詰め</figcaption></figure>
         </div>
-        <p class="photos-note js-reveal">И път за твоето ястие — със същите стъпки.</p>
+        <p class="photos-note js-reveal">オリジナルの料理にも、同じ手順の道すじを。</p>
       </div>
     </section>
 
@@ -431,14 +429,14 @@
     <section class="section band-dark" data-theme="dark">
       <div class="ms-container">
         <div class="section__head js-reveal">
-          <span class="ms-eyebrow">// В приложението</span>
-          <h2 class="section__title">Калкулатор, рецепти, стъпки — в един джоб</h2>
+          <span class="ms-eyebrow">// アプリの中身</span>
+          <h2 class="section__title">計算機、レシピ、手順をひとつにポケットへ</h2>
         </div>
         <div class="scr">
-          <div class="scr__item js-reveal"><div class="phone"><img src="/assets/img/saltcure/screens/calc_en.webp" alt="Доза до грам" loading="lazy" width="620" height="1347"></div><p class="scr__cap">Доза до грам</p></div>
-          <div class="scr__item js-reveal" data-delay="1"><div class="phone"><img src="/assets/img/saltcure/screens/recipes_en.webp" alt="Рецепти със снимки" loading="lazy" width="620" height="1347"></div><p class="scr__cap">Рецепти със снимки</p></div>
-          <div class="scr__item js-reveal" data-delay="2"><div class="phone"><img src="/assets/img/saltcure/screens/showcase_en.webp" alt="Времето — още преди старта" loading="lazy" width="620" height="1347"></div><p class="scr__cap">Времето — още преди старта</p></div>
-          <div class="scr__item js-reveal" data-delay="3"><div class="phone"><img src="/assets/img/saltcure/screens/step_en.webp" alt="Всяка стъпка със снимка" loading="lazy" width="620" height="1347"></div><p class="scr__cap">Всяка стъпка със снимка</p></div>
+          <div class="scr__item js-reveal"><div class="phone"><img src="/assets/img/saltcure/screens/calc_en.webp" alt="量をグラム単位で" loading="lazy" width="620" height="1347"></div><p class="scr__cap">量をグラム単位で</p></div>
+          <div class="scr__item js-reveal" data-delay="1"><div class="phone"><img src="/assets/img/saltcure/screens/recipes_en.webp" alt="写真つきレシピ" loading="lazy" width="620" height="1347"></div><p class="scr__cap">写真つきレシピ</p></div>
+          <div class="scr__item js-reveal" data-delay="2"><div class="phone"><img src="/assets/img/saltcure/screens/showcase_en.webp" alt="始める前に所要時間を確認" loading="lazy" width="620" height="1347"></div><p class="scr__cap">始める前に所要時間を確認</p></div>
+          <div class="scr__item js-reveal" data-delay="3"><div class="phone"><img src="/assets/img/saltcure/screens/step_en.webp" alt="各手順の仕上がりを写真で" loading="lazy" width="620" height="1347"></div><p class="scr__cap">各手順の仕上がりを写真で</p></div>
         </div>
       </div>
     </section>
@@ -447,16 +445,16 @@
     <section class="section">
       <div class="ms-container">
         <div class="section__head js-reveal">
-          <span class="ms-eyebrow">// Какво има вътре</span>
-          <h2 class="section__title">Направено за дългото чакане</h2>
+          <span class="ms-eyebrow">// できること</span>
+          <h2 class="section__title">長い待ち時間のために</h2>
         </div>
         <div class="features">
-          <div class="ms-card ms-card--pad feature js-reveal" data-delay="1"><span class="feature__icon"><i data-lucide="calculator"></i></span><div><h3 class="feature__title">Сухо осоляване и саламура</h3><p class="feature__text">Равновесно дозиране и при двата метода: сол, захар и подправки — в проценти от месото.</p></div></div>
-          <div class="ms-card ms-card--pad feature js-reveal" data-delay="2"><span class="feature__icon"><i data-lucide="shield-check"></i></span><div><h3 class="feature__title">Твоят стандарт за нитрит</h3><p class="feature__text">Cure #1, Cure #2, peklosól, NPS или собствен процент — с проверка по лимитите на USDA/FSIS. Американските калкулатори работят с един стандарт; този — не.</p></div></div>
-          <div class="ms-card ms-card--pad feature js-reveal" data-delay="3"><span class="feature__icon"><i data-lucide="clipboard-list"></i></span><div><h3 class="feature__title">Дневник за всяка партида</h3><p class="feature__text">Дни, ежедневно напомняне за обръщане и отделно — за деня на готовност. Снимки от суровото парче до нарязаното, бележки и оценка.</p></div></div>
-          <div class="ms-card ms-card--pad feature js-reveal" data-delay="1"><span class="feature__icon"><i data-lucide="trending-down"></i></span><div><h3 class="feature__title">Графика на загубата на тегло</h3><p class="feature__text">Дневен темп и целевата зона на ястието: виждаш колко още да съхне.</p></div></div>
-          <div class="ms-card ms-card--pad feature js-reveal" data-delay="2"><span class="feature__icon"><i data-lucide="flame"></i></span><div><h3 class="feature__title">Подправки с доза</h3><p class="feature__text">Черен пипер, чесън, кориандър, чили, хвойна, резене и други — всяка в проценти от месото и с бележка с какво върви.</p></div></div>
-          <div class="ms-card ms-card--pad feature js-reveal" data-delay="3"><span class="feature__icon"><i data-lucide="tablet-smartphone"></i></span><div><h3 class="feature__title">Телефон или таблет</h3><p class="feature__text">Грамове или унции, °C или °F, 12 езика. Партидите се пазят на твоя телефон.</p></div></div>
+          <div class="ms-card ms-card--pad feature js-reveal" data-delay="1"><span class="feature__icon"><i data-lucide="calculator"></i></span><div><h3 class="feature__title">乾塩法とソミュール液</h3><p class="feature__text">どちらの方法も平衡塩漬けで計算。塩、砂糖、スパイスは肉に対する％で決まります。</p></div></div>
+          <div class="ms-card ms-card--pad feature js-reveal" data-delay="2"><span class="feature__icon"><i data-lucide="shield-check"></i></span><div><h3 class="feature__title">あなたの亜硝酸塩の基準で</h3><p class="feature__text">Cure #1、Cure #2、Peklosól、NPS、または自分で入力した％を、USDA/FSIS の上限と照合します。アメリカの計算機は基準をひとつしか想定していませんが、SaltCure は違います。</p></div></div>
+          <div class="ms-card ms-card--pad feature js-reveal" data-delay="3"><span class="feature__icon"><i data-lucide="clipboard-list"></i></span><div><h3 class="feature__title">バッチごとの記録</h3><p class="feature__text">日数、毎日の「返す」リマインダー、完成日だけの別のリマインダー。生肉からスライスまでの写真、メモ、評価も残せます。</p></div></div>
+          <div class="ms-card ms-card--pad feature js-reveal" data-delay="1"><span class="feature__icon"><i data-lucide="trending-down"></i></span><div><h3 class="feature__title">重さの減りのグラフ</h3><p class="feature__text">1日あたりのペースと、その料理の目標範囲を表示。あとどれくらい乾かすかがひと目で分かります。</p></div></div>
+          <div class="ms-card ms-card--pad feature js-reveal" data-delay="2"><span class="feature__icon"><i data-lucide="flame"></i></span><div><h3 class="feature__title">スパイスも量って</h3><p class="feature__text">こしょう、にんにく、コリアンダー、唐辛子、ジュニパー、フェンネルなど。それぞれ肉に対する％で、相性のよい食材のヒントつきです。</p></div></div>
+          <div class="ms-card ms-card--pad feature js-reveal" data-delay="3"><span class="feature__icon"><i data-lucide="tablet-smartphone"></i></span><div><h3 class="feature__title">スマホでもタブレットでも</h3><p class="feature__text">グラムまたはオンス、°C または °F、12言語。バッチの記録はあなたのスマホの中にあります。</p></div></div>
         </div>
       </div>
     </section>
@@ -465,14 +463,14 @@
     <section class="section section--hair">
       <div class="ms-container">
         <div class="section__head js-reveal">
-          <span class="ms-eyebrow">// Безплатно в браузъра</span>
-          <h2 class="section__title">Калкулатори на meat.mordansoft.com</h2>
-          <p class="section__lead">Същото изчисление като в приложението — без инсталиране и без акаунт.</p>
+          <span class="ms-eyebrow">// ブラウザで無料</span>
+          <h2 class="section__title">meat.mordansoft.com の計算機</h2>
+          <p class="section__lead">アプリと同じ塩漬けエンジンです。インストールもアカウントも要りません。</p>
         </div>
         <div class="tool-grid">
-          <a class="ms-card ms-card--pad tool-card js-reveal" href="https://meat.mordansoft.com/bg/curing-salt-calculator/"><h3 class="tool-card__title">Калкулатор за нитритна сол</h3><p class="tool-card__text">Cure #1, Cure #2 или европейска нитритна сол: грамове според теглото, нитрит, проверен по лимитите.</p></a>
-          <a class="ms-card ms-card--pad tool-card js-reveal" data-delay="1" href="https://meat.mordansoft.com/bg/brine-calculator/"><h3 class="tool-card__title">Калкулатор за саламура</h3><p class="tool-card__text">Концентрация на саламурата и сол за дадено тегло месо и вода.</p></a>
-          <a class="ms-card ms-card--pad tool-card js-reveal" data-delay="2" href="https://meat.mordansoft.com/bg/dry-brine-calculator/"><h3 class="tool-card__title">Калкулатор за суха саламура</h3><p class="tool-card__text">Сол по тегло за суха саламура, без нитрит.</p></a>
+          <a class="ms-card ms-card--pad tool-card js-reveal" href="https://meat.mordansoft.com/curing-salt-calculator/"><h3 class="tool-card__title">キュアリングソルト計算機</h3><p class="tool-card__text">Cure #1、Cure #2、ヨーロッパのキュアリングソルト：重さに応じたグラム数と、上限と照合した亜硝酸塩の量。</p></a>
+          <a class="ms-card ms-card--pad tool-card js-reveal" data-delay="1" href="https://meat.mordansoft.com/brine-calculator/"><h3 class="tool-card__title">ソミュール液計算機</h3><p class="tool-card__text">肉と水の重さから、ソミュール液の濃度と塩の量を計算します。</p></a>
+          <a class="ms-card ms-card--pad tool-card js-reveal" data-delay="2" href="https://meat.mordansoft.com/dry-brine-calculator/"><h3 class="tool-card__title">乾塩法の塩計算機</h3><p class="tool-card__text">乾塩法で使う塩の重さを計算します。亜硝酸塩は使いません。</p></a>
         </div>
       </div>
     </section>
@@ -481,17 +479,17 @@
     <section class="section section--hair">
       <div class="ms-container">
         <div class="section__head js-reveal">
-          <span class="ms-eyebrow">// Източници</span>
-          <h2 class="section__title">Откъде идват числата</h2>
-          <p class="section__lead">Всеки лимит за нитрит в SaltCure се основава на публикувано правило на USDA/FSIS, а дозата е показана до своя лимит.</p>
+          <span class="ms-eyebrow">// 出典</span>
+          <h2 class="section__title">数字の出どころ</h2>
+          <p class="section__lead">SaltCure の亜硝酸塩の上限はすべて、公開されている USDA/FSIS の規則に基づいており、量は上限の隣に表示されます。</p>
         </div>
         <ul class="src-list js-reveal">
-          <li>Бекон: до 200 ppm нитрит при сухо осоляване и 120 ppm в саламура — <a href="https://www.law.cornell.edu/cfr/text/9/424.22" rel="noopener">9 CFR 424.22(b)</a>.</li>
-          <li>Друго осолено месо: до 625 ppm на входа за цяло парче на сухо осоляване (не повече от 200 ppm в готовия продукт), 156 ppm за кайма — <a href="https://www.law.cornell.edu/cfr/text/9/424.21" rel="noopener">9 CFR 424.21(c)</a>. За джърки SaltCure съзнателно прилага по-строгите 156 ppm.</li>
-          <li>Нитратът (Cure #2) не е разрешен в бекона, затова приложението го блокира там. Дозата нитрит винаги се закръгля надолу, никога нагоре.</li>
-          <li>Тези правила са писани за промишлени предприятия, а не за домашна кухня. Ползваме ги като най-добрия публичен числов ориентир; резултатът не е одобрение и не е гаранция, а отговорността за готовия продукт остава твоя.</li>
+          <li>ベーコン：亜硝酸塩は乾塩法で最大200 ppm、ソミュール液で120 ppm — <a href="https://www.law.cornell.edu/cfr/text/9/424.22" rel="noopener">9 CFR 424.22(b)</a>。</li>
+          <li>その他の塩漬け肉：乾塩法の塊肉は仕込み時で最大625 ppm（完成品では200 ppm以下）、ひき肉は156 ppm — <a href="https://www.law.cornell.edu/cfr/text/9/424.21" rel="noopener">9 CFR 424.21(c)</a>。ジャーキーには、SaltCure はあえてより厳しい156 ppmを適用しています。</li>
+          <li>硝酸塩（Cure #2）はベーコンには使えないため、アプリ側でブロックします。亜硝酸塩の量は常に切り捨てで、切り上げはしません。</li>
+          <li>これらの規則は家庭のキッチンではなく、商業工場向けに定められたものです。私たちは数値の面でもっとも参考にしやすい公開資料として使っています。結果は承認でも保証でもなく、できあがった食品の責任はあなたにあります。</li>
         </ul>
-        <p class="src-list__faq js-reveal"><a href="#faq">Прочети въпросите за нитрита и безопасността</a></p>
+        <p class="src-list__faq js-reveal"><a href="#faq">亜硝酸塩と安全についてのよくある質問を読む</a></p>
       </div>
     </section>
 
@@ -499,18 +497,18 @@
     <section class="section section--hair">
       <div class="ms-container">
         <div class="section__head js-reveal">
-          <span class="ms-eyebrow">// Нитрит и безопасност</span>
-          <h2 class="section__title">Въпроси за нитрита и безопасността</h2>
+          <span class="ms-eyebrow">// 亜硝酸塩と安全</span>
+          <h2 class="section__title">亜硝酸塩と安全についての質問</h2>
         </div>
         <div class="faq" id="faq">
-          <details class="ms-card ms-card--pad faq__item js-reveal"><summary>Защо дозата нитрит е толкова важна?</summary><p>Нитритът в нитритната сол заедно със солта и студа задържа растежа на <i>C. botulinum</i> в осоленото месо и фиксира цвета. Това не е гаранция, а излишъкът от нитрит е вреден. Затова дозата се претегля на везна с точност 0,1 г, а не се мери с лъжица. SaltCure изчислява дозата в грамове спрямо теглото на месото (при саламура — спрямо теглото на водата).</p></details>
-          <details class="ms-card ms-card--pad faq__item js-reveal"><summary>Какви лимити ползва SaltCure?</summary><p>SaltCure изчислява по публикуваните правила на USDA/FSIS (9 CFR 424.21 и 424.22). За бекона таванът е 200 ppm нитрит при сухо осоляване и 120 ppm в саламура; за каймата — 156 ppm. За джърки от цял мускул SaltCure съзнателно прилага същия по-строг лимит от 156 ppm. Дозата по подразбиране е 156 ppm за сух бекон и 120 ppm за саламура. Тези правила са писани за промишлени предприятия, а не за домашна кухня. Ползваме ги като най-добрия публичен числов ориентир, а отговорността за готовия продукт остава твоя.</p></details>
-          <details class="ms-card ms-card--pad faq__item js-reveal"><summary>Cure #1, Cure #2 или европейска нитритна сол — каква е разликата?</summary><p>Cure #1 съдържа 6,25% натриев нитрит. Cure #2 съдържа и натриев нитрат и е за дълго зреене без термична обработка. Европейската нитритна сол (Pökelsalz, peklosól) обикновено съдържа само 0,4–0,6% нитрит — около десет пъти по-малко. Ако избереш грешния вид, дозата ще е грешна около десет пъти, затова SaltCure първо пита каква сол имаш и те оставя да въведеш точния процент нитрит от опаковката.</p></details>
-          <details class="ms-card ms-card--pad faq__item js-reveal"><summary>Мога ли да ползвам Cure #2 за бекон?</summary><p>Не. Правилата на USDA не допускат добавен нитрат в бекона, затова SaltCure напълно блокира Cure #2 за бекон.</p></details>
-          <details class="ms-card ms-card--pad faq__item js-reveal"><summary>Достатъчно ли е джърките просто да се изсушат?</summary><p>Не. При джърки основният риск са бактериите, а не нитритът. Препоръка на FSIS: преди сушене загрей месото до 160 °F (71 °C), птиците до 165 °F (74 °C) във влажна среда, после суши при около 130–140 °F (54–60 °C).</p></details>
-          <details class="ms-card ms-card--pad faq__item js-reveal"><summary>Как да разбера, че партидата се е развалила?</summary><p>При дълго зреещите цели парчета (панчета, копа) бялата пухкава плесен е нормална. Всяка друга плесен — зелена, черна или каквато и да е друга — или хлъзгава повърхност означава, че цялата партида трябва да се изхвърли. При другите продукти (бекон, джърки, всичко, което не зрее седмици) всяка плесен означава изхвърляне. Чистият вид не доказва, че месото е наред. Ако се съмняваш — изхвърли.</p></details>
+          <details class="ms-card ms-card--pad faq__item js-reveal"><summary>亜硝酸塩の量はなぜそんなに大事なのですか？</summary><p>キュアリングソルトの亜硝酸塩は、塩と低温とあわせて、塩漬け肉の<i>C. botulinum</i>の増殖を抑え、色を定着させます。保証ではなく、多すぎる亜硝酸塩は有害です。だから量はスプーンではなく、0.1 g単位のはかりで量ります。SaltCure は肉の重さ（ソミュール液では水の重さ）からグラム数を計算します。</p></details>
+          <details class="ms-card ms-card--pad faq__item js-reveal"><summary>SaltCure はどの上限を使っていますか？</summary><p>SaltCure は、公開されている USDA/FSIS の規則（9 CFR 424.21 と 424.22）に沿って計算します。ベーコンの上限は亜硝酸塩で、乾塩法200 ppm、ソミュール液120 ppm、ひき肉は156 ppmです。かたまり肉のジャーキーにも、あえて同じ厳しめの156 ppmを適用しています。標準の量は、乾塩法のベーコンで156 ppm、ソミュール液で120 ppmです。これらの規則は家庭のキッチンではなく、商業工場向けに定められたものです。私たちは数値の面でもっとも参考にしやすい公開資料として使っており、できあがった食品の責任はあなたにあります。</p></details>
+          <details class="ms-card ms-card--pad faq__item js-reveal"><summary>Cure #1、Cure #2、ヨーロッパのキュアリングソルト：何が違うのですか？</summary><p>Cure #1 は亜硝酸ナトリウムを6.25％含みます。Cure #2 はさらに硝酸ナトリウムも含み、加熱せずに長く乾燥熟成させるときに使います。ヨーロッパのキュアリングソルト（Pökelsalz、peklosól）の亜硝酸塩は通常0.4〜0.6％で、約10分の1です。種類を取り違えると量が約10倍ずれるため、SaltCure は計算の前にどの塩かを尋ねます。パッケージに書かれた亜硝酸塩の％をそのまま入力することもできます。</p></details>
+          <details class="ms-card ms-card--pad faq__item js-reveal"><summary>ベーコンに Cure #2 は使えますか？</summary><p>いいえ。USDA の規則ではベーコンへの硝酸塩の添加は認められていないため、SaltCure はベーコンでの Cure #2 を完全にブロックします。</p></details>
+          <details class="ms-card ms-card--pad faq__item js-reveal"><summary>ジャーキーは乾燥させるだけで十分ですか？</summary><p>いいえ。ジャーキーでおもに注意するのは亜硝酸塩ではなく細菌です。FSIS の指針では、乾燥の前に湿度のある環境で、肉は160 °F（71 °C）、鶏肉は165 °F（74 °C）まで加熱し、そのあと約130〜140 °F（54〜60 °C）で乾燥させます。</p></details>
+          <details class="ms-card ms-card--pad faq__item js-reveal"><summary>バッチがダメになったかどうか、どう見分けますか？</summary><p>パンチェッタやコッパのような長く乾燥熟成させるかたまり肉では、白くふわふわしたカビは普通です。それ以外のカビ（緑、黒、そのほか何色でも）やぬめりがあれば、バッチ全体を捨ててください。ベーコンやジャーキーなど、何週間も乾燥熟成させないものは、カビが出たら捨てます。見た目がきれいでも、大丈夫とは限りません。迷ったら捨ててください。</p></details>
         </div>
-        <p class="more-link js-reveal">Повече, с източник за всяко число: <a href="https://meat.mordansoft.com/learn/">какво е нитритната сол, какво прави нитритът в месото, кои дози са опасни и на какви правила е изграден SaltCure</a> (на английски).</p>
+        <p class="more-link js-reveal">さらに詳しく、数字はすべて出典つき：<a href="https://meat.mordansoft.com/learn/">キュアリングソルトとは何か、亜硝酸塩は肉の中で何をするのか、どの量が危険か、SaltCure はどの規則をもとに作られているか</a>。</p>
       </div>
     </section>
 
@@ -518,15 +516,15 @@
     <section class="section section--hair">
       <div class="ms-container">
         <div class="section__head js-reveal">
-          <span class="ms-eyebrow">// Казус</span>
-          <h2 class="section__title">От идеята до публикуването в магазините</h2>
+          <span class="ms-eyebrow">// 制作事例</span>
+          <h2 class="section__title">コンセプトからストア公開まで</h2>
         </div>
         <div class="case-grid">
-          <div class="ms-card ms-card--pad js-reveal" data-delay="1"><p class="case-block__label">Контекст</p><p class="case-block__text">Собствен продукт на MordanSoft в нишата на домашното осоляване и шаркутерия. Съществуващите приложения в тази категория почти нямат отзиви, което остави входа свободен.</p></div>
-          <div class="ms-card ms-card--pad js-reveal" data-delay="2"><p class="case-block__label">Какво направихме</p><p class="case-block__text">Дизайн, реализация на Flutter, механизъм за дозиране с проверка на лимитите на FSIS, дневник на партидите с напомняния, екрани за първо стартиране и публикуване в Google Play и App Store.</p></div>
+          <div class="ms-card ms-card--pad js-reveal" data-delay="1"><p class="case-block__label">背景</p><p class="case-block__text">家庭での塩漬けとシャルキュトリー分野での、MordanSoft の自社プロダクトです。このジャンルの既存アプリはレビューがほとんどなく、入り込む余地がありました。</p></div>
+          <div class="ms-card ms-card--pad js-reveal" data-delay="2"><p class="case-block__label">やったこと</p><p class="case-block__text">デザイン、Flutter での実装、FSIS の上限チェックつきの計算エンジン、リマインダー付きのバッチ記録、初回起動の画面、そして Google Play と App Store での公開。</p></div>
           <div class="ms-card ms-card--pad js-reveal" data-delay="1">
-            <p class="case-block__label">Технологии</p>
-            <div class="case-stack"><span class="ms-tag">Flutter</span><span class="ms-tag">Firebase Analytics</span><span class="ms-tag">Crashlytics</span><span class="ms-tag">Офлайн</span><span class="ms-tag">Без акаунти</span></div>
+            <p class="case-block__label">技術</p>
+            <div class="case-stack"><span class="ms-tag">Flutter</span><span class="ms-tag">Firebase Analytics</span><span class="ms-tag">Crashlytics</span><span class="ms-tag">オフライン優先</span><span class="ms-tag">アカウント不要</span></div>
           </div>
         </div>
       </div>
@@ -535,11 +533,11 @@
     <!-- Closing (dark band) -->
     <section class="section band-dark close-band" data-theme="dark">
       <div class="ms-container ms-container--narrow js-reveal">
-        <h2 class="close-band__title">Първият бекон — без налучкване.</h2>
-        <p class="close-band__text">SaltCure работи офлайн, пази партидите ти на телефона и не иска акаунт.</p>
+        <h2 class="close-band__title">はじめてのベーコンを、迷わずに。</h2>
+        <p class="close-band__text">SaltCure はオフラインで動き、バッチの記録はあなたのスマホの中に。アカウントも求めません。</p>
         <div class="store-badges store-badges--lg">
-          <a class="store-badge" href="/saltcure/go/play/" target="_blank" rel="noopener" aria-label="Изтегли SaltCure от Google Play"><img src="/assets/badges/google-play.svg" alt="Изтегли от Google Play"></a>
-          <a class="store-badge" href="/saltcure/go/app-store/" target="_blank" rel="noopener" aria-label="Изтегли SaltCure от App Store"><img src="/assets/badges/app-store.svg" alt="Изтегли от App Store"></a>
+          <a class="store-badge" href="/saltcure/go/play/" target="_blank" rel="noopener" aria-label="Google Play で SaltCure を入手"><img src="/assets/badges/google-play.svg" alt="Google Play で手に入れよう"></a>
+          <a class="store-badge" href="/saltcure/go/app-store/" target="_blank" rel="noopener" aria-label="App Store で SaltCure をダウンロード"><img src="/assets/badges/app-store.svg" alt="App Store でダウンロード"></a>
         </div>
       </div>
     </section>

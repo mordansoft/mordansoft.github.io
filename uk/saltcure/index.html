@@ -10,22 +10,15 @@
   <link rel="alternate" hreflang="en" href="https://mordansoft.com/saltcure/">
   <link rel="alternate" hreflang="uk" href="https://mordansoft.com/uk/saltcure/">
   <link rel="alternate" hreflang="ru" href="https://mordansoft.com/ru/saltcure/">
-  <link rel="alternate" hreflang="pl" href="https://mordansoft.com/pl/saltcure/">
-  <link rel="alternate" hreflang="cs" href="https://mordansoft.com/cs/saltcure/">
-  <link rel="alternate" hreflang="sk" href="https://mordansoft.com/sk/saltcure/">
-  <link rel="alternate" hreflang="be" href="https://mordansoft.com/be/saltcure/">
-  <link rel="alternate" hreflang="bg" href="https://mordansoft.com/bg/saltcure/">
-  <link rel="alternate" hreflang="hr" href="https://mordansoft.com/hr/saltcure/">
-  <link rel="alternate" hreflang="sr" href="https://mordansoft.com/sr/saltcure/">
-  <link rel="alternate" hreflang="sl" href="https://mordansoft.com/sl/saltcure/">
-  <link rel="alternate" hreflang="es" href="https://mordansoft.com/es/saltcure/">
-  <link rel="alternate" hreflang="it" href="https://mordansoft.com/it/saltcure/">
-  <link rel="alternate" hreflang="kk" href="https://mordansoft.com/kk/saltcure/">
-  <link rel="alternate" hreflang="fr" href="https://mordansoft.com/fr/saltcure/">
-  <link rel="alternate" hreflang="pt-BR" href="https://mordansoft.com/pt-br/saltcure/">
-  <link rel="alternate" hreflang="tr" href="https://mordansoft.com/tr/saltcure/">
   <link rel="alternate" hreflang="de" href="https://mordansoft.com/de/saltcure/">
-  <link rel="alternate" hreflang="id" href="https://mordansoft.com/id/saltcure/">
+  <link rel="alternate" hreflang="es" href="https://mordansoft.com/es/saltcure/">
+  <link rel="alternate" hreflang="fr" href="https://mordansoft.com/fr/saltcure/">
+  <link rel="alternate" hreflang="it" href="https://mordansoft.com/it/saltcure/">
+  <link rel="alternate" hreflang="pt-BR" href="https://mordansoft.com/pt-br/saltcure/">
+  <link rel="alternate" hreflang="pl" href="https://mordansoft.com/pl/saltcure/">
+  <link rel="alternate" hreflang="tr" href="https://mordansoft.com/tr/saltcure/">
+  <link rel="alternate" hreflang="ja" href="https://mordansoft.com/ja/saltcure/">
+  <link rel="alternate" hreflang="ko" href="https://mordansoft.com/ko/saltcure/">
   <link rel="alternate" hreflang="x-default" href="https://mordansoft.com/saltcure/">
   <meta name="apple-itunes-app" content="app-id=6812973901">
   <meta property="og:type" content="website">
@@ -242,7 +235,12 @@
     .topbar__right { display: inline-flex; align-items: center; }
 
     /* ══ SaltCure ══ */
-    .hero__title { max-width: 16ch; }
+    .hero__title { max-width: 16ch; text-wrap: balance; }
+    .section__title, .close-band__title { text-wrap: balance; }
+    html[lang="ko"] body { word-break: keep-all; }
+    html[lang="ja"] .hero__title, html[lang="ja"] .section__title { line-break: strict; }
+    html[lang="ja"] .nb { display: inline-block; }
+    html[lang="ja"] .hero__title { max-width: 22ch; }
     .stage--phones { max-width: 920px; display: flex; justify-content: center; align-items: flex-end; gap: 0; min-height: 0; }
     .stage--phones .phone { position: relative; flex: none; }
     .stage--phones .phone--main { width: 286px; z-index: 3; transform: translateY(0); border-radius: 40px; padding: 9px; }
@@ -351,7 +349,7 @@
         </span>
         <span class="brand__name">Mordan<b>Soft</b></span>
       </a>
-      <span class="topbar__right"><span class="topbar__tag">Студія мобільної розробки</span><details class="lang-switch"><summary aria-label="Language"><span class="lang-switch__flag" aria-hidden="true">🇺🇦</span><span>Українська</span></summary><ul class="lang-switch__menu"><li><a href="/saltcure/" lang="en"><span class="lang-switch__flag" aria-hidden="true">🇬🇧</span><span>English</span></a></li><li><a href="/uk/saltcure/" lang="uk" aria-current="page"><span class="lang-switch__flag" aria-hidden="true">🇺🇦</span><span>Українська</span></a></li><li><a href="/ru/saltcure/" lang="ru"><span class="lang-switch__flag" aria-hidden="true">🇷🇺</span><span>Русский</span></a></li><li><a href="/pl/saltcure/" lang="pl"><span class="lang-switch__flag" aria-hidden="true">🇵🇱</span><span>Polski</span></a></li><li><a href="/cs/saltcure/" lang="cs"><span class="lang-switch__flag" aria-hidden="true">🇨🇿</span><span>Čeština</span></a></li><li><a href="/sk/saltcure/" lang="sk"><span class="lang-switch__flag" aria-hidden="true">🇸🇰</span><span>Slovenčina</span></a></li><li><a href="/be/saltcure/" lang="be"><span class="lang-switch__flag" aria-hidden="true">🇧🇾</span><span>Беларуская</span></a></li><li><a href="/bg/saltcure/" lang="bg"><span class="lang-switch__flag" aria-hidden="true">🇧🇬</span><span>Български</span></a></li><li><a href="/hr/saltcure/" lang="hr"><span class="lang-switch__flag" aria-hidden="true">🇭🇷</span><span>Hrvatski</span></a></li><li><a href="/sr/saltcure/" lang="sr"><span class="lang-switch__flag" aria-hidden="true">🇷🇸</span><span>Српски</span></a></li><li><a href="/sl/saltcure/" lang="sl"><span class="lang-switch__flag" aria-hidden="true">🇸🇮</span><span>Slovenščina</span></a></li><li><a href="/es/saltcure/" lang="es"><span class="lang-switch__flag" aria-hidden="true">🇪🇸</span><span>Español</span></a></li><li><a href="/it/saltcure/" lang="it"><span class="lang-switch__flag" aria-hidden="true">🇮🇹</span><span>Italiano</span></a></li><li><a href="/kk/saltcure/" lang="kk"><span class="lang-switch__flag" aria-hidden="true">🇰🇿</span><span>Қазақша</span></a></li><li><a href="/fr/saltcure/" lang="fr"><span class="lang-switch__flag" aria-hidden="true">🇫🇷</span><span>Français</span></a></li><li><a href="/pt-br/saltcure/" lang="pt-BR"><span class="lang-switch__flag" aria-hidden="true">🇧🇷</span><span>Português (Brasil)</span></a></li><li><a href="/tr/saltcure/" lang="tr"><span class="lang-switch__flag" aria-hidden="true">🇹🇷</span><span>Türkçe</span></a></li><li><a href="/de/saltcure/" lang="de"><span class="lang-switch__flag" aria-hidden="true">🇩🇪</span><span>Deutsch</span></a></li><li><a href="/id/saltcure/" lang="id"><span class="lang-switch__flag" aria-hidden="true">🇮🇩</span><span>Bahasa Indonesia</span></a></li></ul></details></span>
+      <span class="topbar__right"><span class="topbar__tag">Студія мобільної розробки</span><details class="lang-switch"><summary aria-label="Language"><span class="lang-switch__flag" aria-hidden="true">🇺🇦</span><span>Українська</span></summary><ul class="lang-switch__menu"><li><a href="/saltcure/" lang="en"><span class="lang-switch__flag" aria-hidden="true">🇬🇧</span><span>English</span></a></li><li><a href="/uk/saltcure/" lang="uk" aria-current="page"><span class="lang-switch__flag" aria-hidden="true">🇺🇦</span><span>Українська</span></a></li><li><a href="/ru/saltcure/" lang="ru"><span class="lang-switch__flag" aria-hidden="true">🇷🇺</span><span>Русский</span></a></li><li><a href="/de/saltcure/" lang="de"><span class="lang-switch__flag" aria-hidden="true">🇩🇪</span><span>Deutsch</span></a></li><li><a href="/es/saltcure/" lang="es"><span class="lang-switch__flag" aria-hidden="true">🇪🇸</span><span>Español</span></a></li><li><a href="/fr/saltcure/" lang="fr"><span class="lang-switch__flag" aria-hidden="true">🇫🇷</span><span>Français</span></a></li><li><a href="/it/saltcure/" lang="it"><span class="lang-switch__flag" aria-hidden="true">🇮🇹</span><span>Italiano</span></a></li><li><a href="/pt-br/saltcure/" lang="pt-BR"><span class="lang-switch__flag" aria-hidden="true">🇧🇷</span><span>Português (Brasil)</span></a></li><li><a href="/pl/saltcure/" lang="pl"><span class="lang-switch__flag" aria-hidden="true">🇵🇱</span><span>Polski</span></a></li><li><a href="/tr/saltcure/" lang="tr"><span class="lang-switch__flag" aria-hidden="true">🇹🇷</span><span>Türkçe</span></a></li><li><a href="/ja/saltcure/" lang="ja"><span class="lang-switch__flag" aria-hidden="true">🇯🇵</span><span>日本語</span></a></li><li><a href="/ko/saltcure/" lang="ko"><span class="lang-switch__flag" aria-hidden="true">🇰🇷</span><span>한국어</span></a></li></ul></details></span>
     </div>
   </div>
 

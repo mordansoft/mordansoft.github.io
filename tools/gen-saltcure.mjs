@@ -7,16 +7,15 @@ import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 const ROOT = new URL('..', import.meta.url).pathname;
 const BASE = 'https://mordansoft.com';
 const MEAT = 'https://meat.mordansoft.com';
-// Same languages, folders and names as the meat.mordansoft.com calculators.
+// The twelve MordanSoft languages (decision 14.11.2026, standardised 19.11.2026).
 const LANGS = [
   ['en', '', 'en_US', 'English', '🇬🇧'], ['uk', 'uk', 'uk_UA', 'Українська', '🇺🇦'], ['ru', 'ru', 'ru_RU', 'Русский', '🇷🇺'],
-  ['pl', 'pl', 'pl_PL', 'Polski', '🇵🇱'], ['cs', 'cs', 'cs_CZ', 'Čeština', '🇨🇿'], ['sk', 'sk', 'sk_SK', 'Slovenčina', '🇸🇰'],
-  ['be', 'be', 'be_BY', 'Беларуская', '🇧🇾'], ['bg', 'bg', 'bg_BG', 'Български', '🇧🇬'], ['hr', 'hr', 'hr_HR', 'Hrvatski', '🇭🇷'],
-  ['sr', 'sr', 'sr_RS', 'Српски', '🇷🇸'], ['sl', 'sl', 'sl_SI', 'Slovenščina', '🇸🇮'], ['es', 'es', 'es_ES', 'Español', '🇪🇸'],
-  ['it', 'it', 'it_IT', 'Italiano', '🇮🇹'], ['kk', 'kk', 'kk_KZ', 'Қазақша', '🇰🇿'], ['fr', 'fr', 'fr_FR', 'Français', '🇫🇷'],
-  ['pt-BR', 'pt-br', 'pt_BR', 'Português (Brasil)', '🇧🇷'], ['tr', 'tr', 'tr_TR', 'Türkçe', '🇹🇷'], ['de', 'de', 'de_DE', 'Deutsch', '🇩🇪'],
-  ['id', 'id', 'id_ID', 'Bahasa Indonesia', '🇮🇩'],
+  ['de', 'de', 'de_DE', 'Deutsch', '🇩🇪'], ['es', 'es', 'es_ES', 'Español', '🇪🇸'], ['fr', 'fr', 'fr_FR', 'Français', '🇫🇷'],
+  ['it', 'it', 'it_IT', 'Italiano', '🇮🇹'], ['pt-BR', 'pt-br', 'pt_BR', 'Português (Brasil)', '🇧🇷'], ['pl', 'pl', 'pl_PL', 'Polski', '🇵🇱'],
+  ['tr', 'tr', 'tr_TR', 'Türkçe', '🇹🇷'], ['ja', 'ja', 'ja_JP', '日本語', '🇯🇵'], ['ko', 'ko', 'ko_KR', '한국어', '🇰🇷'],
 ].map(([code, dir, og, name, flag]) => ({ code, dir, og, name, flag }));
+// meat.mordansoft.com has calculators in these; ja and ko link to the English ones.
+const CALC = ['en', 'uk', 'ru', 'de', 'es', 'fr', 'it', 'pt-BR', 'pl', 'tr'];
 const LEARN = ['en', 'uk']; // knowledge base languages on meat.mordansoft.com
 
 const pathOf = (L) => `/${L.dir ? L.dir + '/' : ''}saltcure/`;
@@ -33,7 +32,7 @@ const menu = (cur) => {
     `<li><a href="${pathOf(L)}" lang="${L.code}"${L.code === cur ? ' aria-current="page"' : ''}><span class="lang-switch__flag" aria-hidden="true">${L.flag}</span><span>${L.name}</span></a></li>`).join('');
   return `<details class="lang-switch"><summary aria-label="Language"><span class="lang-switch__flag" aria-hidden="true">${curL.flag}</span><span>${curL.name}</span></summary><ul class="lang-switch__menu">${items}</ul></details>`;
 };
-const meatPath = (L, slug) => (slug === 'learn' && !LEARN.includes(L.code) ? `${MEAT}/learn/` : `${MEAT}/${L.dir ? L.dir + '/' : ''}${slug}/`);
+const meatPath = (L, slug) => (!CALC.includes(L.code) || (slug === 'learn' && !LEARN.includes(L.code)) ? `${MEAT}/${slug}/` : `${MEAT}/${L.dir ? L.dir + '/' : ''}${slug}/`);
 const strip = (s) => s.replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/&nbsp;/g, ' ');
 
 function head(h, L) {

@@ -224,7 +224,12 @@
     .topbar__right { display: inline-flex; align-items: center; }
 
     /* ══ SaltCure ══ */
-    .hero__title { max-width: 16ch; }
+    .hero__title { max-width: 16ch; text-wrap: balance; }
+    .section__title, .close-band__title { text-wrap: balance; }
+    html[lang="ko"] body { word-break: keep-all; }
+    html[lang="ja"] .hero__title, html[lang="ja"] .section__title { line-break: strict; }
+    html[lang="ja"] .nb { display: inline-block; }
+    html[lang="ja"] .hero__title { max-width: 22ch; }
     .stage--phones { max-width: 920px; display: flex; justify-content: center; align-items: flex-end; gap: 0; min-height: 0; }
     .stage--phones .phone { position: relative; flex: none; }
     .stage--phones .phone--main { width: 286px; z-index: 3; transform: translateY(0); border-radius: 40px; padding: 9px; }
