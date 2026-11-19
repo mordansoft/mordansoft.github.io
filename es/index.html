@@ -138,6 +138,23 @@
     .product__link:hover { text-decoration: none; color: var(--accent-press); }
     .badge-pill { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-mono); font-size: var(--text-xs); padding: 4px 10px; border-radius: var(--radius-pill); background: var(--surface-sunken); color: var(--text-secondary); }
 
+    .offer-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-4); margin-top: var(--space-6); }
+    @media (min-width: 760px) { .offer-grid { grid-template-columns: repeat(3, 1fr); } }
+    .offer { background: var(--surface-elevated); border: 1px solid var(--border-faint); border-radius: var(--radius-lg); padding: var(--space-5); display: flex; flex-direction: column; }
+    .offer__num { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--accent-text); letter-spacing: 0.1em; }
+    .offer__title { font-size: var(--text-h5); font-weight: 600; color: var(--text-primary); margin: var(--space-2) 0 0; }
+    .offer__text { font-size: var(--text-sm); color: var(--text-secondary); line-height: var(--leading-normal); margin: var(--space-3) 0 var(--space-5); flex: 1; }
+    .offer__meta { display: flex; gap: var(--space-5); padding-top: var(--space-4); border-top: 1px solid var(--border-faint); }
+    .offer__label { font-family: var(--font-mono); font-size: var(--text-xs); letter-spacing: 0.08em; color: var(--text-muted); text-transform: uppercase; }
+    .offer__value { font-size: var(--text-base); font-weight: 600; color: var(--text-primary); margin-top: 2px; }
+    .steps-head { font-family: var(--font-mono); font-size: var(--text-xs); letter-spacing: 0.08em; color: var(--text-muted); text-transform: uppercase; margin-top: var(--space-8); }
+    .steps { list-style: none; padding: 0; margin: var(--space-4) 0 0; display: grid; grid-template-columns: 1fr; gap: var(--space-3); counter-reset: step; }
+    @media (min-width: 760px) { .steps { grid-template-columns: repeat(3, 1fr); } }
+    .steps li { display: flex; gap: var(--space-3); align-items: flex-start; font-size: var(--text-sm); color: var(--text-secondary); line-height: var(--leading-normal); }
+    .steps li::before { counter-increment: step; content: counter(step); flex: none; width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; background: var(--accent-subtle); color: var(--accent-text); font-family: var(--font-mono); font-size: var(--text-xs); font-weight: 600; }
+    .offer-note { font-size: var(--text-sm); color: var(--text-secondary); margin-top: var(--space-5); }
+    .offer-actions { margin-top: var(--space-5); }
+    .section__kicker--wide { max-width: 44ch; }
     .do-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-4); }
     @media (min-width: 640px) { .do-grid { grid-template-columns: repeat(2, 1fr); } }
     @media (min-width: 980px) { .do-grid { grid-template-columns: repeat(4, 1fr); } }
@@ -309,6 +326,64 @@
 
   <main>
 
+    <section class="section section--muted" id="services">
+      <div class="ms-container">
+        <div class="section__head section__head--split js-reveal">
+          <div>
+            <span class="ms-eyebrow">// Para fundadores y equipos</span>
+            <h2 class="section__title">Lanzamos las apps.<br>Y después leemos los números.</h2>
+          </div>
+          <p class="section__kicker section__kicker--wide">Precio cerrado, plazo con fecha y compilaciones listas para enviar. Tú conoces el nicho y traes a los usuarios; nosotros montamos la app.</p>
+        </div>
+        <div class="offer-grid">
+
+          <article class="offer js-reveal" data-delay="1">
+            <div class="offer__num">01</div>
+            <h3 class="offer__title">App de utilidad, llave en mano</h3>
+            <p class="offer__text">Tu nicho y tu referencia, en Flutter para iOS y Android: onboarding, pantalla de pago, suscripciones y analítica de eventos. Entregamos las compilaciones listas para enviar y el código fuente.</p>
+            <div class="offer__meta">
+              <div><div class="offer__label">Precio</div><div class="offer__value">desde $1.500</div></div>
+              <div><div class="offer__label">Plazo</div><div class="offer__value">7–10 días hábiles</div></div>
+            </div>
+          </article>
+
+          <article class="offer js-reveal" data-delay="2">
+            <div class="offer__num">02</div>
+            <h3 class="offer__title">Ficha en la tienda</h3>
+            <p class="offer__text">Título, subtítulo, descripción y palabras clave para un idioma. Las palabras clave salen de los resultados reales y de la competencia, con el porqué de cada una.</p>
+            <div class="offer__meta">
+              <div><div class="offer__label">Precio</div><div class="offer__value">$700 · +$100 por idioma</div></div>
+              <div><div class="offer__label">Plazo</div><div class="offer__value">3–4 días hábiles</div></div>
+            </div>
+          </article>
+
+          <article class="offer js-reveal" data-delay="3">
+            <div class="offer__num">03</div>
+            <h3 class="offer__title">Hacernos cargo de una app comprada</h3>
+            <p class="offer__text">Traslado a tu cuenta de desarrollador, librerías actualizadas, nueva pantalla de pago y la compilación revisada antes de enviarla.</p>
+            <div class="offer__meta">
+              <div><div class="offer__label">Precio</div><div class="offer__value">desde $600</div></div>
+              <div><div class="offer__label">Plazo</div><div class="offer__value">3–7 días hábiles</div></div>
+            </div>
+          </article>
+
+        </div>
+        <div class="steps-head js-reveal">Cómo trabajamos</div>
+        <ol class="steps js-reveal">
+          <li>Nos mandas el nicho, las referencias y lo que debe mostrar la pantalla de pago.</li>
+          <li>Te respondemos con el alcance, el precio y el plazo.</li>
+          <li>50% por adelantado y empezamos.</li>
+          <li>A mitad de plazo te enseñamos una compilación: los cambios entran sobre la marcha, no al final.</li>
+          <li>Entregamos las compilaciones y el código fuente; se paga la segunda mitad.</li>
+          <li>Dos semanas de correcciones gratis para lo que aparezca tras la entrega.</li>
+        </ol>
+        <p class="offer-note js-reveal">¿Algo distinto? Lo estimamos y decimos el precio antes de empezar.</p>
+        <div class="offer-actions js-reveal">
+          <a class="ms-btn ms-btn--primary ms-btn--lg" href="#contact">Pedir presupuesto<span class="ms-btn__icon"><i data-lucide="arrow-right"></i></span></a>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="products">
       <div class="ms-container">
         <div class="section__head section__head--split js-reveal">
@@ -402,20 +477,6 @@
       </div>
     </section>
 
-    <section class="section section--muted" id="services">
-      <div class="ms-container">
-        <div class="section__head js-reveal">
-          <span class="ms-eyebrow">// Para fundadores y equipos</span>
-          <h2 class="section__title">Lanzamos las apps.<br>Y después leemos los números.</h2>
-        </div>
-        <div class="do-grid">
-          <div class="do-card js-reveal" data-delay="1"><div class="do-card__num">01</div><h3 class="do-card__title">Desarrollo de apps móviles</h3><p class="do-card__text">Flutter, iOS, Android — del concepto al lanzamiento en tienda.</p></div>
-          <div class="do-card js-reveal" data-delay="2"><div class="do-card__num">02</div><h3 class="do-card__title">Backend y datos</h3><p class="do-card__text">Python, SQL, integraciones con los sistemas que ya tienes.</p></div>
-          <div class="do-card js-reveal" data-delay="3"><div class="do-card__num">03</div><h3 class="do-card__title">Entrega potenciada por IA</h3><p class="do-card__text">Herramientas modernas — compilaciones rápidas, diffs limpios, menos entregas que se pierden.</p></div>
-          <div class="do-card js-reveal" data-delay="4"><div class="do-card__num">04</div><h3 class="do-card__title">Mantenimiento y soporte</h3><p class="do-card__text">Asociaciones a largo plazo, no proyectos desechables.</p></div>
-        </div>
-      </div>
-    </section>
 
     <section class="section" id="review">
       <div class="ms-container">

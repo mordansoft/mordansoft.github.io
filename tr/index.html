@@ -138,6 +138,23 @@
     .product__link:hover { text-decoration: none; color: var(--accent-press); }
     .badge-pill { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-mono); font-size: var(--text-xs); padding: 4px 10px; border-radius: var(--radius-pill); background: var(--surface-sunken); color: var(--text-secondary); }
 
+    .offer-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-4); margin-top: var(--space-6); }
+    @media (min-width: 760px) { .offer-grid { grid-template-columns: repeat(3, 1fr); } }
+    .offer { background: var(--surface-elevated); border: 1px solid var(--border-faint); border-radius: var(--radius-lg); padding: var(--space-5); display: flex; flex-direction: column; }
+    .offer__num { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--accent-text); letter-spacing: 0.1em; }
+    .offer__title { font-size: var(--text-h5); font-weight: 600; color: var(--text-primary); margin: var(--space-2) 0 0; }
+    .offer__text { font-size: var(--text-sm); color: var(--text-secondary); line-height: var(--leading-normal); margin: var(--space-3) 0 var(--space-5); flex: 1; }
+    .offer__meta { display: flex; gap: var(--space-5); padding-top: var(--space-4); border-top: 1px solid var(--border-faint); }
+    .offer__label { font-family: var(--font-mono); font-size: var(--text-xs); letter-spacing: 0.08em; color: var(--text-muted); text-transform: uppercase; }
+    .offer__value { font-size: var(--text-base); font-weight: 600; color: var(--text-primary); margin-top: 2px; }
+    .steps-head { font-family: var(--font-mono); font-size: var(--text-xs); letter-spacing: 0.08em; color: var(--text-muted); text-transform: uppercase; margin-top: var(--space-8); }
+    .steps { list-style: none; padding: 0; margin: var(--space-4) 0 0; display: grid; grid-template-columns: 1fr; gap: var(--space-3); counter-reset: step; }
+    @media (min-width: 760px) { .steps { grid-template-columns: repeat(3, 1fr); } }
+    .steps li { display: flex; gap: var(--space-3); align-items: flex-start; font-size: var(--text-sm); color: var(--text-secondary); line-height: var(--leading-normal); }
+    .steps li::before { counter-increment: step; content: counter(step); flex: none; width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; background: var(--accent-subtle); color: var(--accent-text); font-family: var(--font-mono); font-size: var(--text-xs); font-weight: 600; }
+    .offer-note { font-size: var(--text-sm); color: var(--text-secondary); margin-top: var(--space-5); }
+    .offer-actions { margin-top: var(--space-5); }
+    .section__kicker--wide { max-width: 44ch; }
     .do-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-4); }
     @media (min-width: 640px) { .do-grid { grid-template-columns: repeat(2, 1fr); } }
     @media (min-width: 980px) { .do-grid { grid-template-columns: repeat(4, 1fr); } }
@@ -309,6 +326,64 @@
 
   <main>
 
+    <section class="section section--muted" id="services">
+      <div class="ms-container">
+        <div class="section__head section__head--split js-reveal">
+          <div>
+            <span class="ms-eyebrow">// Kurucular ve ekipler için</span>
+            <h2 class="section__title">Uygulamaları yayınlıyoruz.<br>Ve sonra rakamları okuyoruz.</h2>
+          </div>
+          <p class="section__kicker section__kicker--wide">Sabit fiyat, net teslim tarihi ve gönderime hazır derlemeler. Nişi siz biliyor, kullanıcıyı siz getiriyorsunuz; uygulamayı biz kuruyoruz.</p>
+        </div>
+        <div class="offer-grid">
+
+          <article class="offer js-reveal" data-delay="1">
+            <div class="offer__num">01</div>
+            <h3 class="offer__title">Anahtar teslim araç uygulaması</h3>
+            <p class="offer__text">Sizin nişiniz ve referansınız, iOS ve Android için Flutter'da: onboarding, ödeme ekranı, abonelikler, olay analitiği. Gönderime hazır derlemeleri ve kaynak kodu veriyoruz.</p>
+            <div class="offer__meta">
+              <div><div class="offer__label">Fiyat</div><div class="offer__value">$1.500'den başlıyor</div></div>
+              <div><div class="offer__label">Süre</div><div class="offer__value">7–10 iş günü</div></div>
+            </div>
+          </article>
+
+          <article class="offer js-reveal" data-delay="2">
+            <div class="offer__num">02</div>
+            <h3 class="offer__title">Mağaza sayfası</h3>
+            <p class="offer__text">Tek dil için başlık, alt başlık, açıklama ve anahtar kelimeler. Anahtar kelimeleri canlı sonuçlara ve rakiplere bakarak, her birinin gerekçesiyle seçiyoruz.</p>
+            <div class="offer__meta">
+              <div><div class="offer__label">Fiyat</div><div class="offer__value">$700 · dil başına +$100</div></div>
+              <div><div class="offer__label">Süre</div><div class="offer__value">3–4 iş günü</div></div>
+            </div>
+          </article>
+
+          <article class="offer js-reveal" data-delay="3">
+            <div class="offer__num">03</div>
+            <h3 class="offer__title">Satın alınan uygulamayı devralma</h3>
+            <p class="offer__text">Geliştirici hesabınıza taşıma, kütüphane güncellemesi, yeni ödeme ekranı ve gönderimden önce derleme kontrolü.</p>
+            <div class="offer__meta">
+              <div><div class="offer__label">Fiyat</div><div class="offer__value">$600'dan başlıyor</div></div>
+              <div><div class="offer__label">Süre</div><div class="offer__value">3–7 iş günü</div></div>
+            </div>
+          </article>
+
+        </div>
+        <div class="steps-head js-reveal">Nasıl çalışıyoruz</div>
+        <ol class="steps js-reveal">
+          <li>Nişi, referansları ve ödeme ekranında ne olması gerektiğini gönderirsiniz.</li>
+          <li>Kapsam, fiyat ve teslim tarihiyle yanıt veririz.</li>
+          <li>%50 peşin, iş başlar.</li>
+          <li>Sürenin ortasında bir derleme görürsünüz — değişiklikler sonda değil, yol boyunca girer.</li>
+          <li>Derlemeleri ve kaynak kodu teslim ederiz, ikinci yarı ödenir.</li>
+          <li>Teslimden sonra bulunan hatalar iki hafta boyunca ücretsiz düzeltilir.</li>
+        </ol>
+        <p class="offer-note js-reveal">Farklı bir iş mi? Başlamadan önce fiyatlandırıp fiyatı söylüyoruz.</p>
+        <div class="offer-actions js-reveal">
+          <a class="ms-btn ms-btn--primary ms-btn--lg" href="#contact">Fiyat teklifi al<span class="ms-btn__icon"><i data-lucide="arrow-right"></i></span></a>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="products">
       <div class="ms-container">
         <div class="section__head section__head--split js-reveal">
@@ -402,20 +477,6 @@
       </div>
     </section>
 
-    <section class="section section--muted" id="services">
-      <div class="ms-container">
-        <div class="section__head js-reveal">
-          <span class="ms-eyebrow">// Kurucular ve ekipler için</span>
-          <h2 class="section__title">Uygulamaları yayınlıyoruz.<br>Ve sonra rakamları okuyoruz.</h2>
-        </div>
-        <div class="do-grid">
-          <div class="do-card js-reveal" data-delay="1"><div class="do-card__num">01</div><h3 class="do-card__title">Mobil uygulama geliştirme</h3><p class="do-card__text">Flutter, iOS, Android — konseptten mağaza yayınına.</p></div>
-          <div class="do-card js-reveal" data-delay="2"><div class="do-card__num">02</div><h3 class="do-card__title">Backend ve veri</h3><p class="do-card__text">Python, SQL, hâlihazırda kullandığınız sistemlerle entegrasyonlar.</p></div>
-          <div class="do-card js-reveal" data-delay="3"><div class="do-card__num">03</div><h3 class="do-card__title">AI destekli teslimat</h3><p class="do-card__text">Modern araçlar — daha hızlı build, daha temiz diff, kaybolan daha az aktarım.</p></div>
-          <div class="do-card js-reveal" data-delay="4"><div class="do-card__num">04</div><h3 class="do-card__title">Bakım ve destek</h3><p class="do-card__text">Tek seferlik projeler değil, uzun ortaklıklar.</p></div>
-        </div>
-      </div>
-    </section>
 
     <section class="section" id="review">
       <div class="ms-container">

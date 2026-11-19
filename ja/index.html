@@ -138,6 +138,23 @@
     .product__link:hover { text-decoration: none; color: var(--accent-press); }
     .badge-pill { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-mono); font-size: var(--text-xs); padding: 4px 10px; border-radius: var(--radius-pill); background: var(--surface-sunken); color: var(--text-secondary); }
 
+    .offer-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-4); margin-top: var(--space-6); }
+    @media (min-width: 760px) { .offer-grid { grid-template-columns: repeat(3, 1fr); } }
+    .offer { background: var(--surface-elevated); border: 1px solid var(--border-faint); border-radius: var(--radius-lg); padding: var(--space-5); display: flex; flex-direction: column; }
+    .offer__num { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--accent-text); letter-spacing: 0.1em; }
+    .offer__title { font-size: var(--text-h5); font-weight: 600; color: var(--text-primary); margin: var(--space-2) 0 0; }
+    .offer__text { font-size: var(--text-sm); color: var(--text-secondary); line-height: var(--leading-normal); margin: var(--space-3) 0 var(--space-5); flex: 1; }
+    .offer__meta { display: flex; gap: var(--space-5); padding-top: var(--space-4); border-top: 1px solid var(--border-faint); }
+    .offer__label { font-family: var(--font-mono); font-size: var(--text-xs); letter-spacing: 0.08em; color: var(--text-muted); text-transform: uppercase; }
+    .offer__value { font-size: var(--text-base); font-weight: 600; color: var(--text-primary); margin-top: 2px; }
+    .steps-head { font-family: var(--font-mono); font-size: var(--text-xs); letter-spacing: 0.08em; color: var(--text-muted); text-transform: uppercase; margin-top: var(--space-8); }
+    .steps { list-style: none; padding: 0; margin: var(--space-4) 0 0; display: grid; grid-template-columns: 1fr; gap: var(--space-3); counter-reset: step; }
+    @media (min-width: 760px) { .steps { grid-template-columns: repeat(3, 1fr); } }
+    .steps li { display: flex; gap: var(--space-3); align-items: flex-start; font-size: var(--text-sm); color: var(--text-secondary); line-height: var(--leading-normal); }
+    .steps li::before { counter-increment: step; content: counter(step); flex: none; width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; background: var(--accent-subtle); color: var(--accent-text); font-family: var(--font-mono); font-size: var(--text-xs); font-weight: 600; }
+    .offer-note { font-size: var(--text-sm); color: var(--text-secondary); margin-top: var(--space-5); }
+    .offer-actions { margin-top: var(--space-5); }
+    .section__kicker--wide { max-width: 44ch; }
     .do-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-4); }
     @media (min-width: 640px) { .do-grid { grid-template-columns: repeat(2, 1fr); } }
     @media (min-width: 980px) { .do-grid { grid-template-columns: repeat(4, 1fr); } }
@@ -309,6 +326,64 @@
 
   <main>
 
+    <section class="section section--muted" id="services">
+      <div class="ms-container">
+        <div class="section__head section__head--split js-reveal">
+          <div>
+            <span class="ms-eyebrow">// 創業者・チームの皆さまへ</span>
+            <h2 class="section__title">アプリをリリースします。<br>そして、その後の数字を読み解きます。</h2>
+          </div>
+          <p class="section__kicker section__kicker--wide">固定価格、明示した納期、そのまま申請できるビルド。ニッチとユーザー集めはあなた、アプリの組み立ては私たちが担当します。</p>
+        </div>
+        <div class="offer-grid">
+
+          <article class="offer js-reveal" data-delay="1">
+            <div class="offer__num">01</div>
+            <h3 class="offer__title">ユーティリティアプリ一式</h3>
+            <p class="offer__text">あなたのニッチと参考アプリをもとに、FlutterでiOSとAndroidに対応。オンボーディング、課金画面、サブスクリプション、イベント分析まで。申請可能なビルドとソースコードをお渡しします。</p>
+            <div class="offer__meta">
+              <div><div class="offer__label">価格</div><div class="offer__value">$1,500〜</div></div>
+              <div><div class="offer__label">期間</div><div class="offer__value">7〜10営業日</div></div>
+            </div>
+          </article>
+
+          <article class="offer js-reveal" data-delay="2">
+            <div class="offer__num">02</div>
+            <h3 class="offer__title">ストアページ</h3>
+            <p class="offer__text">1言語分のタイトル、サブタイトル、説明文、キーワード。キーワードは実際の検索結果と競合から選び、それぞれに根拠を付けます。</p>
+            <div class="offer__meta">
+              <div><div class="offer__label">価格</div><div class="offer__value">$700・1言語追加ごとに+$100</div></div>
+              <div><div class="offer__label">期間</div><div class="offer__value">3〜4営業日</div></div>
+            </div>
+          </article>
+
+          <article class="offer js-reveal" data-delay="3">
+            <div class="offer__num">03</div>
+            <h3 class="offer__title">購入したアプリの引き継ぎ</h3>
+            <p class="offer__text">あなたのデベロッパーアカウントへの移管、ライブラリの更新、新しい課金画面、申請前のビルド確認。</p>
+            <div class="offer__meta">
+              <div><div class="offer__label">価格</div><div class="offer__value">$600〜</div></div>
+              <div><div class="offer__label">期間</div><div class="offer__value">3〜7営業日</div></div>
+            </div>
+          </article>
+
+        </div>
+        <div class="steps-head js-reveal">進め方</div>
+        <ol class="steps js-reveal">
+          <li>ニッチ、参考アプリ、課金画面に載せたい内容をお送りください。</li>
+          <li>範囲・価格・納期をお返事します。</li>
+          <li>前金50%で着手します。</li>
+          <li>期間の中間でビルドをお見せします。修正は最後ではなく途中で反映します。</li>
+          <li>ビルドとソースコードを納品し、残り半額をお支払いいただきます。</li>
+          <li>納品後2週間は、見つかった不具合を無償で修正します。</li>
+        </ol>
+        <p class="offer-note js-reveal">それ以外のご依頼は、作業開始前に見積もって価格をお伝えします。</p>
+        <div class="offer-actions js-reveal">
+          <a class="ms-btn ms-btn--primary ms-btn--lg" href="#contact">見積もりを依頼<span class="ms-btn__icon"><i data-lucide="arrow-right"></i></span></a>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="products">
       <div class="ms-container">
         <div class="section__head section__head--split js-reveal">
@@ -402,20 +477,6 @@
       </div>
     </section>
 
-    <section class="section section--muted" id="services">
-      <div class="ms-container">
-        <div class="section__head js-reveal">
-          <span class="ms-eyebrow">// 創業者・チームの皆さまへ</span>
-          <h2 class="section__title">アプリをリリースします。<br>そして、その後の数字を読み解きます。</h2>
-        </div>
-        <div class="do-grid">
-          <div class="do-card js-reveal" data-delay="1"><div class="do-card__num">01</div><h3 class="do-card__title">モバイルアプリ開発</h3><p class="do-card__text">Flutter、iOS、Android。コンセプトからストア公開まで。</p></div>
-          <div class="do-card js-reveal" data-delay="2"><div class="do-card__num">02</div><h3 class="do-card__title">バックエンド＆データ</h3><p class="do-card__text">Python、SQL、すでに運用中のシステムとの連携。</p></div>
-          <div class="do-card js-reveal" data-delay="3"><div class="do-card__num">03</div><h3 class="do-card__title">AI を活用した開発</h3><p class="do-card__text">最新のツールで、ビルドは速く、差分は読みやすく、引き継ぎの取りこぼしは少なく。</p></div>
-          <div class="do-card js-reveal" data-delay="4"><div class="do-card__num">04</div><h3 class="do-card__title">保守・サポート</h3><p class="do-card__text">使い捨てではなく、長く続くパートナーシップを。</p></div>
-        </div>
-      </div>
-    </section>
 
     <section class="section" id="review">
       <div class="ms-container">

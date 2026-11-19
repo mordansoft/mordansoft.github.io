@@ -138,6 +138,23 @@
     .product__link:hover { text-decoration: none; color: var(--accent-press); }
     .badge-pill { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-mono); font-size: var(--text-xs); padding: 4px 10px; border-radius: var(--radius-pill); background: var(--surface-sunken); color: var(--text-secondary); }
 
+    .offer-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-4); margin-top: var(--space-6); }
+    @media (min-width: 760px) { .offer-grid { grid-template-columns: repeat(3, 1fr); } }
+    .offer { background: var(--surface-elevated); border: 1px solid var(--border-faint); border-radius: var(--radius-lg); padding: var(--space-5); display: flex; flex-direction: column; }
+    .offer__num { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--accent-text); letter-spacing: 0.1em; }
+    .offer__title { font-size: var(--text-h5); font-weight: 600; color: var(--text-primary); margin: var(--space-2) 0 0; }
+    .offer__text { font-size: var(--text-sm); color: var(--text-secondary); line-height: var(--leading-normal); margin: var(--space-3) 0 var(--space-5); flex: 1; }
+    .offer__meta { display: flex; gap: var(--space-5); padding-top: var(--space-4); border-top: 1px solid var(--border-faint); }
+    .offer__label { font-family: var(--font-mono); font-size: var(--text-xs); letter-spacing: 0.08em; color: var(--text-muted); text-transform: uppercase; }
+    .offer__value { font-size: var(--text-base); font-weight: 600; color: var(--text-primary); margin-top: 2px; }
+    .steps-head { font-family: var(--font-mono); font-size: var(--text-xs); letter-spacing: 0.08em; color: var(--text-muted); text-transform: uppercase; margin-top: var(--space-8); }
+    .steps { list-style: none; padding: 0; margin: var(--space-4) 0 0; display: grid; grid-template-columns: 1fr; gap: var(--space-3); counter-reset: step; }
+    @media (min-width: 760px) { .steps { grid-template-columns: repeat(3, 1fr); } }
+    .steps li { display: flex; gap: var(--space-3); align-items: flex-start; font-size: var(--text-sm); color: var(--text-secondary); line-height: var(--leading-normal); }
+    .steps li::before { counter-increment: step; content: counter(step); flex: none; width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; background: var(--accent-subtle); color: var(--accent-text); font-family: var(--font-mono); font-size: var(--text-xs); font-weight: 600; }
+    .offer-note { font-size: var(--text-sm); color: var(--text-secondary); margin-top: var(--space-5); }
+    .offer-actions { margin-top: var(--space-5); }
+    .section__kicker--wide { max-width: 44ch; }
     .do-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-4); }
     @media (min-width: 640px) { .do-grid { grid-template-columns: repeat(2, 1fr); } }
     @media (min-width: 980px) { .do-grid { grid-template-columns: repeat(4, 1fr); } }
@@ -309,6 +326,64 @@
 
   <main>
 
+    <section class="section section--muted" id="services">
+      <div class="ms-container">
+        <div class="section__head section__head--split js-reveal">
+          <div>
+            <span class="ms-eyebrow">// Для фаундеров и команд</span>
+            <h2 class="section__title">Выпускаем приложения.<br>И читаем цифры после.</h2>
+          </div>
+          <p class="section__kicker section__kicker--wide">Фиксированная цена, названный срок, сборки, готовые к подаче. Вы знаете нишу и приводите пользователей — мы собираем приложение.</p>
+        </div>
+        <div class="offer-grid">
+
+          <article class="offer js-reveal" data-delay="1">
+            <div class="offer__num">01</div>
+            <h3 class="offer__title">Приложение-утилита под ключ</h3>
+            <p class="offer__text">Ваша ниша и ваш референс, на Flutter для iOS и Android: онбординг, экран оплаты, подписки, аналитика событий. Отдаём сборки, готовые к подаче, и исходный код.</p>
+            <div class="offer__meta">
+              <div><div class="offer__label">Цена</div><div class="offer__value">от $1 500</div></div>
+              <div><div class="offer__label">Срок</div><div class="offer__value">7–10 рабочих дней</div></div>
+            </div>
+          </article>
+
+          <article class="offer js-reveal" data-delay="2">
+            <div class="offer__num">02</div>
+            <h3 class="offer__title">Страница в магазине</h3>
+            <p class="offer__text">Название, подзаголовок, описание и ключевые слова для одного языка. Ключи подбираем по живой выдаче и конкурентам, с обоснованием каждого.</p>
+            <div class="offer__meta">
+              <div><div class="offer__label">Цена</div><div class="offer__value">$700 · +$100 за язык</div></div>
+              <div><div class="offer__label">Срок</div><div class="offer__value">3–4 рабочих дня</div></div>
+            </div>
+          </article>
+
+          <article class="offer js-reveal" data-delay="3">
+            <div class="offer__num">03</div>
+            <h3 class="offer__title">Приём купленного приложения</h3>
+            <p class="offer__text">Перенос на ваш аккаунт разработчика, обновление библиотек, новый экран оплаты и проверка сборки перед подачей.</p>
+            <div class="offer__meta">
+              <div><div class="offer__label">Цена</div><div class="offer__value">от $600</div></div>
+              <div><div class="offer__label">Срок</div><div class="offer__value">3–7 рабочих дней</div></div>
+            </div>
+          </article>
+
+        </div>
+        <div class="steps-head js-reveal">Как мы работаем</div>
+        <ol class="steps js-reveal">
+          <li>Вы присылаете нишу, референсы и что должно быть на экране оплаты.</li>
+          <li>Мы отвечаем: что входит, цена, срок.</li>
+          <li>50% предоплата — и стартуем.</li>
+          <li>На середине срока показываем сборку — правки по ходу, а не в конце.</li>
+          <li>Отдаём сборки и исходный код, вторая половина оплаты.</li>
+          <li>Две недели после сдачи бесплатно чиним найденные ошибки.</li>
+        </ol>
+        <p class="offer-note js-reveal">Нестандартная задача — оцениваем и называем цену до начала работы.</p>
+        <div class="offer-actions js-reveal">
+          <a class="ms-btn ms-btn--primary ms-btn--lg" href="#contact">Получить оценку<span class="ms-btn__icon"><i data-lucide="arrow-right"></i></span></a>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="products">
       <div class="ms-container">
         <div class="section__head section__head--split js-reveal">
@@ -402,20 +477,6 @@
       </div>
     </section>
 
-    <section class="section section--muted" id="services">
-      <div class="ms-container">
-        <div class="section__head js-reveal">
-          <span class="ms-eyebrow">// Для фаундеров и команд</span>
-          <h2 class="section__title">Выпускаем приложения.<br>И читаем цифры после.</h2>
-        </div>
-        <div class="do-grid">
-          <div class="do-card js-reveal" data-delay="1"><div class="do-card__num">01</div><h3 class="do-card__title">Разработка мобильных приложений</h3><p class="do-card__text">Flutter, iOS, Android — от идеи до релиза в сторе.</p></div>
-          <div class="do-card js-reveal" data-delay="2"><div class="do-card__num">02</div><h3 class="do-card__title">Бэкенд и данные</h3><p class="do-card__text">Python, SQL, интеграции с системами, которые у вас уже работают.</p></div>
-          <div class="do-card js-reveal" data-delay="3"><div class="do-card__num">03</div><h3 class="do-card__title">AI-ускоренная разработка</h3><p class="do-card__text">Современный инструментарий — быстрее билды, чище диффы, меньше потерянных хендофов.</p></div>
-          <div class="do-card js-reveal" data-delay="4"><div class="do-card__num">04</div><h3 class="do-card__title">Сопровождение и поддержка</h3><p class="do-card__text">Долгие партнёрства, а не одноразовые проекты.</p></div>
-        </div>
-      </div>
-    </section>
 
     <section class="section" id="review">
       <div class="ms-container">

@@ -138,6 +138,23 @@
     .product__link:hover { text-decoration: none; color: var(--accent-press); }
     .badge-pill { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-mono); font-size: var(--text-xs); padding: 4px 10px; border-radius: var(--radius-pill); background: var(--surface-sunken); color: var(--text-secondary); }
 
+    .offer-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-4); margin-top: var(--space-6); }
+    @media (min-width: 760px) { .offer-grid { grid-template-columns: repeat(3, 1fr); } }
+    .offer { background: var(--surface-elevated); border: 1px solid var(--border-faint); border-radius: var(--radius-lg); padding: var(--space-5); display: flex; flex-direction: column; }
+    .offer__num { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--accent-text); letter-spacing: 0.1em; }
+    .offer__title { font-size: var(--text-h5); font-weight: 600; color: var(--text-primary); margin: var(--space-2) 0 0; }
+    .offer__text { font-size: var(--text-sm); color: var(--text-secondary); line-height: var(--leading-normal); margin: var(--space-3) 0 var(--space-5); flex: 1; }
+    .offer__meta { display: flex; gap: var(--space-5); padding-top: var(--space-4); border-top: 1px solid var(--border-faint); }
+    .offer__label { font-family: var(--font-mono); font-size: var(--text-xs); letter-spacing: 0.08em; color: var(--text-muted); text-transform: uppercase; }
+    .offer__value { font-size: var(--text-base); font-weight: 600; color: var(--text-primary); margin-top: 2px; }
+    .steps-head { font-family: var(--font-mono); font-size: var(--text-xs); letter-spacing: 0.08em; color: var(--text-muted); text-transform: uppercase; margin-top: var(--space-8); }
+    .steps { list-style: none; padding: 0; margin: var(--space-4) 0 0; display: grid; grid-template-columns: 1fr; gap: var(--space-3); counter-reset: step; }
+    @media (min-width: 760px) { .steps { grid-template-columns: repeat(3, 1fr); } }
+    .steps li { display: flex; gap: var(--space-3); align-items: flex-start; font-size: var(--text-sm); color: var(--text-secondary); line-height: var(--leading-normal); }
+    .steps li::before { counter-increment: step; content: counter(step); flex: none; width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; background: var(--accent-subtle); color: var(--accent-text); font-family: var(--font-mono); font-size: var(--text-xs); font-weight: 600; }
+    .offer-note { font-size: var(--text-sm); color: var(--text-secondary); margin-top: var(--space-5); }
+    .offer-actions { margin-top: var(--space-5); }
+    .section__kicker--wide { max-width: 44ch; }
     .do-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-4); }
     @media (min-width: 640px) { .do-grid { grid-template-columns: repeat(2, 1fr); } }
     @media (min-width: 980px) { .do-grid { grid-template-columns: repeat(4, 1fr); } }
@@ -309,6 +326,64 @@
 
   <main>
 
+    <section class="section section--muted" id="services">
+      <div class="ms-container">
+        <div class="section__head section__head--split js-reveal">
+          <div>
+            <span class="ms-eyebrow">// For founders &amp; teams</span>
+            <h2 class="section__title">We ship the apps.<br>And read the numbers after.</h2>
+          </div>
+          <p class="section__kicker section__kicker--wide">Fixed price, a named deadline, builds ready to submit. You know the niche and bring the users — we assemble the app.</p>
+        </div>
+        <div class="offer-grid">
+
+          <article class="offer js-reveal" data-delay="1">
+            <div class="offer__num">01</div>
+            <h3 class="offer__title">Utility app, turnkey</h3>
+            <p class="offer__text">Your niche and your reference, on Flutter for iOS and Android: onboarding, paywall, subscriptions, event analytics. You get builds ready to submit and the source code.</p>
+            <div class="offer__meta">
+              <div><div class="offer__label">Price</div><div class="offer__value">from $1,500</div></div>
+              <div><div class="offer__label">Time</div><div class="offer__value">7–10 working days</div></div>
+            </div>
+          </article>
+
+          <article class="offer js-reveal" data-delay="2">
+            <div class="offer__num">02</div>
+            <h3 class="offer__title">Store listing</h3>
+            <p class="offer__text">Title, subtitle, description and keywords for one language. Keywords picked from the live search results and the competitors, with the reasoning for each.</p>
+            <div class="offer__meta">
+              <div><div class="offer__label">Price</div><div class="offer__value">$700 · +$100 per language</div></div>
+              <div><div class="offer__label">Time</div><div class="offer__value">3–4 working days</div></div>
+            </div>
+          </article>
+
+          <article class="offer js-reveal" data-delay="3">
+            <div class="offer__num">03</div>
+            <h3 class="offer__title">Taking over an app you bought</h3>
+            <p class="offer__text">Moved to your developer account, libraries updated, a new paywall, and the build checked before you submit it.</p>
+            <div class="offer__meta">
+              <div><div class="offer__label">Price</div><div class="offer__value">from $600</div></div>
+              <div><div class="offer__label">Time</div><div class="offer__value">3–7 working days</div></div>
+            </div>
+          </article>
+
+        </div>
+        <div class="steps-head js-reveal">How it works</div>
+        <ol class="steps js-reveal">
+          <li>You send the niche, the references and what the paywall should show.</li>
+          <li>We reply with the scope, the price and the deadline.</li>
+          <li>50% up front, and the work starts.</li>
+          <li>Halfway through you get a build — changes go in along the way, not at the end.</li>
+          <li>We hand over the builds and the source code; the second half is paid.</li>
+          <li>Two weeks of free fixes for anything found after delivery.</li>
+        </ol>
+        <p class="offer-note js-reveal">Anything else — we scope it and name the price before the work starts.</p>
+        <div class="offer-actions js-reveal">
+          <a class="ms-btn ms-btn--primary ms-btn--lg" href="#contact">Get a quote<span class="ms-btn__icon"><i data-lucide="arrow-right"></i></span></a>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="products">
       <div class="ms-container">
         <div class="section__head section__head--split js-reveal">
@@ -402,20 +477,6 @@
       </div>
     </section>
 
-    <section class="section section--muted" id="services">
-      <div class="ms-container">
-        <div class="section__head js-reveal">
-          <span class="ms-eyebrow">// For founders &amp; teams</span>
-          <h2 class="section__title">We ship the apps.<br>And read the numbers after.</h2>
-        </div>
-        <div class="do-grid">
-          <div class="do-card js-reveal" data-delay="1"><div class="do-card__num">01</div><h3 class="do-card__title">Mobile app development</h3><p class="do-card__text">Flutter, iOS, Android — concept to store release.</p></div>
-          <div class="do-card js-reveal" data-delay="2"><div class="do-card__num">02</div><h3 class="do-card__title">Backend &amp; data</h3><p class="do-card__text">Python, SQL, integrations with the systems you already run.</p></div>
-          <div class="do-card js-reveal" data-delay="3"><div class="do-card__num">03</div><h3 class="do-card__title">AI-augmented delivery</h3><p class="do-card__text">Modern tooling — faster builds, cleaner diffs, fewer handoffs lost.</p></div>
-          <div class="do-card js-reveal" data-delay="4"><div class="do-card__num">04</div><h3 class="do-card__title">Maintenance &amp; support</h3><p class="do-card__text">Long-term partnerships, not throwaway projects.</p></div>
-        </div>
-      </div>
-    </section>
 
     <section class="section" id="review">
       <div class="ms-container">
