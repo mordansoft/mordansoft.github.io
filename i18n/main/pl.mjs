@@ -6,7 +6,7 @@ export default [
   "Kontakt",
   "// Niezależne studio mobilne · od 2014",
   "Aplikacje mobilne,<br>wydawane<br>i <span class=\"hero__title--accent\">utrzymywane w sklepach.</span>",
-  "Studio Flutter prowadzone przez dewelopera z 13+ latami doświadczenia. Pracujemy na zlecenie dla founderów i zespołów oraz nad własnymi aplikacjami w sklepach.",
+  "Studio Flutter prowadzone przez dewelopera z 7+ latami doświadczenia. Pracujemy na zlecenie dla founderów i zespołów oraz nad własnymi aplikacjami w sklepach.",
   "Dla founderów i zespołów",
   "Zobacz nasze aplikacje",
   "W sklepach od 2014",

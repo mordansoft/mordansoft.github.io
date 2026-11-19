@@ -6,7 +6,7 @@ export default [
   "Contato",
   "// Estúdio mobile independente · desde 2014",
   "Apps móveis,<br>que entregamos<br>e <span class=\"hero__title--accent\">mantemos nas lojas.</span>",
-  "Estúdio Flutter tocado por um desenvolvedor com mais de 13 anos de estrada. Entrega sob contrato para fundadores e times, e nossos próprios apps nas lojas.",
+  "Estúdio Flutter tocado por um desenvolvedor com mais de 7 anos de estrada. Entrega sob contrato para fundadores e times, e nossos próprios apps nas lojas.",
   "Para fundadores e times",
   "Ver nossos apps",
   "Nas lojas desde 2014",

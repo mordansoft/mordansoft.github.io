@@ -6,7 +6,7 @@ export default [
   "Contact",
   "// Studio mobile indépendant · depuis 2014",
   "Des apps mobiles,<br>livrées<br>et <span class=\"hero__title--accent\">maintenues sur les stores.</span>",
-  "Studio Flutter mené par un développeur avec 13+ ans d’expérience. Prestations pour fondateurs et équipes, et nos propres petites apps en magasin.",
+  "Studio Flutter mené par un développeur avec 7+ ans d’expérience. Prestations pour fondateurs et équipes, et nos propres petites apps en magasin.",
   "Pour fondateurs et équipes",
   "Voir nos apps",
   "En stores depuis 2014",

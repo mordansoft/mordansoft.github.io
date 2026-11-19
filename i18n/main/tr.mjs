@@ -6,7 +6,7 @@ export default [
   "İletişim",
   "// Bağımsız mobil stüdyo · 2014’ten beri",
   "Yayınladığımız,<br>mağazalarda<br>ve <span class=\"hero__title--accent\">yaşatmaya devam ettiğimiz mobil uygulamalar.</span>",
-  "13+ yıllık deneyime sahip bir geliştiricinin yönettiği Flutter stüdyosu. Kurucular ve ekipler için sözleşmeli teslimat ve mağazalardaki küçük kendi uygulamalarımız.",
+  "7+ yıllık deneyime sahip bir geliştiricinin yönettiği Flutter stüdyosu. Kurucular ve ekipler için sözleşmeli teslimat ve mağazalardaki küçük kendi uygulamalarımız.",
   "Kurucular ve ekipler için",
   "Uygulamalarımızı gör",
   "2014’ten beri mağazalarda",

@@ -6,7 +6,7 @@ export default [
   "Contatti",
   "// Studio mobile indipendente · dal 2014",
   "App mobili,<br>rilasciate<br>e <span class=\"hero__title--accent\">mantenute negli store.</span>",
-  "Studio Flutter guidato da uno sviluppatore con 13+ anni di esperienza. Lavori su commessa per founder e team, e le nostre piccole app negli store.",
+  "Studio Flutter guidato da uno sviluppatore con 7+ anni di esperienza. Lavori su commessa per founder e team, e le nostre piccole app negli store.",
   "Per founder e team",
   "Vedi le nostre app",
   "Negli store dal 2014",

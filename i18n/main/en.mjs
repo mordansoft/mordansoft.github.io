@@ -6,7 +6,7 @@ export default [
   "Contact",
   "// Independent mobile studio · est. 2014",
   "Mobile apps,<br>built to ship<br>and <span class=\"hero__title--accent\">stay shipped.</span>",
-  "Flutter studio run by a developer with 13+ years in production software. Contract delivery for founders and teams, and our own small apps that live in the stores.",
+  "Flutter studio run by a developer with 7+ years in production software. Contract delivery for founders and teams, and our own small apps that live in the stores.",
   "For founders &amp; teams",
   "See our apps",
   "Shipping since 2014",

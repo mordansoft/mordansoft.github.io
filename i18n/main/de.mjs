@@ -6,7 +6,7 @@ export default [
   "Kontakt",
   "// Unabhängiges Mobile-Studio · seit 2014",
   "Mobile Apps,<br>die ausgeliefert werden<br>und <span class=\"hero__title--accent\">im Store bleiben.</span>",
-  "Flutter-Studio, geführt von einem Entwickler mit 13+ Jahren Erfahrung. Auftragsarbeit für Gründer und Teams — und eigene kleine Apps in den Stores.",
+  "Flutter-Studio, geführt von einem Entwickler mit 7+ Jahren Erfahrung. Auftragsarbeit für Gründer und Teams — und eigene kleine Apps in den Stores.",
   "Für Gründer &amp; Teams",
   "Unsere Apps ansehen",
   "In Stores seit 2014",
