@@ -10,7 +10,7 @@ export default [
   "iOS",
   "Android",
   "Sin cuenta",
-  "Próximamente en App Store y Google Play.",
+  "Próximamente en App Store.",
   "Pago único",
   "funciona sin conexión",
   "nada sale de tu dispositivo",

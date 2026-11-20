@@ -145,7 +145,7 @@
     @media (min-width: 720px) { .detail-features { grid-template-columns: 1fr 1fr; } }
     /* Single-column hero until the screenshots arrive; restore the two-column
        rule (1.05fr 0.95fr) together with the phone mocks. */
-    @media (min-width: 900px) { .detail-hero { padding: var(--space-20) 0 var(--space-24); } }
+    @media (min-width: 900px) { .detail-hero { padding: var(--space-20) 0 var(--space-24); } .detail-hero__grid { grid-template-columns: 1.05fr 0.95fr; } }
     .detail__soon { font-family: var(--font-mono); font-size: var(--text-sm); color: var(--accent-text); margin: var(--space-8) 0 0; }
     @media (max-width: 860px) { .phone--b, .detail-hero__facet { display: none; } .detail-hero__wash { opacity: 0.24; } }
     @media (max-width: 720px) {
@@ -226,8 +226,7 @@
         </a>
         <div class="detail-hero__grid">
           <div class="detail-hero__copy" data-reveal>
-            <!-- TODO: icon tile goes back here once the app icon is picked:
-                 <span class="detail__tile"><img src="../../assets/rowline/icon.png" alt="Rowline app icon"></span> -->
+            <span class="detail__tile"><img src="/assets/img/rowline/icon.png" alt="Rowline app icon"></span>
             <h1 class="detail__title">Rowline</h1>
             <p class="detail__tagline">No pierdas el hilo en ningún patrón de punto o ganchillo.</p>
             <p class="detail__blurb">Abre un patrón que ya tengas — un PDF, una foto de una página o una página de la web — y Rowline lo muestra en pantalla con una barra resaltada sobre la vuelta en la que estás trabajando. Toca en cualquier sitio para contar una vuelta. Vuelve semanas después y seguirás justo donde lo dejaste.</p>
@@ -238,13 +237,20 @@
               <span class="ms-tag">Android</span>
               <span class="ms-tag">Sin cuenta</span>
             </div>
-            <!-- TODO: store badges replace this line once both apps are live -->
-            <p class="detail__soon">Próximamente en App Store y Google Play.</p>
+            <div class="detail__cta store-badges">
+              <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.mordansoft.rowline" target="_blank" rel="noopener" aria-label="Get Rowline on Google Play"><img src="/assets/badges/google-play.svg" alt="Get it on Google Play"></a>
+              <a class="store-badge" href="https://apps.apple.com/us/app/rowline-knit-crochet-rows/id6831794045" target="_blank" rel="noopener" aria-label="Download Rowline on the App Store"><img src="/assets/badges/app-store.svg" alt="Download on the App Store"></a>
+            </div>
             <div class="detail__specs">
               <span><b>Pago único</b></span>
               <span>funciona sin conexión</span>
               <span>nada sale de tu dispositivo</span>
             </div>
+          </div>
+          <div class="detail-hero__mock" aria-hidden="true">
+            <div class="phone phone--b"><img src="/assets/img/rowline/work_en.jpg" alt=""></div>
+            <div class="phone phone--a"><img src="/assets/img/rowline/counters_en.jpg" alt=""></div>
+            <div class="detail-hero__facet"></div>
           </div>
         </div>
       </div>
@@ -306,7 +312,10 @@
       <div class="ms-container ms-container--narrow js-reveal">
         <h2 class="detail-close__title">Dos proyectos gratis. Un solo pago para el resto.</h2>
         <p class="detail-close__text">Todas las funciones están desbloqueadas desde el primer momento: dos proyectos no cuestan nada. Proyectos ilimitados y exportación por un único pago de $7.99: sin suscripción, sin prueba que te cobre y sin subidas de precio más adelante.</p>
-        <!-- TODO: store badges go here once both apps are live -->
+        <div class="store-badges store-badges--lg" style="justify-content: center; margin-top: var(--space-6);">
+          <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.mordansoft.rowline" target="_blank" rel="noopener" aria-label="Get Rowline on Google Play"><img src="/assets/badges/google-play.svg" alt="Get it on Google Play"></a>
+              <a class="store-badge" href="https://apps.apple.com/us/app/rowline-knit-crochet-rows/id6831794045" target="_blank" rel="noopener" aria-label="Download Rowline on the App Store"><img src="/assets/badges/app-store.svg" alt="Download on the App Store"></a>
+        </div>
       </div>
     </section>
   </main>

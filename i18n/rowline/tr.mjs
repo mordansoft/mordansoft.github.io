@@ -10,7 +10,7 @@ export default [
   "iOS",
   "Android",
   "Hesap yok",
-  "Yakında App Store ve Google Play'de.",
+  "Yakında App Store'da.",
   "Tek seferlik satın alma",
   "çevrimdışı çalışır",
   "hiçbir şey cihazınızdan çıkmaz",

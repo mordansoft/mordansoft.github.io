@@ -10,7 +10,7 @@ export default [
   "iOS",
   "Android",
   "Sans compte",
-  "Bientôt sur l’App Store et Google Play.",
+  "Bientôt sur l’App Store.",
   "Achat unique",
   "fonctionne hors ligne",
   "rien ne quitte ton appareil",

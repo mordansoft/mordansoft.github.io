@@ -10,7 +10,7 @@ export default [
   "iOS",
   "Android",
   "Bez konta",
-  "Wkrótce w App Store i Google Play.",
+  "Wkrótce w App Store.",
   "Jednorazowy zakup",
   "działa offline",
   "nic nie opuszcza Twojego urządzenia",

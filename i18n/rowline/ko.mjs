@@ -10,7 +10,7 @@ export default [
   "iOS",
   "Android",
   "계정 필요 없음",
-  "App Store와 Google Play에 곧 출시됩니다.",
+  "App Store에도 곧 출시됩니다.",
   "1회 구매",
   "오프라인에서 작동",
   "어떤 데이터도 기기 밖으로 나가지 않습니다",

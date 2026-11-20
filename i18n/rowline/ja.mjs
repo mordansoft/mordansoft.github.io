@@ -10,7 +10,7 @@ export default [
   "iOS",
   "Android",
   "アカウント不要",
-  "App Store と Google Play で近日公開予定です。",
+  "App Store でも近日公開予定です。",
   "買い切り",
   "オフラインで使えます",
   "データは端末の外に出ません",

@@ -145,7 +145,7 @@
     @media (min-width: 720px) { .detail-features { grid-template-columns: 1fr 1fr; } }
     /* Single-column hero until the screenshots arrive; restore the two-column
        rule (1.05fr 0.95fr) together with the phone mocks. */
-    @media (min-width: 900px) { .detail-hero { padding: var(--space-20) 0 var(--space-24); } }
+    @media (min-width: 900px) { .detail-hero { padding: var(--space-20) 0 var(--space-24); } .detail-hero__grid { grid-template-columns: 1.05fr 0.95fr; } }
     .detail__soon { font-family: var(--font-mono); font-size: var(--text-sm); color: var(--accent-text); margin: var(--space-8) 0 0; }
     @media (max-width: 860px) { .phone--b, .detail-hero__facet { display: none; } .detail-hero__wash { opacity: 0.24; } }
     @media (max-width: 720px) {
@@ -226,8 +226,7 @@
         </a>
         <div class="detail-hero__grid">
           <div class="detail-hero__copy" data-reveal>
-            <!-- TODO: icon tile goes back here once the app icon is picked:
-                 <span class="detail__tile"><img src="../../assets/rowline/icon.png" alt="Rowline app icon"></span> -->
+            <span class="detail__tile"><img src="/assets/img/rowline/icon.png" alt="Rowline app icon"></span>
             <h1 class="detail__title">Rowline</h1>
             <p class="detail__tagline">뜨개질·코바늘 도안에서 보던 자리를 잃지 마세요.</p>
             <p class="detail__blurb">이미 가지고 있는 도안(PDF, 페이지 사진, 웹 페이지)을 열면 Rowline이 화면에 띄우고 지금 뜨는 단에 하이라이트 바를 표시합니다. 아무 곳이나 탭하면 단이 한 줄 올라갑니다. 몇 주 뒤에 돌아와도 멈춘 자리 그대로 이어서 뜰 수 있습니다.</p>
@@ -238,13 +237,20 @@
               <span class="ms-tag">Android</span>
               <span class="ms-tag">계정 필요 없음</span>
             </div>
-            <!-- TODO: store badges replace this line once both apps are live -->
-            <p class="detail__soon">App Store와 Google Play에 곧 출시됩니다.</p>
+            <div class="detail__cta store-badges">
+              <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.mordansoft.rowline" target="_blank" rel="noopener" aria-label="Get Rowline on Google Play"><img src="/assets/badges/google-play.svg" alt="Get it on Google Play"></a>
+              <a class="store-badge" href="https://apps.apple.com/us/app/rowline-knit-crochet-rows/id6831794045" target="_blank" rel="noopener" aria-label="Download Rowline on the App Store"><img src="/assets/badges/app-store.svg" alt="Download on the App Store"></a>
+            </div>
             <div class="detail__specs">
               <span><b>1회 구매</b></span>
               <span>오프라인에서 작동</span>
               <span>어떤 데이터도 기기 밖으로 나가지 않습니다</span>
             </div>
+          </div>
+          <div class="detail-hero__mock" aria-hidden="true">
+            <div class="phone phone--b"><img src="/assets/img/rowline/work_en.jpg" alt=""></div>
+            <div class="phone phone--a"><img src="/assets/img/rowline/counters_en.jpg" alt=""></div>
+            <div class="detail-hero__facet"></div>
           </div>
         </div>
       </div>
@@ -306,7 +312,10 @@
       <div class="ms-container ms-container--narrow js-reveal">
         <h2 class="detail-close__title">프로젝트 두 개는 무료. 나머지는 한 번의 결제로.</h2>
         <p class="detail-close__text">모든 기능을 처음 실행할 때부터 쓸 수 있고, 프로젝트 두 개는 무료입니다. 무제한 프로젝트와 내보내기는 7.99달러 1회 결제입니다. 구독도, 요금이 청구되는 체험도, 이후 가격 인상도 없습니다.</p>
-        <!-- TODO: store badges go here once both apps are live -->
+        <div class="store-badges store-badges--lg" style="justify-content: center; margin-top: var(--space-6);">
+          <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.mordansoft.rowline" target="_blank" rel="noopener" aria-label="Get Rowline on Google Play"><img src="/assets/badges/google-play.svg" alt="Get it on Google Play"></a>
+              <a class="store-badge" href="https://apps.apple.com/us/app/rowline-knit-crochet-rows/id6831794045" target="_blank" rel="noopener" aria-label="Download Rowline on the App Store"><img src="/assets/badges/app-store.svg" alt="Download on the App Store"></a>
+        </div>
       </div>
     </section>
   </main>

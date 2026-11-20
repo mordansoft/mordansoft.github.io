@@ -10,7 +10,7 @@ export default [
   "iOS",
   "Android",
   "No account",
-  "Coming soon to the App Store and Google Play.",
+  "Coming soon to the App Store.",
   "One-time purchase",
   "works offline",
   "nothing leaves your device",
