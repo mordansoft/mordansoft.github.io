@@ -132,10 +132,12 @@
     .wip__desc { font-size: var(--text-sm); color: var(--text-secondary); margin-top: var(--space-2); }
     .product__shot { aspect-ratio: 1024 / 500; border-radius: var(--radius-md); overflow: hidden; background: var(--surface-sunken); }
     .product__shot img { display: block; width: 100%; height: 100%; object-fit: cover; }
-    .product__foot { display: flex; align-items: center; justify-content: space-between; padding-top: var(--space-4); border-top: 1px solid var(--border-faint); }
-    .product__badges { display: inline-flex; gap: var(--space-2); flex-wrap: wrap; }
-    .product__link { font-size: var(--text-sm); font-weight: 500; color: var(--accent-text); text-decoration: none; }
-    .product__link:hover { text-decoration: none; color: var(--accent-press); }
+    .product__foot { display: flex; flex-direction: column; gap: var(--space-3); margin-top: auto; padding-top: var(--space-4); border-top: 1px solid var(--border-faint); }
+    .product__badges { display: grid; grid-template-columns: 3.375fr 2.99fr; gap: var(--space-2); align-items: center; }
+    .product__badges .store-badge { display: block; }
+    .product__badges .store-badge img { display: block; width: 100%; height: auto; }
+    .product__link { display: flex; align-items: center; justify-content: center; width: 100%; min-height: 44px; border: 1px solid var(--border-strong); border-radius: var(--radius-md); background: var(--surface-elevated); font-size: var(--text-sm); font-weight: 600; color: var(--accent-text); text-decoration: none; transition: background .15s ease, border-color .15s ease; }
+    .product__link:hover { text-decoration: none; color: var(--accent-press); background: var(--accent-subtle); border-color: var(--accent-subtle); }
     .badge-pill { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-mono); font-size: var(--text-xs); padding: 4px 10px; border-radius: var(--radius-pill); background: var(--surface-sunken); color: var(--text-secondary); }
 
     .offer-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-4); margin-top: var(--space-6); }
@@ -399,8 +401,8 @@
             <p class="product__desc">Спутник для заточки кухонных и карманных ножей. Учит углу, считает движения, ведёт журнал лезвия.</p>
             <div class="product__foot">
               <div class="product__badges">
-                <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.mordansoft.aok" target="_blank" rel="noopener" aria-label="Get AoK on Google Play"><img src="../assets/badges/google-play.svg" alt="Google Play" style="height:28px"></a>
-                <a class="store-badge" href="https://apps.apple.com/us/app/angle-of-knife-sharpening/id6739965153" target="_blank" rel="noopener" aria-label="Download AoK on the App Store"><img src="../assets/badges/app-store.svg" alt="App Store" style="height:28px"></a>
+                <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.mordansoft.aok" target="_blank" rel="noopener" aria-label="Get AoK on Google Play"><img src="../assets/badges/google-play.svg" alt="Google Play"></a>
+                <a class="store-badge" href="https://apps.apple.com/us/app/angle-of-knife-sharpening/id6739965153" target="_blank" rel="noopener" aria-label="Download AoK on the App Store"><img src="../assets/badges/app-store.svg" alt="App Store"></a>
               </div>
               <a class="product__link" href="/ru/aok/">Открыть &rarr;</a>
             </div>
@@ -415,8 +417,8 @@
             <p class="product__desc">Калькулятор нитритной соли и журнал партий для домашней чарктри. Офлайн, без аккаунта, журнал можно распечатать.</p>
             <div class="product__foot">
               <div class="product__badges">
-                <a class="store-badge" href="/saltcure/go/play/" target="_blank" rel="noopener" aria-label="Get SaltCure on Google Play"><img src="../assets/badges/google-play.svg" alt="Google Play" style="height:28px"></a>
-                <a class="store-badge" href="/saltcure/go/app-store/" target="_blank" rel="noopener" aria-label="Download SaltCure on the App Store"><img src="../assets/badges/app-store.svg" alt="App Store" style="height:28px"></a>
+                <a class="store-badge" href="/saltcure/go/play/" target="_blank" rel="noopener" aria-label="Get SaltCure on Google Play"><img src="../assets/badges/google-play.svg" alt="Google Play"></a>
+                <a class="store-badge" href="/saltcure/go/app-store/" target="_blank" rel="noopener" aria-label="Download SaltCure on the App Store"><img src="../assets/badges/app-store.svg" alt="App Store"></a>
               </div>
               <a class="product__link" href="/ru/saltcure/">Открыть &rarr;</a>
             </div>
@@ -431,8 +433,8 @@
             <p class="product__desc">Минимальный тренажёр словаря — выбираешь правильный перевод, учишь слово за словом. Офлайн, без аккаунтов.</p>
             <div class="product__foot">
               <div class="product__badges">
-                <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.mordansoft.morseng" target="_blank" rel="noopener" aria-label="Get Sloviko on Google Play"><img src="../assets/badges/google-play.svg" alt="Google Play" style="height:28px"></a>
-                <a class="store-badge" href="https://apps.apple.com/us/app/sloviko-english-vocabulary/id6814202372" target="_blank" rel="noopener" aria-label="Download Sloviko on the App Store"><img src="../assets/badges/app-store.svg" alt="App Store" style="height:28px"></a>
+                <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.mordansoft.morseng" target="_blank" rel="noopener" aria-label="Get Sloviko on Google Play"><img src="../assets/badges/google-play.svg" alt="Google Play"></a>
+                <a class="store-badge" href="https://apps.apple.com/us/app/sloviko-english-vocabulary/id6814202372" target="_blank" rel="noopener" aria-label="Download Sloviko on the App Store"><img src="../assets/badges/app-store.svg" alt="App Store"></a>
               </div>
               <a class="product__link" href="/ru/sloviko/">Открыть &rarr;</a>
             </div>
@@ -447,8 +449,8 @@
             <p class="product__desc">Счётчик рядов, который держит весь узор — ряды, повторы, заметки, всплывающие там, где нужно. Офлайн, без аккаунта.</p>
             <div class="product__foot">
               <div class="product__badges">
-                <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.mordansoft.rowline" target="_blank" rel="noopener" aria-label="Get Rowline on Google Play"><img src="../assets/badges/google-play.svg" alt="Google Play" style="height:28px"></a>
-                <a class="store-badge" href="https://apps.apple.com/us/app/rowline-knit-crochet-rows/id6831794045" target="_blank" rel="noopener" aria-label="Download Rowline on the App Store"><img src="../assets/badges/app-store.svg" alt="App Store" style="height:28px"></a>
+                <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.mordansoft.rowline" target="_blank" rel="noopener" aria-label="Get Rowline on Google Play"><img src="../assets/badges/google-play.svg" alt="Google Play"></a>
+                <a class="store-badge" href="https://apps.apple.com/us/app/rowline-knit-crochet-rows/id6831794045" target="_blank" rel="noopener" aria-label="Download Rowline on the App Store"><img src="../assets/badges/app-store.svg" alt="App Store"></a>
               </div>
               <a class="product__link" href="/rowline/">Открыть &rarr;</a>
             </div>
