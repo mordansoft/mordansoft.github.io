@@ -9,7 +9,7 @@ export default [
   "Studio Flutter prowadzone przez dewelopera z 7+ latami doświadczenia. Pracujemy na zlecenie dla founderów i zespołów oraz nad własnymi aplikacjami w sklepach.",
   "Dla founderów i zespołów",
   "Zobacz nasze aplikacje",
-  "W sklepach od 2014",
+  "W sklepach od 2021",
   "Flutter · iOS · Android",
   "AoK — Angle of Knife",
   "Kiedy nóż to coś więcej niż nóż",

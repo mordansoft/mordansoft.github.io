@@ -9,7 +9,7 @@ export default [
   "7+ yıllık deneyime sahip bir geliştiricinin yönettiği Flutter stüdyosu. Kurucular ve ekipler için sözleşmeli teslimat ve mağazalardaki küçük kendi uygulamalarımız.",
   "Kurucular ve ekipler için",
   "Uygulamalarımızı gör",
-  "2014’ten beri mağazalarda",
+  "2021’ten beri mağazalarda",
   "Flutter · iOS · Android",
   "AoK — Angle of Knife",
   "Bir bıçak bıçaktan fazlasıysa",

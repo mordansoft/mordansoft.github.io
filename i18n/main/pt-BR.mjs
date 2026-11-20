@@ -9,7 +9,7 @@ export default [
   "Estúdio Flutter tocado por um desenvolvedor com mais de 7 anos de estrada. Entrega sob contrato para fundadores e times, e nossos próprios apps nas lojas.",
   "Para fundadores e times",
   "Ver nossos apps",
-  "Nas lojas desde 2014",
+  "Nas lojas desde 2021",
   "Flutter · iOS · Android",
   "AoK — Angle of Knife",
   "Quando uma faca é mais que uma faca",

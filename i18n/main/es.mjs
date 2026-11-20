@@ -9,7 +9,7 @@ export default [
   "Estudio de Flutter dirigido por un desarrollador con 7+ años de experiencia. Entrega por contrato para fundadores y equipos, y nuestras propias apps en las tiendas.",
   "Para fundadores y equipos",
   "Ver nuestras apps",
-  "En tiendas desde 2014",
+  "En tiendas desde 2021",
   "Flutter · iOS · Android",
   "AoK — Angle of Knife",
   "Cuando un cuchillo es más que un cuchillo",

@@ -9,7 +9,7 @@ export default [
   "Flutter studio run by a developer with 7+ years in production software. Contract delivery for founders and teams, and our own small apps that live in the stores.",
   "For founders &amp; teams",
   "See our apps",
-  "Shipping since 2014",
+  "Shipping since 2021",
   "Flutter · iOS · Android",
   "AoK — Angle of Knife",
   "When a knife means more than a knife",
