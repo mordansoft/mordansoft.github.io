@@ -54,6 +54,8 @@ for (const L of live) {
     h = h.replace(/href="\/aok\/"/g, `href="/${L.dir}/aok/"`);
     if (existsSync(`${ROOT}${L.dir}/bodyladder/index.html`)) h = h.replace(/href="\/bodyladder\/"/g, `href="/${L.dir}/bodyladder/"`);
     h = h.replace(/href="\/sloviko\/"/g, `href="/${L.dir}/sloviko/"`);
+    if (existsSync(`${ROOT}${L.dir}/rowline/index.html`)) h = h.replace(/href="\/rowline\/"/g, `href="/${L.dir}/rowline/"`);
+    if (existsSync(`${ROOT}${L.dir}/beanjar/index.html`)) h = h.replace(/href="\/beanjar\/"/g, `href="/${L.dir}/beanjar/"`);
     h = h.replace(/href="\/services\/app-data-review\/"/g, `href="/${L.dir}/services/app-data-review/"`);
   }
   const outDir = L.dir ? `${ROOT}${L.dir}` : ROOT.replace(/\/$/, '');

@@ -57,6 +57,8 @@ for (const L of live) {
     .replace(/(<meta property="og:url" content=")[^"]*(">)/, `$1${urlOf(L)}$2`)
     .replace(/(<meta property="og:locale" content=")[^"]*(">)/, `$1${L.og}$2`);
   if (L.dir) h = h.replace(/(href|src)="\.\.\//g, '$1="../../'); // pages one folder deeper
+  // «Ко всем продуктам» ведёт на главную того же языка.
+  if (L.dir) h = h.replace(/href="\/#products"/g, `href="/${L.dir}/#products"`);
   const outDir = `${ROOT}${L.dir ? L.dir + '/' : ''}rowline`;
   mkdirSync(outDir, { recursive: true });
   writeFileSync(`${outDir}/index.html`, h);

@@ -57,6 +57,11 @@ for (const L of live) {
   h = h.replace(/(<link rel="canonical" href=")[^"]*(">)/, `$1${urlOf(L)}$2`)
     .replace(/(<meta property="og:url" content=")[^"]*(">)/, `$1${urlOf(L)}$2`)
     .replace(/(<meta property="og:locale" content=")[^"]*(">)/, `$1${L.og}$2`);
+  // «Ко всем продуктам» ведёт на главную того же языка.
+  if (L.dir) h = h.replace(/href="\/#products"/g, `href="/${L.dir}/#products"`);
+  // Экраны сняты не на всех языках (assets/beanjar/<lang>): где папки нет, показываем английские.
+  const shots = existsSync(`${ROOT}assets/beanjar/${L.code}`) ? L.code : 'en';
+  h = h.replace(/\/assets\/beanjar\/[^/"]+\//g, `/assets/beanjar/${shots}/`);
   const outDir = `${ROOT}${L.dir ? L.dir + '/' : ''}beanjar`;
   mkdirSync(outDir, { recursive: true });
   writeFileSync(`${outDir}/index.html`, h);

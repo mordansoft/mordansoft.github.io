@@ -69,6 +69,8 @@ for (const L of live) {
       ? `/assets/img/aok/screens/${shot}_${L.code}.webp` : m);
   // One folder deeper than the template: /ru/x/ reaches /_ds and /assets through one more ../.
   if (L.dir) h = h.replace(/(href|src)="\.\.\//g, '$1="../../');
+  // «Ко всем продуктам» ведёт на главную того же языка.
+  if (L.dir) h = h.replace(/href="\/#products"/g, `href="/${L.dir}/#products"`);
   const outDir = `${ROOT}${L.dir ? L.dir + '/' : ''}aok`;
   mkdirSync(outDir, { recursive: true });
   writeFileSync(`${outDir}/index.html`, h);

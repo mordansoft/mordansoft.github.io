@@ -63,6 +63,8 @@ for (const L of live) {
     .map(([, q, a]) => ({ '@type': 'Question', name: strip(q), acceptedAnswer: { '@type': 'Answer', text: strip(a) } }));
   h = h.replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/,
     `<script type="application/ld+json">${JSON.stringify({ '@context': 'https://schema.org', '@type': 'FAQPage', inLanguage: L.code, mainEntity: qa }).replace(/</g, '\\u003c')}</script>`);
+  // «Ко всем продуктам» ведёт на главную того же языка.
+  if (L.dir) h = h.replace(/href="\/#products"/g, `href="/${L.dir}/#products"`);
   const dir = `${ROOT}${L.dir ? L.dir + '/' : ''}saltcure`;
   mkdirSync(dir, { recursive: true });
   writeFileSync(`${dir}/index.html`, h);
