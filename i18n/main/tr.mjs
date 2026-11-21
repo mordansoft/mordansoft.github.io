@@ -142,4 +142,6 @@ export default [
   "Derlemeleri ve kaynak kodu teslim ederiz, ikinci yarı ödenir.",
   "Teslimden sonra bulunan hatalar iki hafta boyunca ücretsiz düzeltilir.",
   "Farklı bir iş mi? Başlamadan önce fiyatlandırıp fiyatı söylüyoruz.",
+  "Vücut ağırlığı becerileri, basamak basamak",
+  "Beş dal, 47 basamak; her biri ölçülebilir hedefi olan bir egzersiz. Şınav ve barfiks sonsuza dek ücretsiz. Yakında mağazalarda.",
 ];

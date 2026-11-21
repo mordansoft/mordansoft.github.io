@@ -142,4 +142,6 @@ export default [
   "Oddajemy buildy i kod źródłowy, płatna jest druga połowa.",
   "Dwa tygodnie po oddaniu bezpłatnie poprawiamy znalezione błędy.",
   "Nietypowe zadanie — wyceniamy i podajemy cenę przed startem.",
+  "Ciężar własnego ciała, stopień po stopniu",
+  "Pięć gałęzi, 47 stopni, każdy to ćwiczenie z normą, którą da się sprawdzić. Pompki i podciągnięcia za darmo na zawsze. Wkrótce w sklepach.",
 ];

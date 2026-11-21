@@ -142,4 +142,6 @@ export default [
   "Entregamos las compilaciones y el código fuente; se paga la segunda mitad.",
   "Dos semanas de correcciones gratis para lo que aparezca tras la entrega.",
   "¿Algo distinto? Lo estimamos y decimos el precio antes de empezar.",
+  "Habilidades con el peso del cuerpo, escalón a escalón",
+  "Cinco ramas, 47 escalones, cada uno un ejercicio con una meta que puedes comprobar. Flexiones y dominadas gratis para siempre. Pronto en las tiendas.",
 ];

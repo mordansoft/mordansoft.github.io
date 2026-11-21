@@ -142,4 +142,6 @@ export default [
   "Entregamos as builds e o código-fonte; a segunda metade é paga.",
   "Duas semanas de correções grátis para o que aparecer depois da entrega.",
   "Outra coisa? A gente estima e diz o preço antes de começar.",
+  "Habilidades com o peso do corpo, degrau a degrau",
+  "Cinco ramos, 47 degraus, cada um um exercício com uma meta que dá para conferir. Flexões e barras de graça para sempre. Em breve nas lojas.",
 ];

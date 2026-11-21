@@ -142,4 +142,6 @@ export default [
   "Wir übergeben Builds und Quellcode, die zweite Hälfte wird fällig.",
   "Zwei Wochen nach Übergabe beheben wir gefundene Fehler kostenlos.",
   "Etwas anderes? Wir schätzen es ein und nennen den Preis, bevor die Arbeit beginnt.",
+  "Körpergewichtsübungen, Stufe für Stufe",
+  "Fünf Zweige, 47 Stufen, jede eine Übung mit prüfbarer Vorgabe. Liegestütze und Klimmzüge für immer kostenlos. Bald in den Stores.",
 ];

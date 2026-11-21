@@ -142,4 +142,6 @@ export default [
   "Consegniamo build e codice sorgente; si salda la seconda metà.",
   "Due settimane di correzioni gratuite per ciò che emerge dopo la consegna.",
   "Qualcosa di diverso? Lo valutiamo e diciamo il prezzo prima di iniziare.",
+  "Abilità a corpo libero, gradino dopo gradino",
+  "Cinque rami, 47 gradini, ognuno un esercizio con un obiettivo verificabile. Piegamenti e trazioni gratis per sempre. Presto negli store.",
 ];

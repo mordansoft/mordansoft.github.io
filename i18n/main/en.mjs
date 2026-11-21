@@ -142,4 +142,6 @@ export default [
   "We hand over the builds and the source code; the second half is paid.",
   "Two weeks of free fixes for anything found after delivery.",
   "Anything else — we scope it and name the price before the work starts.",
+  "Bodyweight skills, step by step",
+  "Five branches, 47 steps, each one an exercise with a target you can check. Push-ups and pull-ups free forever. Coming to the stores.",
 ];

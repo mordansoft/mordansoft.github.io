@@ -52,6 +52,7 @@ for (const L of live) {
     // Everything but /legal/* is localised; keep legal links on the English root.
     if (existsSync(`${ROOT}${L.dir}/saltcure/index.html`)) h = h.replace(/href="\/saltcure\/"/g, `href="/${L.dir}/saltcure/"`);
     h = h.replace(/href="\/aok\/"/g, `href="/${L.dir}/aok/"`);
+    if (existsSync(`${ROOT}${L.dir}/bodyladder/index.html`)) h = h.replace(/href="\/bodyladder\/"/g, `href="/${L.dir}/bodyladder/"`);
     h = h.replace(/href="\/sloviko\/"/g, `href="/${L.dir}/sloviko/"`);
     h = h.replace(/href="\/services\/app-data-review\/"/g, `href="/${L.dir}/services/app-data-review/"`);
   }

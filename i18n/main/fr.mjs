@@ -142,4 +142,6 @@ export default [
   "Nous livrons les builds et le code source ; le solde est réglé.",
   "Deux semaines de corrections gratuites pour tout ce qui apparaît après la livraison.",
   "Autre chose ? Nous chiffrons et annonçons le prix avant de commencer.",
+  "Le poids du corps, échelon par échelon",
+  "Cinq branches, 47 échelons, chacun un exercice avec un objectif vérifiable. Pompes et tractions gratuites pour toujours. Bientôt sur les stores.",
 ];
