@@ -18,7 +18,7 @@
   <main class="container">
     <p class="breadcrumb"><a href="/">← MordanSoft</a></p>
     <h1>Privacy Policy</h1>
-    <p><strong>Rowline</strong> is a knitting and crochet companion developed by MordanSoft. It shows the patterns you already own and counts your rows. This policy explains what happens to your data — and the short answer is: your patterns and your projects stay on your device, and what leaves it is anonymous usage statistics and crash reports.</p>
+    <p><strong>Rowline</strong> is a knitting and crochet companion developed by MordanSoft. It shows the patterns you already own and counts your rows. This policy explains what happens to your data — and the short answer is: your patterns and your projects stay on your device, and what leaves it is anonymous usage statistics, crash reports and, if you buy Rowline Plus, an anonymous record of that purchase.</p>
 
     <h2>No account, no servers of ours</h2>
     <p>Rowline has no accounts and no sign-up, and we run no server that stores your content. We never ask for your name, email address, phone number, location or contacts, and we have no way to identify you personally.</p>
@@ -27,11 +27,15 @@
     <p>The patterns you import — PDF files, photos of a page, or pages you open by link — are stored in the app’s private storage on your device. They are never uploaded to us or to anyone else. We do not read them, we do not copy them, and we never share them.</p>
     <p>Rowline does not sell, host or generate patterns. It works only with the files you bring yourself, and the copyright in those patterns remains with their authors.</p>
 
+    <h2>Reading rows from photos and scans</h2>
+    <p>When a pattern is a photo or a scan, Rowline reads the text on the page to find the rows. This happens on your device, using the text recognition built into the system: Apple’s Vision framework on iPhone, and Google’s ML Kit, bundled inside the app, on Android. The page images and the text read from them are not sent to us or to anyone else.</p>
+    <p>On Android, ML Kit itself sends Google technical information about how the recognition performed: device model and operating system, app name and version, a per-installation identifier that is not meant to identify you or your device, timing and error codes, and the format and size of the image processed. Google uses it for diagnostics and usage analytics of ML Kit, encrypts it in transit and does not pass it to third parties. On iPhone, recognition runs inside Apple’s on-device framework, and Rowline sends nothing about it.</p>
+
     <h2>Your projects and notes</h2>
     <p>Projects, counters, notes and progress are stored in a local database on your device. If you use <em>Export</em>, a backup file is created and goes wherever you send it — that file is yours, and it does not pass through us.</p>
 
     <h2>Usage statistics and crash reports</h2>
-    <p>Released versions of Rowline send anonymous usage statistics through <strong>Google Analytics for Firebase</strong> and crash diagnostics through <strong>Firebase Crashlytics</strong> (both provided by Google). This is the only data that leaves your device without you asking for it, and we use it for one purpose: to see which parts of the app work and which fail, so we can fix them.</p>
+    <p>Released versions of Rowline send anonymous usage statistics through <strong>Google Analytics for Firebase</strong> and crash diagnostics through <strong>Firebase Crashlytics</strong> (both provided by Google). Apart from the purchase records and the text-recognition diagnostics described in their own sections, this is the only data that leaves your device without you asking for it, and we use it for one purpose: to see which parts of the app work and which fail, so we can fix them.</p>
     <p><strong>What is sent:</strong> that a screen or step happened (for example: a pattern was imported, a project was created, a row was counted, the paywall was shown, an import failed and why), coarse measures such as how many rows and roughly how many minutes a session lasted, the number of pages in an imported file and whether rows were found in it, your device model, operating system version, app version, language and country, and a random app-instance identifier generated on your device. Crash reports add the technical details of the failure.</p>
     <p><strong>What is never sent:</strong> the content of your patterns, imported files or photos; file names; project names; your notes; the addresses you import from; your name, email or contacts; your exact location; and any advertising identifier. Counted rows and minutes are sent in ranges, not exact numbers.</p>
     <p>Development builds send nothing at all. Google processes this data as our service provider, on servers that may be outside your country, including in the United States, under the transfer safeguards in Google’s own terms. Anonymous event data is retained for up to 14 months; crash reports for up to 90 days. We cannot link any of it back to you, and we do not try to.</p>
@@ -40,17 +44,29 @@
     <p>Rowline shows no advertising and contains no advertising SDKs. We do not profile you, we do not track you across other apps or websites, we do not use advertising identifiers, and we never sell or share your data with data brokers or advertisers.</p>
 
     <h2>When the app uses the internet</h2>
-    <p>Only when you ask it to, plus the statistics described above: if you import a pattern by link, the app downloads that page from the address you entered. No other content requests are made by the app.</p>
+    <p>Only when you ask it to, plus the statistics, purchase checks and text-recognition diagnostics described in this policy: if you import a pattern by link, the app downloads that page from the address you entered; if you connect Ravelry, the app talks to Ravelry as described below. No other content requests are made by the app.</p>
 
     <h2>Camera and photo library</h2>
     <p>If you choose to photograph a pattern page or pick an image, the app asks for permission at that moment. The images are used only to build your pattern and are kept on your device. You can decline, and everything else in the app keeps working.</p>
 
-    <h2>Purchases</h2>
-    <p>The current version of Rowline is free and contains no in-app purchases, so there is no billing data of any kind. If a paid option is added later, it will be sold and charged by Apple or Google under that store’s own terms — we would never see your card details or billing information, only the fact from the store that a purchase was made — and this policy will be updated before it ships.</p>
+    <h2>Microphone and voice control</h2>
+    <p>Voice control is optional and off until you turn it on. While it is on, Rowline listens for short commands such as “next” using the speech recognition built into your device, and it asks for microphone permission the first time. Recognition runs on the device: on iPhone Rowline requires Apple’s on-device recognition, and on Android it uses the system’s on-device recognizer. Rowline does not record, store or send your voice, and nothing you say reaches us.</p>
+
+    <h2>Ravelry (optional)</h2>
+    <p>If you choose to connect your Ravelry account, you sign in on Ravelry’s own page; Rowline never sees your Ravelry password. Ravelry then gives the app an access token, which is kept in your device’s secure storage (Keychain on iPhone, Keystore on Android) and is exchanged directly between your device and Ravelry. With it, the app reads your Ravelry username, your pattern library and your projects, and downloads the pattern PDFs you choose to open. They are stored on your device like any other imported pattern.</p>
+    <p>Rowline sends one thing back to Ravelry: the progress percentage of a project you have linked to Ravelry. Nothing from your Ravelry account is sent to us. Disconnecting Ravelry in Settings deletes the token from your device; projects you created stay, because they are yours. Ravelry’s own privacy policy applies to your Ravelry account. Rowline is made by MordanSoft and is not affiliated with Ravelry.</p>
+
+    <h2>Home Screen widget and Lock Screen</h2>
+    <p>If you add the Rowline widget or count from the Lock Screen, the current project’s name and row number are shared with that widget on your device. They are not sent anywhere.</p>
+
+    <h2>Purchases: Rowline Plus</h2>
+    <p>Rowline is free to use, and <strong>Rowline Plus</strong> is an optional upgrade, sold as a yearly subscription or a one-time purchase. It is sold and charged by Apple (App Store) or Google (Google Play) under that store’s own terms. We never see your card details, your billing address or your store account name.</p>
+    <p>To know whether Plus is active on your device, Rowline uses <strong>RevenueCat</strong> (RevenueCat, Inc., United States) as our service provider. When the app starts and when you buy or restore, RevenueCat receives a random identifier that it creates for your installation, the receipt or purchase token from your store, and with it your purchase history in Rowline: which product, when, the price and currency, and whether a subscription is active, renewing or cancelled. It also receives your device’s operating system, app version and store country, and, as part of any internet connection, your IP address. RevenueCat uses this only to verify purchases and give us aggregate sales reports; it does not use it for advertising and does not track you across apps. This record is not linked to your name or email, because Rowline does not have them.</p>
+    <p>If you never open the purchase screen and never buy, RevenueCat still receives the random identifier and the device details above, but there is no purchase history to record.</p>
 
     <h2>Your choices and your rights</h2>
-    <p>Everything you create is in your hands: you can delete any project or pattern inside the app, and uninstalling Rowline removes your local database and all imported files from the device. To stop the anonymous statistics as well, uninstall the app — there is nothing of yours left with us afterwards, because we hold no personal data to delete.</p>
-    <p>If you are in the European Economic Area, the United Kingdom, Ukraine or California, the law gives you rights of access, correction, deletion, portability and objection over personal data about you. We process your content on your device only, and the statistics we receive are anonymous and not linked to your identity, so in practice there is no personal data of yours for us to produce or erase. You are welcome to write to us anyway and we will explain what we hold; where processing is based on our legitimate interest in keeping the app working, you may object to it at any time.</p>
+    <p>Everything you create is in your hands: you can delete any project or pattern inside the app, and uninstalling Rowline removes your local database and all imported files from the device. To stop the anonymous statistics as well, uninstall the app.</p>
+    <p>If you are in the European Economic Area, the United Kingdom, Ukraine or California, the law gives you rights of access, correction, deletion, portability and objection over personal data about you. We process your content on your device only, and the statistics we receive are anonymous and not linked to your identity. The one record that concerns you individually is the purchase record held by RevenueCat: write to us and we will tell you what it holds or delete it. Apple and Google keep their own record of what you bought; you can ask them directly. Where processing is based on our legitimate interest in keeping the app working, you may object to it at any time.</p>
 
     <h2>Children</h2>
     <p>Rowline is a tool for crafters and is not directed at children, and we do not knowingly collect personal information from them.</p>
@@ -64,7 +80,7 @@
     <h2>Contact</h2>
     <p>Questions about this policy or about the app: <a href="mailto:mordansoft@gmail.com">mordansoft@gmail.com</a>. See also the <a href="terms.html">Terms of Use</a>.</p>
 
-    <p class="meta">Last updated: 12 November 2026 · MordanSoft</p>
+    <p class="meta">Last updated: 23 November 2026 · MordanSoft</p>
   </main>
 </body>
 </html>
